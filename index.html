@@ -3,7 +3,7 @@
     <title>Luan</title>
   </head>
   <body>
-    Hello! My name is Luan, and this is my landing page.
+    Hello! My name is Luan Nico, and this is my landing page.
     <h2>Projects</h2>
     <ul>
       <li><a href="yawp.io">Yawp!</a></li>
@@ -11,9 +11,14 @@
       <li>Will add the others shortly...</li>
     </ul>
     <h2>Contact</h2>
-    You can contact me using via <span id="contact"></a>.
+    <p>Feel free to contact me using <a href="#" id="contact">this</a>.</p>
+    <p>If you want to talk about specific projects, other option is to use Github's Issue Manager.</p>
   </body>
   <script type="text/javascript">
-    document.getElementById("contact").innerHTML = 'myemail@serverz.com';
+    var contact = document.getElementById("contact");
+    contact.onclick = function () {
+      var myName = 'luannico', myServer = 'gmail.com';
+      contact.innerHTML = myName + '27' + '&#64;' + myServer; 
+    };
   </script>
 </html>
