@@ -1,0 +1,32 @@
+{
+	"name": "jsep",
+	"version": "0.3.0",
+	"description": "a tiny JavaScript expression parser",
+	"author": "Stephen Oney <swloney@gmail.com> (http://from.so/)",
+	"homepage": "http://jsep.from.so/",
+	"licenses": [{
+		"type": "MIT",
+		"url": "https://github.com/soney/jsep/blob/master/LICENSE"
+	}],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/soney/jsep.git"
+	},
+	"main": "build/jsep.js",
+	"private": false,
+	"dependencies": {},
+	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-jshint": "~0.1",
+		"grunt-contrib-qunit": "~0.3",
+		"grunt-contrib-uglify": "~0.2",
+		"grunt-contrib-concat": "~0.2",
+		"grunt-contrib-watch": "~0.5",
+		"grunt-contrib-compress": "~0.5",
+		"grunt-contrib-clean": "~0.4",
+		"grunt-docco": "~0.3"
+	},
+	"engines": {"node": ">= 0.4.7"},
+	"directories": {"test": "test"},
+	"scripts": {"test": "grunt test"}
+}

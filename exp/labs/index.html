@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <title>Lab - Test</title>
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/nstephens/cssterm/master/css/cssterm.css">
+    <style type="text/css">
+    body {
+        background-color: gray;
+    }
+    
+    #input {
+        background-color: black;
+        color: gray;
+        font-family: monospace;
+        line-height: 1em;
+        font-size: 11px;
+        width: 80%;
+        border: 0;
+    }
+    
+    #input:focus {
+        outline-width: 0;
+        border: 0;
+    }
+    
+    .in {
+        color: gray;
+    }
+    
+    .out {
+        color: white;
+    }
+    
+    .err {
+        color: red;
+    }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="node_modules/decimal.js/decimal.js"></script>
+    <!-- script type="text/javascript" src="node_modules/jsep/src/jsep.js"></script -->
+    <script type="text/javascript" src="jsep.js"></script>
+    <script type="text/javascript" src="src/utils.js"></script>
+    <script type="text/javascript" src="src/exp.js"></script>
+    <script type="text/javascript" src="src/simplifier.js"></script>
+    <script type="text/javascript" src="src/derivatives.js"></script>
+    <script type="text/javascript" src="src/env-builder.js"></script>
+    <script type="text/javascript" src="src/lab.js"></script>
+    <script type="text/javascript">
+    jQuery(function($) {
+
+        const FNS = {
+            ':clear': function() {
+                $('#list').text('');
+                env = {};
+            }
+        };
+
+        var history = [],
+            currentIndex = 0,
+            currentText = '';
+
+        var env = {};
+
+        var append = function(c, cl, t) {
+            $('#list').append($('<span>').addClass(cl).text(c + ' ' + t)).append($('<br>'));
+        };
+
+        var parse = function(command) {
+            append('>', 'in', command);
+            try {
+                var result = new Function('return ' + command).bind(env)();
+                if (result) {
+                    append('<', 'out', JSON.stringify(result));
+                }
+            } catch (e) {
+                append('<', 'err', e);
+            }
+        };
+
+        var cacheCurrentText = function(command) {
+            if (currentIndex == 0) {
+                currentText = command;
+            }
+        };
+
+        var readHistory = function() {
+            if (currentIndex > 0 && currentIndex <= history.length) {
+                $('#input').val(history[history.length - currentIndex]);
+            } else if (currentIndex == 0) {
+                currentIndex = 0;
+                $('#input').val(currentText);
+            } else {
+                currentIndex = currentIndex <= 0 ? 0 : history.length;
+            }
+        };
+
+        var parseMacro = function(command) {
+            var fn = FNS[command];
+            if (fn) {
+                var r = fn();
+                if (r) {
+                    append('<', 'out', r);
+                }
+            } else {
+                append('<', 'err', 'Unknown function ' + command);
+            }
+        }
+
+        $('#input').on('keydown', function(e) {
+            const UP_ARROW = 38,
+                DOWN_ARROW = 40,
+                ENTER = 13;
+            var command = $(this).val();
+            if (e.keyCode === ENTER) {
+                currentIndex = 0;
+                history.push(command);
+                $(this).val('');
+                if (command[0] === ':') {
+                    parseMacro(command);
+                } else {
+                    parse(command);
+                }
+            } else if (e.keyCode === DOWN_ARROW) {
+                cacheCurrentText(command);
+                currentIndex--;
+                readHistory();
+            } else if (e.keyCode === UP_ARROW) {
+                cacheCurrentText(command);
+                currentIndex++;
+                readHistory();
+            } else {
+                currentIndex = 0;
+            }
+            e.stopPropagation();
+        }).focus();
+    });
+    </script>
+</head>
+
+<body>
+    <div id="terminal-window">
+        <div id="terminal-toolbar">
+            <div class="terminal-top">
+                <div class="terminal-menu">
+                </div>
+                <div id="terminal-buttons">
+                    <div class="terminal-button terminal-close">
+                        <div class="terminal-close-icon">X</div>
+                    </div>
+                </div>
+                <div id="terminal-title">
+                    user@localhost:~
+                </div>
+            </div>
+        </div>
+        <div id="terminal-body">
+            <p id="list"></p>
+            <p>&gt;
+                <input type="text" id="input" autofocus></input>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
