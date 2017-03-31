@@ -14,6 +14,10 @@ EnvBuilder = (function () {
         this.vars[name] = [latex, unit, formula];
     };
 
+    EnvBuilder.prototype.varWithFormula = function (name, latex, formula) {
+        this.vars[name] = [latex, '', formula];
+    };
+
     EnvBuilder.prototype.constantWithValue = function (name, latex, value, error, unit) {
         this.consts[name] = {
             name : latex,

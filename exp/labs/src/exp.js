@@ -124,7 +124,7 @@ Exp = (function() {
     };
 
     Expression.prototype.unit = function(vars) {
-        return this._unit(vars)._purgeIdentifiers();
+        return this._unit(vars).simplify()._purgeIdentifiers();
     };
 
     Expression.prototype._purgeIdentifiers = function(vars) {
@@ -150,7 +150,7 @@ Exp = (function() {
             if (args.length === 1) {
                 return args[0];
             }
-            return call(this.fn, args).toPrettyString();
+            return call(this.fn, this.args).toPrettyString();
         }
     };
 
@@ -160,15 +160,25 @@ Exp = (function() {
         } else if (this.isIdentifier()) {
             return identifier(vars[this.name]);
         } else {
-            var parsedArgs = this.args.map(function(arg) {
-                return arg._unit(vars);
-            }).filter(function(arg) {
-                return arg.name !== '';
-            });
-            if (parsedArgs.length === 0) {
+            if (['sin', 'cos', 'tan', 'ln'].indexOf(this.fn) > -1) {
                 return identifier('');
             }
-            return call(this.fn, parsedArgs).simplify();
+            if (['+', '-', '*', '/'].indexOf(this.fn) > -1) {
+                var parsedArgs = this.args.map(function(arg) {
+                    return arg._unit(vars);
+                }).filter(function(arg) {
+                    return arg.name !== '';
+                });
+                if (parsedArgs.length === 0) {
+                    return identifier('');
+                }
+                return call(this.fn, parsedArgs).simplify();
+            }
+            if (this.fn === '^') {
+                var parsedArgs = [this.args[0]._unit(vars), this.args[1]];
+                return call(this.fn, parsedArgs).simplify();
+            }
+            throw 'Unkown function ' + this.fn;
         }
     };
 

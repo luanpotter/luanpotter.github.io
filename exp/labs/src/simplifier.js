@@ -31,6 +31,10 @@
         return identifier.name;
     };
 
+    var isPotencyOfIdentifier = function (arg) {
+        return arg.isCall() && arg.fn === '^' && arg.args[0].isIdentifier() && arg.args[1].isLiteral();
+    };
+
     const SIMPLIFIERS = {
         '+': function(args) {
             var newArgs = [];
@@ -112,16 +116,27 @@
                         return false;
                     });
                     newArgs.push(literal(acc));
-                } else if (arg.isIdentifier()) {
-                    var acc = new Decimal(1);
+                } else if (arg.isIdentifier() || isPotencyOfIdentifier(arg)) {
+                    var acc = new Decimal(arg.isIdentifier() ? 1 : arg.args[1].value);
+                    var name = arg.isIdentifier() ? arg.name : arg.args[0].name;
                     args = args.filter(function(otherArg) {
-                        if (otherArg.isIdentifier() && otherArg.name === arg.name) {
+                        if (otherArg.isIdentifier() && otherArg.name === name) {
                             acc = acc.plus(1);
+                            return false;
+                        }
+                        if (isPotencyOfIdentifier(otherArg) && otherArg.args[0].name === name) {
+                            acc = acc.plus(otherArg.args[1].value);
                             return false;
                         }
                         return true;
                     });
-                    newArgs.push(acc.toNumber() === 1 ? arg : call('^', [arg, literal(acc)]));
+                    if (acc.toNumber() === 0) {
+                        newArgs.push(literal(1));
+                    } else if (acc.toNumber() === 1) {
+                        newArgs.push(identifier(name));
+                    } else {
+                        newArgs.push(call('^', [identifier(name), literal(acc.toNumber())]));
+                    }
                 } else {
                     newArgs.push(arg);
                 }
@@ -145,6 +160,9 @@
             }
             var r = call('*', newArgs);
             return hasMinusOne ? call('-', r) : r;
+        },
+        '/': function (args) {
+            return call('*', [ args[0], call('^', [ args[1], literal(-1) ]) ]).simplify();
         },
         '^': function(args) {
             if (args[1].isLiteral() && args[1].value.toNumber() === 1) {

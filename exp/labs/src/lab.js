@@ -190,18 +190,13 @@ Env = (function() {
         }.bind(this));
     };
 
-    var elToLatex = function(el) {
-        var m = el.multiplier ? ' ' + el.multiplier : '';
-        return '$' + el.value + ' \\pm ' + el.error + m + '$';
-    };
-
     Env.prototype.get = function(name) {
         var variable = this.vars[name];
         if (!variable) {
             throw 'Variable name \'' + name + '\' not found in vars list.';
         }
 
-        return elToLatex(this.parse(this.fetchValues(variable)).join('\n'));
+        return this.parse(this.fetchValues(variable));
     };
 
     Env.prototype.table = function(names) {
@@ -224,17 +219,7 @@ Env = (function() {
     };
 
     Env.prototype.latexTable = function(names) {
-        var table = this.table(names).map(function(row) {
-            return row.map(elToLatex);
-        });
-        table.splice(0, 0, names.map(function(name) {
-            var variable = this.vars[name];
-            var unit = this.fetchUnit(variable);
-            return '$' + variable.name + (unit == '' ? '' : ' (' + unit + ')') + '$';
-        }.bind(this)));
-        return table.map(function(row) {
-            return row.join(' & ');
-        }).join(' \\\\\n');
+        return Latex.latexTable(names, this);
     };
 
     Env.prototype.error = function(variable) {
@@ -318,15 +303,14 @@ Env = (function() {
     };
 
     Env.prototype.fetchUnit = function(variable) {
-        return variable.unit; // TODO properly evaluate units
-
-        if (!variable.formula) {
+        if (true || !variable.formula) {
             return variable.unit;
         }
 
         var units = {};
         variable.formula.deps().forEach(function(dep) {
-            units[dep] = this.fetchUnit(this.vars[dep]);
+            var depV = this.consts[dep] || this.vars[dep];
+            units[dep] = this.fetchUnit(depV);
         }.bind(this));
 
         return variable.formula.unit(units);
@@ -336,6 +320,18 @@ Env = (function() {
         var variable = this.vars[name];
         var ast = jsep(variable.formula);
         return Exp.deps(ast);
+    };
+
+    Env.prototype.name = function (id) {
+        return (this.vars[id] || this.constants[id]).name;
+    };
+
+    Env.prototype.desc = function (id) {
+        return (this.vars[id] || this.constants[id]).desc || 'no desc';
+    };
+
+    Env.prototype.fullLatexTable = function (names, caption, ref) {
+        return Latex.fullLatexTable(names, caption, ref, this);
     };
 
     return Env;
