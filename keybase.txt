@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/luan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://luan.xyz
+  * I am luan (https://keybase.io/luan) on keybase.
+  * I have a public key ASBXke-DO-PJjCl5pMZ0zPTmJk3Sn-CI4zhVCYnlRGPwpQo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01012addb99ba326f7f2baed118c79dde51d1c7741b6d3b2818793801eba2d04502e0a",
+            "host": "keybase.io",
+            "kid": "01205791ef833be3c98c2979a4c674ccf4e6264dd29fe088e338550989e54463f0a50a",
+            "uid": "22783f0252bcaaefacf263eacb5ec319",
+            "username": "luan"
+        },
+        "service": {
+            "hostname": "luan.xyz",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.20"
+    },
+    "ctime": 1491695974,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1491695857,
+        "hash": "b4b972e9123e91730d54dd61aa1488abe150a5831e30b4d10bc63535563a1b5371594ea3f9d0ec1f6d49fc2497e696ec78c74920e65da994ba63e964e65650ac",
+        "seqno": 1007351
+    },
+    "prev": "b92aa77d5281b6f2d10bdd694290aaf9fca7237f155c7a551debe064e1e462fb",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgV5HvgzvjyYwpeaTGdMz05iZN0p/giOM4VQmJ5URj8KUKp3BheWxvYWTFAu17ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxMmFkZGI5OWJhMzI2ZjdmMmJhZWQxMThjNzlkZGU1MWQxYzc3NDFiNmQzYjI4MTg3OTM4MDFlYmEyZDA0NTAyZTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNTc5MWVmODMzYmUzYzk4YzI5NzlhNGM2NzRjY2Y0ZTYyNjRkZDI5ZmUwODhlMzM4NTUwOTg5ZTU0NDYzZjBhNTBhIiwidWlkIjoiMjI3ODNmMDI1MmJjYWFlZmFjZjI2M2VhY2I1ZWMzMTkiLCJ1c2VybmFtZSI6Imx1YW4ifSwic2VydmljZSI6eyJob3N0bmFtZSI6Imx1YW4ueHl6IiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4yMCJ9LCJjdGltZSI6MTQ5MTY5NTk3NCwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDkxNjk1ODU3LCJoYXNoIjoiYjRiOTcyZTkxMjNlOTE3MzBkNTRkZDYxYWExNDg4YWJlMTUwYTU4MzFlMzBiNGQxMGJjNjM1MzU1NjNhMWI1MzcxNTk0ZWEzZjlkMGVjMWY2ZDQ5ZmMyNDk3ZTY5NmVjNzhjNzQ5MjBlNjVkYTk5NGJhNjNlOTY0ZTY1NjUwYWMiLCJzZXFubyI6MTAwNzM1MX0sInByZXYiOiJiOTJhYTc3ZDUyODFiNmYyZDEwYmRkNjk0MjkwYWFmOWZjYTcyMzdmMTU1YzdhNTUxZGViZTA2NGUxZTQ2MmZiIiwic2Vxbm8iOjExLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQHrDP1b0Q2vv3QkkKa1EgIiClEy2GjBStoSJsTDDlKf7CaTqloxh8IJdxRi3yxKCFIO9gyI94DLJdot2o3nJEwGoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCDqs6aTwjgAOIrFmCG6jcAdK8iEx8GnwIHjOOgn9/RxhKN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/luan
+
+==================================================================
