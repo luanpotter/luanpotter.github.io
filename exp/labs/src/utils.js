@@ -1,6 +1,17 @@
 Utils = {
+    isString: function (v) {
+        return typeof v === 'string';
+    },
+    isObject: function (v) {
+        return (typeof v === 'object') && v !== null;
+    },
     build: function(map, values, defaults) {
         return Object.keys(map || []).reduce(function(result, key) {
+            if (Utils.isObject(map[key]) && !Array.isArray(map[key])) {
+                result[key] = map[key];
+                result[key].key = key;
+                return result;
+            }
             result[key] = {};
             values.forEach(function(current, i) {
                 result[key][current] = map[key][i] || (defaults ? defaults[i] : undefined);

@@ -11,4 +11,12 @@ describe('simplifier', function() {
         var exp = Exp.parse('2*x + 3*x + 7*x^2/x');
         assert.equal('12*x', exp.simplify().toPrettyString());
     });
+    it('potency of potency', function() {
+        var exp = Exp.parse('(x^2)^2');
+        assert.equal('x^4', exp.simplify().toPrettyString());
+    });
+    it('product of product', function() {
+        var exp = Exp.parse('(x*y)*x');
+        assert.equal('x^2*y', exp.simplify().toPrettyString());
+    });
 });

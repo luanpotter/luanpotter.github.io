@@ -184,6 +184,10 @@
                 }
             }
 
+            if (args[0].isCall() && args[0].fn === '^') {
+                return call('^', [args[0].args[0], call('*', [args[0].args[1], args[1]]).simplify()]);
+            }
+
             return call('^', args);
         }
     };

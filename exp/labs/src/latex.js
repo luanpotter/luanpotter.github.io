@@ -1,21 +1,25 @@
-Latex = (function() {
+Latex = (function () {
     var Latex = {};
 
-    var elToLatex = function(el) {
-        var m = el.multiplier ? ' ' + el.multiplier : '';
+    const elToLatex = function (el) {
+        let m = el.multiplier ? ' ' + el.multiplier : '';
         return '$' + el.value + ' \\pm ' + el.error + m + '$';
     };
 
+    function header(env, name) {
+        let variable = env.vars[name];
+        let unit = env.fetchUnit(variable);
+        return '$' + variable.name + (unit === '' ? '' : ' (' + unit + ')') + '$';
+    }
+
     Latex.latexTable = function (names, env) {
-        var table = env.table(names).map(function(row) {
+        let table = env.table(names).map(function (row) {
             return row.map(elToLatex);
         });
-        table.splice(0, 0, names.map(function(name) {
-            var variable = env.vars[name];
-            var unit = env.fetchUnit(variable);
-            return '$' + variable.name + (unit == '' ? '' : ' (' + unit + ')') + '$';
+        table.splice(0, 0, names.map(function (name) {
+            return header(env, name);
         }.bind(env)));
-        return table.map(function(row) {
+        return table.map(function (row) {
             return row.join(' & ');
         }).join(' \\\\\n');
     };
@@ -25,7 +29,7 @@ Latex = (function() {
             '\\begin{longtable}[c]{|' + ' c |'.repeat(names.length) + '}',
             '\\caption{' + caption + '\\label{tab:' + ref + '}}\\\\',
             '\\hline',
-            names.map(n => '$' + env.name(n) + '$').join(' & ') + ' \\\\',
+            names.map(n => header(env, n)).join(' & ') + ' \\\\',
             '\\hline',
             '\\endhead',
             '\\hline',
@@ -33,7 +37,9 @@ Latex = (function() {
             '\\hline',
             '\\caption*{ ' + names.map(n => '$' + env.name(n) + '$: desc...').join('; ') + '}',
             '\\endlastfoot',
-            Latex.latexTable(names, env),
+            env.table(names).map(function (row) {
+                return row.map(elToLatex).join(' & ') + ' \\\\';
+            }).join('\n'),
             '\\end{longtable}'
         ].join('\n');
     };

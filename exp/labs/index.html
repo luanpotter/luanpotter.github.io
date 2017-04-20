@@ -43,16 +43,26 @@
     <script type="text/javascript" src="src/latex.js"></script>
     <script type="text/javascript" src="src/exp.js"></script>
     <script type="text/javascript" src="src/simplifier.js"></script>
+    <script type="text/javascript" src="src/dimensions.js"></script>
     <script type="text/javascript" src="src/derivatives.js"></script>
     <script type="text/javascript" src="src/env-builder.js"></script>
     <script type="text/javascript" src="src/lab.js"></script>
+    <script type="text/javascript" src="src/guide.js"></script>
     <script type="text/javascript">
     jQuery(function($) {
 
         const FNS = {
+            ':start': function() {
+                append('>', 'out', guide.start());
+            },
+            ':q': function() {
+                guide = new Guide();
+                append('>', 'out', 'Left interactive mode.');
+            },
             ':clear': function() {
                 $('#list').text('');
                 env = {};
+                guide = new Guide();
             }
         };
 
@@ -61,13 +71,21 @@
             currentText = '';
 
         var env = {};
+        var guide = new Guide();
 
-        var append = function(c, cl, t) {
-            $('#list').append($('<span>').addClass(cl).text(c + ' ' + t)).append($('<br>'));
+        var append = function(c, cl, te) {
+            var ts = Array.isArray(te) ? te : [ te ];
+            ts.forEach(function (t) {
+                $('#list').append($('<span>').addClass(cl).text(c + ' ' + t)).append($('<br>'));
+            });
         };
 
         var parse = function(command) {
             append('>', 'in', command);
+            if (guide.on()) {
+                append('<', 'out', guide.next(command));
+                return;
+            }
             try {
                 var result = new Function('return ' + command).bind(env)();
                 if (result) {

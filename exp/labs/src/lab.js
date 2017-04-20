@@ -92,6 +92,7 @@ Env = (function() {
         var deps = {};
         Object.keys(this.consts).forEach(function(constant) {
             validateName(constant);
+            this.consts[constant].name = this.consts[constant].latexName || this.consts[constant].name || constant;
             if (this.consts[constant].formula) {
                 this.consts[constant].formula = Exp.parse(this.consts[constant].formula);
                 var deps = this.consts[constant].formula.deps();
@@ -104,8 +105,9 @@ Env = (function() {
         }.bind(this));
         Object.keys(this.vars).forEach(function(variable) {
             validateName(variable);
+            this.vars[variable].values = this.vars[variable].values || [];
             if (this.consts[variable]) {
-                throw 'Invalid variable name, there is already a constant with that name: ' + name;
+                throw 'Invalid variable name, there is already a constant with that name: ' + variable;
             }
             if (this.vars[variable].formula) {
                 this.vars[variable].formula = Exp.parse(this.vars[variable].formula);
@@ -175,18 +177,32 @@ Env = (function() {
             return parseInt(v2.multiplier) - parseInt(v1.multiplier);
         }).find(function(v) {
             return v.multiplier <= expoent;
-        });
+        }) || MULTIPLIERS.y;
     };
 
     Env.prototype.parse = function(values) {
         return values.map(function(v) {
             var multiplier = Env.findMultipler(v.error);
-            var m = new Decimal(10).pow(multiplier.multiplier);
+            var m = new Decimal(10).pow(parseInt(multiplier.multiplier));
 
             var error = v.error.dividedBy(m).toSD(1);
             var value = v.value.dividedBy(m);
 
-            return { value: value.toFixed(error.decimalPlaces()), error: error.toFixed(), multiplier: multiplier.key };
+            if (error.eq(0)) {
+                return { value : value.toString(), error : 0, multiplier : multiplier.key };
+            }
+
+            var fixedValue = value.toFixed(error.decimalPlaces());
+            if (error.gt(1)) {
+                var trailingZeroes = (/^[^0]*(0*)$/g).exec(error.toFixed())[1];
+                if (fixedValue.length <= trailingZeroes.length) {
+                    fixedValue = '0';
+                } else {
+                    fixedValue = fixedValue.substring(0, fixedValue.length - trailingZeroes.length) + trailingZeroes;
+                }
+            }
+
+            return { value: fixedValue, error: error.toFixed(), multiplier: multiplier.key };
         }.bind(this));
     };
 
@@ -208,7 +224,7 @@ Env = (function() {
             }
             var values = this.fetchValues(variable);
             if (size && values.length !== size) {
-                throw 'Incompatible variables, differente sizes!';
+                throw 'Incompatible variables, differente sizes: ' + values.length + ' != ' + size + ' (for ' + variable.name + ').';
             } else {
                 size = values.length;
             }
@@ -235,7 +251,12 @@ Env = (function() {
 
     Env.prototype.fetchConstant = function (constant) {
         if (!constant.formula) {
-            return constant;
+            var ms = constant.multiplier || '';
+            var m = new Decimal(10).pow(parseInt(MULTIPLIERS[ms].multiplier));
+            return {
+                value: new Decimal(constant.value).times(m),
+                error: new Decimal(constant.error).times(m)
+            };
         }
         var deps = constant.formula.deps();
         var mapi = {};
@@ -253,7 +274,7 @@ Env = (function() {
     Env.prototype.fetchValues = function(variable) {
         if (!variable.formula) {
             return variable.values.map(function(v) {
-                var m = new Decimal(10).pow(MULTIPLIERS[v.multiplier].multiplier);
+                var m = new Decimal(10).pow(parseInt(MULTIPLIERS[v.multiplier].multiplier));
                 return {
                     value: new Decimal(v.value).times(m),
                     error: new Decimal(v.error).times(m)
@@ -322,17 +343,23 @@ Env = (function() {
         return Exp.deps(ast);
     };
 
+    Env.prototype.obj = function (id) {
+        return this.vars[id] || this.constants[id];
+    }
+
     Env.prototype.name = function (id) {
-        return (this.vars[id] || this.constants[id]).name;
+        return this.obj(id).name;
     };
 
     Env.prototype.desc = function (id) {
-        return (this.vars[id] || this.constants[id]).desc || 'no desc';
+        return this.obj(id).description || 'no desc';
     };
 
-    Env.prototype.fullLatexTable = function (names, caption, ref) {
-        return Latex.fullLatexTable(names, caption, ref, this);
+    Env.prototype.fullLatexTable = function (names, caption, label) {
+        return Latex.fullLatexTable(names, caption, label, this);
     };
+
+    Env.MULTIPLIERS = MULTIPLIERS;
 
     return Env;
 })();
