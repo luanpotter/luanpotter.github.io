@@ -1,5 +1,9 @@
 #!/bin/bash
 
-rm -rf labs/*
-cp -r ../../labs/* labs/
-rm -rf labs/.git*
+rm -rf labs
+mkdir labs
+
+cd ../../labs/labs-web
+yarn
+webpack
+cp dist/* ../../luanpotter.github.io/exp/labs/
