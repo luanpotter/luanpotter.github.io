@@ -44353,10 +44353,13 @@ __webpack_require__(33);
 jQuery(function ($) {
   let main = $('<div>');
   main.append($('<textarea>').attr('id', 'src'));
+  main.append($('<div>').append($('<span>').text('dotMode')).append($('<input>').attr('id', 'dotMode').attr('type', 'checkbox').prop('checked', true)));
   main.append($('<button>').on('click', function () {
     $('#result, #errors').text('');
     try {
-      $('#result').html(parse($('#src').val()).replace(/\n/g, '<br />'));
+      let input = $('#src').val()
+      let dotMode = $('#dotMode').prop('checked');
+      $('#result').html(parse(input, dotMode).replace(/\n/g, '<br />'));
     } catch (ex) {
       $('#errors').text(ex + ex.stack);
     }
@@ -44366,7 +44369,7 @@ jQuery(function ($) {
   $('body').append(main);
 });
 
-const parse = src => {
+const parse = (src, dotMode) => {
   let data = src.split('\n').map(l => l.split(/[ \t]+/));
 
   let u = _.uniq(data.map(el => el.length));
@@ -44380,6 +44383,11 @@ const parse = src => {
   }
 
   let headers = hasHeaders ? data.shift() : _.flatMap(_.range(data[0].length/2), i => ['v' + i, 'e_v' + i]);
+  let has = c => data.some(cl => cl.some(el => el.includes(c)));
+  if (has(',') && !has('.')) {
+    data = data.map(c => c.map(el => el.replace(/,/g, '.')));
+  }
+
   let table = _.unzip(data).map((datum, i) => ({ header : headers[i], data : datum }));
   let values = _.chunk(table, 2).map(a => ({ header : a[0].header,  values : a[0].data, errors : a[1].data }));
 
@@ -44393,7 +44401,11 @@ const parse = src => {
   let e = b.build();
   values.forEach(value => e.add(value.header, value.values.map((datum , i) => [datum, value.errors[i]])));
 
-  return e.fullLatexTable(values.map(e => e.header), 'MY TABLE', 'mylable');
+  let latex = e.fullLatexTable(values.map(e => e.header), 'MY TABLE', 'mylable');
+  if (!dotMode) {
+    latex = latex.split('\n').map(line => line.startsWith('$') ? line.replace(/\./g, ',') : line).join('\n');
+  }
+  return latex;
 };
 
 
