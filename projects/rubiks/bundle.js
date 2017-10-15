@@ -45404,10 +45404,61 @@ const createCube = (position, colors) => {
     return cube;
 };
 
+const rgb = (r, g, b) => b + 256*g + 256*256*r;
+
 const draw = scene => {
-    scene.add(createCube({ x: -SIZE, y: +SIZE, z: +SIZE }, { 1: 0xCC0000 }));
-    scene.add(createCube({ x: 0, y: +SIZE, z: +SIZE }, { 0: 0x0000CC, 2: 0x00CC00 }));
-    scene.add(createCube({ x: -SIZE, y: 0, z: +SIZE }, 0x0000CC));
+    const cubeDescStr = 'a,a,a,a,a,a,a,a,a;b,b,b,b,b,b,b,b,b;c,c,c,c,c,c,c,c,c;d,d,d,d,d,d,d,d,d;e,e,e,e,e,e,e,e,e;f,f,f,f,f,f,f,f,f';
+    const cubeDesc = cubeDescStr.split(';').map(s => s.split(','));
+    const colors = {
+        a: rgb(238, 111, 18),
+        b: rgb(2, 166, 93),
+        c: rgb(25, 59, 254),
+        d: rgb(255, 255, 255),
+        e: rgb(184, 0, 0),
+        f: rgb(254, 232, 51)
+    };
+    const color = (face, pos) => colors[cubeDesc[face - 1][pos - 1]];
+    const d = SIZE + 4;
+
+    scene.add(createCube({ x: -d, y: d, z: d }, { 4: color(1, 1), 1: color(3, 3), 2: color(2, 7) }));
+    scene.add(createCube({ x: 0, y: d, z: d }, { 4: color(1, 2), 2: color(2, 8) }));
+    scene.add(createCube({ x: d, y: d, z: d }, { 4: color(1, 3), 0: color(4, 1), 2: color(2, 9) }));
+
+    scene.add(createCube({ x: -d, y: 0, z: d }, { 4: color(1, 4), 1: color(3, 6) }));
+    scene.add(createCube({ x: 0, y: 0, z: d }, { 4: color(1, 5) }));
+    scene.add(createCube({ x: +d, y: 0, z: d }, { 4: color(1, 6), 0: color(4, 4) }));
+
+    scene.add(createCube({ x: -d, y: -d, z: d }, { 4: color(1, 7), 1: color(3, 9), 3: color(5, 1) }));
+    scene.add(createCube({ x: 0, y: -d, z: d }, { 4: color(1, 8), 3: color(5, 2) }));
+    scene.add(createCube({ x: d, y: -d, z: d }, { 4: color(1, 9), 0: color(4, 7), 3: color(5, 3) }));
+
+
+
+    scene.add(createCube({ x: -d, y: d, z: 0 }, { 1: color(3, 2), 2: color(2, 4) }));
+    scene.add(createCube({ x: 0, y: d, z: 0 }, { 2: color(2, 5) }));
+    scene.add(createCube({ x: d, y: d, z: 0 }, { 0: color(4, 2), 2: color(2, 6) }));
+
+    scene.add(createCube({ x: -d, y: 0, z: 0 }, { 1: color(3, 5) }));
+    scene.add(createCube({ x: 0, y: 0, z: 0 }, {}));
+    scene.add(createCube({ x: +d, y: 0, z: 0 }, { 0: color(4, 5) }));
+
+    scene.add(createCube({ x: -d, y: -d, z: 0 }, { 1: color(3, 8), 3: color(5, 4) }));
+    scene.add(createCube({ x: 0, y: -d, z: 0 }, { 3: color(5, 5) }));
+    scene.add(createCube({ x: d, y: -d, z: 0 }, { 0: color(4, 8), 3: color(5, 6) }));
+
+
+
+    scene.add(createCube({ x: -d, y: d, z: -d }, { 5: color(6, 1), 1: color(3, 1), 2: color(2, 1) }));
+    scene.add(createCube({ x: 0, y: d, z: -d }, { 5: color(6, 2), 2: color(2, 2) }));
+    scene.add(createCube({ x: d, y: d, z: -d }, { 5: color(6, 3), 0: color(4, 3), 2: color(2, 3) }));
+
+    scene.add(createCube({ x: -d, y: 0, z: -d }, { 5: color(6, 4), 1: color(3, 4) }));
+    scene.add(createCube({ x: 0, y: 0, z: -d }, { 5: color(6, 5) }));
+    scene.add(createCube({ x: +d, y: 0, z: -d }, { 5: color(6, 6), 0: color(4, 6) }));
+
+    scene.add(createCube({ x: -d, y: -d, z: -d }, { 5: color(6, 7), 1: color(3, 7), 3: color(5, 7) }));
+    scene.add(createCube({ x: 0, y: -d, z: -d }, { 5: color(6, 8), 3: color(5, 8) }));
+    scene.add(createCube({ x: d, y: -d, z: -d }, { 5: color(6, 9), 0: color(4, 9), 3: color(5, 9) }));
 };
 
 module.exports = { draw };
