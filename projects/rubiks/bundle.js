@@ -45472,17 +45472,54 @@ const drawCube = scene => {
     scene.add(createCube({ x: d, y: -d, z: -d }, { 5: color(6, 9), 0: color(4, 9), 3: color(5, 9) }));
 };
 
-let rotation = 0;
+const rotations = [ 'R', 'L' ];
+let rotation = 0, currentRotation;
+let pivot;
+
+// [ [from, to], ... ]
+const swap = (...changes) => {
+    const froms = {};
+    changes.map(v => v[1]).forEach(from => froms[from] = CUBES[from]);
+    changes.forEach(pair => CUBES[pair[0]] = froms[pair[1]]);
+};
+
 const draw = scene => {
     drawCube(scene);
     return dt => {
-        const pivot = new THREE.Group();
-        scene.add(pivot);
-        for (let i = 0; i < 9; i++) {
-            pivot.add(CUBES[i]);
+        if (!currentRotation) {
+            if (rotations.length === 0) {
+                return;
+            }
+            currentRotation = rotations.shift();
+            pivot = new THREE.Group();
+            if (currentRotation === 'R') {
+                for (let i = 0; i < 9; i++) {
+                    pivot.add(CUBES[i]);
+                }
+            } else {
+                for (let i = 0; i < 27; i += 3) {
+                    pivot.add(CUBES[i]);
+                }
+            }
+            scene.add(pivot);
         }
-        rotation += 0.001 * dt;
-        pivot.rotation.z = rotation;
+        rotation -= 0.001 * dt;
+        if (currentRotation === 'R') {
+            pivot.rotation.z = rotation;
+        } else {
+            pivot.rotation.x = rotation;
+        }
+        if (Math.abs(rotation) >= Math.PI / 2) {
+            pivot.children.slice().forEach(child => THREE.SceneUtils.detach(child, pivot, scene));
+            scene.remove(pivot);
+            if (currentRotation === 'R') {
+                //swap([1, 7], [2, 4], [3, 1], [4, 8], [5, 5], [6, 2], [7, 9], [8, 6], [9, 3]);
+                swap([0, 6], [1, 3], [2, 0], [3, 7], [4, 4], [5, 1], [6, 8], [7, 5], [8, 2]);
+            } else {
+            }
+            rotation = 0;
+            currentRotation = null;
+        }
     };
 };
 
