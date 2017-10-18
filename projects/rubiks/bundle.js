@@ -45472,12 +45472,12 @@ const drawCube = scene => {
     scene.add(createCube({ x: d, y: -d, z: -d }, { 5: color(6, 9), 0: color(4, 9), 3: color(5, 9) }));
 };
 
-const rotations = [ 'F', 'L' ];
+const rotations = [ 'F', 'L', 'F\'', 'L\'' ];
 let rotation = 0, currentRotation;
 let pivot;
 
-// [ [from, to], ... ]
-const swap = (changes) => {
+const swap = rotation => {
+    const changes = rotation.rotations.map(e => rotation.sign < 0 ? e : e.reverse());
     const froms = {};
     changes.map(v => v[1]).forEach(from => froms[from] = CUBES[from]);
     changes.forEach(pair => CUBES[pair[0]] = froms[pair[1]]);
@@ -45487,14 +45487,16 @@ const MAP = {
     'F': {
         rotations: [[0, 6], [1, 3], [2, 0], [3, 7], [4, 4], [5, 1], [6, 8], [7, 5], [8, 2]],
         axis: 'z',
-        sign: -1
+        sign: +1
     },
     'L': {
         rotations: [[0, 6], [9, 3], [18, 0], [3, 15], [12, 12], [21, 9], [6, 24], [15, 21], [24, 18]],
         axis: 'x',
-        sign: +1
+        sign: -1
     }
 }
+
+const clone = obj => JSON.parse(JSON.stringify(obj));
 
 const draw = scene => {
     drawCube(scene);
@@ -45503,17 +45505,22 @@ const draw = scene => {
             if (rotations.length === 0) {
                 return;
             }
-            currentRotation = rotations.shift();
+            const operation = rotations.shift();
+            const key = operation[0];
+            const prime = operation.length === 2;
+
+            currentRotation = clone(MAP[key[0]]);
+            currentRotation.sign *= prime ? 1 : -1;
             pivot = new THREE.Group();
-            MAP[currentRotation].rotations.map(v => v[1]).forEach(i => pivot.add(CUBES[i]));
+            currentRotation.rotations.map(v => v[1]).forEach(i => pivot.add(CUBES[i]));
             scene.add(pivot);
         }
-        rotation += 0.001 * dt * MAP[currentRotation].sign;
-        pivot.rotation[MAP[currentRotation].axis] = rotation;
+        rotation += 0.001 * dt * currentRotation.sign;
+        pivot.rotation[currentRotation.axis] = rotation;
         if (Math.abs(rotation) >= Math.PI / 2) {
             pivot.children.slice().forEach(child => THREE.SceneUtils.detach(child, pivot, scene));
             scene.remove(pivot);
-            swap(MAP[currentRotation].rotations);
+            swap(currentRotation);
             rotation = 0;
             currentRotation = null;
         }
