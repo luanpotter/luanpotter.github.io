@@ -31,11 +31,11 @@
 				<key>bundle-identifier</key>
 				<string>br.com.dextra.barzinga</string>
 				<key>bundle-version</key>
-				<string>5.0</string>
+				<string>9.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>Barzinga!</string>
+				<string>Runner</string>
 			</dict>
 		</dict>
 	</array>
