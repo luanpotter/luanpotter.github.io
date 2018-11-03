@@ -4,15 +4,36 @@
   <meta charset="utf-8">
   <title>Monte Carlo Renderer</title>
   <script src="pixi.min.js"></script>
+  <script src="js/constants.js"></script>
+  <script src="js/point.js"></script>
+  <script src="js/particle.js"></script>
+  <script src="js/button.js"></script>
+  <style>
+      body {
+        background-color: black;
+        text-align: center;
+      }
+
+      @font-face {
+        font-family: diffusion;
+        src: url(diffusion.woff2);
+      }
+  </style>
 </head>
 <body>
   <script type="text/javascript">
     const type = PIXI.utils.isWebGLSupported() ? 'WebGL' : 'canvas';
     PIXI.utils.sayHello(type);
 
+    const style = new PIXI.TextStyle({
+      fontFamily: 'diffusion',
+      fontSize: 24,
+      fill: '#fff4e6',
+    });
+
     const app = new PIXI.Application({
-        width: 512,
-        height: 512,
+        width: 2*SIZE + MARGIN,
+        height: SIZE,
         antialias: false,
         transparent: false,
         resolution: 1,
@@ -20,66 +41,38 @@
 
     const game = {
       _lastTime: Date.now(),
+      _lastDt: 0,
+      speed: 1,
       components: [],
-      width: 512,
-      height: 512,
+      fullWidth: 2*SIZE + MARGIN,
+      width: SIZE,
+      height: SIZE,
       constants: {
         alpha: 25000,
       },
     };
 
-    app.ticker.add(delta => gameLoop(game, delta));
-    const canvas = new PIXI.Graphics();
-    app.stage.addChild(canvas);
-    document.body.appendChild(app.view);
-    game.canvas = canvas;
+    const setup = () => {
+      app.ticker.add(delta => gameLoop(game, delta));
+      const canvas = new PIXI.Graphics();
+      app.stage.addChild(canvas);
 
-    const Point = class {
-      constructor(x, y) {
-        this.x = x;
-        this.y = y;
-      }
+      const options = new PIXI.Text('Options', style);
+      options.x = SIZE + 2*MARGIN;
+      options.y = MARGIN;
+      app.stage.addChild(options);
 
-      add(p) {
-        return new Point(this.x + p.x, this.y + p.y);
-      }
+      const sheet = PIXI.loader.resources['spritesheet'].spritesheet;
+      const p = new Point(SIZE + 2*MARGIN, 2*MARGIN + options.height);
+      const d = new Point(16.0 + SM, 0);
+      new Button(sheet, p.add(d.times(0)), 'stop', () => game.speed = 0).add(app);
+      new Button(sheet, p.add(d.times(1)), 'play', () => game.speed = 1).add(app);
+      new Button(sheet, p.add(d.times(2)), 'fast', () => game.speed = 10).add(app);
 
-      times(m) {
-        return new Point(this.x * m, this.y * m);
-      }
+      document.body.appendChild(app.view);
+      game.canvas = canvas;
 
-      squared() {
-        return this.x * this.x + this.y * this.y;
-      }
-
-      mod() {
-        return Math.sqrt(this.squared());
-      }
-    };
-
-    const Particle = class {
-      constructor(game, p, speed) {
-        this.game = game;
-        this.p = p;
-        this.speed = speed;
-      }
-
-      update(dt) {
-        const modAcc = this.game.constants.alpha / this.p.squared();
-        const acc = this.p.times(modAcc / this.p.mod());
-
-        this.p = this.p.add(this.speed.times(dt)).add(acc.times(dt*dt / 2))
-        this.speed = this.speed.add(acc.times(dt));
-      }
-
-      render(canvas) {
-        canvas.lineStyle(2, 0xFFF4E6);
-        canvas.drawCircle(this.game.width / 2 + this.p.x, this.game.height /2 + this.p.y, 1);
-      }
-
-      destroy() {
-        return this.p.x < 0 || this.p.y < 0 || this.p.x > this.game.width || this.p.y > this.game.height;
-      }
+      game.components.push(new Particle(game, new Point(-512/2, -50), new Point(50, 0)));
     };
 
     const gameLoop = (game, delta) => {
@@ -93,7 +86,9 @@
     const render = game => {
       const { canvas } = game;
       canvas.beginFill(0x3C2F2F);
+      canvas.lineStyle(2, 0xBE9B7B);
       canvas.drawRect(0, 0, game.width, game.height);
+      canvas.drawRect(game.width + MARGIN, 0, game.width, game.height);
       canvas.endFill();
 
       canvas.lineStyle(2, 0xBE9B7B);
@@ -103,11 +98,20 @@
     };
 
     const update = (game, dt) => {
-      game.components.forEach(p => p.update(dt));
-      game.components = game.components.filter(e => e.destroy());
+      dt *= game.speed;
+      if (dt === 0) {
+        return;
+      }
+      dt += game._lastDt;
+      while (dt >= STEP) {
+        game.components.forEach(p => p.update(STEP));
+        dt -= STEP;
+      }
+      game._lastDt = dt;
+      game.components = game.components.filter(e => !e.destroy());
     };
 
-    game.components.push(new Particle(game, new Point(-512/2, -50), new Point(50, 0)));
+    PIXI.loader.add('spritesheet', 'spritesheet.json').load(setup);
   </script>
 </body>
 </html>
