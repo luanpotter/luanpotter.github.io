@@ -2,4 +2,4 @@
 
 rm -rf anis
 mkdir anis
-cp ../../unicamp/monte-carlo/nuclear/* ./anis/
+cp -r ../../unicamp/monte-carlo/nuclear/* ./anis/
