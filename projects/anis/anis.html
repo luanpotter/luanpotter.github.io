@@ -25,11 +25,18 @@
     const type = PIXI.utils.isWebGLSupported() ? 'WebGL' : 'canvas';
     PIXI.utils.sayHello(type);
 
-    const style = new PIXI.TextStyle({
-      fontFamily: 'diffusion',
-      fontSize: 24,
-      fill: '#fff4e6',
-    });
+    const styles = {
+      title: new PIXI.TextStyle({
+        fontFamily: 'diffusion',
+        fontSize: 24,
+        fill: '#fff4e6',
+      }),
+      small: new PIXI.TextStyle({
+        fontFamily: 'diffusion',
+        fontSize: 12,
+        fill: '#fff4e6',
+      }),
+    };
 
     const app = new PIXI.Application({
         width: 2*SIZE + MARGIN,
@@ -43,6 +50,8 @@
       _lastTime: Date.now(),
       _lastDt: 0,
       speed: 1,
+      repeat: false,
+      repeatClock: 0,
       components: [],
       fullWidth: 2*SIZE + MARGIN,
       width: SIZE,
@@ -53,26 +62,45 @@
     };
 
     const setup = () => {
+      const sheet = PIXI.loader.resources['spritesheet'].spritesheet;
+
       app.ticker.add(delta => gameLoop(game, delta));
       const canvas = new PIXI.Graphics();
       app.stage.addChild(canvas);
 
-      const options = new PIXI.Text('Options', style);
+      const options = new PIXI.Text('Options', styles.title);
       options.x = SIZE + 2*MARGIN;
       options.y = MARGIN;
       app.stage.addChild(options);
 
-      const sheet = PIXI.loader.resources['spritesheet'].spritesheet;
-      const p = new Point(SIZE + 2*MARGIN, 2*MARGIN + options.height);
+      const time = new PIXI.Text('Time', styles.small);
+      time.x = SIZE + 2*MARGIN;
+      time.y = MARGIN + options.height + SM;
+      app.stage.addChild(time);
+
+      const p = new Point(SIZE + 2*MARGIN, time.y + SM + time.height);
       const d = new Point(16.0 + SM, 0);
       new Button(sheet, p.add(d.times(0)), 'stop', () => game.speed = 0).add(app);
       new Button(sheet, p.add(d.times(1)), 'play', () => game.speed = 1).add(app);
       new Button(sheet, p.add(d.times(2)), 'fast', () => game.speed = 10).add(app);
 
+      const flow = new PIXI.Text('Flow', styles.small);
+      flow.x = SIZE + 2*MARGIN;
+      flow.y = p.y + SM + 16.0;
+      app.stage.addChild(flow);
+
+      const p2 = new Point(SIZE + 2*MARGIN, flow.y + SM + flow.height);
+      new Button(sheet, p2.add(d.times(0)), 'pause', () => game.repeat = false).add(app);
+      new Button(sheet, p2.add(d.times(1)), 'single', () => game.create()).add(app);
+      new Button(sheet, p2.add(d.times(2)), 'repeat', () => game.repeat = true).add(app);
+
       document.body.appendChild(app.view);
       game.canvas = canvas;
-
-      game.components.push(new Particle(game, new Point(-512/2, -50), new Point(50, 0)));
+      
+      game.create = () => {
+        const b = Math.random() * game.height - game.height / 2;
+        game.components.push(new Particle(game, new Point(-game.width/2, b), new Point(50, 0)));
+      };
     };
 
     const gameLoop = (game, delta) => {
@@ -85,6 +113,12 @@
 
     const render = game => {
       const { canvas } = game;
+
+      canvas.beginFill(0x000000);
+      canvas.lineStyle(2, 0x000000);
+      canvas.drawRect(0, 0, game.fullWidth, game.height);
+      canvas.endFill();
+
       canvas.beginFill(0x3C2F2F);
       canvas.lineStyle(2, 0xBE9B7B);
       canvas.drawRect(0, 0, game.width, game.height);
@@ -98,6 +132,15 @@
     };
 
     const update = (game, dt) => {
+      if (game.repeat) {
+        game.repeatClock += dt;
+        while (game.repeatClock > 1) {
+          game.repeatClock -= 1;
+          game.create();
+        }
+      } else {
+        game.repeatClock = 0;
+      }
       dt *= game.speed;
       if (dt === 0) {
         return;
