@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <title>Monte Carlo Renderer</title>
-  <script src="pixi.min.js"></script>
+  <script src="lib/pixi.min.js"></script>
   <script src="js/constants.js"></script>
   <script src="js/point.js"></script>
   <script src="js/particle.js"></script>
   <script src="js/button.js"></script>
+  <script src="js/ui.js"></script>
   <style>
       body {
         background-color: black;
@@ -16,7 +17,7 @@
 
       @font-face {
         font-family: diffusion;
-        src: url(diffusion.woff2);
+        src: url(assets/diffusion.woff2);
       }
   </style>
 </head>
@@ -25,21 +26,8 @@
     const type = PIXI.utils.isWebGLSupported() ? 'WebGL' : 'canvas';
     PIXI.utils.sayHello(type);
 
-    const styles = {
-      title: new PIXI.TextStyle({
-        fontFamily: 'diffusion',
-        fontSize: 24,
-        fill: '#fff4e6',
-      }),
-      small: new PIXI.TextStyle({
-        fontFamily: 'diffusion',
-        fontSize: 12,
-        fill: '#fff4e6',
-      }),
-    };
-
     const app = new PIXI.Application({
-        width: 2*SIZE + MARGIN,
+        width: FULL_SIZE,
         height: SIZE,
         antialias: false,
         transparent: false,
@@ -53,46 +41,21 @@
       repeat: false,
       repeatClock: 0,
       components: [],
-      fullWidth: 2*SIZE + MARGIN,
+      fullWidth: FULL_SIZE,
       width: SIZE,
       height: SIZE,
       constants: {
         alpha: 25000,
+        flow: 1,
       },
     };
 
     const setup = () => {
-      const sheet = PIXI.loader.resources['spritesheet'].spritesheet;
-
       app.ticker.add(delta => gameLoop(game, delta));
       const canvas = new PIXI.Graphics();
       app.stage.addChild(canvas);
 
-      const options = new PIXI.Text('Options', styles.title);
-      options.x = SIZE + 2*MARGIN;
-      options.y = MARGIN;
-      app.stage.addChild(options);
-
-      const time = new PIXI.Text('Time', styles.small);
-      time.x = SIZE + 2*MARGIN;
-      time.y = MARGIN + options.height + SM;
-      app.stage.addChild(time);
-
-      const p = new Point(SIZE + 2*MARGIN, time.y + SM + time.height);
-      const d = new Point(16.0 + SM, 0);
-      new Button(sheet, p.add(d.times(0)), 'stop', () => game.speed = 0).add(app);
-      new Button(sheet, p.add(d.times(1)), 'play', () => game.speed = 1).add(app);
-      new Button(sheet, p.add(d.times(2)), 'fast', () => game.speed = 10).add(app);
-
-      const flow = new PIXI.Text('Flow', styles.small);
-      flow.x = SIZE + 2*MARGIN;
-      flow.y = p.y + SM + 16.0;
-      app.stage.addChild(flow);
-
-      const p2 = new Point(SIZE + 2*MARGIN, flow.y + SM + flow.height);
-      new Button(sheet, p2.add(d.times(0)), 'pause', () => game.repeat = false).add(app);
-      new Button(sheet, p2.add(d.times(1)), 'single', () => game.create()).add(app);
-      new Button(sheet, p2.add(d.times(2)), 'repeat', () => game.repeat = true).add(app);
+      UI(app, game);
 
       document.body.appendChild(app.view);
       game.canvas = canvas;
@@ -134,8 +97,8 @@
     const update = (game, dt) => {
       if (game.repeat) {
         game.repeatClock += dt;
-        while (game.repeatClock > 1) {
-          game.repeatClock -= 1;
+        while (game.repeatClock > 1/game.constants.flow) {
+          game.repeatClock -= 1/game.constants.flow;
           game.create();
         }
       } else {
@@ -154,7 +117,7 @@
       game.components = game.components.filter(e => !e.destroy());
     };
 
-    PIXI.loader.add('spritesheet', 'spritesheet.json').load(setup);
+    PIXI.loader.add('sprites', 'assets/spritesheet.json').load(setup);
   </script>
 </body>
 </html>
