@@ -95,6 +95,11 @@
     };
 
     const update = (game, dt) => {
+      dt *= game.speed;
+      if (dt === 0) {
+        return;
+      }
+
       if (game.repeat) {
         game.repeatClock += dt;
         while (game.repeatClock > 1/game.constants.flow) {
@@ -104,10 +109,7 @@
       } else {
         game.repeatClock = 0;
       }
-      dt *= game.speed;
-      if (dt === 0) {
-        return;
-      }
+
       dt += game._lastDt;
       while (dt >= STEP) {
         game.components.forEach(p => p.update(STEP));
