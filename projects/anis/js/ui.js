@@ -13,9 +13,9 @@ const UI = (app, game) => {
 
     const p = new Point(SIZE + 2*MARGIN, time.y + SM + time.height);
     const d = new Point(16.0 + SM, 0);
-    new Button(sheet, p.add(d.times(0)), 'stop', () => game.speed = 0).add(app);
-    new Button(sheet, p.add(d.times(1)), 'play', () => game.speed = 1).add(app);
-    new Button(sheet, p.add(d.times(2)), 'fast', () => game.speed = 10).add(app);
+    new Button(sheet, p.add(d.times(0)), 'stop', () => game.options.speed = 0).add(app);
+    new Button(sheet, p.add(d.times(1)), 'play', () => game.options.speed = 1).add(app);
+    new Button(sheet, p.add(d.times(2)), 'fast', () => game.options.speed = 10).add(app);
 
     const flow = new PIXI.Text('Flow', STYLES.regular);
     flow.x = SIZE + 2*MARGIN;
@@ -23,31 +23,51 @@ const UI = (app, game) => {
     app.stage.addChild(flow);
 
     const p2 = new Point(SIZE + 2*MARGIN, flow.y + SM + flow.height);
-    new Button(sheet, p2.add(d.times(0)), 'pause', () => game.repeat = false).add(app);
+    new Button(sheet, p2.add(d.times(0)), 'pause', () => game.options.repeat = false).add(app);
     new Button(sheet, p2.add(d.times(1)), 'single', () => game.create()).add(app);
-    new Button(sheet, p2.add(d.times(2)), 'repeat', () => game.repeat = true).add(app);
+    new Button(sheet, p2.add(d.times(2)), 'repeat', () => game.options.repeat = true).add(app);
 
     const config = new PIXI.Text('Config', STYLES.regular);
     config.x = SIZE + 2*MARGIN;
     config.y = p2.y + SM + 16.0;
     app.stage.addChild(config);
 
-    const flowControl = new PIXI.Text('Flow (particles/second)', STYLES.small);
+    const flowControl = new PIXI.Text('Flow (particles/ps)', STYLES.small);
     flowControl.x = SIZE + 2*MARGIN;
     flowControl.y = config.y + SM + config.height;
     app.stage.addChild(flowControl);
 
     const flowControlInputPoint = new Point(flowControl.x, flowControl.y + SM + flowControl.height);
     const flowControlInput = new Input(sheet, flowControlInputPoint, {
-        get() {
-            return game.constants.flow;
-        },
-
-        set(frac) {
-            game.constants.flow = Math.round(1 + frac * 99);
-        },
+        min: 1,
+        max: 100,
+        get: () => game.constants.flow,
+        set: v => game.constants.flow = v,
     });
     flowControlInput.append(app.stage);
+
+    const alphaInputPoint = new Point(flowControlInputPoint.x, flowControlInputPoint.y + SM + 32);
+    const alphaInput = new Input(sheet, alphaInputPoint, {
+        min: 20000,
+        max: 30000,
+        get: () => game.constants.alpha,
+        set: v => game.constants.alpha = v,
+    });
+    alphaInput.append(app.stage);
+
+    const vZeroPoint = new Point(alphaInputPoint.x, alphaInputPoint.y + SM + 32);
+    const vZero = new Input(sheet, vZeroPoint, {
+        min: 30,
+        max: 60,
+        get: () => game.constants.vzero,
+        set: v => game.constants.vzero = v,
+    });
+    vZero.append(app.stage);
+
+    const stats = new PIXI.Text('Stats', STYLES.regular);
+    stats.x = vZeroPoint.x;
+    stats.y = vZeroPoint.y + SM + 32.0;
+    app.stage.addChild(stats);
 };
 
 const Input = class {
@@ -94,9 +114,13 @@ const Input = class {
             }
             position.x = nx;
             const frac = (nx - minX) / (maxX - minX);
-            this.value.set(frac);
+            const v = this.value.min + frac * (this.value.max - this.value.min);
+            this.value.set(Math.round(v));
             label.text = this.value.get();
         });
+
+        const frac = (this.value.get() - this.value.min) / (this.value.max - this.value.min);
+        sprite.position.x = minX + (maxX - minX) * frac;
     }
 
     createDragAndDropFor(target, handler) {
