@@ -37,73 +37,73 @@ const App = {
         };
 
         const setup = () => {
-        app.ticker.add(delta => gameLoop(game, delta));
-        const canvas = new PIXI.Graphics();
-        app.stage.addChild(canvas);
+            app.ticker.add(delta => gameLoop(game, delta));
+            const canvas = new PIXI.Graphics();
+            app.stage.addChild(canvas);
 
-        UI(app, game);
+            UI(app, game);
 
-        document.body.appendChild(app.view);
-        game.canvas = canvas;
-        
-        game.create = () => {
-            const b = Math.random() * game.height - game.height / 2;
-            const vzero = game.constants.vzero;
-            game.components.push(new Particle(game, new Point(-game.width/2, b), new Point(vzero, 0)));
-        };
+            document.body.appendChild(app.view);
+            game.canvas = canvas;
+            
+            game.create = () => {
+                const b = Math.random() * game.height - game.height / 2;
+                const vzero = game.constants.vzero;
+                game.components.push(new Particle(game, new Point(-game.width/2, b), new Point(vzero, 0)));
+            };
         };
 
         const gameLoop = (game, delta) => {
-        const time = Date.now();
-        const dt = time - game._lastTime;
-        game._lastTime = time;
-        update(game, dt / 1000);
-        game.options.render && render(game);
+            const time = Date.now();
+            const dt = time - game._lastTime;
+            game._lastTime = time;
+            update(game, dt / 1000);
+            game.options.render && render(game);
         };
 
         const render = game => {
-        const { canvas } = game;
+            const { canvas } = game;
 
-        canvas.beginFill(0x000000);
-        canvas.lineStyle(2, 0x000000);
-        canvas.drawRect(0, 0, game.fullWidth, game.height);
-        canvas.endFill();
+            canvas.beginFill(0x000000);
+            canvas.lineStyle(2, 0x000000);
+            canvas.drawRect(0, 0, game.fullWidth, game.height);
+            canvas.endFill();
 
-        canvas.beginFill(0x3C2F2F);
-        canvas.lineStyle(2, 0xBE9B7B);
-        canvas.drawRect(0, 0, game.width, game.height);
-        canvas.drawRect(game.width + MARGIN, 0, game.width, game.height);
-        canvas.endFill();
+            canvas.beginFill(0x3C2F2F);
+            canvas.lineStyle(2, 0xBE9B7B);
+            canvas.drawRect(0, 0, game.width, game.height);
+            canvas.drawRect(game.width + MARGIN, 0, game.width, game.height);
+            canvas.endFill();
 
-        canvas.lineStyle(2, 0xBE9B7B);
-        canvas.drawCircle(game.width / 2, game.height / 2, 1);
+            canvas.lineStyle(2, 0xBE9B7B);
+            canvas.drawCircle(game.width / 2, game.height / 2, 1);
 
-        game.components.forEach(p => p.render(canvas));
+            game.components.forEach(p => p.render(canvas));
         };
 
         const update = (game, dt) => {
-        dt *= game.options.speed;
-        if (dt === 0) {
-            return;
-        }
-
-        if (game.options.repeat) {
-            game.options.repeatClock += dt;
-            while (game.options.repeatClock > 1/game.constants.flow) {
-            game.options.repeatClock -= 1/game.constants.flow;
-            game.create();
+            dt *= game.options.speed;
+            if (dt === 0) {
+                return;
             }
-        } else {
-            game.options.repeatClock = 0;
-        }
 
-        dt += game._lastDt;
-        while (dt >= STEP) {
-            game.components.forEach(p => p.update(STEP));
-            dt -= STEP;
-        }
-        game._lastDt = dt;
-        game.components = game.components.filter(e => !e.destroy());
+            if (game.options.repeat) {
+                game.options.repeatClock += dt;
+                while (game.options.repeatClock > 1/game.constants.flow) {
+                game.options.repeatClock -= 1/game.constants.flow;
+                game.create();
+                }
+            } else {
+                game.options.repeatClock = 0;
+            }
+
+            dt += game._lastDt;
+            while (dt >= STEP) {
+                game.components.forEach(p => p.update(STEP));
+                dt -= STEP;
+            }
+            game._lastDt = dt;
+            game.components = game.components.filter(e => !e.destroy());
         };
 
         PIXI.loader.add('sprites', 'assets/spritesheet.json').load(setup);

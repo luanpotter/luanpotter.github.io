@@ -9,30 +9,25 @@
   <script src="js/constants.js"></script>
   <script src="js/point.js"></script>
   <script src="js/particle.js"></script>
-  <script src="js/button.js"></script>
   <script src="js/ui.js"></script>
+  <script src="js/right_menu.js"></script>
   <script src="js/app.js"></script>
   <style>
     body {
-        background-color: black;
-        text-align: center;
-      }
-
-      @font-face {
-        font-family: diffusion;
-        src: url(assets/diffusion.woff2);
-      }
+      background-color: black;
+      text-align: center;
+    }
   </style>
 </head>
 
 <body>
   <script type="text/javascript">
     WebFont.load({
-      google: {
-        families: ['diffusion']
+      custom: {
+        families: ['diffusion'],
+        urls: ['./css/fonts.css']
       },
-      active: e => {
-        console.log('diff loaded');
+      active: () => {
         App.run();
       },
     });
