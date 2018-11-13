@@ -6,11 +6,22 @@ const Particle = class {
   }
 
   update(dt) {
-    const modAcc = this.game.constants.alpha / this.p.squared();
-    const acc = this.p.times(modAcc / this.p.mod());
+    // const modAcc = this.game.constants.alpha / this.p.squared();
+    // const acc = this.p.times(modAcc / this.p.mod());
+    // this.p = this.p.add(this.speed.times(dt)).add(acc.times((dt * dt) / 2));
+    // this.speed = this.speed.add(acc.times(dt));
 
-    this.p = this.p.add(this.speed.times(dt)).add(acc.times((dt * dt) / 2));
-    this.speed = this.speed.add(acc.times(dt));
+    // I changed for performance, above is the prettier code for reference (it works still)
+
+    const speedIncMod = dt * this.game.constants.alpha / this.p.squared()  / this.p.mod();
+    const speedIncX = this.p.x * speedIncMod;
+    const speedIncY = this.p.y * speedIncMod;
+
+    this.p.x += this.speed.x * dt + speedIncX * dt / 2;
+    this.p.y += this.speed.y * dt + speedIncY * dt / 2;
+    
+    this.speed.x += speedIncX;
+    this.speed.y += speedIncY;
   }
 
   render(canvas) {

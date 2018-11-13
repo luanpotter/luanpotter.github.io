@@ -57,6 +57,12 @@ const App = {
             const time = Date.now();
             const dt = time - game._lastTime;
             game._lastTime = time;
+
+            const realDt = dt * game.options.speed;
+            if (realDt === 0) {
+                return;
+            }
+
             update(game, dt / 1000);
             game.options.render && render(game);
         };
@@ -82,11 +88,6 @@ const App = {
         };
 
         const update = (game, dt) => {
-            dt *= game.options.speed;
-            if (dt === 0) {
-                return;
-            }
-
             if (game.options.repeat) {
                 game.options.repeatClock += dt;
                 while (game.options.repeatClock > 1/game.constants.flow) {
