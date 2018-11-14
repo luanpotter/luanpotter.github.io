@@ -73,6 +73,6 @@ const Particle = class {
   }
 
   isHit() {
-    return this.x > 0 && Math.abs(this.p.y) < this.game.constants.dy;
+    return this.p.x > 0 && Math.abs(this.p.y) < this.game.constants.dy;
   }
 };
