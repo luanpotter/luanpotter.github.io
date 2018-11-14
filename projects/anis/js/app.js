@@ -64,22 +64,22 @@ const App = {
                 return;
             }
 
-            update(game, dt / 1000);
+            update(game, realDt / 1000);
         };
 
         const update = (game, dt) => {
-            if (game.options.repeat) {
-                game.options.repeatClock += dt;
-                while (game.options.repeatClock > 1/game.constants.flow) {
-                game.options.repeatClock -= 1/game.constants.flow;
-                game.create();
-                }
-            } else {
-                game.options.repeatClock = 0;
-            }
-
             dt += game._lastDt;
             while (dt >= STEP) {
+                if (game.options.repeat) {
+                    game.options.repeatClock += STEP;
+                    while (game.options.repeatClock > 1 / game.constants.flow) {
+                        game.options.repeatClock -= 1 / game.constants.flow;
+                        game.create();
+                    }
+                } else {
+                    game.options.repeatClock = 0;
+                }
+
                 game.components.forEach(p => p.update(STEP));
                 dt -= STEP;
             }
