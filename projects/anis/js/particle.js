@@ -31,6 +31,11 @@ const Particle = class {
     this.pixi.y = this.p.y;
   }
 
+  tween(dt) {
+    this.pixi.x = this.p.x + dt * this.speed.x;
+    this.pixi.y = this.p.y + dt * this.speed.y;
+  }
+
   toPixi() {
     return this.pixi;
   }

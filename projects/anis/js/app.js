@@ -90,6 +90,9 @@ const App = {
                 dt -= STEP;
             }
             game._lastDt = dt;
+            if (dt > 0) {
+                game.components.forEach(p => p.tween(dt));
+            }
             game.components = game.components.filter(e => !e.destroy(app.stage));
 
             game.labels.hits.text = game.stats.hits;
