@@ -22,7 +22,6 @@ const App = {
             speed: 1,
             repeat: false,
             repeatClock: 0,
-            render: true,
         },
         constants: {
             alpha: 25080,
@@ -37,23 +36,25 @@ const App = {
         };
 
         const setup = () => {
-            app.ticker.add(delta => gameLoop(game, delta));
-            const canvas = new PIXI.Graphics();
-            app.stage.addChild(canvas);
+            app.ticker.add(gameLoop);
+
+            const bg = new Background();
+            app.stage.addChild(bg.toPixi(game));
 
             UI(app, game);
-
-            document.body.appendChild(app.view);
-            game.canvas = canvas;
             
             game.create = () => {
                 const b = Math.random() * game.height - game.height / 2;
                 const vzero = game.constants.vzero;
-                game.components.push(new Particle(game, new Point(-game.width/2, b), new Point(vzero, 0)));
+                const pt = new Particle(game, new Point(-game.width/2, b), new Point(vzero, 0));
+                game.components.push(pt);
+                app.stage.addChild(pt.toPixi(game));
             };
+
+            document.body.appendChild(app.view);
         };
 
-        const gameLoop = (game, delta) => {
+        const gameLoop = () => {
             const time = Date.now();
             const dt = time - game._lastTime;
             game._lastTime = time;
@@ -64,27 +65,6 @@ const App = {
             }
 
             update(game, dt / 1000);
-            game.options.render && render(game);
-        };
-
-        const render = game => {
-            const { canvas } = game;
-
-            canvas.beginFill(0x000000);
-            canvas.lineStyle(2, 0x000000);
-            canvas.drawRect(0, 0, game.fullWidth, game.height);
-            canvas.endFill();
-
-            canvas.beginFill(0x3C2F2F);
-            canvas.lineStyle(2, 0xBE9B7B);
-            canvas.drawRect(0, 0, game.width, game.height);
-            canvas.drawRect(game.width + MARGIN, 0, game.width, game.height);
-            canvas.endFill();
-
-            canvas.lineStyle(2, 0xBE9B7B);
-            canvas.drawCircle(game.width / 2, game.height / 2, 1);
-
-            game.components.forEach(p => p.render(canvas));
         };
 
         const update = (game, dt) => {
@@ -104,7 +84,7 @@ const App = {
                 dt -= STEP;
             }
             game._lastDt = dt;
-            game.components = game.components.filter(e => !e.destroy());
+            game.components = game.components.filter(e => !e.destroy(app.stage));
         };
 
         PIXI.loader.add('sprites', 'assets/spritesheet.json').load(setup);

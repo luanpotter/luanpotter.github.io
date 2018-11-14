@@ -3,6 +3,10 @@ const Particle = class {
     this.game = game;
     this.p = p;
     this.speed = speed;
+
+    this.pixi = this._genPixi();
+    this.pixi.x = this.p.x;
+    this.pixi.y = this.p.y;
   }
 
   update(dt) {
@@ -22,18 +26,27 @@ const Particle = class {
     
     this.speed.x += speedIncX;
     this.speed.y += speedIncY;
+
+    this.pixi.x = this.p.x;
+    this.pixi.y = this.p.y;
   }
 
-  render(canvas) {
-    canvas.lineStyle(2, 0xfff4e6);
-    canvas.drawCircle(
-      this.game.width / 2 + this.p.x,
-      this.game.height / 2 + this.p.y,
+  toPixi() {
+    return this.pixi;
+  }
+
+  _genPixi() {
+    const g = new PIXI.Graphics();
+    g.lineStyle(2, 0xfff4e6);
+    g.drawCircle(
+      this.game.width / 2,
+      this.game.height / 2,
       1
     );
+    return g;
   }
 
-  destroy() {
+  destroy(stage) {
     const shouldDestroy =
       this.p.x < -(this.game.width / 2) ||
       this.p.y < -(this.game.height / 2) ||
@@ -42,6 +55,7 @@ const Particle = class {
 
     if (shouldDestroy) {
       this.runStats();
+      stage.removeChild(this.pixi);
     }
 
     return shouldDestroy;

@@ -13,7 +13,7 @@ const UI = (app, game) => {
             ]),
         ], SM, SM),
         new Column([
-            new Label('Time'),
+            new Label('Flow'),
             new Row([
                 new Button(sheet, 'pause', () => game.options.repeat = false),
                 new Button(sheet, 'single', () => game.create()),
@@ -52,6 +52,8 @@ const UI = (app, game) => {
         ], SM, SM),
         new Column([
             new Label('Stats'),
+            new Label('Hits: ' + game.stats.hits),
+            new Label('Total: ' + game.stats.total),
         ], SM, SM),
     ], SM, MARGIN);
 
