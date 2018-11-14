@@ -55,8 +55,8 @@ const Particle = class {
     const shouldDestroy =
       this.p.x < -(this.game.width / 2) ||
       this.p.y < -(this.game.height / 2) ||
-      this.p.x > this.game.width / 2 ||
-      this.p.y > this.game.height / 2;
+      this.p.x > this.game.width / 2 - SM ||
+      this.p.y > this.game.height / 2 - SM;
 
     if (shouldDestroy) {
       this.runStats();
