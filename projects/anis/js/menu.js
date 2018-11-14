@@ -34,37 +34,49 @@ const Menu = {
                     }),
                 ], SM, SM),
                 new Column([
-                    new Label('Alpha (?)', STYLES.small),
+                    new Label('Xi (px^3/ps^2)', STYLES.small),
                     new SliderInput(sheet, {
                         min: 20000,
                         max: 30000,
                         get: () => game.constants.alpha,
-                        set: v => game.constants.alpha = v,
+                        set: v => (game.constants.alpha = v) && game.stats.reset(),
                     }),
                 ], SM, SM),
                 new Column([
-                    new Label('vzero (?)', STYLES.small),
+                    new Label('vzero (px/ps)', STYLES.small),
                     new SliderInput(sheet, {
                         min: 30,
                         max: 60,
                         get: () => game.constants.vzero,
-                        set: v => game.constants.vzero = v,
+                        set: v => (game.constants.vzero = v) && game.stats.reset(),
+                    }),
+                ], SM, SM),
+                new Column([
+                    new Label('delta y (px)', STYLES.small),
+                    new SliderInput(sheet, {
+                        min: 0,
+                        max: SIZE/2,
+                        get: () => game.constants.dy,
+                        set: v => (game.constants.dy = v) && game.stats.reset(),
                     }),
                 ], SM, SM),
             ], SM, SM),
             new Column([
-                new Label('Stats'),
                 new Row([
-                    new Label('Hits: '),
-                    new Label(game.stats.hits).ref(ref => hits = ref),
+                    new Label('Stats'),
+                    new Button(sheet, 'repeat', () => game.stats.reset()),
                 ]),
                 new Row([
-                    new Label('Total: '),
-                    new Label(game.stats.total).ref(ref => total = ref),
+                    new Label('Hits: ', STYLES.small),
+                    new Label('', STYLES.small).ref(ref => hits = ref),
                 ]),
                 new Row([
-                    new Label('Prob: '),
-                    new Label(game.stats.prob).ref(ref => prob = ref),
+                    new Label('Total: ', STYLES.small),
+                    new Label('', STYLES.small).ref(ref => total = ref),
+                ]),
+                new Row([
+                    new Label('Prob: ', STYLES.small),
+                    new Label('', STYLES.small).ref(ref => prob = ref),
                 ]),
             ], SM, SM),
         ], SM, MARGIN);

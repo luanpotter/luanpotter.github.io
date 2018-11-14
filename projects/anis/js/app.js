@@ -33,6 +33,11 @@ const App = {
                 total: 0,
                 hits: 0,
                 prob: 0,
+                reset() {
+                    game.stats.total = 0;
+                    game.stats.hits = 0;
+                    game.stats.prob = 0;
+                },
             }
         };
 
