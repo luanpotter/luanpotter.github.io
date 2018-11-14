@@ -13,6 +13,11 @@ const FormComponents = (() => {
     height() {
       return this.c.height;
     }
+
+    ref(cb) {
+      cb(this.c);
+      return this;
+    }
   };
 
   const Label = class extends Component {

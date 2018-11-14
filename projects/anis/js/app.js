@@ -12,27 +12,28 @@ const App = {
         });
 
         const game = {
-        _lastTime: Date.now(),
-        _lastDt: 0,
-        fullWidth: FULL_SIZE,
-        width: SIZE,
-        height: SIZE,
-        components: [],
-        options: {
-            speed: 1,
-            repeat: false,
-            repeatClock: 0,
-        },
-        constants: {
-            alpha: 25080,
-            vzero: 51.2,
-            dy: SIZE/4,
-            flow: 1,
-        },
-        stats: {
-            total: 0,
-            hits: 0,
-        }
+            _lastTime: Date.now(),
+            _lastDt: 0,
+            fullWidth: FULL_SIZE,
+            width: SIZE,
+            height: SIZE,
+            components: [],
+            options: {
+                speed: 1,
+                repeat: false,
+                repeatClock: 0,
+            },
+            constants: {
+                alpha: 25080,
+                vzero: 51.2,
+                dy: SIZE/4,
+                flow: 1,
+            },
+            stats: {
+                total: 0,
+                hits: 0,
+                prob: 0,
+            }
         };
 
         const setup = () => {
@@ -41,8 +42,8 @@ const App = {
             const bg = new Background();
             app.stage.addChild(bg.toPixi(game));
 
-            UI(app, game);
-            
+            Menu.create(app, game);
+
             game.create = () => {
                 const b = Math.random() * game.height - game.height / 2;
                 const vzero = game.constants.vzero;
@@ -85,6 +86,10 @@ const App = {
             }
             game._lastDt = dt;
             game.components = game.components.filter(e => !e.destroy(app.stage));
+
+            game.labels.hits.text = game.stats.hits;
+            game.labels.total.text = game.stats.total;
+            game.labels.prob.text = game.stats.prob;
         };
 
         PIXI.loader.add('sprites', 'assets/spritesheet.json').load(setup);

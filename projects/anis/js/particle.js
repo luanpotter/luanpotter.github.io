@@ -64,6 +64,7 @@ const Particle = class {
   runStats() {
     this.game.stats.total += 1;
     this.game.stats.hits += this.isHit() ? 1 : 0;
+    this.game.stats.prob = this.game.stats.hits / this.game.stats.total;
   }
 
   isHit() {
