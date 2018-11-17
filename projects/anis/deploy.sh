@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd ../../../luanpotter.github.io/projects
-gpr
+git pull --rebase
 
 ./pull_anis.sh
 
