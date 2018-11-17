@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+a, a:visited, a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+small {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 8px;
+}

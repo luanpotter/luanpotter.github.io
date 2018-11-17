@@ -57,7 +57,7 @@ const App = {
                 app.stage.addChild(pt.toPixi(game));
             };
 
-            document.body.appendChild(app.view);
+            document.getElementById('root').replaceWith(app.view);
         };
 
         const gameLoop = () => {
