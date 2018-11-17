@@ -1,8 +1,8 @@
 const Menu = {
     create(app, game) {
-        const { Column, Row, Label, Button, SliderInput } = FormComponents;
+        const { Column, Row, Label, Button, SliderInput, Switch } = FormComponents;
         const sheet = PIXI.loader.resources.sprites.spritesheet;
-        let hits, total, prob;
+        const refs = {};
 
         const form = new Column([
             new Row([ new Label('Options', STYLES.title)]),
@@ -32,7 +32,7 @@ const Menu = {
                         get: () => game.constants.flow,
                         set: v => game.constants.flow = v,
                     }),
-                ], SM, SM),
+                ], SM, SSM),
                 new Column([
                     new Label('Xi (px^3/ps^2)', STYLES.small),
                     new SliderInput(sheet, {
@@ -41,16 +41,54 @@ const Menu = {
                         get: () => game.constants.alpha,
                         set: v => (game.constants.alpha = v) && game.stats.reset(),
                     }),
-                ], SM, SM),
+                ], SM, SSM),
                 new Column([
-                    new Label('vzero (px/ps)', STYLES.small),
-                    new SliderInput(sheet, {
-                        min: 30,
-                        max: 60,
-                        get: () => game.constants.vzero,
-                        set: v => (game.constants.vzero = v) && game.stats.reset(),
-                    }),
-                ], SM, SM),
+                    new Row([
+                        new Label('vzero (px/ps)', STYLES.small),
+                        new Button(sheet, 'config', () => {
+                            if (game.constants.vzero.current !== null) {
+                                game.constants.vzero.current = null;
+                                refs.vzero.set(false);
+                            } else {
+                                game.constants.vzero.current = game.constants.vzero.default;
+                                refs.vzero.set(true);
+                            }
+                        }),
+                    ]),
+                    new Switch({
+                        on: new SliderInput(sheet, {
+                            min: game.constants.vzero.min,
+                            max: game.constants.vzero.max,
+                            get: () => game.constants.vzero.current,
+                            set: v => (game.constants.vzero.current = v) && game.stats.reset(),
+                        }),
+                        off: new Label('Will be generated randomly', STYLES.small),
+                    }).ref(v => refs.vzero = v),
+                ], SM, SSM),
+                new Column([
+                    new Row([
+                        new Label('b (px)', STYLES.small),
+                        new Button(sheet, 'config', () => {
+                            if (game.constants.b.current !== null) {
+                                game.constants.b.current = null;
+                                refs.b.set(false);
+                            } else {
+                                game.constants.b.current = game.constants.b.default;
+                                refs.b.set(true);
+                            }
+                        }),
+                    ]),
+                    new Switch({
+                        on: new SliderInput(sheet, {
+                            min: game.constants.b.min,
+                            max: game.constants.b.max,
+                            get: () => game.constants.b.current || 0,
+                            set: v => (game.constants.b.current = v) && game.stats.reset(),
+                        }),
+                        off: new Label('Will be generated randomly', STYLES.small),
+                        v: false,
+                    }).ref(v => refs.b = v),
+                ], SM, SSM),
                 new Column([
                     new Label('delta y (px)', STYLES.small),
                     new SliderInput(sheet, {
@@ -59,7 +97,7 @@ const Menu = {
                         get: () => game.constants.dy,
                         set: v => (game.constants.dy = v) && game.stats.reset(),
                     }),
-                ], SM, SM),
+                ], SM, SSM),
             ], SM, SM),
             new Column([
                 new Row([
@@ -68,23 +106,23 @@ const Menu = {
                 ]),
                 new Row([
                     new Label('Hits: ', STYLES.small),
-                    new Label('', STYLES.small).ref(ref => hits = ref),
+                    new Label('', STYLES.small).ref(ref => refs.hits = ref),
                 ]),
                 new Row([
                     new Label('Total: ', STYLES.small),
-                    new Label('', STYLES.small).ref(ref => total = ref),
+                    new Label('', STYLES.small).ref(ref => refs.total = ref),
                 ]),
                 new Row([
                     new Label('Prob: ', STYLES.small),
-                    new Label('', STYLES.small).ref(ref => prob = ref),
+                    new Label('', STYLES.small).ref(ref => refs.prob = ref),
                 ]),
             ], SM, SM),
-        ], SM, MARGIN);
+        ], 0, SM);
 
         const x = SIZE + 2*MARGIN;
         const y = MARGIN;
         form.build(app.stage, x, y);
 
-        game.labels = { hits, total, prob };
+        game.labels = refs;
     }
 };

@@ -18,6 +18,10 @@ const FormComponents = (() => {
       cb(this.c);
       return this;
     }
+
+    setVisible(visible) {
+      this.c.visible = visible;
+    }
   };
 
   const Label = class extends Component {
@@ -68,6 +72,10 @@ const FormComponents = (() => {
 				cX += el.width() + this.m;
       });
     }
+
+    setVisible(visible) {
+      this.elements.forEach(el => el.setVisible(visible));
+    }
   };
 
   const Column = class extends Component {
@@ -99,14 +107,19 @@ const FormComponents = (() => {
         cY += el.height() + this.m;
       });
     }
+
+    setVisible(visible) {
+      this.elements.forEach(el => el.setVisible(visible));
+    }
   };
 
   const SliderInput = class extends Component {
     constructor(sheet, value) {
 			super();
-      this.sheet = sheet;
       this.value = value;
       this.label = new PIXI.Text(this.value.get(), STYLES.small);
+      this.slider = new PIXI.Graphics();
+      this.sprite = new PIXI.Sprite(sheet.textures[`slider.png`]);
     }
 
     width() {
@@ -124,7 +137,7 @@ const FormComponents = (() => {
       const labelWidth = 20;
       stage.addChild(label);
 
-      const slider = new PIXI.Graphics();
+      const slider = this.slider;
       slider.x = label.x + SM + labelWidth;
       slider.y = label.y;
       const sliderWidth = FULL_SIZE - slider.x - SM;
@@ -138,7 +151,7 @@ const FormComponents = (() => {
       slider.moveTo(1, (sliderHeight - 1) / 2);
       slider.lineTo(sliderWidth - 1, (sliderHeight - 1) / 2);
 
-      const sprite = new PIXI.Sprite(this.sheet.textures[`slider.png`]);
+      const sprite = this.sprite;
       const minX = slider.x + 4;
       const maxX = minX + sliderWidth - 1 - 8 - 16;
       sprite.x = minX;
@@ -180,7 +193,66 @@ const FormComponents = (() => {
         }
       });
     }
+
+    setVisible(visible) {
+      this.label.visible = visible;
+      this.slider.visible = visible;
+      this.sprite.visible = visible;
+    }
   };
 
-  return { Component, Column, Row, Label, Button, SliderInput };
+  const Switch = class extends Component {
+    constructor({ on, off, v = true }) {
+      super();
+      this.on = on;
+      this.off = off;
+      this.v = v;
+    }
+
+    build(stage, x, y) {
+      this.update();
+      this.on.build(stage, x, y);
+      this.off.build(stage, x, y);
+    }
+
+    set(v) {
+      this.v = v;
+      this.update();
+    }
+
+    update() {
+      console.log(this.v);
+      this.on.setVisible(this.v);
+      this.off.setVisible(!this.v);
+    }
+
+    width() {
+      return Math.max(this.on.width(), this.off.width());
+    }
+
+    height() {
+      return Math.max(this.on.height(), this.off.height());
+    }
+
+    ref(cb) {
+      cb({
+        on: this.on,
+        off: this.off,
+        set: v => this.set(v),
+        get: () => this.v,
+      });
+      return this;
+    }
+
+    setVisible(v) {
+      if (v) {
+        this.update();
+      } else {
+        this.on.setVisible(false);
+        this.off.setVisible(false);
+      }
+    }
+  }
+
+  return { Component, Column, Row, Label, Button, SliderInput, Switch };
 })();

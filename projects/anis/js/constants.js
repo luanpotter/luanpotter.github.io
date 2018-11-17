@@ -1,6 +1,7 @@
 const STEP = 0.1;
 const MARGIN = 16;
 const SM = MARGIN / 2;
+const SSM = SM / 2;
 const SIZE = 512;
 const FULL_SIZE = 2 * SIZE + MARGIN;
 

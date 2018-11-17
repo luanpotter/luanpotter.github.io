@@ -1,4 +1,6 @@
-const App = { 
+const random = (min, max) => Math.random() * (max - min) + min;
+
+const App = {
     run() {
         const type = PIXI.utils.isWebGLSupported() ? 'WebGL' : 'canvas';
         PIXI.utils.sayHello(type);
@@ -10,6 +12,13 @@ const App = {
             transparent: false,
             resolution: 1,
         });
+
+        const getValueOrGenerate = constant => {
+            if (constant.current === null) {
+                return random(constant.min, constant.max);
+            }
+            return constant.current;
+        };
 
         const game = {
             _lastTime: Date.now(),
@@ -25,7 +34,18 @@ const App = {
             },
             constants: {
                 alpha: 25080,
-                vzero: 51.2,
+                vzero: {
+                    min: 30,
+                    max: 60,
+                    default: 51.2,
+                    current: 51.2,
+                },
+                b: {
+                    min: -SIZE / 2,
+                    max: SIZE / 2,
+                    default: 0,
+                    current: null,
+                },
                 dy: SIZE/4,
                 flow: 1,
             },
@@ -50,8 +70,8 @@ const App = {
             Menu.create(app, game);
 
             game.create = () => {
-                const b = Math.random() * game.height - game.height / 2;
-                const vzero = game.constants.vzero;
+                const b = getValueOrGenerate(game.constants.b);
+                const vzero = getValueOrGenerate(game.constants.vzero);
                 const pt = new Particle(game, new Point(-game.width/2, b), new Point(vzero, 0));
                 game.components.push(pt);
                 app.stage.addChild(pt.toPixi(game));
