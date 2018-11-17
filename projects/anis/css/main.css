@@ -21,9 +21,3 @@ small {
 canvas {
     margin: 8px;
 }
-
-@media screen and (orientation:portrait) {
-    body {
-        transform:  scale(1.6) rotate(-90deg)  translate(-410px, 0);
-    }
-}

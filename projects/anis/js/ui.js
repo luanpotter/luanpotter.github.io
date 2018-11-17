@@ -36,7 +36,7 @@ const FormComponents = (() => {
 			super();
       this.c = new PIXI.Sprite(sheet.textures[`${name}.png`]);
       if (click) {
-        this.c.on("pointerdown", click);
+        this.c.on('pointerdown', click);
         this.c.interactive = true;
         this.c.buttonMode = true;
       }
