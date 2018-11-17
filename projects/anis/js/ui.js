@@ -181,17 +181,31 @@ const FormComponents = (() => {
       let drag = false;
       target.interactive = true;
       target.buttonMode = true;
-      target.on("mousedown", () => (drag = target));
-      target.on("mouseup", () => (drag = false));
-      target.on("mouseupoutside", () => (drag = false));
-      target.on("mousemove", e => {
+      target.on('pointerdown', () => (drag = target));
+      target.on('pointerup', () => (drag = false));
+      target.on('pointerupoutside', () => (drag = false));
+
+      const moveEvt = e => {
         if (drag) {
+          const delta = {};
+
+          if (e.data.originalEvent.targetTouches) {
+            const evt = e.data.originalEvent.targetTouches[0];
+            delta.x = evt.pageX;
+            delta.y = evt.pageY;
+          } else {
+            const evt = e.data.originalEvent;
+            delta.x = evt.offsetX;
+            delta.y = evt.offsetY;
+          }
+
           handler(drag.position, {
-            x: e.data.originalEvent.movementX,
-            y: e.data.originalEvent.movementY
+            x: delta.x - drag.position.x,
+            y: delta.y - drag.position.y,
           });
         }
-      });
+      };
+      target.on('pointermove', moveEvt);
     }
 
     setVisible(visible) {
@@ -221,7 +235,6 @@ const FormComponents = (() => {
     }
 
     update() {
-      console.log(this.v);
       this.on.setVisible(this.v);
       this.off.setVisible(!this.v);
     }

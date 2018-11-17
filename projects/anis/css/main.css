@@ -2,6 +2,8 @@ body {
     background-color: black;
     text-align: center;
     color: white;
+    margin: 0;
+    padding: 0;
 }
 
 a, a:visited, a:hover {
@@ -14,4 +16,14 @@ small {
     text-align: center;
     width: 100%;
     font-size: 8px;
+}
+
+canvas {
+    margin: 8px;
+}
+
+@media screen and (orientation:portrait) {
+    body {
+        transform:  scale(1.6) rotate(-90deg)  translate(-410px, 0);
+    }
 }
