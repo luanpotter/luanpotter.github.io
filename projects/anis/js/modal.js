@@ -24,14 +24,18 @@ const Modal = {
         const html = Object.entries(game.constants).map(this._tr).join('');
         table.innerHTML = html;
 
-        Object.entries(game.constants).forEach(([ key, cte ]) => {
-            this.$(`#modal [data-key=${key}][data-kind=min]`).value = cte.min;
-            this.$(`#modal [data-key=${key}][data-kind=max]`).value = cte.max;
-            this.$(`#modal [data-key=${key}][data-kind=default]`).value = cte.default;
-            this.$(`#modal [data-key=${key}][data-kind=current]`).value = cte.current;
-        });
+        const reset = () => {
+            Object.entries(game.constants).forEach(([ key, cte ]) => {
+                this.$(`#modal [data-key=${key}][data-kind=min]`).value = cte.min;
+                this.$(`#modal [data-key=${key}][data-kind=max]`).value = cte.max;
+                this.$(`#modal [data-key=${key}][data-kind=default]`).value = cte.default;
+                this.$(`#modal [data-key=${key}][data-kind=current]`).value = cte.current;
+            });
+        };
 
-        this.$('#modal-cancel').addEventListener('click', () => this.toggle());
+        this.$('#modal-param-reset').addEventListener('click', reset);
+        reset();
+
         this.$('#modal-save').addEventListener('click', () => {
             Object.entries(game.constants).forEach(([ key, cte ]) => {
                 const v = x => x === '' ? null : parseFloat(x);
@@ -41,10 +45,14 @@ const Modal = {
                 cte.current = v(this.$(`#modal [data-key=${key}][data-kind=current]`).value);
             });
             game.resetMenu();
-            this.toggle();
         });
 
         this._betaGammaSetup(game);
+
+        this.$('#modal-close').addEventListener('click', () => {
+            reset();
+            this.toggle();
+        });
     },
 
     _betaGammaUpdate(variables) {
@@ -60,9 +68,13 @@ const Modal = {
                 lock.classList.remove('closed');
                 lock.classList.add('open');
             }
-            inputRW.disabled = variable.lock;
+            const doLock = input => {
+                const isFree = input.classList.contains('free');
+                input.disabled = !isFree && variable.lock;
+            }
+            doLock(inputRW);
             inputRW.value = variable.rw.toExponential(5);
-            inputS.disabled = variable.lock;
+            doLock(inputS);
             inputS.value = variable.s.toExponential(5);
         });
     },
@@ -116,7 +128,7 @@ const Modal = {
             game._variables = deepClone(DEFAULT_VARIABLES);
             recalc();
         };
-        this.$('#modal-reset').addEventListener('click', () => confirm('Are you sure you want to reset?') && reset());
+        this.$('#modal-var-reset').addEventListener('click', () => confirm('Are you sure you want to reset?') && reset());
         reset();
     },
 

@@ -47,6 +47,10 @@
             </thead>
             <tbody></tbody>
           </table>
+        <p>
+          <button id="modal-save">Save</button>
+          <button id="modal-param-reset">Cancel</button>
+        </p>
     </div>
     <div>
       <h2>Beta and Gamma Fit</h2>
@@ -74,13 +78,13 @@
             </tr>
             <tr data-variable="vzero">
               <td>Vzero</td>
-              <td><input type="text" data-kind="rw"> m/s</td>
+              <td><input class="free" type="text" data-kind="rw"> m/s</td>
               <td><input type="text" data-kind="s"> px/ps</td>
               <td><div class="lock"></div></td>
             </tr>
             <tr data-variable="xi">
               <td>Xi</td>
-              <td><input type="text" data-kind="rw"> m^3/s^2</td>
+              <td><input class="free" type="text" data-kind="rw"> m^3/s^2</td>
               <td><input type="text" data-kind="s"> px^3/ps^2</td>
               <td><div class="lock"></div></td>
             </tr>
@@ -88,12 +92,11 @@
         </table>
         <p>
           <button id="modal-recalc">Recalculate</button>
-          <button id="modal-reset">Reset</button>
+          <button id="modal-var-reset">Reset</button>
         </p>
     </div>
     <div>
-      <button id="modal-save">Save</button>
-      <button id="modal-cancel">Cancel</button>
+      <button id="modal-close">Close</button>
     </div>
   </div>
   <small>Created by Anis &amp; Nico; full credits <a href="./credits.md"> here</a>.</small>
