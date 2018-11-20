@@ -72,26 +72,30 @@ const Modal = {
             beta: {
                 rw: parseFloat('1.9e-10'),
                 s: parseFloat('216'),
-                lock: true,
+                lock: false,
             },
             gamma: {
                 rw: parseFloat('1'),
                 s: null,
-                lock: false,
+                lock: true,
             },
             vzero: {
                 rw: parseFloat('2e7'),
                 s: parseFloat('51.2'),
-                lock: true,
+                lock: false,
             },
             xi: {
                 rw: parseFloat('5.49'),
                 s: null,
-                lock: false,
+                lock: true,
             },
         };
 
-        document.querySelectorAll('.lock').forEach(lock => lock.addEventListener('click', () => {
+        const table = this.$('#modal .beta-gamma');
+        table.querySelectorAll('input').forEach(input => input.addEventListener('change', () => {
+            this._betaGammaRecalculate(game._variables);
+        }));
+        table.querySelectorAll('.lock').forEach(lock => lock.addEventListener('click', () => {
             alert('Feature not available yet!');
             return;
             const name = lock.closest('tr').getAttribute('data-variable');
@@ -120,8 +124,6 @@ const Modal = {
     _calcXi(vars) {
         const beta = this._RWtoS(vars.beta) ** 3;
         const gamma = this._StoRW(vars.gamma) ** 2;
-        console.log(beta);
-        console.log(gamma);
         vars.xi.s = vars.xi.rw * beta * gamma;
     },
 
