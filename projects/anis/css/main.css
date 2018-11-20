@@ -21,3 +21,37 @@ small {
 canvas {
     margin: 8px;
 }
+
+#modal {
+    position: absolute;
+    width: 50%;
+    height: 75%;
+    left: 25%;
+    top: 12.5%;
+    z-index: 1;
+    border: 1px solid #fff4e6;
+    background-color: #3C2F2F;
+    color: #fff4e6;
+    padding: 32px;
+    display: none;
+}
+
+#modal.show {
+    display: block;
+}
+
+button {
+    background-color: #3C2F2F;
+    color: #fff4e6;
+    border: 1px solid #fff4e6;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+#modal table {
+    width: 100%;
+}
+
+#modal table input {
+    width: 75%;
+}

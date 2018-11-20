@@ -1,8 +1,37 @@
 const Menu = {
-    create(app, game) {
+    createInput(game, sheet, name) {
         const { Column, Row, Label, Button, SliderInput, Switch } = FormComponents;
+        return new Column([
+            new Row([
+                new Label(game.constants[name].title, STYLES.small),
+                new Button(sheet, 'dice', () => {
+                    if (game.constants[name].current !== null) {
+                        game.constants[name].current = null;
+                        game.labels[name].set(false);
+                    } else {
+                        game.constants[name].current = game.constants[name].default;
+                        game.labels[name].set(true);
+                    }
+                }),
+            ]),
+            new Switch({
+                on: new SliderInput(sheet, {
+                    min: game.constants[name].min,
+                    max: game.constants[name].max,
+                    get: () => game.constants[name].current || 0,
+                    set: v => (game.constants[name].current = v) && game.stats.reset(),
+                }),
+                off: new Label('Will be generated randomly', STYLES.small),
+                v: game.constants[name].current !== null,
+            }).ref(v => game.labels[name] = v),
+        ], SM, SSM);
+    },
+
+    create(container, game) {
+        const { Column, Row, Label, Button } = FormComponents;
         const sheet = PIXI.loader.resources.sprites.spritesheet;
-        const refs = {};
+
+        game.labels = {};
 
         const form = new Column([
             new Row([ new Label('Options', STYLES.title)]),
@@ -23,81 +52,15 @@ const Menu = {
                 ]),
             ], SM, SM),
             new Column([
-                new Label('Config'),
-                new Column([
-                    new Label('Flow (particles/ps)', STYLES.small),
-                    new SliderInput(sheet, {
-                        min: 1,
-                        max: 100,
-                        get: () => game.constants.flow,
-                        set: v => game.constants.flow = v,
-                    }),
-                ], SM, SSM),
-                new Column([
-                    new Label('Xi (px^3/ps^2)', STYLES.small),
-                    new SliderInput(sheet, {
-                        min: 20000,
-                        max: 30000,
-                        get: () => game.constants.alpha,
-                        set: v => (game.constants.alpha = v) && game.stats.reset(),
-                    }),
-                ], SM, SSM),
-                new Column([
-                    new Row([
-                        new Label('vzero (px/ps)', STYLES.small),
-                        new Button(sheet, 'config', () => {
-                            if (game.constants.vzero.current !== null) {
-                                game.constants.vzero.current = null;
-                                refs.vzero.set(false);
-                            } else {
-                                game.constants.vzero.current = game.constants.vzero.default;
-                                refs.vzero.set(true);
-                            }
-                        }),
-                    ]),
-                    new Switch({
-                        on: new SliderInput(sheet, {
-                            min: game.constants.vzero.min,
-                            max: game.constants.vzero.max,
-                            get: () => game.constants.vzero.current,
-                            set: v => (game.constants.vzero.current = v) && game.stats.reset(),
-                        }),
-                        off: new Label('Will be generated randomly', STYLES.small),
-                    }).ref(v => refs.vzero = v),
-                ], SM, SSM),
-                new Column([
-                    new Row([
-                        new Label('b (px)', STYLES.small),
-                        new Button(sheet, 'config', () => {
-                            if (game.constants.b.current !== null) {
-                                game.constants.b.current = null;
-                                refs.b.set(false);
-                            } else {
-                                game.constants.b.current = game.constants.b.default;
-                                refs.b.set(true);
-                            }
-                        }),
-                    ]),
-                    new Switch({
-                        on: new SliderInput(sheet, {
-                            min: game.constants.b.min,
-                            max: game.constants.b.max,
-                            get: () => game.constants.b.current || 0,
-                            set: v => (game.constants.b.current = v) && game.stats.reset(),
-                        }),
-                        off: new Label('Will be generated randomly', STYLES.small),
-                        v: false,
-                    }).ref(v => refs.b = v),
-                ], SM, SSM),
-                new Column([
-                    new Label('delta y (px)', STYLES.small),
-                    new SliderInput(sheet, {
-                        min: 0,
-                        max: SIZE/2,
-                        get: () => game.constants.dy,
-                        set: v => (game.constants.dy = v) && game.stats.reset(),
-                    }),
-                ], SM, SSM),
+                new Row([
+                    new Label('Config'),
+                    new Button(sheet, 'config', () => Modal.toggle()),
+                ], SM, 0),
+                this.createInput(game, sheet, 'flow'),
+                this.createInput(game, sheet, 'xi'),
+                this.createInput(game, sheet, 'vzero'),
+                this.createInput(game, sheet, 'b'),
+                this.createInput(game, sheet, 'theta'),
             ], SM, SM),
             new Column([
                 new Row([
@@ -106,23 +69,23 @@ const Menu = {
                 ]),
                 new Row([
                     new Label('Hits: ', STYLES.small),
-                    new Label('', STYLES.small).ref(ref => refs.hits = ref),
+                    new Label('', STYLES.small).ref(ref => game.labels.hits = ref),
                 ]),
                 new Row([
                     new Label('Total: ', STYLES.small),
-                    new Label('', STYLES.small).ref(ref => refs.total = ref),
+                    new Label('', STYLES.small).ref(ref => game.labels.total = ref),
                 ]),
                 new Row([
                     new Label('Prob: ', STYLES.small),
-                    new Label('', STYLES.small).ref(ref => refs.prob = ref),
+                    new Label('', STYLES.small).ref(ref => game.labels.prob = ref),
                 ]),
             ], SM, SM),
         ], 0, SM);
 
         const x = SIZE + 2*MARGIN;
         const y = MARGIN;
-        form.build(app.stage, x, y);
 
-        game.labels = refs;
+        container.removeChildren();
+        form.build(container, x, y);
     }
 };

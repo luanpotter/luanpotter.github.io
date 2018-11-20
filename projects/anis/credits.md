@@ -23,5 +23,8 @@ We have used some free resources out there; dosen't mean we won't give our thank
   Available here: https://amorphous.itch.io/diffusion
 * The button sprites are ButtonId, by kicked-in-teeth
   Available here: https://kicked-in-teeth.itch.io/button-ui
+* Some Icons from FreepPick @ Flat Icons (CC 3.0)
+  https://www.freepik.com/
+  https:// www.flaticon.com/
 
 Thanks in particular to itch.io, for providing us with the tools to connect developers and artists.
