@@ -92,7 +92,10 @@ const Modal = {
         };
 
         const table = this.$('#modal .beta-gamma');
-        table.querySelectorAll('input').forEach(input => input.addEventListener('change', () => {
+        table.querySelectorAll('input').forEach(input => input.addEventListener('blur', () => {
+            const kind = input.getAttribute('data-kind');
+            const variable = input.closest('tr').getAttribute('data-variable');
+            game._variables[variable][kind] = parseFloat(input.value);
             this._betaGammaRecalculate(game._variables);
         }));
         table.querySelectorAll('.lock').forEach(lock => lock.addEventListener('click', () => {
