@@ -61,14 +61,14 @@ const Modal = {
                 lock.classList.add('open');
             }
             inputRW.disabled = variable.lock;
-            inputRW.value = variable.rw.toExponential();
+            inputRW.value = variable.rw.toExponential(5);
             inputS.disabled = variable.lock;
-            inputS.value = variable.s.toExponential();
+            inputS.value = variable.s.toExponential(5);
         });
     },
 
     _betaGammaSetup(game) {
-        game._variables = {
+        const DEFAULT_VARIABLES = {
             beta: {
                 rw: parseFloat('1.9e-10'),
                 s: parseFloat('216'),
@@ -96,41 +96,46 @@ const Modal = {
             const kind = input.getAttribute('data-kind');
             const variable = input.closest('tr').getAttribute('data-variable');
             game._variables[variable][kind] = parseFloat(input.value);
-            this._betaGammaRecalculate(game._variables);
+            this._betaGammaUpdate(game._variables);
         }));
         table.querySelectorAll('.lock').forEach(lock => lock.addEventListener('click', () => {
-            alert('Feature not available yet!');
-            return;
             const name = lock.closest('tr').getAttribute('data-variable');
             const variable = game._variables[name];
             variable.lock = !variable.lock;
             this._betaGammaUpdate(game._variables);
         }));
 
-        this._betaGammaRecalculate(game._variables);
+        const engine = new Engine([
+            'vzero = beta * gamma^-1',
+            'xi = beta^3 * gamma^-2',
+        ]);
+        const recalc = () => this._betaGammaRecalculate(engine, game._variables);
+        this.$('#modal-recalc').addEventListener('click', recalc);
+
+        const reset = () => {
+            game._variables = deepClone(DEFAULT_VARIABLES);
+            recalc();
+        };
+        this.$('#modal-reset').addEventListener('click', () => confirm('Are you sure you want to reset?') && reset());
+        reset();
     },
 
-    _betaGammaRecalculate(vars) {
-        this._calcGamma(vars);
-        this._calcXi(vars);
+    _betaGammaRecalculate(engine, vars) {
+        const makeVar = name => ({ name, value: vars[name].s/vars[name].rw });
+        const makeVars = list => Object.fromEntries(list.map(v => [v, makeVar(v)]));
+        const install = (result, v) => vars[v].s = vars[v].rw * result[v].value;
+        const installAll = (result, vars) => vars.forEach(v => install(result, v));
+
+        const locked = Object.keys(vars).filter(n => vars[n].lock);
+        const free = Object.keys(vars).filter(n => !vars[n].lock);
+        if (locked.length !== 2 || free.length !== 2) {
+            console.info({ locked, free });
+            alert('Error! Exactly two must be locked at all times!');
+            return;
+        }
+
+        const result = engine.calc(makeVars(free));
+        installAll(result, locked);
         this._betaGammaUpdate(vars);
-    },
-
-    _RWtoS(v) {
-        return v.s / v.rw;
-    },
-
-    _StoRW(v) {
-        return v.rw / v.s;
-    },
-
-    _calcXi(vars) {
-        const beta = this._RWtoS(vars.beta) ** 3;
-        const gamma = this._StoRW(vars.gamma) ** 2;
-        vars.xi.s = vars.xi.rw * beta * gamma;
-    },
-
-    _calcGamma(vars) {
-        vars.gamma.s = this._StoRW(vars.vzero) * this._RWtoS(vars.beta) / vars.gamma.rw;
     },
 };

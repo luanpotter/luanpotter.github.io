@@ -31,3 +31,14 @@ const getValueOrGenerate = constant => {
   }
   return constant.current;
 };
+
+// it's spec now, folks
+Array.prototype.flatMap = function(lambda) { 
+  return Array.prototype.concat.apply([], this.map(lambda)); 
+};
+
+const onlyUnique = (value, index, self) => {
+  return self.indexOf(value) === index;
+};
+
+const deepClone = v => JSON.parse(JSON.stringify(v));
