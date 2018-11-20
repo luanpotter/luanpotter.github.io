@@ -38,7 +38,7 @@ canvas {
     border: 1px solid #fff4e6;
     background-color: #3C2F2F;
     color: #fff4e6;
-    padding: 32px;
+    padding: 16px;
     display: none;
 }
 
@@ -59,7 +59,7 @@ button {
 }
 
 #modal > div {
-    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 .lock {
