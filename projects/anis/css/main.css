@@ -7,6 +7,11 @@ body {
     padding: 0;
 }
 
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
 a, a:visited, a:hover {
     color: white;
     text-decoration: underline;
@@ -51,6 +56,10 @@ button {
 
 #modal table {
     width: 100%;
+}
+
+#modal > div {
+    margin-top: 16px;
 }
 
 .lock {
