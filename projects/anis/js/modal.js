@@ -43,5 +43,89 @@ const Modal = {
             game.resetMenu();
             this.toggle();
         });
+
+        this._betaGammaSetup(game);
+    },
+
+    _betaGammaUpdate(variables) {
+        Object.entries(variables).forEach(([ key, variable ]) => {
+            const tr = this.$(`#modal tr[data-variable=${key}]`);
+            const lock = tr.querySelector('.lock');
+            const inputRW = tr.querySelector('[data-kind=rw]');
+            const inputS = tr.querySelector('[data-kind=s]');
+            if (variable.lock) {
+                lock.classList.remove('closed');
+                lock.classList.add('open');
+            } else {
+                lock.classList.remove('open');
+                lock.classList.add('closed');
+            }
+            inputRW.disabled = variable.lock;
+            inputRW.value = variable.rw.toExponential();
+            inputS.disabled = variable.lock;
+            inputS.value = variable.s.toExponential();
+        });
+    },
+
+    _betaGammaSetup(game) {
+        game._variables = {
+            beta: {
+                rw: parseFloat('1.9e-10'),
+                s: parseFloat('216'),
+                lock: true,
+            },
+            gamma: {
+                rw: parseFloat('1'),
+                s: null,
+                lock: false,
+            },
+            vzero: {
+                rw: parseFloat('2e7'),
+                s: parseFloat('51.2'),
+                lock: true,
+            },
+            xi: {
+                rw: parseFloat('5.49'),
+                s: null,
+                lock: false,
+            },
+        };
+
+        document.querySelectorAll('.lock').forEach(lock => lock.addEventListener('click', () => {
+            alert('Feature not available yet!');
+            return;
+            const name = lock.closest('tr').getAttribute('data-variable');
+            const variable = game._variables[name];
+            variable.lock = !variable.lock;
+            this._betaGammaUpdate(game._variables);
+        }));
+
+        this._betaGammaRecalculate(game._variables);
+    },
+
+    _betaGammaRecalculate(vars) {
+        this._calcGamma(vars);
+        this._calcXi(vars);
+        this._betaGammaUpdate(vars);
+    },
+
+    _RWtoS(v) {
+        return v.s / v.rw;
+    },
+
+    _StoRW(v) {
+        return v.rw / v.s;
+    },
+
+    _calcXi(vars) {
+        const beta = this._RWtoS(vars.beta) ** 3;
+        const gamma = this._StoRW(vars.gamma) ** 2;
+        console.log(beta);
+        console.log(gamma);
+        vars.xi.s = vars.xi.rw * beta * gamma;
+    },
+
+    _calcGamma(vars) {
+        vars.gamma.s = this._StoRW(vars.vzero) * this._RWtoS(vars.beta) / vars.gamma.rw;
     },
 };

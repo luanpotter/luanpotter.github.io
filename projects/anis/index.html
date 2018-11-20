@@ -32,22 +32,64 @@
   </script>
   <div id="root"></div>
   <div id="modal">
-    <table>
-      <thead>
-        <tr>
-          <th>Variable</th>
-          <th>Min</th>
-          <th>Max</th>
-          <th>Default</th>
-          <th>Current</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <p>
+    <div>
+        <h2>Parameters Setup</h2>
+        <table class="big-inputs">
+            <thead>
+              <tr>
+                <th>Variable</th>
+                <th>Min</th>
+                <th>Max</th>
+                <th>Default</th>
+                <th>Current</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+    </div>
+    <div>
+      <h2>Beta and Gamma Fit</h2>
+      <table class="small-inputs">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Real World</th>
+              <th>Simulation</th>
+              <th>Lock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-variable="beta">
+              <td>Beta</td>
+              <td><input type="text" data-kind="rw"> m</td>
+              <td><input type="text" data-kind="s"> px</td>
+              <td><div class="lock"></div></td>
+            </tr>
+            <tr data-variable="gamma">
+              <td>Gamma</td>
+              <td><input type="text" data-kind="rw"> s</td>
+              <td><input type="text" data-kind="s"> ps</td>
+              <td><div class="lock"></div></td>
+            </tr>
+            <tr data-variable="vzero">
+              <td>Vzero</td>
+              <td><input type="text" data-kind="rw"> m/s</td>
+              <td><input type="text" data-kind="s"> px/ps</td>
+              <td><div class="lock"></div></td>
+            </tr>
+            <tr data-variable="xi">
+              <td>Xi</td>
+              <td><input type="text" data-kind="rw"> m^3/s^2</td>
+              <td><input type="text" data-kind="s"> px^3/ps^2</td>
+              <td><div class="lock"></div></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div>
       <button id="modal-save">Save</button>
       <button id="modal-cancel">Cancel</button>
-    </p>
+    </div>
   </div>
   <small>Created by Anis &amp; Nico; full credits <a href="./credits.md"> here</a>.</small>
 </body>

@@ -52,6 +52,28 @@ button {
     width: 100%;
 }
 
-#modal table input {
+.lock {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.lock.open {
+    background-image: url(../assets/lock-open.png);
+}
+
+.lock.closed {
+    background-image: url(../assets/lock-closed.png);
+}
+
+.big-inputs input {
     width: 75%;
+}
+
+.small-inputs td, .small-inputs th {
+    text-align: left;
+}
+
+.small-inputs input {
+    width: 200px;
 }
