@@ -54,11 +54,11 @@ const Modal = {
             const inputRW = tr.querySelector('[data-kind=rw]');
             const inputS = tr.querySelector('[data-kind=s]');
             if (variable.lock) {
-                lock.classList.remove('closed');
-                lock.classList.add('open');
-            } else {
                 lock.classList.remove('open');
                 lock.classList.add('closed');
+            } else {
+                lock.classList.remove('closed');
+                lock.classList.add('open');
             }
             inputRW.disabled = variable.lock;
             inputRW.value = variable.rw.toExponential();
