@@ -1,4 +1,4 @@
-const Modal = {
+const ModalConfig = {
     _tr([ key, cte ]) {
         const bits = cte.title.split('(');
         const formatted = bits[0] + '<br />(' + bits[1];
@@ -16,48 +16,54 @@ const Modal = {
     },
 
     toggle() {
-        this.$('#modal').classList.toggle('show');
+        this.paramsReset();
+        this.$('#modal-config').classList.toggle('show');
+        if (this.$('#modal-config').classList.contains('show')) {
+            this.$('#modal-stats').classList.remove('show');
+        }
     },
 
     setup(game) {
-        const table = this.$('#modal table tbody');
-        const html = Object.entries(game.constants).map(this._tr).join('');
-        table.innerHTML = html;
-
-        const reset = () => {
-            Object.entries(game.constants).forEach(([ key, cte ]) => {
-                this.$(`#modal [data-key=${key}][data-kind=min]`).value = cte.min;
-                this.$(`#modal [data-key=${key}][data-kind=max]`).value = cte.max;
-                this.$(`#modal [data-key=${key}][data-kind=default]`).value = cte.default;
-                this.$(`#modal [data-key=${key}][data-kind=current]`).value = cte.current;
-            });
-        };
-
-        this.$('#modal-param-reset').addEventListener('click', reset);
-        reset();
-
-        this.$('#modal-save').addEventListener('click', () => {
-            Object.entries(game.constants).forEach(([ key, cte ]) => {
-                const v = x => x === '' ? null : parseFloat(x);
-                cte.min = v(this.$(`#modal [data-key=${key}][data-kind=min]`).value);
-                cte.max = v(this.$(`#modal [data-key=${key}][data-kind=max]`).value);
-                cte.default = v(this.$(`#modal [data-key=${key}][data-kind=default]`).value);
-                cte.current = v(this.$(`#modal [data-key=${key}][data-kind=current]`).value);
-            });
-            game.resetMenu();
-        });
+        const { reset } = this._paramsSetup(game);
+        this.paramsReset = reset;
 
         this._betaGammaSetup(game);
 
-        this.$('#modal-close').addEventListener('click', () => {
-            reset();
-            this.toggle();
+        this.$('#modal-config-close').addEventListener('click', () => this.toggle());
+    },
+
+    _paramsSetup(game) {
+        const table = this.$('#modal-config table.params tbody');
+        const html = Object.entries(game.constants).map(this._tr).join('');
+        table.innerHTML = html;
+
+        const input = (key, kind) => this.$(`#modal-config table.params [data-key=${key}][data-kind=${kind}]`);
+        const v = x => x === '' ? null : parseFloat(x);
+        const kinds = [ 'min', 'max', 'default', 'current' ];
+        const forEachInput = fn => {
+            Object.entries(game.constants).forEach(([ key, cte ]) => {
+                kinds.forEach(kind => {
+                    fn(input(key, kind), cte, kind);
+                });
+            });
+        };
+
+        const reset = () => forEachInput((input, cte, kind) => input.value = cte[kind]);
+
+        this.$('#modal-config-params-reset').addEventListener('click', reset);
+        reset();
+
+        this.$('#modal-config-params-save').addEventListener('click', () => {
+            forEachInput((input, cte, kind) => cte[kind] = v(input.value));
+            game.resetMenu();
         });
+
+        return { reset };
     },
 
     _betaGammaUpdate(variables) {
         Object.entries(variables).forEach(([ key, variable ]) => {
-            const tr = this.$(`#modal tr[data-variable=${key}]`);
+            const tr = this.$(`#modal-config table.betagamma tr[data-variable=${key}]`);
             const lock = tr.querySelector('.lock');
             const inputRW = tr.querySelector('[data-kind=rw]');
             const inputS = tr.querySelector('[data-kind=s]');
@@ -103,7 +109,7 @@ const Modal = {
             },
         };
 
-        const table = this.$('#modal .beta-gamma');
+        const table = this.$('#modal-config table.betagamma');
         table.querySelectorAll('input').forEach(input => input.addEventListener('blur', () => {
             const kind = input.getAttribute('data-kind');
             const variable = input.closest('tr').getAttribute('data-variable');
@@ -122,13 +128,13 @@ const Modal = {
             'xi = beta^3 * gamma^-2',
         ]);
         const recalc = () => this._betaGammaRecalculate(engine, game._variables);
-        this.$('#modal-recalc').addEventListener('click', recalc);
+        this.$('#modal-config-betagamma-recalc').addEventListener('click', recalc);
 
         const reset = () => {
             game._variables = deepClone(DEFAULT_VARIABLES);
             recalc();
         };
-        this.$('#modal-var-reset').addEventListener('click', () => confirm('Are you sure you want to reset?') && reset());
+        this.$('#modal-config-betagamma-reset').addEventListener('click', () => confirm('Are you sure you want to reset?') && reset());
         reset();
     },
 

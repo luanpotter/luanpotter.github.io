@@ -54,7 +54,7 @@ const Menu = {
             new Column([
                 new Row([
                     new Label('Config'),
-                    new Button(sheet, 'config', () => Modal.toggle()),
+                    new Button(sheet, 'config', () => ModalConfig.toggle()),
                 ], SM, 0),
                 this.createInput(game, sheet, 'flow'),
                 this.createInput(game, sheet, 'xi'),
@@ -66,6 +66,7 @@ const Menu = {
                 new Row([
                     new Label('Stats'),
                     new Button(sheet, 'repeat', () => game.stats.reset()),
+                    new Button(sheet, 'dice', () => ModalStats.toggle()),
                 ]),
                 new Row([
                     new Label('Hits: ', STYLES.small),

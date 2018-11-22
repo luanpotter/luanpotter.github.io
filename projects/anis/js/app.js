@@ -64,7 +64,9 @@ const App = {
                 total: 0,
                 hits: 0,
                 prob: 0,
+                thetas: [],
                 reset() {
+                    game.stats.thetas = [];
                     game.stats.total = 0;
                     game.stats.hits = 0;
                     game.stats.prob = 0;
@@ -93,7 +95,8 @@ const App = {
             };
 
             document.getElementById('root').replaceWith(app.view);
-            Modal.setup(game);
+            ModalConfig.setup(game);
+            ModalStats.setup(game);
         };
 
         const gameLoop = () => {

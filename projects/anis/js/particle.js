@@ -85,8 +85,9 @@ const Particle = class {
     const dy = yf - this.b;
     const ttheta = dy / SIZE;
     const theta = Math.atan(ttheta);
+    this.game.stats.thetas.push(theta);
 
     const thetaMax = getValueOrGenerate(this.game.constants.theta);
-    return theta >= thetaMax;
+    return Math.abs(theta) > thetaMax;
   }
 };
