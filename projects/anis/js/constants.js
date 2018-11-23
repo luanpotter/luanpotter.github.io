@@ -37,8 +37,28 @@ Array.prototype.flatMap = function(lambda) {
   return Array.prototype.concat.apply([], this.map(lambda)); 
 };
 
+Object.fromEntries = iterable => {
+  return [...iterable]
+    .reduce((obj, { 0: key, 1: val }) => Object.assign(obj, { [key]: val }), {})
+};
+//
+
 const onlyUnique = (value, index, self) => {
   return self.indexOf(value) === index;
 };
 
 const deepClone = v => JSON.parse(JSON.stringify(v));
+
+const np = {
+  linspace(start, end, num = 10) {
+    const result = [start];
+    const step = (end - start) / num;
+    while (start < end) {
+      start += step;
+      result.push(start);
+    }
+    return result;
+  }
+};
+
+const toDegrees = angle => angle * (180 / Math.PI);

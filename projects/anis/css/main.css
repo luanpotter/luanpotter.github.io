@@ -5,6 +5,7 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    font-size: 12px;
 }
 
 h2 {
@@ -95,3 +96,27 @@ input.free {
 #modal-stats-chart {
     font-size: 6px;
 }
+
+
+/* CSS D3 */
+.bar {
+    fill: #BE9B7B;
+}
+
+.bar:hover {
+    fill: #fff4e6;
+}
+
+.axis-x path {
+    display: none;
+}
+
+.axis path, .axis line {
+    stroke: #BE9B7B;
+}
+
+.axis text {
+    fill: #BE9B7B;
+    font-weight: bold;
+}
+/* end d3 */
