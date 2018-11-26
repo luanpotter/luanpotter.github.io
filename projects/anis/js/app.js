@@ -19,7 +19,7 @@ const App = {
             height: SIZE,
             components: [],
             options: {
-                speed: 1,
+                speed: 10,
                 repeat: false,
                 repeatClock: 0,
             },
@@ -28,8 +28,8 @@ const App = {
                     title: 'Xi (px^3/ps^2)',
                     min: 10,
                     max: 10000,
-                    default: 1812,
-                    current: 1812,
+                    default: 16361.1,
+                    current: 16361.1,
                 },
                 vzero: {
                     title: 'vzero (px/ps)',

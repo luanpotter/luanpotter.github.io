@@ -61,12 +61,13 @@ const ModalConfig = {
         return { reset };
     },
 
-    _betaGammaUpdate(variables) {
+    _betaGammaUpdate(game) {
+        const variables = game._variables;
         Object.entries(variables).forEach(([ key, variable ]) => {
             const tr = this.$(`#modal-config table.betagamma tr[data-variable=${key}]`);
             const lock = tr.querySelector('.lock');
-            const inputRW = tr.querySelector('[data-kind=rw]');
-            const inputS = tr.querySelector('[data-kind=s]');
+            const inputRW = tr.querySelector('input[data-kind=rw]');
+            const inputS = tr.querySelector('input[data-kind=s]');
             if (variable.lock) {
                 lock.classList.remove('open');
                 lock.classList.add('closed');
@@ -83,6 +84,29 @@ const ModalConfig = {
             doLock(inputS);
             inputS.value = variable.s.toExponential(5);
         });
+
+        const Z = 79;
+        const z = 2;
+        const alpha = 1/137;
+        const hc = 197.3; // MeV * fm
+
+        const theta = toRadians(game.constants.theta.current);
+        const v0 = variables.vzero.rw;
+        const T = 6.242 * 6.64 / 2 * 10**(-15) * v0**2;
+        const sigmaRW = Math.PI/4 * (Z*z*alpha*hc/T)**2 / Math.tan(theta/2);
+        const sigmaS = sigmaRW * 10**-30 * (variables.beta.s / variables.beta.rw)**2;
+
+        const R = variables.beta;
+        const PRW = sigmaRW * 10**(-30) / 4 / R.rw**2;
+        const PS = sigmaS / 4 / R.s**2;
+
+        const trSigma = this.$('tr[data-calc=sigma]');
+        trSigma.querySelector('[data-kind=rw]').innerHTML = sigmaRW.toExponential(5);
+        trSigma.querySelector('[data-kind=s]').innerHTML = sigmaS.toExponential(5);
+
+        const trP = this.$('tr[data-calc=p]');
+        trP.querySelector('[data-kind=rw]').innerHTML = PRW.toExponential(5);
+        trP.querySelector('[data-kind=s]').innerHTML = PS.toExponential(5);
     },
 
     _betaGammaSetup(game) {
@@ -98,7 +122,7 @@ const ModalConfig = {
                 lock: true,
             },
             vzero: {
-                rw: parseFloat('2e7'),
+                rw: parseFloat('1e6'),
                 s: parseFloat('51.2'),
                 lock: false,
             },
@@ -114,20 +138,20 @@ const ModalConfig = {
             const kind = input.getAttribute('data-kind');
             const variable = input.closest('tr').getAttribute('data-variable');
             game._variables[variable][kind] = parseFloat(input.value);
-            this._betaGammaUpdate(game._variables);
+            this._betaGammaUpdate(game);
         }));
         table.querySelectorAll('.lock').forEach(lock => lock.addEventListener('click', () => {
             const name = lock.closest('tr').getAttribute('data-variable');
             const variable = game._variables[name];
             variable.lock = !variable.lock;
-            this._betaGammaUpdate(game._variables);
+            this._betaGammaUpdate(game);
         }));
 
         const engine = new Engine([
             'vzero = beta * gamma^-1',
             'xi = beta^3 * gamma^-2',
         ]);
-        const recalc = () => this._betaGammaRecalculate(engine, game._variables);
+        const recalc = () => this._betaGammaRecalculate(engine, game);
         this.$('#modal-config-betagamma-recalc').addEventListener('click', recalc);
 
         const reset = () => {
@@ -138,7 +162,8 @@ const ModalConfig = {
         reset();
     },
 
-    _betaGammaRecalculate(engine, vars) {
+    _betaGammaRecalculate(engine, game) {
+        const vars = game._variables;
         const makeVar = name => ({ name, value: vars[name].s/vars[name].rw });
         const makeVars = list => Object.fromEntries(list.map(v => [v, makeVar(v)]));
         const install = (result, v) => vars[v].s = vars[v].rw * result[v].value;
@@ -154,6 +179,6 @@ const ModalConfig = {
 
         const result = engine.calc(makeVars(free));
         installAll(result, locked);
-        this._betaGammaUpdate(vars);
+        this._betaGammaUpdate(game);
     },
 };
