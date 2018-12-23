@@ -1,0 +1,58 @@
+<html>
+
+<head>
+  <title>Clapper</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    #wrapper {
+      position: absolute;
+      display: block;
+      width: 600px;
+      text-align: center;
+      margin-left: calc(50% - 300px);
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    #top.hit {
+      transform: rotate(32deg) translateX(10px) translateY(100px);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>A Digital Clapperboard</h1>
+  <div id="wrapper">
+    <img id="top" src="board_top.svg" />
+    <img id="bottom" src="board_bottom.svg" />
+  </div>
+  <small><a href="CREDITS.md">Credits</a></small>
+  <script>
+    const audio = new Audio('clap_cut.wav');
+    const toggleClass = () => document.getElementById('top').classList.toggle('hit');
+    let clap = false;
+    document.getElementById('wrapper').onclick = () => {
+      if (!clap) {
+        audio.play();
+        setTimeout(toggleClass, 500);
+        clap = true;
+      } else {
+        toggleClass();
+        clap = false;
+      }
+    };
+  </script>
+</body>
+
+</html>
