@@ -6,10 +6,10 @@ const RESOURCES = {
 "assets/AssetManifest.json": "1b89573fa5a30281e1273e4ebeedbab9",
 "assets/LICENSE": "65a84aefcc0d59ed02da4f4dc733070a",
 "manifest.json": "9af27539b7a61934c4c730b2d65140ed",
-"index.html": "e2c4015457c201e564a93e3a6fb6a474",
-"/": "e2c4015457c201e564a93e3a6fb6a474",
+"index.html": "458052334b0532513c16b4c28f5d769a",
+"/": "458052334b0532513c16b4c28f5d769a",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"main.dart.js": "90acf2c650307fc1c982c5831e3ea0c5",
+"main.dart.js": "aef341bd23c74986caff99775c61fdd6",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1"
 };
