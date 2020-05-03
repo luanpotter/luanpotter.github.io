@@ -44213,7 +44213,7 @@ l=m.rf(0,4)
 l.fV("Options")
 l.Ag(0,"New World",k.c,new L.Kr(k))
 l.Ag(0,"Reset Camera",k.c,new L.Ks(k))
-l.fV("Version: "+C.e.SM("gitVersionTag:dc6ecb2","gitVersionTag:",""))
+l.fV("Version: "+C.e.SM("gitVersionTag:9b01d4c","gitVersionTag:",""))
 l.ou(a,k.jv$)},
 aC:function(a,b){},
 QE:function(a){var t=this.c,s=t.gnI(t).eG(0,new L.Kc(a),new L.Kd())
