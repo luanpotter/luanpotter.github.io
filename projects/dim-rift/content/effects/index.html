@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Dimensional Rift</title>
-    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
-    <link rel="stylesheet" href="/bundle.css">
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/mana.png">
+    <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
 </head>
 
 <body>
     <header>
-        <h1><a href="/">Dimensional Rift</a></h1>
-        <a href="/">Home</a> |
-        <a href="/introduction">Introduction</a> |
-        <a href="/rules">Rules</a> |
-        <a href="/references">References</a>
+        <h1><a href="/projects/dim-rift/">Dimensional Rift</a></h1>
+        <a href="/projects/dim-rift/">Home</a> |
+        <a href="/projects/dim-rift/introduction">Introduction</a> |
+        <a href="/projects/dim-rift/rules">Rules</a> |
+        <a href="/projects/dim-rift/references">References</a>
     </header>
     <main>
         
         <div class="pagination">
             
-            <p><a href="/content/cards">Cards &lt;</a></p>
+            <p><a href="/projects/dim-rift/content/cards">Cards &lt;</a></p>
             
             
         </div>
@@ -31,7 +31,7 @@
 <p>There are 4 main effect types in the game, and then each of them can have some variations.</p>
 <h3 id="costs" tabindex="-1">Costs</h3>
 <p class="center">
-    <img class="game-icon" src="/assets/icons/e-cost.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-cost.png">
 </p>
 <p>The <strong>Summoning Cost</strong> in a card, if present, must be paid immediately upon summoning. Failing to pay it will negate the summon and cause the card to be discarded. You do not need to pay any costs when setting cards; but when they are flipped they are automatically summoned.</p>
 <p>Note that costs denoted by this symbol are the cost for summoning each card; each effect can require its own activation costs specified in the effect text.</p>
@@ -49,93 +49,93 @@
 <p>Discard means &quot;send a card from your hand to the graveyard&quot;. This type of cost is quite rare.</p>
 <h3 id="continuous" tabindex="-1">Continuous</h3>
 <p class="center">
-    <img class="game-icon" src="/assets/icons/e-continuous.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-continuous.png">
 </p>
 <p>These are continuous, always active effects. They do not ever go to the Stack; as soon as the associated card is summoned, they are considered to be active, and as soon as the associated card is destroyed, they are not.</p>
 <h3 id="trigger" tabindex="-1">Trigger</h3>
 <p class="center">
-    <img class="game-icon" src="/assets/icons/e-trigger.png">
-    <img class="game-icon" src="/assets/icons/e-opt-trigger.png">
-    <img class="game-icon" src="/assets/icons/e-optional-trigger.png">
-    <img class="game-icon" src="/assets/icons/e-optional-opt-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-opt-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-optional-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-optional-opt-trigger.png">
 </p>
 <p>Triggers happen as a response to something. They immediately go to the Stack, following standard MTG rules. There is no &quot;missed timing&quot; in Dimensional Rift because that is quite stupid.</p>
 <p>Trigger effects always start with <code>When</code>, <code>At</code>, <code>If</code> or <code>After</code>. Note that unlike Yu-Gi-Oh! there is no distinction between them other than making the effect description more grammatically palatable.</p>
 <p>Trigger's can be replacement effects if they also contain the word <code>instead</code>. In that case they replace an effect or action already on the Stack with a different one.</p>
 <h3 id="activation" tabindex="-1">Activation</h3>
 <p class="center">
-    <img class="game-icon" src="/assets/icons/e-activation.png">
-    <img class="game-icon" src="/assets/icons/e-opt-activation.png">
-    <img class="game-icon" src="/assets/icons/e-slow-activation.png">
-    <img class="game-icon" src="/assets/icons/e-slow-opt-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-opt-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-slow-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-slow-opt-activation.png">
 </p>
 <p>These are the effects that can be proactively activated by the player and added to the Stack. While most of them are Fast, meaning they can be activated at &quot;instant speed&quot;, there are also a few Slow effects (see <a href="#spell-speed">Spell Speed</a> below).</p>
 <h2 id="effect-modifiers" tabindex="-1">Effect Modifiers</h2>
 <p>Some effect types can be modified with a few additional symbols.</p>
 <h3 id="once-per-turn" tabindex="-1">Once-per-turn</h3>
 <p class="center">
-    <img class="game-icon" src="/assets/icons/e-opt-trigger.png">
-    <img class="game-icon" src="/assets/icons/e-optional-opt-trigger.png">
-    <img class="game-icon" src="/assets/icons/e-opt-activation.png">
-    <img class="game-icon" src="/assets/icons/e-slow-opt-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-opt-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-optional-opt-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-opt-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-slow-opt-activation.png">
 </p>
 <p>Once-per-turn effects are symbolic denoted by a small &quot;1&quot; on the effect symbol.</p>
 <p>This means that the effect can be used only once each and every turn (be it yours or your opponent's).</p>
 <p>This applies to <strong>Trigger</strong> and <strong>Activation</strong> effects.</p>
 <h3 id="optional" tabindex="-1">Optional</h3>
 <p class="center">
-    <img class="game-icon" src="/assets/icons/e-optional-trigger.png">
-    <img class="game-icon" src="/assets/icons/e-optional-opt-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-optional-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-optional-opt-trigger.png">
 </p>
 <p>Optional applies on to <strong>Trigger</strong> effects and mean that the response is optional. The controlling player must decide whether to respond with the effect at the moment that it would trigger.</p>
 <p>This is visually indicate on the <strong>Trigger</strong> effect symbol by a broken return arrow.</p>
 <h3 id="slow" tabindex="-1">Slow</h3>
 <p class="center">
-    <img class="game-icon" src="/assets/icons/e-slow-activation.png">
-    <img class="game-icon" src="/assets/icons/e-slow-opt-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-slow-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-slow-opt-activation.png">
 </p>
 <p>Slow applies only to <strong>Activation</strong> effects. It means that the effect can only be activated at slow speed (see <a href="#spell-speed">Spell Speed</a> below.)</p>
 <p>This is symbolic indicated by the effect icon being grayed out.</p>
 <h2 id="effect-icons" tabindex="-1">Effect Icons</h2>
 <p>Combining the Effect Types and Modifiers, this is a complete list of all possible effect icons.</p>
 <div class="image-with-text">
-    <img class="game-icon" src="/assets/icons/e-cost.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-cost.png">
     <p>Cost</p>
 </div>
 <div class="image-with-text">
-    <img class="game-icon" src="/assets/icons/e-continuous.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-continuous.png">
     <p>Continuous</p>
 </div>
 <div class="image-with-text">
-    <img class="game-icon" src="/assets/icons/e-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-trigger.png">
     <p>Mandatory Repeatable Trigger</p>
 </div>
 <div class="image-with-text">
-    <img class="game-icon" src="/assets/icons/e-opt-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-opt-trigger.png">
     <p>Mandatory Once-per-Turn Trigger</p>
 </div>
 <div class="image-with-text">
-    <img class="game-icon" src="/assets/icons/e-optional-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-optional-trigger.png">
     <p>Optional Repeatable Trigger</p>
 </div>
 <div class="image-with-text">
-    <img class="game-icon" src="/assets/icons/e-optional-opt-trigger.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-optional-opt-trigger.png">
     <p>Optional Once-per-Turn Trigger</p>
 </div>
 <div class="image-with-text">
-    <img class="game-icon" src="/assets/icons/e-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-activation.png">
     <p>Repeatable Instant Activation</p>
 </div>
 <div class="image-with-text">
-    <img class="game-icon" src="/assets/icons/e-slow-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-slow-activation.png">
     <p>Repeatable Slow Activation</p>
 </div>
 <div class="image-with-text">
-    <img class="game-icon" src="/assets/icons/e-opt-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-opt-activation.png">
     <p>Once-per-Turn Slow Activation</p>
 </div>
 <div class="image-with-text">
-    <img class="game-icon" src="/assets/icons/e-slow-opt-activation.png">
+    <img class="game-icon" src="/projects/dim-rift/assets/icons/e-slow-opt-activation.png">
     <p>Once-per-Turn Slow Activation</p>
 </div>
 <h2 id="effect-text" tabindex="-1">Effect Text</h2>
@@ -179,7 +179,7 @@ Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
 <p>Non-active zones can still be targeted if there is a valid card in it (unless otherwise specified). For example, if a creature with &quot;Explorer&quot; moves to a non-active zone, it can still be targeted by a &quot;Target creature&quot; effect.</p>
 <p>Note that Monuments do not participate in the targeting system. Monuments cannot have arrows and cannot be orientated other than straight up. They also cannot ever be face-down. Monument zones are not part of the targeting grid, not being adjacent or connected to any other zones.</p>
 <figure style="text-align:center;">
-    <img src="/assets/illustrations/targeting-1.svg" width="60%" />
+    <img src="/projects/dim-rift/assets/illustrations/targeting-1.svg" width="60%">
     <figcaption>
         Example of a creature with a 3 arrows highlighting which zones it connects to.
     </figcaption>
@@ -194,7 +194,7 @@ Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
 <p>Sometimes the targeting will be specified in the Activation Criteria to avoid ambiguity or to facilitate the specification of extra parameters and requirements; sometimes it will only be mentioned on the Resolution Instructions to simplify the wording of the effect. Either way, there is no mechanical difference.</p>
 <h3 id="arrows" tabindex="-1">Arrows</h3>
 <p>Unlike in any other game, where normally any card matching the targeting requirement can be selected, in DimRift &quot;target&quot; always mean &quot;arrow targeting&quot;, meaning that the target must be reachable from the targeting card using its arrows and current orientation on the field.</p>
-<p>Every card has either none, single or double arrows on each of the 8 directions (top, bottom, left, right, and diagonals). Face-up non-monument cards while on the field can be oriented in any of 4 90-degree possible rotations. The orientation of a card must be picked by the player upon summoning it, and cannot be changed arbitrarily (but can be changed by Rotation effects or during the Move Action as established under <a href="/content/turn-structure">Turn Structure</a>).</p>
+<p>Every card has either none, single or double arrows on each of the 8 directions (top, bottom, left, right, and diagonals). Face-up non-monument cards while on the field can be oriented in any of 4 90-degree possible rotations. The orientation of a card must be picked by the player upon summoning it, and cannot be changed arbitrarily (but can be changed by Rotation effects or during the Move Action as established under <a href="/projects/dim-rift/content/turn-structure">Turn Structure</a>).</p>
 <p>Cards cannot be oriented on non-90-degree angles, and thus orthogonal arrows are always orthogonal and diagonal arrows are always diagonal.</p>
 <p>You can only target cards your card connects to.</p>
 <p>An orthogonal single arrow connects to the next zone on the row/column it points to; while a double arrow connects all the zones in that direction.</p>
@@ -202,8 +202,8 @@ Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
 <h3 id="target-from" tabindex="-1">Target from</h3>
 <p>When an effect says &quot;target <em>from</em> X&quot; it means to do the targeting operation using the position and arrows from a different card. Essentially, &quot;target as if you were that card&quot;.</p>
 <p>For example:</p>
-<p class="notice">When [equipped] destroys a creature; target an artifact from that creature; consume 1 mana: destroy target.</P>
-<p>Means you use the position and arrows of the destroyed creature to do the targeting.</p>
+<p class="notice">When [equipped] destroys a creature; target an artifact from that creature; consume 1 mana: destroy target.
+</p><p>Means you use the position and arrows of the destroyed creature to do the targeting.</p>
 <h3 id="choosing" tabindex="-1">Choosing</h3>
 <p>The word &quot;choose&quot; also has special meanings in effects, depending on what kind of &quot;choosing&quot; is being done.</p>
 <p>Some effects, typically from Monuments, might allow you to &quot;choose&quot; cards or zones. This essentially works exactly like targeting but with no arrow requirements (so like targeting is in other games). You can choose any card or zone according to the specified requirements, and must do so at the targeting phase (even if the word choose is at the Resolution Instructions).</p>
