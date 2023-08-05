@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        
+<h2>Mechanized Shield</h2>
+<div class="card-detail">
+    <div>
+        <img
+            src="/assets/_card-gen/mechanized_shield.png"
+            alt="Mechanized Shield"
+            title="Mechanized Shield"
+            width="360px"
+        />
+    </div>
+    <div>
+        <p><strong>Name:</strong> Mechanized Shield</p>
+        <p><strong>Type:</strong> artifact</p>
+        <p><strong>Sub-Type:</strong> equipment</p>
+        <p><strong>Faction:</strong> telur</p>
+        <p><strong>XD:</strong> true</p>
+        <p><strong>Stats:</strong> {"armor":1,"movement":1}</p>
+        <p><strong>Arrows:</strong> {"top":"single","topRight":"double","topLeft":"double"}</p>
+    </div>
+</div>
+
+<hr /><div class="image-with-text">
+        <img src="/assets/icons/e-cost.png" class="game-icon" alt="Cost" title="Cost" />
+        <div>
+            <strong>Cost</strong>
+            <br />
+            Sac an artifact: summon.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-continuous.png" class="game-icon" alt="Continuous" title="Continuous" />
+        <div>
+            <strong>Continuous</strong>
+            <br />
+            [equipped] has Conduit.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-activation.png" class="game-icon" alt="Fast Repeatable Activation" title="Fast Repeatable Activation" />
+        <div>
+            <strong>Fast Repeatable Activation</strong>
+            <br />
+            Sac connected artifact: [equipped] has Resilient until the end of turn.
+        </div>
+    </div>
+    <hr />
+
+    <h3>Related Keywords</h3><p><strong>Conduit</strong>: A card connected to [this] can use this card's arrows for their targeting.</p><p><strong>Resilient</strong>: When [this] would receive lethal damage: [this] only takes up to its (Life - 1) instead.</p>
+
+<hr />
+    </main>
+</body>
+
+</html>

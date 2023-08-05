@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        
+<h2>Fishing Boat</h2>
+<div class="card-detail">
+    <div>
+        <img
+            src="/assets/_card-gen/fishing_boat.png"
+            alt="Fishing Boat"
+            title="Fishing Boat"
+            width="360px"
+        />
+    </div>
+    <div>
+        <p><strong>Name:</strong> Fishing Boat</p>
+        <p><strong>Type:</strong> artifact</p>
+        <p><strong>Sub-Type:</strong> vehicle</p>
+        <p><strong>Faction:</strong> men</p>
+        <p><strong>XD:</strong> false</p>
+        <p><strong>Stats:</strong> {"attack":1,"movement":3}</p>
+        <p><strong>Arrows:</strong> {"top":"single","left":"single","right":"single","bottom":"single"}</p>
+    </div>
+</div>
+
+<hr /><div class="image-with-text">
+        <img src="/assets/icons/e-continuous.png" class="game-icon" alt="Continuous" title="Continuous" />
+        <div>
+            <strong>Continuous</strong>
+            <br />
+            Blessed: [equipped] gets +2 Life.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-opt-activation.png" class="game-icon" alt="Fast Once-per-turn Activation" title="Fast Once-per-turn Activation" />
+        <div>
+            <strong>Fast Once-per-turn Activation</strong>
+            <br />
+            Rotate target card.
+        </div>
+    </div>
+    <hr />
+
+    <h3>Related Keywords</h3><p><strong>Blessed</strong>: The Blessed effect is active iff a creature you control with at least 1 mana is connected to [this].</p>
+
+<hr />
+    </main>
+</body>
+
+</html>

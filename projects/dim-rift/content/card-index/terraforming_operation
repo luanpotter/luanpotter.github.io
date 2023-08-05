@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        
+<h2>Terraforming Operation</h2>
+<div class="card-detail">
+    <div>
+        <img
+            src="/assets/_card-gen/terraforming_operation.png"
+            alt="Terraforming Operation"
+            title="Terraforming Operation"
+            width="360px"
+        />
+    </div>
+    <div>
+        <p><strong>Name:</strong> Terraforming Operation</p>
+        <p><strong>Type:</strong> monument</p>
+        <p><strong>Sub-Type:</strong> </p>
+        <p><strong>Faction:</strong> Unaligned</p>
+        <p><strong>XD:</strong> false</p>
+        <p><strong>Stats:</strong> {"mana":1}</p>
+        <p><strong>Arrows:</strong> </p>
+    </div>
+</div>
+
+<hr /><div class="image-with-text">
+        <img src="/assets/icons/e-cost.png" class="game-icon" alt="Cost" title="Cost" />
+        <div>
+            <strong>Cost</strong>
+            <br />
+            Sac a card: summon [this] to a non-active Monument zone.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-activation.png" class="game-icon" alt="Fast Repeatable Activation" title="Fast Repeatable Activation" />
+        <div>
+            <strong>Fast Repeatable Activation</strong>
+            <br />
+            Consume any 1 mana: put a damage counter on [this].
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-opt-trigger.png" class="game-icon" alt="Mandatory Once-per-turn Trigger" title="Mandatory Once-per-turn Trigger" />
+        <div>
+            <strong>Mandatory Once-per-turn Trigger</strong>
+            <br />
+            At the end of your turn, if [this] has at least 3 damage counters; sac [this]: put a Summoning Token (from supply) on this zone.
+        </div>
+    </div>
+
+<hr />
+    </main>
+</body>
+
+</html>

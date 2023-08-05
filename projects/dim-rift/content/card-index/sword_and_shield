@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        
+<h2>Sword & Shield</h2>
+<div class="card-detail">
+    <div>
+        <img
+            src="/assets/_card-gen/sword_and_shield.png"
+            alt="Sword & Shield"
+            title="Sword & Shield"
+            width="360px"
+        />
+    </div>
+    <div>
+        <p><strong>Name:</strong> Sword & Shield</p>
+        <p><strong>Type:</strong> artifact</p>
+        <p><strong>Sub-Type:</strong> equipment</p>
+        <p><strong>Faction:</strong> Unaligned</p>
+        <p><strong>XD:</strong> false</p>
+        <p><strong>Stats:</strong> {"attack":1,"armor":1}</p>
+        <p><strong>Arrows:</strong> {"top":"single","topRight":"single","topLeft":"single","bottom":"double"}</p>
+    </div>
+</div>
+
+<hr /><div class="image-with-text">
+        <img src="/assets/icons/e-optional-opt-trigger.png" class="game-icon" alt="Optional Once-per-turn Trigger" title="Optional Once-per-turn Trigger" />
+        <div>
+            <strong>Optional Once-per-turn Trigger</strong>
+            <br />
+            Poke.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-activation.png" class="game-icon" alt="Fast Repeatable Activation" title="Fast Repeatable Activation" />
+        <div>
+            <strong>Fast Repeatable Activation</strong>
+            <br />
+            Sac artifact equipped to [equipped].
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-optional-opt-trigger.png" class="game-icon" alt="Optional Once-per-turn Trigger" title="Optional Once-per-turn Trigger" />
+        <div>
+            <strong>Optional Once-per-turn Trigger</strong>
+            <br />
+            When destroyed: you can set an Artifact card from your hand on the zone this card was.
+        </div>
+    </div>
+    <hr />
+
+    <h3>Related Keywords</h3><p><strong>Poke</strong>: When summoned: flip target.</p>
+
+<hr />
+    </main>
+</body>
+
+</html>

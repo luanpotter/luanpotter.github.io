@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        
+<h2>Zion & Shawarma, Formidable Rats</h2>
+<div class="card-detail">
+    <div>
+        <img
+            src="/assets/_card-gen/zion_and_shawarma_formidable_rats.png"
+            alt="Zion & Shawarma, Formidable Rats"
+            title="Zion & Shawarma, Formidable Rats"
+            width="360px"
+        />
+    </div>
+    <div>
+        <p><strong>Name:</strong> Zion & Shawarma, Formidable Rats</p>
+        <p><strong>Type:</strong> creature</p>
+        <p><strong>Sub-Type:</strong> feyBeast</p>
+        <p><strong>Faction:</strong> fey</p>
+        <p><strong>XD:</strong> true</p>
+        <p><strong>Stats:</strong> {"attack":2,"life":4,"movement":5}</p>
+        <p><strong>Arrows:</strong> {"top":"single","topRight":"single","topLeft":"single","bottom":"single"}</p>
+    </div>
+</div>
+
+<hr /><div class="image-with-text">
+        <img src="/assets/icons/e-cost.png" class="game-icon" alt="Cost" title="Cost" />
+        <div>
+            <strong>Cost</strong>
+            <br />
+            Transformed: summon.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-optional-opt-trigger.png" class="game-icon" alt="Optional Once-per-turn Trigger" title="Optional Once-per-turn Trigger" />
+        <div>
+            <strong>Optional Once-per-turn Trigger</strong>
+            <br />
+            Lightfoot.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-slow-opt-activation.png" class="game-icon" alt="Slow Once-per-turn Activation" title="Slow Once-per-turn Activation" />
+        <div>
+            <strong>Slow Once-per-turn Activation</strong>
+            <br />
+            Consume any 2 mana: knock all connected creatures Prone.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-opt-activation.png" class="game-icon" alt="Fast Once-per-turn Activation" title="Fast Once-per-turn Activation" />
+        <div>
+            <strong>Fast Once-per-turn Activation</strong>
+            <br />
+            Destroy up to 3 target Scrolls: [this] gains that 1 mana for each.
+        </div>
+    </div>
+    <hr />
+
+    <h3>Related Keywords</h3><p><strong>Transformed</strong>: Can only be summoned using a [Transform] effect.</p><p><strong>Lightfoot</strong>: After [this] takes an Attack Action: [this] can immediately perform a Move Action.</p><p><strong>Prone</strong>: Prone creatures cannot move or rotate during their next Move Action (they must instead spend it to get up). They can still be moved or rotated by effects.</p>
+
+<hr />
+    </main>
+</body>
+
+</html>

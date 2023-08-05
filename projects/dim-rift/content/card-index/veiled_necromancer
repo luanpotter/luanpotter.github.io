@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        
+<h2>Veiled Necromancer</h2>
+<div class="card-detail">
+    <div>
+        <img
+            src="/assets/_card-gen/veiled_necromancer.png"
+            alt="Veiled Necromancer"
+            title="Veiled Necromancer"
+            width="360px"
+        />
+    </div>
+    <div>
+        <p><strong>Name:</strong> Veiled Necromancer</p>
+        <p><strong>Type:</strong> creature</p>
+        <p><strong>Sub-Type:</strong> </p>
+        <p><strong>Faction:</strong> wynn</p>
+        <p><strong>XD:</strong> false</p>
+        <p><strong>Stats:</strong> {"attack":1,"life":1,"mana":2,"movement":2}</p>
+        <p><strong>Arrows:</strong> {"top":"double","bottom":"single","bottomRight":"single","bottomLeft":"single"}</p>
+    </div>
+</div>
+
+<hr /><div class="image-with-text">
+        <img src="/assets/icons/e-optional-trigger.png" class="game-icon" alt="Optional Repeatable Trigger" title="Optional Repeatable Trigger" />
+        <div>
+            <strong>Optional Repeatable Trigger</strong>
+            <br />
+            Shadowwalker.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-continuous.png" class="game-icon" alt="Continuous" title="Continuous" />
+        <div>
+            <strong>Continuous</strong>
+            <br />
+            Necrotic.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-optional-opt-trigger.png" class="game-icon" alt="Optional Once-per-turn Trigger" title="Optional Once-per-turn Trigger" />
+        <div>
+            <strong>Optional Once-per-turn Trigger</strong>
+            <br />
+            Flip; consume any X mana (max 2): deal X Necrotic damage to target creature.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-optional-trigger.png" class="game-icon" alt="Optional Repeatable Trigger" title="Optional Repeatable Trigger" />
+        <div>
+            <strong>Optional Repeatable Trigger</strong>
+            <br />
+            When a non-token creature you control connected to [this] is sac'ed, consume 1 mana: summon a Creature Token in that zone.
+        </div>
+    </div>
+    <hr />
+
+    <h3>Related Keywords</h3><p><strong>Shadowwalker</strong>: Flip: You can choose another face-down creature you control; flip this back face-down and switch their positions. Note: do not trigger summoning or other Flip effects, nor does it generate mana for [this]. You cannot activate more than one Shadowwalker effect per chain.</p><p><strong>Necrotic</strong>: Necrotic damage does not get cleaned-up at the end of turn.</p><p><strong>Flip</strong>: When this card is targeted face-down for an effect/attack; immediately before that effect/attack resolves, right after flipping this fac-up: Activate the [Flip] effect. Note: Flip effects happen before any "When summoned" effects. If a creature is flipped back face-down during its Flip effect (e.g. via [Shadowwalker]), it is not considered to have been summoned.</p><p><strong>Necrotic</strong>: Necrotic damage does not get cleaned-up at the end of turn.</p>
+
+<hr />
+    </main>
+</body>
+
+</html>

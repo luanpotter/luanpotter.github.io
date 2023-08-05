@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        
+<h2>Shifting Fissure</h2>
+<div class="card-detail">
+    <div>
+        <img
+            src="/assets/_card-gen/shifting_fissure.png"
+            alt="Shifting Fissure"
+            title="Shifting Fissure"
+            width="360px"
+        />
+    </div>
+    <div>
+        <p><strong>Name:</strong> Shifting Fissure</p>
+        <p><strong>Type:</strong> artifact</p>
+        <p><strong>Sub-Type:</strong> </p>
+        <p><strong>Faction:</strong> Unaligned</p>
+        <p><strong>XD:</strong> false</p>
+        <p><strong>Stats:</strong> {"mana":1,"movement":1}</p>
+        <p><strong>Arrows:</strong> {"top":"double"}</p>
+    </div>
+</div>
+
+<hr /><div class="image-with-text">
+        <img src="/assets/icons/e-opt-activation.png" class="game-icon" alt="Fast Once-per-turn Activation" title="Fast Once-per-turn Activation" />
+        <div>
+            <strong>Fast Once-per-turn Activation</strong>
+            <br />
+            Target 2 creatures: the one with the highest attack takes 5 damage. The other gains 1 mana. If it is a tie; sac this: you draw a card instead.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-slow-opt-activation.png" class="game-icon" alt="Slow Once-per-turn Activation" title="Slow Once-per-turn Activation" />
+        <div>
+            <strong>Slow Once-per-turn Activation</strong>
+            <br />
+            Consume any 1 mana: move [this].
+        </div>
+    </div>
+
+<hr />
+    </main>
+</body>
+
+</html>

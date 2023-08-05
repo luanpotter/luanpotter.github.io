@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        
+<h2>Holy Caravel</h2>
+<div class="card-detail">
+    <div>
+        <img
+            src="/assets/_card-gen/holy_caravel.png"
+            alt="Holy Caravel"
+            title="Holy Caravel"
+            width="360px"
+        />
+    </div>
+    <div>
+        <p><strong>Name:</strong> Holy Caravel</p>
+        <p><strong>Type:</strong> artifact</p>
+        <p><strong>Sub-Type:</strong> vehicle</p>
+        <p><strong>Faction:</strong> men</p>
+        <p><strong>XD:</strong> false</p>
+        <p><strong>Stats:</strong> {"attack":1,"life":1,"movement":5}</p>
+        <p><strong>Arrows:</strong> {"top":"single","topRight":"single","topLeft":"single","left":"single","right":"single","bottom":"single"}</p>
+    </div>
+</div>
+
+<hr /><div class="image-with-text">
+        <img src="/assets/icons/e-optional-opt-trigger.png" class="game-icon" alt="Optional Once-per-turn Trigger" title="Optional Once-per-turn Trigger" />
+        <div>
+            <strong>Optional Once-per-turn Trigger</strong>
+            <br />
+            When summoned: target creature gets Armor +1 until the end of turn.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-slow-opt-activation.png" class="game-icon" alt="Slow Once-per-turn Activation" title="Slow Once-per-turn Activation" />
+        <div>
+            <strong>Slow Once-per-turn Activation</strong>
+            <br />
+            If crewed: deal 1 damage to target creature.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-optional-opt-trigger.png" class="game-icon" alt="Optional Once-per-turn Trigger" title="Optional Once-per-turn Trigger" />
+        <div>
+            <strong>Optional Once-per-turn Trigger</strong>
+            <br />
+            When destroyed: target gains 2 mana.
+        </div>
+    </div>
+
+<hr />
+    </main>
+</body>
+
+</html>

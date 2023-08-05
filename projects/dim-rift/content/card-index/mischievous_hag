@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        
+<h2>Mischievous Hag</h2>
+<div class="card-detail">
+    <div>
+        <img
+            src="/assets/_card-gen/mischievous_hag.png"
+            alt="Mischievous Hag"
+            title="Mischievous Hag"
+            width="360px"
+        />
+    </div>
+    <div>
+        <p><strong>Name:</strong> Mischievous Hag</p>
+        <p><strong>Type:</strong> creature</p>
+        <p><strong>Sub-Type:</strong> </p>
+        <p><strong>Faction:</strong> Unaligned</p>
+        <p><strong>XD:</strong> true</p>
+        <p><strong>Stats:</strong> {"attack":3,"life":3,"mana":2,"movement":1}</p>
+        <p><strong>Arrows:</strong> {"top":"single"}</p>
+    </div>
+</div>
+
+<hr /><div class="image-with-text">
+        <img src="/assets/icons/e-cost.png" class="game-icon" alt="Cost" title="Cost" />
+        <div>
+            <strong>Cost</strong>
+            <br />
+            Sac a creature; consume any 3 mana; pay 5 life: summon [this] to a non-activated creature zone by adding a Summoning Token (from supply) to it.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-opt-trigger.png" class="game-icon" alt="Mandatory Once-per-turn Trigger" title="Mandatory Once-per-turn Trigger" />
+        <div>
+            <strong>Mandatory Once-per-turn Trigger</strong>
+            <br />
+            At the start of your turn: consume any 2 mana. If you can't, sac [this].
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-opt-trigger.png" class="game-icon" alt="Mandatory Once-per-turn Trigger" title="Mandatory Once-per-turn Trigger" />
+        <div>
+            <strong>Mandatory Once-per-turn Trigger</strong>
+            <br />
+            When destroyed: your opponent gains 5 life.
+        </div>
+    </div>
+
+<hr />
+    </main>
+</body>
+
+</html>

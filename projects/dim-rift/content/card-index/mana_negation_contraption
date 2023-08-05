@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        
+<h2>Mana Negation Contraption</h2>
+<div class="card-detail">
+    <div>
+        <img
+            src="/assets/_card-gen/mana_negation_contraption.png"
+            alt="Mana Negation Contraption"
+            title="Mana Negation Contraption"
+            width="360px"
+        />
+    </div>
+    <div>
+        <p><strong>Name:</strong> Mana Negation Contraption</p>
+        <p><strong>Type:</strong> artifact</p>
+        <p><strong>Sub-Type:</strong> </p>
+        <p><strong>Faction:</strong> telur</p>
+        <p><strong>XD:</strong> true</p>
+        <p><strong>Stats:</strong> </p>
+        <p><strong>Arrows:</strong> {"top":"double","right":"double","left":"double","bottom":"double"}</p>
+    </div>
+</div>
+
+<hr /><div class="image-with-text">
+        <img src="/assets/icons/e-cost.png" class="game-icon" alt="Cost" title="Cost" />
+        <div>
+            <strong>Cost</strong>
+            <br />
+            Sac 4 artifacts with at least 1 mana among them: summon.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-continuous.png" class="game-icon" alt="Continuous" title="Continuous" />
+        <div>
+            <strong>Continuous</strong>
+            <br />
+            Connected cards are Manalock'ed.
+        </div>
+    </div>
+    <hr />
+
+    <h3>Related Keywords</h3><p><strong>Manalock</strong>: When summoned: target card cannot consume its own mana or activate effects that cost mana until the end of turn. If that card has an effect in this chain that would qualify, that effect fizzles.</p>
+
+<hr />
+    </main>
+</body>
+
+</html>

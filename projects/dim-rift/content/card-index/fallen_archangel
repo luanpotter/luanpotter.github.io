@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        
+<h2>Fallen Archangel</h2>
+<div class="card-detail">
+    <div>
+        <img
+            src="/assets/_card-gen/fallen_archangel.png"
+            alt="Fallen Archangel"
+            title="Fallen Archangel"
+            width="360px"
+        />
+    </div>
+    <div>
+        <p><strong>Name:</strong> Fallen Archangel</p>
+        <p><strong>Type:</strong> creature</p>
+        <p><strong>Sub-Type:</strong> angel</p>
+        <p><strong>Faction:</strong> men</p>
+        <p><strong>XD:</strong> true</p>
+        <p><strong>Stats:</strong> {"attack":2,"life":2,"armor":2,"movement":5}</p>
+        <p><strong>Arrows:</strong> {"top":"single","left":"single","right":"single","bottom":"single"}</p>
+    </div>
+</div>
+
+<hr /><div class="image-with-text">
+        <img src="/assets/icons/e-cost.png" class="game-icon" alt="Cost" title="Cost" />
+        <div>
+            <strong>Cost</strong>
+            <br />
+            Sac Blessed creature with at least 3 mana: summon.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-optional-opt-trigger.png" class="game-icon" alt="Optional Once-per-turn Trigger" title="Optional Once-per-turn Trigger" />
+        <div>
+            <strong>Optional Once-per-turn Trigger</strong>
+            <br />
+            Protect.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-activation.png" class="game-icon" alt="Fast Repeatable Activation" title="Fast Repeatable Activation" />
+        <div>
+            <strong>Fast Repeatable Activation</strong>
+            <br />
+            Consume any 2 mana: [this] or target creature has Evasive until the end of turn.
+        </div>
+    </div><div class="image-with-text">
+        <img src="/assets/icons/e-continuous.png" class="game-icon" alt="Continuous" title="Continuous" />
+        <div>
+            <strong>Continuous</strong>
+            <br />
+            [this] cannot gain mana.
+        </div>
+    </div>
+    <hr />
+
+    <h3>Related Keywords</h3><p><strong>Blessed</strong>: The Blessed effect is active iff a creature you control with at least 1 mana is connected to [this].</p><p><strong>Protect</strong>: When summoned: target gets +1 Armor until the end of turn.</p><p><strong>Evasive</strong>: This creature can only be blocked by the creature in the zone it is attacking.</p>
+
+<hr />
+    </main>
+</body>
+
+</html>

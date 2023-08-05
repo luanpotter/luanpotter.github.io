@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/mana.png">
+    <link rel="stylesheet" href="/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Dimensional Rift</a></h1>
+        <a href="/">Home</a> |
+        <a href="/introduction">Introduction</a> |
+        <a href="/rules">Rules</a> |
+        <a href="/references">References</a>
+    </header>
+    <main>
+        
+        <div class="pagination">
+            
+            <p><a href="/content/cards">Cards &lt;</a></p>
+            
+            
+        </div>
+        
+        <h1 id="effects" tabindex="-1">Effects</h1>
+<p>Each card in the game has one or more effects listed in their effects box. These effects add to or change how the card or the game behaves, in addition to the normal rules associated with that specific card type (or sub-type). Depending on the type of effect, which is indicated by a symbol on the left of the effect text, they can have varied consequences on the game.</p>
+<h2 id="effect-types" tabindex="-1">Effect Types</h2>
+<p>There are 4 main effect types in the game, and then each of them can have some variations.</p>
+<h3 id="costs" tabindex="-1">Costs</h3>
+<p class="center">
+    <img class="game-icon" src="/assets/icons/e-cost.png">
+</p>
+<p>The <strong>Summoning Cost</strong> in a card, if present, must be paid immediately upon summoning. Failing to pay it will negate the summon and cause the card to be discarded. You do not need to pay any costs when setting cards; but when they are flipped they are automatically summoned.</p>
+<p>Note that costs denoted by this symbol are the cost for summoning each card; each effect can require its own activation costs specified in the effect text.</p>
+<p>Costs (either summoning or activation costs) never go to the stack and must be paid immediately (upon summoning or activation).</p>
+<p>If an activation cost of an effect is mandatory, you cannot choose not to pay it. If do not have the resources to afford it, the effect fizzles. You don't need to pay partial resources in this case. The exception being life costs (see below).</p>
+<p>Typically, costs fall into these categories:</p>
+<h4 id="mana-cost" tabindex="-1">Mana Cost</h4>
+<p>Requires the removal of mana counters from cards you control. If the effect says &quot;pay X mana&quot;, that means it must be paid with mana in this card. If it says &quot;pay any X mana&quot;, you can use mana from any cards you control. In that case, you can remove any amount of mana of each card as long as the total is equal to the cost.</p>
+<h4 id="material%2Fsacrificial-cost" tabindex="-1">Material/Sacrificial Cost</h4>
+<p>This requires you to &quot;sac&quot; (sacrifice) cards. Sacrifice means destroy a card you control. It can be a face-up or face-down card, as long as it is currently on the field and matches the requirements (if the requirements specify any aspect other than card type, they must be face-up as face-down cards do not have any other properties).</p>
+<p>Note that cards that are in the process of being summoned (but have not have its summoning costs paid yet) are not considered to be on the field and cannot be sac'ed.</p>
+<h4 id="life-cost" tabindex="-1">Life Cost</h4>
+<p>Cards will say &quot;pay X life&quot; requiring you to pay from your current life points. If a mandatory effect requires you to pay more life than you currently have, you are obliged to comply and lose the game.</p>
+<h4 id="discard" tabindex="-1">Discard</h4>
+<p>Discard means &quot;send a card from your hand to the graveyard&quot;. This type of cost is quite rare.</p>
+<h3 id="continuous" tabindex="-1">Continuous</h3>
+<p class="center">
+    <img class="game-icon" src="/assets/icons/e-continuous.png">
+</p>
+<p>These are continuous, always active effects. They do not ever go to the Stack; as soon as the associated card is summoned, they are considered to be active, and as soon as the associated card is destroyed, they are not.</p>
+<h3 id="trigger" tabindex="-1">Trigger</h3>
+<p class="center">
+    <img class="game-icon" src="/assets/icons/e-trigger.png">
+    <img class="game-icon" src="/assets/icons/e-opt-trigger.png">
+    <img class="game-icon" src="/assets/icons/e-optional-trigger.png">
+    <img class="game-icon" src="/assets/icons/e-optional-opt-trigger.png">
+</p>
+<p>Triggers happen as a response to something. They immediately go to the Stack, following standard MTG rules. There is no &quot;missed timing&quot; in Dimensional Rift because that is quite stupid.</p>
+<p>Trigger effects always start with <code>When</code>, <code>At</code>, <code>If</code> or <code>After</code>. Note that unlike Yu-Gi-Oh! there is no distinction between them other than making the effect description more grammatically palatable.</p>
+<p>Trigger's can be replacement effects if they also contain the word <code>instead</code>. In that case they replace an effect or action already on the Stack with a different one.</p>
+<h3 id="activation" tabindex="-1">Activation</h3>
+<p class="center">
+    <img class="game-icon" src="/assets/icons/e-activation.png">
+    <img class="game-icon" src="/assets/icons/e-opt-activation.png">
+    <img class="game-icon" src="/assets/icons/e-slow-activation.png">
+    <img class="game-icon" src="/assets/icons/e-slow-opt-activation.png">
+</p>
+<p>These are the effects that can be proactively activated by the player and added to the Stack. While most of them are Fast, meaning they can be activated at &quot;instant speed&quot;, there are also a few Slow effects (see <a href="#spell-speed">Spell Speed</a> below).</p>
+<h2 id="effect-modifiers" tabindex="-1">Effect Modifiers</h2>
+<p>Some effect types can be modified with a few additional symbols.</p>
+<h3 id="once-per-turn" tabindex="-1">Once-per-turn</h3>
+<p class="center">
+    <img class="game-icon" src="/assets/icons/e-opt-trigger.png">
+    <img class="game-icon" src="/assets/icons/e-optional-opt-trigger.png">
+    <img class="game-icon" src="/assets/icons/e-opt-activation.png">
+    <img class="game-icon" src="/assets/icons/e-slow-opt-activation.png">
+</p>
+<p>Once-per-turn effects are symbolic denoted by a small &quot;1&quot; on the effect symbol.</p>
+<p>This means that the effect can be used only once each and every turn (be it yours or your opponent's).</p>
+<p>This applies to <strong>Trigger</strong> and <strong>Activation</strong> effects.</p>
+<h3 id="optional" tabindex="-1">Optional</h3>
+<p class="center">
+    <img class="game-icon" src="/assets/icons/e-optional-trigger.png">
+    <img class="game-icon" src="/assets/icons/e-optional-opt-trigger.png">
+</p>
+<p>Optional applies on to <strong>Trigger</strong> effects and mean that the response is optional. The controlling player must decide whether to respond with the effect at the moment that it would trigger.</p>
+<p>This is visually indicate on the <strong>Trigger</strong> effect symbol by a broken return arrow.</p>
+<h3 id="slow" tabindex="-1">Slow</h3>
+<p class="center">
+    <img class="game-icon" src="/assets/icons/e-slow-activation.png">
+    <img class="game-icon" src="/assets/icons/e-slow-opt-activation.png">
+</p>
+<p>Slow applies only to <strong>Activation</strong> effects. It means that the effect can only be activated at slow speed (see <a href="#spell-speed">Spell Speed</a> below.)</p>
+<p>This is symbolic indicated by the effect icon being grayed out.</p>
+<h2 id="effect-icons" tabindex="-1">Effect Icons</h2>
+<p>Combining the Effect Types and Modifiers, this is a complete list of all possible effect icons.</p>
+<div class="image-with-text">
+    <img class="game-icon" src="/assets/icons/e-cost.png">
+    <p>Cost</p>
+</div>
+<div class="image-with-text">
+    <img class="game-icon" src="/assets/icons/e-continuous.png">
+    <p>Continuous</p>
+</div>
+<div class="image-with-text">
+    <img class="game-icon" src="/assets/icons/e-trigger.png">
+    <p>Mandatory Repeatable Trigger</p>
+</div>
+<div class="image-with-text">
+    <img class="game-icon" src="/assets/icons/e-opt-trigger.png">
+    <p>Mandatory Once-per-Turn Trigger</p>
+</div>
+<div class="image-with-text">
+    <img class="game-icon" src="/assets/icons/e-optional-trigger.png">
+    <p>Optional Repeatable Trigger</p>
+</div>
+<div class="image-with-text">
+    <img class="game-icon" src="/assets/icons/e-optional-opt-trigger.png">
+    <p>Optional Once-per-Turn Trigger</p>
+</div>
+<div class="image-with-text">
+    <img class="game-icon" src="/assets/icons/e-activation.png">
+    <p>Repeatable Instant Activation</p>
+</div>
+<div class="image-with-text">
+    <img class="game-icon" src="/assets/icons/e-slow-activation.png">
+    <p>Repeatable Slow Activation</p>
+</div>
+<div class="image-with-text">
+    <img class="game-icon" src="/assets/icons/e-opt-activation.png">
+    <p>Once-per-Turn Slow Activation</p>
+</div>
+<div class="image-with-text">
+    <img class="game-icon" src="/assets/icons/e-slow-opt-activation.png">
+    <p>Once-per-Turn Slow Activation</p>
+</div>
+<h2 id="effect-text" tabindex="-1">Effect Text</h2>
+<p>After the symbol indicating its type, each effect then has a text describing itself.</p>
+<p>Effects are worded using a structure similar to &quot;Problem-Solving Card Text&quot;. They start with a list of triggers, costs, targeting or other activation requirements (called the Activation Criteria), separated by <code>;</code>; then followed by a single <code>:</code> to indicate the start of the Resolution Instructions portion of the effect, with sub-effects separated by <code>;</code> or <code>.</code>.</p>
+<p>For example:</p>
+<p class="notice">
+    When summoned; consume any two mana: [this] gets either (1) +1 Attack or (2) +1 Life.
+</p>
+<p>We have several &quot;parts&quot; (note that it is all considered a single effect of type Trigger!):</p>
+<p><strong>Trigger</strong>: When summoned</p>
+<p><strong>Cost</strong>: consume any two mana</p>
+<p><strong>Resolution</strong>: [this] gets either (1) +1 Attack or (2) +1 Life.</p>
+<p>For this effect, there are no implicit targeting. The &quot;choose either&quot; choice is entirely written in the resolution part so it does not need to be decided upon activation.</p>
+<h2 id="spell-speed" tabindex="-1">Spell Speed</h2>
+<p>There are two spell speeds on DimRift; slow effects (and actions) are &quot;sorcery&quot; speed, while fast effects (and actions) are &quot;instant&quot; speed.</p>
+<ul>
+<li>
+<p>slow speed: slow activation effects, summoning cards from your hand</p>
+</li>
+<li>
+<p>fast speed: any other activation and trigger effects, flipping cards on the field</p>
+</li>
+</ul>
+<p>As in MTG, Slow speed effects can only be activated during your own Main Phases, when the stack is empty, and you have priority.</p>
+<p>Note that flipping an artifact card face-up can be considered as part of activating a trigger or activation effect. For example, if you have priority and want to respond to a chain with the effect of a face-down card, you can flip it face up, pay for its Cost, put any &quot;When summoned&quot; triggers on the stack and immediately put one of its activation or trigger effects on the stack, before passing priority to your opponent.</p>
+<h2 id="the-stack-%26-chains" tabindex="-1">The Stack &amp; Chains</h2>
+<p>DimRift makes uses of the concept called Stack in MTG or Chains in Yu-Gi-Oh!.</p>
+<p>While the mechanism works exactly like MTG's Stack (and not like Yu-Gi-Oh!'s chains), both terms can be used in the game to define different facets of the same construct. Cards can refer to &quot;the current chain&quot; or &quot;in this chain&quot; to refer to any effects currently or subsequently added to the Stack until the Stack is completely empty (at what point that Chain is completed and new Chains can start).</p>
+<p>Since we are following MTG rules, effects <strong>can</strong> be added to the stack while it is not empty; triggers never &quot;miss timing&quot; like in Yu-Gi-Oh!, and <code>When</code> and <code>If</code> used in Trigger description texts are mechanically identical.</p>
+<p>Stack based effects must be activated by following the following (completely standard) lifecycle:</p>
+<p class="notice">
+Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
+</p>
+<p>Then the Stack starts to resolve in backwards order. Each single Effect resolution cannot be interrupted; triggers just go to the Stack after that. However, as stated, the stack does not need to be empty for effects to be added to it.</p>
+<p>Triggers always go into the Stack as soon as they trigger and the current effect finishes resolving (regardless of optionality); first the current player's turn triggers, and then the opponent's. Each player can order their triggers as desired.</p>
+<p>After triggers each player gets to add as many Activation effects as desired, using the priority system, starting with the turn's player.</p>
+<h2 id="targeting" tabindex="-1">Targeting</h2>
+<p>Targeting is a unique part of Dimensional Rift because you cannot just choose any card on the field. You actually target zones, not cards, and you must use the card's arrows to determine what other zones it can &quot;reach&quot;.</p>
+<p>When a card says &quot;target creature&quot; or &quot;target card&quot; it actually means &quot;target non-empty creature zone&quot; or &quot;target non-empty zone&quot;. Whichever card is in the targeted zone at time of resolution will be the target of the effect. Targets must be valid both at time of activation and also at time of resolution. So, for example, for a &quot;target creature&quot; effect, there must be a creature on the target zone at time of activation and also at the resolution time. If there is no longer a creature in the zone, the effect fizzles (i.e. is moot). If the card doing the targeting moves, rotates, or has its arrows changed in between activation and resolution, the target zone must still be &quot;reachable&quot; during resolution, or the effect fizzles.</p>
+<p>Non-active zones can still be targeted if there is a valid card in it (unless otherwise specified). For example, if a creature with &quot;Explorer&quot; moves to a non-active zone, it can still be targeted by a &quot;Target creature&quot; effect.</p>
+<p>Note that Monuments do not participate in the targeting system. Monuments cannot have arrows and cannot be orientated other than straight up. They also cannot ever be face-down. Monument zones are not part of the targeting grid, not being adjacent or connected to any other zones.</p>
+<figure style="text-align:center;">
+    <img src="/assets/illustrations/targeting-1.svg" width="60%" />
+    <figcaption>
+        Example of a creature with a 3 arrows highlighting which zones it connects to.
+    </figcaption>
+</figure>
+<h3 id="implicit-targeting" tabindex="-1">Implicit targeting</h3>
+<p>Targeting must always be done during activation, following the effect lifecycle; however it might not be specified in the Activation Criteria text (before <code>:</code>).</p>
+<p>In fact, the mere presence of the word &quot;target&quot; in any part of the effect is an implicit shorthand to call out that this card requires targeting during activation.</p>
+<p>For example, if an effect were to read:</p>
+<p class="notice">When summoned: target creature gets Armor +1.</p>
+<p>The use of the word &quot;target&quot; here in the Resolution Instructions implies a short hand for:</p>
+<p class="notice">When summoned; target a creature: target creature gets Armor +1.</p>
+<p>Sometimes the targeting will be specified in the Activation Criteria to avoid ambiguity or to facilitate the specification of extra parameters and requirements; sometimes it will only be mentioned on the Resolution Instructions to simplify the wording of the effect. Either way, there is no mechanical difference.</p>
+<h3 id="arrows" tabindex="-1">Arrows</h3>
+<p>Unlike in any other game, where normally any card matching the targeting requirement can be selected, in DimRift &quot;target&quot; always mean &quot;arrow targeting&quot;, meaning that the target must be reachable from the targeting card using its arrows and current orientation on the field.</p>
+<p>Every card has either none, single or double arrows on each of the 8 directions (top, bottom, left, right, and diagonals). Face-up non-monument cards while on the field can be oriented in any of 4 90-degree possible rotations. The orientation of a card must be picked by the player upon summoning it, and cannot be changed arbitrarily (but can be changed by Rotation effects or during the Move Action as established under <a href="/content/turn-structure">Turn Structure</a>).</p>
+<p>Cards cannot be oriented on non-90-degree angles, and thus orthogonal arrows are always orthogonal and diagonal arrows are always diagonal.</p>
+<p>You can only target cards your card connects to.</p>
+<p>An orthogonal single arrow connects to the next zone on the row/column it points to; while a double arrow connects all the zones in that direction.</p>
+<p>A diagonal single arrow connects the zone in the next row and next column; while a double arrow connects that zone and every next zone until the end of that row.</p>
+<h3 id="target-from" tabindex="-1">Target from</h3>
+<p>When an effect says &quot;target <em>from</em> X&quot; it means to do the targeting operation using the position and arrows from a different card. Essentially, &quot;target as if you were that card&quot;.</p>
+<p>For example:</p>
+<p class="notice">When [equipped] destroys a creature; target an artifact from that creature; consume 1 mana: destroy target.</P>
+<p>Means you use the position and arrows of the destroyed creature to do the targeting.</p>
+<h3 id="choosing" tabindex="-1">Choosing</h3>
+<p>The word &quot;choose&quot; also has special meanings in effects, depending on what kind of &quot;choosing&quot; is being done.</p>
+<p>Some effects, typically from Monuments, might allow you to &quot;choose&quot; cards or zones. This essentially works exactly like targeting but with no arrow requirements (so like targeting is in other games). You can choose any card or zone according to the specified requirements, and must do so at the targeting phase (even if the word choose is at the Resolution Instructions).</p>
+<p>A card might also require you to &quot;choose either&quot;, followed by options identified by numbers in parenthesis, <code>(1)</code> and <code>(2)</code>. Whether this must be done at time of Activation or Resolution depends on where in the effect the word &quot;choose&quot; or &quot;either&quot; resides. If any of them is on the Activation Criteria, then the choice must be made upon activation as part of Targeting.</p>
+<p>Finally, an effect might contain a variable <code>X</code>, often to represent either a value to be determined or calculated based on the current game state or to be &quot;chosen&quot; by the player. Either way, that must be done upon Activation.</p>
+<h3 id="connected" tabindex="-1">Connected</h3>
+<p>A card is considered Connected to another card if it has arrows that connect to that card. That does not mean target; instead it refers to all cards or zones that this card <em>could</em> target.</p>
+<h3 id="connection-chain" tabindex="-1">Connection Chain</h3>
+<p>A Connection Chain (no &quot;<em>connection</em>&quot; to <em>Effect Chains</em>) is a specific sequence of cards where each one is connected to the the next card.</p>
+<p>For example:</p>
+<p class="notice">When [this] is part of a Connection Chain connecting every non-monument card on the field (at least 4): [Transform].</p>
+<p>Means that if there is any way to order the cards on the field (at least 4), in a way that each card connects to the next card, you must transform this creature. Naturally this excludes Monuments.</p>
+
+    </main>
+</body>
+
+</html>
