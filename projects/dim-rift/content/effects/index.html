@@ -178,12 +178,6 @@ Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
 <p>When a card says &quot;target creature&quot; or &quot;target card&quot; it actually means &quot;target non-empty creature zone&quot; or &quot;target non-empty zone&quot;. Whichever card is in the targeted zone at time of resolution will be the target of the effect. Targets must be valid both at time of activation and also at time of resolution. So, for example, for a &quot;target creature&quot; effect, there must be a creature on the target zone at time of activation and also at the resolution time. If there is no longer a creature in the zone, the effect fizzles (i.e. is moot). If the card doing the targeting moves, rotates, or has its arrows changed in between activation and resolution, the target zone must still be &quot;reachable&quot; during resolution, or the effect fizzles.</p>
 <p>Non-active zones can still be targeted if there is a valid card in it (unless otherwise specified). For example, if a creature with &quot;Explorer&quot; moves to a non-active zone, it can still be targeted by a &quot;Target creature&quot; effect.</p>
 <p>Note that Monuments do not participate in the targeting system. Monuments cannot have arrows and cannot be orientated other than straight up. They also cannot ever be face-down. Monument zones are not part of the targeting grid, not being adjacent or connected to any other zones.</p>
-<figure style="text-align:center;">
-    <img src="/projects/dim-rift/assets/illustrations/targeting-1.svg" width="60%">
-    <figcaption>
-        Example of a creature with a 3 arrows highlighting which zones it connects to.
-    </figcaption>
-</figure>
 <h3 id="implicit-targeting" tabindex="-1">Implicit targeting</h3>
 <p>Targeting must always be done during activation, following the effect lifecycle; however it might not be specified in the Activation Criteria text (before <code>:</code>).</p>
 <p>In fact, the mere presence of the word &quot;target&quot; in any part of the effect is an implicit shorthand to call out that this card requires targeting during activation.</p>
@@ -199,6 +193,12 @@ Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
 <p>You can only target cards your card connects to.</p>
 <p>An orthogonal single arrow connects to the next zone on the row/column it points to; while a double arrow connects all the zones in that direction.</p>
 <p>A diagonal single arrow connects the zone in the next row and next column; while a double arrow connects that zone and every next zone until the end of that row.</p>
+<figure style="text-align:center;">
+    <img src="/projects/dim-rift/assets/illustrations/targeting-1.svg" width="60%">
+    <figcaption>
+        Example of a creature with a 3 arrows highlighting which zones it connects to.
+    </figcaption>
+</figure>
 <h3 id="target-from" tabindex="-1">Target from</h3>
 <p>When an effect says &quot;target <em>from</em> X&quot; it means to do the targeting operation using the position and arrows from a different card. Essentially, &quot;target as if you were that card&quot;.</p>
 <p>For example:</p>
