@@ -72,7 +72,7 @@ div.pagination {
 	text-align: center;
 }
 
-.card-grid {
+#card-grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 8px;
@@ -93,4 +93,29 @@ div.pagination {
 .stat-block img {
 	width: 16px;
 	height: 16px;
+}
+
+.filter-section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+}
+
+.filter-section p {
+	margin: 0;
+}
+
+.filter-section .game-icon {
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+}
+
+.filter-section .game-icon.selected {
+	border: 1px solid white;
+}
+
+.filter-section .game-icon:not(.selected) {
+	opacity: 0.5;
 }
