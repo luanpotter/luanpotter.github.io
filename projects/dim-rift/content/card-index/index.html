@@ -383,7 +383,7 @@
     const nodes = [...cardList.querySelectorAll('p')];
     nodes.forEach((node) => {
       const name = node.getAttribute('data-name');
-      const nameFilter = name.includes(name);
+      const nameFilter = name.toLowerCase().includes(filters.name.toLowerCase());
 
       const faction = node.getAttribute('data-faction-key');
       const factionFilter = filters.factions.has(faction);
