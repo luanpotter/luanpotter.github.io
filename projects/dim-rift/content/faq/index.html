@@ -19,12 +19,26 @@
     <main>
         
         <h1 id="faq" tabindex="-1">FAQ</h1>
-<h3 id="can-i-use-%22heal%22-effects-to-prevent-a-creature-from-dying-from-damage-greater-or-equal-to-its-maximum-life%3F" tabindex="-1">Can I use &quot;heal&quot; effects to prevent a creature from dying from damage greater or equal to its maximum life?</h3>
-<p>No. Since destruction is a state-based action, and due to the fact that you can't heal past the creature's max life, there is no moment in which you can activate a heal effect &quot;in between&quot; a creature reaching 0 current life and being destroyed.</p>
-<p>If the creature does not have zero damage counters before the lethal blow though, then you can activate in response to remove any prior damage to the creature.</p>
 <p class="notice">
     If anything in the rules wasn't clear, please let me know so I can improve it & add it to the FAQ!
 </p>
+<h3 id="if-a-card-is-destroyed%2C-will-its-effects-resolve%3F" tabindex="-1">If a card is destroyed, will its effects resolve?</h3>
+<p>No. Cards must still be on the field at the time of resolution for their effects to resolve. Not only that, but they still need to be connected to the same zones that were targeted at activation. If they were moved or rotated but can still connect to their targets, the effect can resolve.</p>
+<h3 id="what-is-the-correct-interaction-between-armor%2C-necrotic-and-resilient-when-dealing-damage%3F" tabindex="-1">What is the correct interaction between Armor, Necrotic and Resilient when dealing damage?</h3>
+<p>Armor reduces incoming damage by the armor amount, down to at least 1.</p>
+<p>Necrotic damage does not get cleaned up.</p>
+<p>Resilient creatures, if dealt lethal damage, only take enough damage to remain with 1 current life.</p>
+<p>So if a creature deals 5 Necrotic damage to a 2 Life, 2 Armor, 0 damage creature with Resilient, the following happens:</p>
+<ul>
+<li>The incoming damage (5) is reduced by Armor down to 3</li>
+<li>The creature would then take 3 Necrotic damage, but that would be lethal</li>
+<li>Due to Resilient, the incoming damage is reduced to 1, as that is the most damage the creature can take without being lethal</li>
+<li>The 1 damage that goes through is still Necrotic</li>
+</ul>
+<h3 id="can-i-use-%22heal%22-effects-to-prevent-a-creature-from-dying-from-damage-greater-or-equal-to-its-maximum-life%3F" tabindex="-1">Can I use &quot;heal&quot; effects to prevent a creature from dying from damage greater or equal to its maximum life?</h3>
+<p>No. Since destruction is a state-based action, and due to the fact that you can't heal past the creature's max life, there is no moment in which you can activate a heal effect &quot;in between&quot; a creature reaching 0 current life and being destroyed.</p>
+<p>If the creature does not have zero damage counters before the lethal blow though, then you can activate in response to remove any prior damage to the creature.</p>
+
     </main>
 </body>
 
