@@ -94,6 +94,14 @@ Note that if you choose to do that, you can't also use the same Scroll as a arti
     </figcaption>
 </figure>
 <p>Monuments are extremely resilient as they cannot be targeted and do not interact with the targeting system. They are rare and you have only one Monument zone, and have effects that normally affect the entire battlefield.</p>
+<h2 id="card-lifecycle" tabindex="-1">Card Lifecycle</h2>
+<p>In order to prevent infinite loops and other broken shenanigans, DimRift observes a strict card lifecycle. While effects have full reign within these guidelines, rarely, if ever, they should be violated.</p>
+<figure style="text-align:center;">
+    <img src="/projects/dim-rift/assets/illustrations/card-lifecycle.svg" width="80%">
+    <figcaption>
+        Diagram illustrating the card lifecycle state machine and transitions.
+    </figcaption>
+</figure>
 
     </main>
 </body>
