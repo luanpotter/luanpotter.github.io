@@ -91,6 +91,7 @@ div.pagination {
 }
 
 .stat-block img {
+	image-rendering: pixelated;
 	width: 16px;
 	height: 16px;
 }
