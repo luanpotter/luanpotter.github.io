@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/mana.png">
+    <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/projects/dim-rift/">Dimensional Rift</a></h1>
+        <a href="/projects/dim-rift/">Home</a> |
+        <a href="/projects/dim-rift/introduction">Introduction</a> |
+        <a href="/projects/dim-rift/rules">Rules</a> |
+        <a href="/projects/dim-rift/wiki">Wiki</a> |
+        <a href="/projects/dim-rift/references">References</a>
+    </header>
+    <main>
+        
+        <div class="filter-section">
+  <p>
+    <strong>Filter:</strong> <input type="text" id="filter-card">
+  </p>
+  <p>
+    <span id="faction-icons">
+      <img data-faction-key="men" class="game-icon selected" src="/projects/dim-rift/assets/icons/men.png">
+      <img data-faction-key="fey" class="game-icon selected" src="/projects/dim-rift/assets/icons/fey.png">
+      <img data-faction-key="telur" class="game-icon selected" src="/projects/dim-rift/assets/icons/telur.png">
+      <img data-faction-key="wynn" class="game-icon selected" src="/projects/dim-rift/assets/icons/wynn.png">
+      <img data-faction-key="unaligned" class="game-icon selected" src="/projects/dim-rift/assets/icons/none.png">
+    </span>
+    |
+    <span id="extra-icons">
+      <img data-extra-key="true" class="game-icon selected" src="/projects/dim-rift/assets/icons/extra.png">
+      <img data-extra-key="false" class="game-icon selected" src="/projects/dim-rift/assets/icons/none.png">
+    </span>
+    |
+    <span id="type-icons">
+      <img data-type-key="creature" class="game-icon selected" src="/projects/dim-rift/assets/icons/c-creature.png">
+      <img data-type-key="artifact" class="game-icon selected" src="/projects/dim-rift/assets/icons/c-artifact.png">
+      <img data-type-key="monument" class="game-icon selected" src="/projects/dim-rift/assets/icons/c-monument.png">
+    </span>
+  </p>
+</div>
+
+<div id="card-list"><p data-faction-key="unaligned" data-name="Dangerous Defender" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/dangerous_defender">Dangerous Defender</a>
+    </p><p data-faction-key="unaligned" data-name="Artifact Defender" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/artifact_defender">Artifact Defender</a>
+    </p><p data-faction-key="unaligned" data-name="Cursed Defender" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/cursed_defender">Cursed Defender</a>
+    </p><p data-faction-key="unaligned" data-name="Spiked Defender" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/spiked_defender">Spiked Defender</a>
+    </p><p data-faction-key="unaligned" data-name="Recycled Construct" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/recycled_construct">Recycled Construct</a>
+    </p><p data-faction-key="unaligned" data-name="Assault Catapult" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/assault_catapult">Assault Catapult</a>
+    </p><p data-faction-key="unaligned" data-name="Filthy Rogue" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/filthy_rogue">Filthy Rogue</a>
+    </p><p data-faction-key="unaligned" data-name="Enraged Barbarian" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/enraged_barbarian">Enraged Barbarian</a>
+    </p><p data-faction-key="unaligned" data-name="Magical Apprentice" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/magical_apprentice">Magical Apprentice</a>
+    </p><p data-faction-key="unaligned" data-name="Shielded Warrior" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/shielded_warrior">Shielded Warrior</a>
+    </p><p data-faction-key="unaligned" data-name="Aberrant Growth" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/aberrant_growth">Aberrant Growth</a>
+    </p><p data-faction-key="unaligned" data-name="Mercenary Brigade" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/mercenary_brigade">Mercenary Brigade</a>
+    </p><p data-faction-key="unaligned" data-name="Sword & Shield" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/sword_and_shield">Sword & Shield</a>
+    </p><p data-faction-key="unaligned" data-name="Swift Boots" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/swift_boots">Swift Boots</a>
+    </p><p data-faction-key="unaligned" data-name="Anti-Magical Field Device" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/anti_magical_field_device">Anti-Magical Field Device</a>
+    </p><p data-faction-key="unaligned" data-name="Artifact Evacuation Device" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/artifact_evacuation_device">Artifact Evacuation Device</a>
+    </p><p data-faction-key="unaligned" data-name="Thunderous Avalanche" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/thunderous_avalanche">Thunderous Avalanche</a>
+    </p><p data-faction-key="unaligned" data-name="Double Chariots" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/double_chariots">Double Chariots</a>
+    </p><p data-faction-key="unaligned" data-name="Chained Lightning" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/chained_lightning">Chained Lightning</a>
+    </p><p data-faction-key="unaligned" data-name="Monolith" data-extra-key="false" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/monolith">Monolith</a>
+    </p><p data-faction-key="unaligned" data-name="Battle Arena" data-extra-key="false" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/battle_arena">Battle Arena</a>
+    </p><p data-faction-key="unaligned" data-name="Mana Rock" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/mana_rock">Mana Rock</a>
+    </p><p data-faction-key="unaligned" data-name="Madook and His Friends" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/madook_and_his_friends">Madook and His Friends</a>
+    </p><p data-faction-key="unaligned" data-name="Watchful Hiker" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/watchful_hiker">Watchful Hiker</a>
+    </p><p data-faction-key="unaligned" data-name="Chained Blessing" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/chained_blessing">Chained Blessing</a>
+    </p><p data-faction-key="unaligned" data-name="Zippy Rabbit" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/zippy_rabbit">Zippy Rabbit</a>
+    </p><p data-faction-key="unaligned" data-name="Shrouded Veil" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/shrouded_veil">Shrouded Veil</a>
+    </p><p data-faction-key="unaligned" data-name="Energetic Release Capsule" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/energetic_release_capsule">Energetic Release Capsule</a>
+    </p><p data-faction-key="unaligned" data-name="Illusory Projection" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/illusory_projection">Illusory Projection</a>
+    </p><p data-faction-key="unaligned" data-name="Elusive Benefactor" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/elusive_benefactor">Elusive Benefactor</a>
+    </p><p data-faction-key="unaligned" data-name="Superfluous Mirror" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/superfluous_mirror">Superfluous Mirror</a>
+    </p><p data-faction-key="unaligned" data-name="Shadowy Figure" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/shadowy_figure">Shadowy Figure</a>
+    </p><p data-faction-key="unaligned" data-name="Royal Library of Lithanur" data-extra-key="true" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/royal_library_of_lithanur">Royal Library of Lithanur</a>
+    </p><p data-faction-key="unaligned" data-name="Double or Nothing" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/double_or_nothing">Double or Nothing</a>
+    </p><p data-faction-key="unaligned" data-name="Token of Resilience" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/token_of_resilience">Token of Resilience</a>
+    </p><p data-faction-key="unaligned" data-name="Gritty Swashbuckler" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/gritty_swashbuckler">Gritty Swashbuckler</a>
+    </p><p data-faction-key="unaligned" data-name="Hardworking Consul" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/hardworking_consul">Hardworking Consul</a>
+    </p><p data-faction-key="unaligned" data-name="White Flag" data-extra-key="true" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/white_flag">White Flag</a>
+    </p><p data-faction-key="unaligned" data-name="External Armor" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/external_armor">External Armor</a>
+    </p><p data-faction-key="unaligned" data-name="Battle Cart" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/battle_cart">Battle Cart</a>
+    </p><p data-faction-key="unaligned" data-name="Tamed Ostrich" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/tamed_ostrich">Tamed Ostrich</a>
+    </p><p data-faction-key="unaligned" data-name="Whispering Nomad" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/whispering_nomad">Whispering Nomad</a>
+    </p><p data-faction-key="unaligned" data-name="Constellation Seeker" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/constellation_seeker">Constellation Seeker</a>
+    </p><p data-faction-key="unaligned" data-name="Guardian at the Gates" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/guardian_at_the_gates">Guardian at the Gates</a>
+    </p><p data-faction-key="unaligned" data-name="Ensnare Creature" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/ensnare_creature">Ensnare Creature</a>
+    </p><p data-faction-key="unaligned" data-name="Unexpected Response" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/unexpected_response">Unexpected Response</a>
+    </p><p data-faction-key="unaligned" data-name="Cylindrical Concoction" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/cylindrical_concoction">Cylindrical Concoction</a>
+    </p><p data-faction-key="unaligned" data-name="Attack Reaction" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/attack_reaction">Attack Reaction</a>
+    </p><p data-faction-key="unaligned" data-name="Lunar Sighting" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/lunar_sighting">Lunar Sighting</a>
+    </p><p data-faction-key="unaligned" data-name="Hidden Strings" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/hidden_strings">Hidden Strings</a>
+    </p><p data-faction-key="men" data-name="Hardened Peasant" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/hardened_peasant">Hardened Peasant</a>
+    </p><p data-faction-key="men" data-name="Fearless Sentinel" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/fearless_sentinel">Fearless Sentinel</a>
+    </p><p data-faction-key="men" data-name="City Watchman" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/city_watchman">City Watchman</a>
+    </p><p data-faction-key="men" data-name="Crafty Diplomat" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/crafty_diplomat">Crafty Diplomat</a>
+    </p><p data-faction-key="men" data-name="Noble Squire" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/noble_squire">Noble Squire</a>
+    </p><p data-faction-key="men" data-name="Deceitful Acolyte" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/deceitful_acolyte">Deceitful Acolyte</a>
+    </p><p data-faction-key="men" data-name="Orderly Cleric" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/orderly_cleric">Orderly Cleric</a>
+    </p><p data-faction-key="men" data-name="Devout Priest" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/devout_priest">Devout Priest</a>
+    </p><p data-faction-key="men" data-name="Paladin of Hope" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/paladin_of_hope">Paladin of Hope</a>
+    </p><p data-faction-key="men" data-name="Sword of Theranor" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/sword_of_theranor">Sword of Theranor</a>
+    </p><p data-faction-key="men" data-name="Sacred Texts" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/sacred_texts">Sacred Texts</a>
+    </p><p data-faction-key="men" data-name="Valiant Horse" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/valiant_horse">Valiant Horse</a>
+    </p><p data-faction-key="men" data-name="Fishing Boat" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/fishing_boat">Fishing Boat</a>
+    </p><p data-faction-key="men" data-name="Holy Caravel" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/holy_caravel">Holy Caravel</a>
+    </p><p data-faction-key="men" data-name="Towering Lighthouse" data-extra-key="false" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/towering_lighthouse">Towering Lighthouse</a>
+    </p><p data-faction-key="men" data-name="Blasphemous Servant of Our Lord" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/blasphemous_servant_of_our_lord">Blasphemous Servant of Our Lord</a>
+    </p><p data-faction-key="men" data-name="Fallen Archangel" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/fallen_archangel">Fallen Archangel</a>
+    </p><p data-faction-key="men" data-name="Righteous Knight of the Queen" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/righteous_knight_of_the_queen">Righteous Knight of the Queen</a>
+    </p><p data-faction-key="men" data-name="High Priestess of Altaria" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/high_priestess_of_altaria">High Priestess of Altaria</a>
+    </p><p data-faction-key="men" data-name="Divine Gauntlet of Faith" data-extra-key="true" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/divine_gauntlet_of_faith">Divine Gauntlet of Faith</a>
+    </p><p data-faction-key="men" data-name="Church of the New Covenant" data-extra-key="true" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/church_of_the_new_covenant">Church of the New Covenant</a>
+    </p><p data-faction-key="men" data-name="Avatar of the False God, Galadon" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/avatar_of_the_false_god_galadon">Avatar of the False God, Galadon</a>
+    </p><p data-faction-key="fey" data-name="Dim-witted forest-dweller" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/dim_witted_forest_dweller">Dim-witted forest-dweller</a>
+    </p><p data-faction-key="fey" data-name="Poetic Ranger" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/poetic_ranger">Poetic Ranger</a>
+    </p><p data-faction-key="fey" data-name="Renowned Hunter" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/renowned_hunter">Renowned Hunter</a>
+    </p><p data-faction-key="fey" data-name="Elder Druid" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/elder_druid">Elder Druid</a>
+    </p><p data-faction-key="fey" data-name="Gatherer of Dreams" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/gatherer_of_dreams">Gatherer of Dreams</a>
+    </p><p data-faction-key="fey" data-name="Reluctant Poacher" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/reluctant_poacher">Reluctant Poacher</a>
+    </p><p data-faction-key="fey" data-name="Feral Boar" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/feral_boar">Feral Boar</a>
+    </p><p data-faction-key="fey" data-name="Feral Hyena" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/feral_hyena">Feral Hyena</a>
+    </p><p data-faction-key="fey" data-name="Call of the Wild" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/call_of_the_wild">Call of the Wild</a>
+    </p><p data-faction-key="fey" data-name="Serenade of the Forest" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/serenade_of_the_forest">Serenade of the Forest</a>
+    </p><p data-faction-key="fey" data-name="Violent Winds" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/violent_winds">Violent Winds</a>
+    </p><p data-faction-key="fey" data-name="Morning Dew" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/morning_dew">Morning Dew</a>
+    </p><p data-faction-key="fey" data-name="Woodland Whispers" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/woodland_whispers">Woodland Whispers</a>
+    </p><p data-faction-key="fey" data-name="Verdant Burst" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/verdant_burst">Verdant Burst</a>
+    </p><p data-faction-key="fey" data-name="Tiny Tree House" data-extra-key="false" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/tiny_tree_house">Tiny Tree House</a>
+    </p><p data-faction-key="fey" data-name="The Lone Wolf" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/the_lone_wolf">The Lone Wolf</a>
+    </p><p data-faction-key="fey" data-name="The Mighty Bear" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/the_mighty_bear">The Mighty Bear</a>
+    </p><p data-faction-key="fey" data-name="Zion & Shawarma, Formidable Rats" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/zion_and_shawarma_formidable_rats">Zion & Shawarma, Formidable Rats</a>
+    </p><p data-faction-key="fey" data-name="The Atrocious Eagle" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/the_atrocious_eagle">The Atrocious Eagle</a>
+    </p><p data-faction-key="fey" data-name="Unavoidable Tremors" data-extra-key="true" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/unavoidable_tremors">Unavoidable Tremors</a>
+    </p><p data-faction-key="fey" data-name="Deep Forest Temple" data-extra-key="true" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/deep_forest_temple">Deep Forest Temple</a>
+    </p><p data-faction-key="fey" data-name="Mother Nature" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/mother_nature">Mother Nature</a>
+    </p><p data-faction-key="telur" data-name="Crafty Engineer" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/crafty_engineer">Crafty Engineer</a>
+    </p><p data-faction-key="telur" data-name="A.L. Armstrong" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/a_l_armstrong">A.L. Armstrong</a>
+    </p><p data-faction-key="telur" data-name="Ramshackle Convoy" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/ramshackle_convoy">Ramshackle Convoy</a>
+    </p><p data-faction-key="telur" data-name="Dexterous Acrobat" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/dexterous_acrobat">Dexterous Acrobat</a>
+    </p><p data-faction-key="telur" data-name="Enlightened Builder" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/enlightened_builder">Enlightened Builder</a>
+    </p><p data-faction-key="telur" data-name="Skilled Operator" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/skilled_operator">Skilled Operator</a>
+    </p><p data-faction-key="telur" data-name="Biomechanical Convolution" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/biomechanical_convolution">Biomechanical Convolution</a>
+    </p><p data-faction-key="telur" data-name="Unstable Engine" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/unstable_engine">Unstable Engine</a>
+    </p><p data-faction-key="telur" data-name="Autonomous Submarine" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/autonomous_submarine">Autonomous Submarine</a>
+    </p><p data-faction-key="telur" data-name="Pneumatic Potato Pounder" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/pneumatic_potato_pounder">Pneumatic Potato Pounder</a>
+    </p><p data-faction-key="telur" data-name="Scapegoat" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/scapegoat">Scapegoat</a>
+    </p><p data-faction-key="telur" data-name="Protection Goggles" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/protection_goggles">Protection Goggles</a>
+    </p><p data-faction-key="telur" data-name="Studded Leather Gloves" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/studded_leather_gloves">Studded Leather Gloves</a>
+    </p><p data-faction-key="telur" data-name="Scrapyard Reanimator" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/scrapyard_reanimator">Scrapyard Reanimator</a>
+    </p><p data-faction-key="telur" data-name="Lookout Tower" data-extra-key="false" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/lookout_tower">Lookout Tower</a>
+    </p><p data-faction-key="telur" data-name="Perfect Conduit" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/perfect_conduit">Perfect Conduit</a>
+    </p><p data-faction-key="telur" data-name="The Facilitator" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/the_facilitator">The Facilitator</a>
+    </p><p data-faction-key="telur" data-name="Telur Leader" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/telur_leader">Telur Leader</a>
+    </p><p data-faction-key="telur" data-name="Mechanized Shield" data-extra-key="true" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/mechanized_shield">Mechanized Shield</a>
+    </p><p data-faction-key="telur" data-name="Mana Negation Contraption" data-extra-key="true" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/mana_negation_contraption">Mana Negation Contraption</a>
+    </p><p data-faction-key="telur" data-name="Meticulously Engineered Contraption of Homogeneity Advancement" data-extra-key="true" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/meticulously_engineered_contraption_of_homogeneity_advancement">Meticulously Engineered Contraption of Homogeneity Advancement</a>
+    </p><p data-faction-key="telur" data-name="Pivotal Transmission Central" data-extra-key="true" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/pivotal_transmission_central">Pivotal Transmission Central</a>
+    </p><p data-faction-key="wynn" data-name="Disheveled Researcher" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/disheveled_researcher">Disheveled Researcher</a>
+    </p><p data-faction-key="wynn" data-name="Suspicious Mountaineer" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/suspicious_mountaineer">Suspicious Mountaineer</a>
+    </p><p data-faction-key="wynn" data-name="Prophetic Seer" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/prophetic_seer">Prophetic Seer</a>
+    </p><p data-faction-key="wynn" data-name="Ghastly Shaman" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/ghastly_shaman">Ghastly Shaman</a>
+    </p><p data-faction-key="wynn" data-name="Veiled Necromancer" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/veiled_necromancer">Veiled Necromancer</a>
+    </p><p data-faction-key="wynn" data-name="Elemental Magus" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/elemental_magus">Elemental Magus</a>
+    </p><p data-faction-key="wynn" data-name="Spirit Caller" data-extra-key="false" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/spirit_caller">Spirit Caller</a>
+    </p><p data-faction-key="wynn" data-name="Morbid Rites" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/morbid_rites">Morbid Rites</a>
+    </p><p data-faction-key="wynn" data-name="Scroll of Forsaking" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/scroll_of_forsaking">Scroll of Forsaking</a>
+    </p><p data-faction-key="wynn" data-name="Enigmatic Tome" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/enigmatic_tome">Enigmatic Tome</a>
+    </p><p data-faction-key="wynn" data-name="Sacrificial Dagger" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/sacrificial_dagger">Sacrificial Dagger</a>
+    </p><p data-faction-key="wynn" data-name="Altar of Despair" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/altar_of_despair">Altar of Despair</a>
+    </p><p data-faction-key="wynn" data-name="Obsidian Rune Stone" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/obsidian_rune_stone">Obsidian Rune Stone</a>
+    </p><p data-faction-key="wynn" data-name="Ancient Ossuary Relic" data-extra-key="false" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/ancient_ossuary_relic">Ancient Ossuary Relic</a>
+    </p><p data-faction-key="wynn" data-name="Hidden Tunnel Network" data-extra-key="false" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/hidden_tunnel_network">Hidden Tunnel Network</a>
+    </p><p data-faction-key="wynn" data-name="Frozen Shrine of the Fallen" data-extra-key="true" data-type-key="monument">
+      <a href="/projects/dim-rift/cards/card-index/frozen_shrine_of_the_fallen">Frozen Shrine of the Fallen</a>
+    </p><p data-faction-key="wynn" data-name="Primordial Underworld Entity" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/primordial_underworld_entity">Primordial Underworld Entity</a>
+    </p><p data-faction-key="wynn" data-name="Eldritch Sorcerer" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/eldritch_sorcerer">Eldritch Sorcerer</a>
+    </p><p data-faction-key="wynn" data-name="Elder Sage of the Mountaintop" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/elder_sage_of_the_mountaintop">Elder Sage of the Mountaintop</a>
+    </p><p data-faction-key="wynn" data-name="Harbinger of Desolation" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/harbinger_of_desolation">Harbinger of Desolation</a>
+    </p><p data-faction-key="wynn" data-name="Deep-dwelling Horror" data-extra-key="true" data-type-key="creature">
+      <a href="/projects/dim-rift/cards/card-index/deep_dwelling_horror">Deep-dwelling Horror</a>
+    </p><p data-faction-key="wynn" data-name="Locket of the Ineffable Void" data-extra-key="true" data-type-key="artifact">
+      <a href="/projects/dim-rift/cards/card-index/locket_of_the_ineffable_void">Locket of the Ineffable Void</a>
+    </p></div>
+
+<script>
+  const cardList = document.querySelector('#card-list');
+  const cardFilter = document.querySelector('#filter-card');
+  const factionIcons = [...document.querySelectorAll('#faction-icons img')];
+  const extraIcons = [...document.querySelectorAll('#extra-icons img')];
+  const typeIcons = [...document.querySelectorAll('#type-icons img')];
+
+  const filters = {
+    name: '',
+    factions: new Set(['men', 'fey', 'telur', 'wynn', 'unaligned']),
+    extras: new Set(['true', 'false']),
+    types: new Set(['creature', 'artifact', 'monument']),
+  };
+  
+  cardFilter.addEventListener('input', function () {
+    const value = this.value.toLowerCase();
+    filters.name = value;
+    doFilter();
+  });
+
+  const setupIcons = (icons, filterName, dataAttribute) => {
+    icons.forEach((icon) => {
+      icon.addEventListener('click', function () {
+        const node = this;
+        node.classList.toggle('selected');
+        const isSelected = node.classList.contains('selected');
+        const key = node.getAttribute(dataAttribute);
+        filters[filterName].toggle(key, isSelected);
+        doFilter();
+      });
+    });
+  };
+
+  setupIcons(factionIcons, 'factions', 'data-faction-key');
+  setupIcons(extraIcons, 'extras', 'data-extra-key');
+  setupIcons(typeIcons, 'types', 'data-type-key');
+  
+  const doFilter = () => {
+    const nodes = [...cardList.querySelectorAll('p')];
+    nodes.forEach((node) => {
+      const name = node.getAttribute('data-name');
+      const nameFilter = name.toLowerCase().includes(filters.name.toLowerCase());
+
+      const faction = node.getAttribute('data-faction-key');
+      const factionFilter = filters.factions.has(faction);
+
+      const extra = node.getAttribute('data-extra-key');
+      const extraFilter = filters.extras.has(extra);
+
+      const type = node.getAttribute('data-type-key');
+      const typeFilter = filters.types.has(type);
+
+      const visible = nameFilter && factionFilter && extraFilter && typeFilter;
+      node.style.display = visible ? 'block' : 'none';
+    });
+  };
+
+  Set.prototype.toggle = function (element, value) {
+    const isAdd = value ?? !this.has(element);
+    if (isAdd) {
+      this.add(element);
+    } else {
+      this.delete(element);
+    }
+  };
+</script>
+    </main>
+</body>
+
+</html>

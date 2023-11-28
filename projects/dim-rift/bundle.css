@@ -56,6 +56,10 @@ div.pagination {
 	justify-content: space-between;
 }
 
+div.pagination p {
+	margin: 0;
+}
+
 .game-icon {
 	image-rendering: pixelated;
 	width: 64px;
@@ -88,6 +92,7 @@ div.pagination {
 	padding: 2px;
 	margin: 4px;
 	border: 1px solid;
+	text-decoration: none;
 }
 
 .stat-block img {

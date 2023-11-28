@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/mana.png">
+    <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/projects/dim-rift/">Dimensional Rift</a></h1>
+        <a href="/projects/dim-rift/">Home</a> |
+        <a href="/projects/dim-rift/introduction">Introduction</a> |
+        <a href="/projects/dim-rift/rules">Rules</a> |
+        <a href="/projects/dim-rift/wiki">Wiki</a> |
+        <a href="/projects/dim-rift/references">References</a>
+    </header>
+    <main>
+        
+        <div class="pagination">
+            
+            <p></p>
+            
+            
+            <p><a href="/projects/dim-rift/introduction/lore">&gt; Lore</a></p>
+            
+        </div>
+        
+        <h1 id="principles" tabindex="-1">Principles</h1>
+<p>Why yet another card game? These are some of the design goals that went into creating Dimensional Rift.</p>
+<h2 id="positional" tabindex="-1">Positional</h2>
+<p>This is the main design element of DimRift, and it is heavily inspired by the &quot;Shifting Shadows&quot; and Link card in Yu-Gi-Oh!. Cards have specific positions in the field in that game, unlike MTG/Pokemon, and their specific orientation and the arrows drawn in the card determine which zones can be targets. Most design decisions are direct and indirect consequences of this premise.</p>
+<h2 id="a-%22non-tcg%22-tcg" tabindex="-1">A &quot;non-TCG&quot; TCG</h2>
+<p>I love the deck building and gameplay aspect of the famous TCGs out there, like Yu-Gi-Oh! and Magic The Gathering. However, the real life grind to acquire new, expensive cards, the power creep, ban lists, etc. are things I really dislike. DimRift brings the deck building aspect within the game, in a concept similar to Magic's &quot;draft&quot; or &quot;constructed&quot; game mode. However, the set of cards in pre-defined and come all together on the same &quot;box&quot;.</p>
+<h2 id="chains" tabindex="-1">Chains</h2>
+<p>I love chains (or the Stack) in TCG games, and I want Dimensional Rift to encourage the player to chain lots of cards, but without being unfair to the other player. So you cannot play cards from your hand on the other players' turn but you can set cards face-down in the field just like in Yu-Gi-Oh!, and activate them in your opponent's turn to disrupt their plans.</p>
+<h2 id="no-generic-counters" tabindex="-1">No Generic Counters</h2>
+<p>To make cooler chains, instead of generic counter spells, cards will just affect the board and hopefully make other effects miss target, fizzle, or just do the opposite of what the opponent intended.</p>
+<h2 id="no-dedicated-resource-system" tabindex="-1">No Dedicated Resource System</h2>
+<p>I don't quite fancy having cards like Pokemon's Energies or Magic's Lands cluttering your deck; DimRift uses other kinds of resources to gatekeep powerful cards and those are not in your deck (Summoning Tokens, material costs, mana costs, life, for example). All cards in your deck will represent intentional choices and will have powers and effects of their own. No chance of mana screw of flood!</p>
+<h2 id="few-card-with-costs" tabindex="-1">Few Card with Costs</h2>
+<p>Alongside no primary resource system, in general, most cards in your deck also have no cost whatsoever; you are constrained by your card draw power and how you want to distribute your resources towards the game; if you use all your 5 cards turn 1 you will be at a disadvantage later.</p>
+<p>Essentially, you should be able to play most cards in your hand each turn - and the gameplay choice is to pick which one(s). In MTG's turn one, two and sometimes even three, you often have absolutely no choice whatsoever as there is only one optimal play. That shall not be the case here. While some cards do have cost, most of the powerful, costly cards are in your extra deck and not cluttering your hand.</p>
+<h2 id="no-%22card-specific%22-cards" tabindex="-1">No &quot;card-specific&quot; Cards</h2>
+<p>As games like Yu-Gi-Oh! power creep, you start to get cards designed with very specific combos in mind, to the point that some cards mention other cards names in their effects. No card in DimRift will ever mention another card's name; the effects will be generic and can mention attributes of cards in order to match certain themes, but the goal is that there is no pre-defined combos; there are sets of cards with similar/compounding effects that work well together but on the actual play each effect will be used differently.</p>
+<h2 id="no-banishment" tabindex="-1">No Banishment</h2>
+<p>Banishment, exile or remove from play are just next tiers of graveyards. Without power creep making the graveyard your second hand, effects that target, activate or restore things from your graveyard do not exist DimRift. So unlike other TCGs, there is no concept of removing from play (or, god forbid, banish face down, the 3rd tier of removal in Yu-Gi-Oh!). There is only one level of graveyard, and it's forever.</p>
+<h2 id="card-lifecycle" tabindex="-1">Card Lifecycle</h2>
+<p>Every card has a lifecycle. It starts being drawn from your deck to your hand (never searched). It is then played from your hand or extra deck to the field, potentially face down. Eventually it is summoned and triggers &quot;When summoned&quot; effects. It stays in the battlefield until it is destroyed, triggering its &quot;When destroyed&quot; effects. Then it goes to the grave and stays there. Forever. No Monster Reborn.</p>
+<p>This kind of restriction places a &quot;sanity-check&quot; on effects that could allow for broken, infinite loops. A design goal of DimRift is to have no infinite combos, FTKs or other similar nonsense from power-crept games.</p>
+<h2 id="reasonable-effects" tabindex="-1">Reasonable Effects</h2>
+<p>No single effects with dozens of lines. Each effect in a card should be relatively easy to explain to your opponent. Complex combos should be made by combining multiple effects in a chain.</p>
+<p>At the same time, every card has at least one, probably two or three effects, for different situations. No effectless monsters that turn the gameplay choice into an obvious &quot;bigger number&quot; choice.</p>
+<h2 id="no-tutors" tabindex="-1">No Tutors</h2>
+<p>No tutors or deck searches. This is a card game, meaning it must combine skill with luck (hand draw). Each duel should be unique depending on the cards you draw. Very powerful effects might allow you to draw extra cards, but never search your deck. Searching is time consuming and causes analysis paralysis, is a gateway to power creep and violates the fundamental boundaries of a card game.</p>
+<h2 id="no-%22colors%22" tabindex="-1">No &quot;colors&quot;</h2>
+<p>Every card can be used in every deck. There are 4 main factions, that are stand-ins for core decks with some similar effects, plus the unaligned cards that are drafted to compose the other half; but, essentially, any card should work on any deck. You could shuffle the core cards plus unaligned cards and do a full random draft if you so desire. The same goes for the type of effects the cards feature; when drafting, there are no &quot;moot&quot; cards. Every card can work on any deck. Of course some combinations and synergies can work better than others, but everything should be at least viable.</p>
+<h2 id="no-alternative-winning-conditions" tabindex="-1">No alternative winning conditions</h2>
+<p>Because of the previous points, one corollary is that there should be no alternative win conditions. There can be only one losing condition, which is reaching 0 life - which causes the opponent to win. That means that all cards can be aligned towards the same goal. There can be no mill (your opponent's deck) effects, for example, because they are useless unless your entire decks contributes to that win condition. If you add a single mill card to an otherwise damage focused deck, it is moot. This goes against the game being easily &quot;draftable&quot;. Just imagine &quot;drafting&quot; a Yu-Gi-Oh! deck by randomly sampling from the entire set of existing cards - you will immediately see all the issues that I am trying to avoid.</p>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/mana.png">
+    <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/projects/dim-rift/">Dimensional Rift</a></h1>
+        <a href="/projects/dim-rift/">Home</a> |
+        <a href="/projects/dim-rift/introduction">Introduction</a> |
+        <a href="/projects/dim-rift/rules">Rules</a> |
+        <a href="/projects/dim-rift/wiki">Wiki</a> |
+        <a href="/projects/dim-rift/references">References</a>
+    </header>
+    <main>
+        
+        <div class="filter-section">
+  <p>
+    <strong>Filter:</strong> <input type="text" id="filter-conditions">
+  </p>
+</div>
+
+<div id="conditions-list"><p data-condition-key="blessed"><a href="/projects/dim-rift/wiki/Blessed"><strong>Blessed</strong></a>: A creature is "Blessed" if and only if another creature you control with at least 1 mana connects to it. The "Blessed" effect is active if and only if the creature is "Blessed".
+</p><p data-condition-key="manalock"><a href="/projects/dim-rift/wiki/Manalock"><strong>Manalock</strong></a>: Target card cannot consume its own mana or activate effects that cost mana until the end of turn. If that card has an effect in this chain that would qualify, that effect fizzles.
+</p><p data-condition-key="prone"><a href="/projects/dim-rift/wiki/Prone"><strong>Prone</strong></a>: Prone creatures cannot perform actions. They can use an "get up" action to lose their Prone condition.</p><p data-condition-key="sealed"><a href="/projects/dim-rift/wiki/Sealed"><strong>Sealed</strong></a>: Sealed creatures have: "Sac [this]: collect an extra Soul". Sealed creatures have: "When destroyed: you pay 2 life."
+</p></div>
+
+<script>
+  const conditionsList = document.querySelector('#conditions-list');
+  const conditionsFilter = document.querySelector('#filter-conditions');
+  
+  conditionsFilter.addEventListener('input', function () {
+    const value = this.value.toLowerCase();
+    const nodes = [...conditionsList.querySelectorAll('p')];
+    nodes.forEach((node) => {
+      const name = node.querySelector('strong').innerHTML.toLowerCase();
+      const visible = name.includes(value);
+      node.style.display = visible ? 'block' : 'none';
+    });
+  });
+</script>
+    </main>
+</body>
+
+</html>

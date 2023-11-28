@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/mana.png">
+    <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/projects/dim-rift/">Dimensional Rift</a></h1>
+        <a href="/projects/dim-rift/">Home</a> |
+        <a href="/projects/dim-rift/introduction">Introduction</a> |
+        <a href="/projects/dim-rift/rules">Rules</a> |
+        <a href="/projects/dim-rift/wiki">Wiki</a> |
+        <a href="/projects/dim-rift/references">References</a>
+    </header>
+    <main>
+        
+        <div class="filter-section">
+  <p>
+    <strong>Filter:</strong> <input type="text" id="filter-keyword">
+  </p>
+</div>
+
+<div id="keyword-list"><p data-keyword-key="autonomous"><a href="/projects/dim-rift/wiki/Autonomous"><strong>Autonomous</strong></a>: The Movement stat printed on this card is considered both transferred and not transferred. If [this] is not equipped or crewed: all transferred effects on [this] can be used as if they were not transferred. [this] can perform the Move Action. When destroyed: collect Souls according to rank.
+</p><p data-keyword-key="conduit"><a href="/projects/dim-rift/wiki/Conduit"><strong>Conduit</strong></a>: A card connected to [this] can use this card's arrows for their targeting.</p><p data-keyword-key="defender"><a href="/projects/dim-rift/wiki/Defender"><strong>Defender</strong></a>: This creature cannot declare an Attack Action.</p><p data-keyword-key="evasive"><a href="/projects/dim-rift/wiki/Evasive"><strong>Evasive</strong></a>: This creature can only be blocked by the creature in the zone it is attacking.</p><p data-keyword-key="explorer"><a href="/projects/dim-rift/wiki/Explorer"><strong>Explorer</strong></a>: This card can move to non-activated zones you control.</p><p data-keyword-key="focused"><a href="/projects/dim-rift/wiki/Focused"><strong>Focused</strong></a>: [this] cannot block creatures attacking zones other than its own.</p><p data-keyword-key="inspired"><a href="/projects/dim-rift/wiki/Inspired"><strong>Inspired</strong></a>: [this] can perform an extra Action each Event.</p><p data-keyword-key="re_target"><a href="/projects/dim-rift/wiki/Re-target"><strong>Re-target</strong></a>: When this card is targeted; immediately before that effect/attack resolves: choose a new valid target zone using [this]'s arrows.
+</p><p data-keyword-key="resilient"><a href="/projects/dim-rift/wiki/Resilient"><strong>Resilient</strong></a>: When [this] would receive lethal damage: [this] only takes up to its (Life - 1) instead.</p><p data-keyword-key="shadowwalker"><a href="/projects/dim-rift/wiki/Shadowwalker"><strong>Shadowwalker</strong></a>: You can choose another face-down creature you control; flip this back face-down and switch their positions. You cannot activate more than one Shadowwalker effect per chain.
+</p><p data-keyword-key="transform"><a href="/projects/dim-rift/wiki/Transform"><strong>Transform</strong></a>: When the transform condition is met, you must immediately resolve: "Sac [this]: you can summon from your Extra Deck a [Transformed] creature"
+</p><p data-keyword-key="transformed"><a href="/projects/dim-rift/wiki/Transformed"><strong>Transformed</strong></a>: Can only be summoned using a [Transform] effect.</p></div>
+
+<script>
+  const keywordList = document.querySelector('#keyword-list');
+  const keywordFilter = document.querySelector('#filter-keyword');
+  
+  keywordFilter.addEventListener('input', function () {
+    const value = this.value.toLowerCase();
+    const nodes = [...keywordList.querySelectorAll('p')];
+    nodes.forEach((node) => {
+      const name = node.querySelector('strong').innerHTML.toLowerCase();
+      const visible = name.includes(value);
+      node.style.display = visible ? 'block' : 'none';
+    });
+  });
+</script>
+    </main>
+</body>
+
+</html>

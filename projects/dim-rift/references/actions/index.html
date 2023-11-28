@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/mana.png">
+    <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/projects/dim-rift/">Dimensional Rift</a></h1>
+        <a href="/projects/dim-rift/">Home</a> |
+        <a href="/projects/dim-rift/introduction">Introduction</a> |
+        <a href="/projects/dim-rift/rules">Rules</a> |
+        <a href="/projects/dim-rift/wiki">Wiki</a> |
+        <a href="/projects/dim-rift/references">References</a>
+    </header>
+    <main>
+        
+        <div class="filter-section">
+  <p>
+    <strong>Filter:</strong> <input type="text" id="filter-actions">
+  </p>
+</div>
+
+<div id="actions-list"><p data-actions-key="activate"><a href="/projects/dim-rift/wiki/Activate"><strong>Activate</strong></a>: Select [this] or target non-active zone: activate selected zone.</p><p data-actions-key="attack"><a href="/projects/dim-rift/wiki/Attack"><strong>Attack</strong></a>: Perform the Attack Action.</p><p data-actions-key="conscript"><a href="/projects/dim-rift/wiki/Conscript"><strong>Conscript</strong></a>: Summon a Creature Token to target empty active creature zone.</p><p data-actions-key="convoke"><a href="/projects/dim-rift/wiki/Convoke"><strong>Convoke</strong></a>: Summon a creature or artifact from your hand or Extra Deck to target empty zone you control.</p><p data-actions-key="erode"><a href="/projects/dim-rift/wiki/Erode"><strong>Erode</strong></a>: Sac [this] and another card: draw a card.</p><p data-actions-key="exchange"><a href="/projects/dim-rift/wiki/Exchange"><strong>Exchange</strong></a>: Replace one damage counter with one mana counter on target creature, or vice-versa.</p><p data-actions-key="maneuver"><a href="/projects/dim-rift/wiki/Maneuver"><strong>Maneuver</strong></a>: Move target artifact as if it had Movement equal to at least this card's Movement.</p><p data-actions-key="move"><a href="/projects/dim-rift/wiki/Move"><strong>Move</strong></a>: Perform the Move Action.</p><p data-actions-key="operate"><a href="/projects/dim-rift/wiki/Operate"><strong>Operate</strong></a>: Select an Activation effect or Action from target artifact: resolve that effect. Ignore any costs or OPT restrictions.
+</p><p data-actions-key="pray"><a href="/projects/dim-rift/wiki/Pray"><strong>Pray</strong></a>: [this] collects 1 mana.</p><p data-actions-key="reap"><a href="/projects/dim-rift/wiki/Reap"><strong>Reap</strong></a>: Separate one Soul from the shared cache into your own personal cache. If the shared cache is empty: collect one soul to the shared cache.
+</p><p data-actions-key="recycle"><a href="/projects/dim-rift/wiki/Recycle"><strong>Recycle</strong></a>: Draw a card; then, discard a card.</p><p data-actions-key="upgrade"><a href="/projects/dim-rift/wiki/Upgrade"><strong>Upgrade</strong></a>: Sac [this] monument; summon a monument from your hand or Extra Deck in it's place, but with Cost Reduction (1). Move any counters [this] had into the new monument.
+</p><p data-actions-key="wake"><a href="/projects/dim-rift/wiki/Wake"><strong>Wake</strong></a>: Flip target creature; it's controller gain 1 life.</p></div>
+
+<script>
+  const actionsList = document.querySelector('#actions-list');
+  const actionsFilter = document.querySelector('#filter-actions');
+  
+  actionsFilter.addEventListener('input', function () {
+    const value = this.value.toLowerCase();
+    const nodes = [...actionsList.querySelectorAll('p')];
+    nodes.forEach((node) => {
+      const name = node.querySelector('strong').innerHTML.toLowerCase();
+      const visible = name.includes(value);
+      node.style.display = visible ? 'block' : 'none';
+    });
+  });
+</script>
+    </main>
+</body>
+
+</html>
