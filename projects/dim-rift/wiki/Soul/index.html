@@ -23,24 +23,31 @@
     <main>
         
         
-<p class="notice"><mark>WARNING</mark> While the rest of the website is, in general, WIP, the Wiki is particularly incomplete and unfinished. Usage of these pages is not recommended at this stage.</p>
-
 <h1 id="soul" tabindex="-1">Soul</h1>
-<p>A Soul is a shared global resource that is collected whenever creatures perish. Souls can then be consumed by any player to pay for costs on the most nefarious cards, or to perform the forbidden ritual of opening a Dimensional Rift.</p>
+<p>A Soul is a shared global resource that is collected whenever creatures are destroyed. It represents the Souls of the recently perished being still accessible as they enter the Aether. Souls can then be consumed by any player for the purposes of Soulrifting (either for paying hefty costs, or to perform the forbidden ritual of Rift Summoning).</p>
 <h2 id="collection" tabindex="-1">Collection</h2>
-<p>Whenever a card is destroyed, if:</p>
-<ul>
-<li>it is a <a href="/projects/dim-rift/wiki/Creature">Creature</a>; or</li>
-<li>it is an <a href="/projects/dim-rift/wiki/Artifact">Artifact</a> with <a href="/projects/dim-rift/wiki/Autonomous">Autonomous</a></li>
-</ul>
-<p>Collect one Soul to the shared cache, plus one additional Soul per Rank the card has. So for example, if a Rank 1 creature is destroyed, collect 2 Souls.</p>
-<p>Some special effects and abilities, specially from the <a href="/projects/dim-rift/wiki/Wynn">Wynn</a> (like <a href="/projects/dim-rift/wiki/Sealed">Sealed</a>), allow even more Souls to be collected.</p>
+<p>Whenever a creature is destroyed (unless it is <a href="/projects/dim-rift/wiki/Soulless">Soulless</a>), collect its Soul into the Aether (shared global cache).</p>
+<p>The Soul will have a Rank which depends mostly on the Rank of the creature. Creatures without ranks are considered Rank 0 (most creatures on your Main Deck). Creatures from the extra deck are at least Rank 1 (one star). Creatures can be at most Rank 3.</p>
+<p>There are several effects and or conditions that can affect the rank of the Soul collected. For example, if the creature was <a href="/projects/dim-rift/wiki/Sealed">Sealed</a>, the rank of the collected Soul will increase by 1 (max 3).</p>
+<p>When an effect says to &quot;release a Soul&quot; without specifying a rank, release a Rank 0 Soul.</p>
 <h2 id="consumption" tabindex="-1">Consumption</h2>
-<p>Any player can consume Souls from the shared cache to pay for costs as specified in their cards.</p>
-<p>Additionally, when performing the <a href="/projects/dim-rift/wiki/Rift_Summoning_Event">Rift Summoning Event</a>, the player is opting to opening a <a href="/projects/dim-rift/wiki/Dimensional_Rift">Dimensional Rift</a>, a portal to another dimension that allows certain entities to cross over to our side. To do so, they must consume a number of Souls equal to the Rank of the desired Rift (at least 1).</p>
-<p>The rank of the Rift determine the ranks of cards that can be summoned. You can summon as many cards you want whose ranks are equal to the Rift rank or lower. So for example, if you consume 1 Soul, you will open a Rank 1 Rift and can summon as many Rank 1 cards you want. If you consume 2 Souls, you will open a Rank 2 Rift and can summon as many Rank 1 or 2 cards you want, and so on. Note that opening a Rift has a cost (well, on top of having to harvest the souls of the perished): if you don't manage to summon at least one creature with Rank = to the Rift Rank you opened, you take 3 damage per unused rank! So if you open a Rank 3 portal but only manage to summon a Rank 1 creature, you take 6 damage to your life points.</p>
-<h2 id="personal-cache" tabindex="-1">Personal Cache</h2>
-<p>The <a href="/projects/dim-rift/wiki/Wynn">Wynn</a> have certain effects and abilities, particularly <a href="/projects/dim-rift/wiki/Reap">Reap</a>, that allow them to separate Souls from the shared cache into their own, personal cache. That means that only that player can access those Souls, but both players can still access whatever is left on the shared cache.</p>
+<p>Any player can consume any number of Souls from the shared cache to pay for Soulrift costs.</p>
+<p>A Soulrift cost will always mention a number which is the power level required. For example, if a card says <code>Soulrift 2</code>, you need to consume Souls adding up to a power of 2. A Soul power is equivalent to its rank + 1. So for example, to pay for a <code>Soulrift 2</code> cost, you can either consume one Rank 1 Soul, or 2 Rank 0 Souls.</p>
+<p>However, Souls cannot be split. For example, if you wish to pay for a <code>Soulrift 1</code> cost and only have a Rank 2 Soul available, you will have to consume it. Also, you cannot consume Souls unless paying for a cost that requires Soulrifting.</p>
+<h2 id="soulburn" tabindex="-1">Soulburn</h2>
+<p>Soulrifting is a powerful art that has a steep cost and dangerous consequences. When paying for Soulrift costs, it is possible that you might take Soulburn damage. There are three ways in which it can happen.</p>
+<p>Taking Soulburn damage deals 3 damage to your life points per power level.</p>
+<p>The first source of Soulburn is when you consume Souls summing up to a power level greater than the required for paying for a cost; you take Soulburn damage with power equivalent to the difference. This can happen if the available Souls don't nicely split into the units you need. For example, if you use a Rank 2 Soul to pay for a Soulrift 1 cost, you take 6 damage (remember that the power of a Soul is its rank + 1).</p>
+<p>The second source is when you pay a cost for an effect that ends up <a href="/projects/dim-rift/wiki/Fizzle">fizzling</a>; you take Soulburn damage for the entire cost paid. So if you Pay <code>Soulrift 1</code> for an effect and the effect misses target, you take 3 damage.</p>
+<p>Finally, the third source of Soulburn is if you paid Soulrift for the purposes of Rift Summoning and didn't manage to summon at least one card with rank equal to the rank of the portal you opened. In this case, you suffer Soulburn equivalent to the unused ranks. So for example, if you open a Rank 3 portal but only manage to summon a Rank 1 creature, you take 6 damage.</p>
+<p>Note that you CANNOT proactively consume Souls to take Soulburn damage. You can only consume Souls to pay for costs or to take the Rift Summoning event. You CAN take the Rift Summoning event and intentionally not summon any cards, ergo taking the full Soulburn damage, but if you do so, you are using up your Event for that turn.</p>
+<h2 id="rift-summoning" tabindex="-1">Rift Summoning</h2>
+<p>During the <a href="/projects/dim-rift/wiki/Rift_Summoning_Event">Rift Summoning Event</a>, the player is opening a <a href="/projects/dim-rift/wiki/Dimensional_Rift">Dimensional Rift</a>, a portal to another dimension that allows certain entities to cross over to our side. To do so, they must Soulrift X, where X is the desired Rank of the Rift (min 1, max 3).</p>
+<p>The rank of the Rift determine the ranks of cards that can be summoned. You can summon as many cards you want whose ranks are equal to the Rift rank or lower. So for example, if you Soulrift 1, you will open a Rank 1 Rift and can summon as many Rank 1 cards you want. If you Soulrift 2, you will open a Rank 2 Rift and can summon as many Rank 1 or 2 cards you want, and so on.</p>
+<p>Note that opening a Rift has a cost (well, on top of having to harvest the souls of the perished): if you don't manage to summon at least one creature with Rank = to the Rift Rank you opened, you take Soulburn damage per unused Rank. So for example, if you open a Rank 3 portal, but only manage to summon a Rank 1 creature, you take 6 damage to your life points.</p>
+<h2 id="reap" tabindex="-1">Reap</h2>
+<p>The <a href="/projects/dim-rift/wiki/Wynn">Wynn</a> have certain effects and abilities, particularly <a href="/projects/dim-rift/wiki/Reap">Reap</a>, that allow them to separate Souls from the Aether (shared cache) and put them into cards on the battlefield. Once that is done, those Souls are only accessible for Soulrifting by the player the controls the card. Players can always use a combination of Souls from the shared cache and from their own cards to pay for Soulrift costs.</p>
+<p>If a card with Souls on it is destroyed, the Souls are returned to the Aether (alongside the new Soul released by the card destruction itself).</p>
 
     </main>
 </body>

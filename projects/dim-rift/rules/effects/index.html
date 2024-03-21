@@ -33,31 +33,18 @@
 <p>Each card in the game has one or more effects listed in their effects box. These effects add to or change how the card or the game behaves, in addition to the normal rules associated with that specific card type (or sub-type). Depending on the type of effect, which is indicated by a symbol on the left of the effect text, they can have varied consequences on the game.</p>
 <h2 id="effect-types" tabindex="-1">Effect Types</h2>
 <p>There are 4 main effect types in the game, and then each of them can have some variations.</p>
-<h3 id="costs" tabindex="-1">Costs</h3>
+<h3 id="summoning-cost" tabindex="-1">Summoning Cost</h3>
 <p class="center">
     <img class="game-icon" src="/projects/dim-rift/assets/icons/e-cost.png">
 </p>
-<p>The <strong>Summoning Cost</strong> in a card, if present, must be paid immediately upon summoning. Failing to pay it will negate the summon and cause the card to be discarded. You do not need to pay any costs when setting cards; but when they are flipped they are automatically summoned.</p>
+<p>The <strong>Summoning Cost</strong> in a card, if present, must be paid immediately upon summoning. Failing to pay it will <a href="/projects/dim-rift/wiki/Fizzle">fizzle</a> the summon and cause the card to be sent to the graveyard (without triggering &quot;When destroyed&quot; effects). You do not need to pay any costs when setting cards; but when they are flipped they are automatically summoned.</p>
 <p>Note that costs denoted by this symbol are the cost for summoning each card; each effect can require its own activation costs specified in the effect text.</p>
-<p>Costs (either summoning or activation costs) never go to the stack and must be paid immediately (upon summoning or activation).</p>
-<p>If an activation cost of an effect is mandatory, you cannot choose not to pay it. If do not have the resources to afford it, the effect fizzles. You don't need to pay partial resources in this case. The exception being life costs (see below).</p>
-<p>Typically, costs fall into these categories:</p>
-<h4 id="mana-cost" tabindex="-1">Mana Cost</h4>
-<p>Requires the removal of mana counters from cards you control. If the effect says &quot;pay X mana&quot;, that means it must be paid with mana in this card. If it says &quot;pay any X mana&quot;, you can use mana from any cards you control. In that case, you can remove any amount of mana of each card as long as the total is equal to the cost.</p>
-<h4 id="material%2Fsacrificial-cost" tabindex="-1">Material/Sacrificial Cost</h4>
-<p>This requires you to &quot;sac&quot; (sacrifice) cards. Sacrifice means destroy a card you control. It can be a face-up or face-down card, as long as it is currently on the field and matches the requirements (if the requirements specify any aspect other than card type, they must be face-up as face-down cards do not have any other properties).</p>
-<p>Note that cards that are in the process of being summoned (but have not have its summoning costs paid yet) are not considered to be on the field and cannot be sac'ed.</p>
-<h4 id="life-cost" tabindex="-1">Life Cost</h4>
-<p>Cards will say &quot;pay X life&quot; requiring you to pay from your current life points. If a mandatory effect requires you to pay more life than you currently have, you are obliged to comply and lose the game.</p>
-<h4 id="discard" tabindex="-1">Discard</h4>
-<p>Discard means &quot;send a card from your hand to the graveyard&quot;.</p>
-<h4 id="soul-cost" tabindex="-1">Soul Cost</h4>
-<p>Cards will say &quot;consume x Souls&quot;, requiring you to directly consume Souls from either the shared pool or your personal cache. Note that if this is a Rift Summoning, any Soul cost specified on the card is <em>on top</em> of whatever you already paid to open the Rift.</p>
+<p>See the section &quot;Costs&quot; below for more details on how costs work.</p>
 <h3 id="action" tabindex="-1">Action</h3>
 <p class="center">
     <img class="game-icon" src="/projects/dim-rift/assets/icons/e-action.png">
 </p>
-<p>Declares an additional action that this card can perform during the Event Phase. It can be a simple &quot;Action: Attack&quot;, which allows this card to use the Attack Action regardless of the Event chosen; it can be one of the basic actions listed on the <a href="/projects/dim-rift/references/actions">Actions</a> page, or a unique action described on the card.</p>
+<p>Specifies an additional action to be added to this card's <a href="/projects/dim-rift/wiki/Action_Pool">Action Pool</a>, meaning that this card can perform during this action during any Event Phase. It can be a simple &quot;Action: Attack&quot;, which allows this card to use the <a href="/projects/dim-rift/wiki/Attack_Action">Attack Action</a> regardless of the Event; it can be one of the basic actions listed on the <a href="/projects/dim-rift/references/actions">Actions</a> page, or a unique action described on the card itself.</p>
 <h3 id="continuous" tabindex="-1">Continuous</h3>
 <p class="center">
     <img class="game-icon" src="/projects/dim-rift/assets/icons/e-continuous.png">
@@ -147,6 +134,21 @@
 <p><strong>Cost</strong>: consume any two mana</p>
 <p><strong>Resolution</strong>: [this] gets either (1) +1 Attack or (2) +1 Life.</p>
 <p>For this effect, there are no implicit targeting. The &quot;choose either&quot; choice is entirely written in the resolution part so it does not need to be decided upon activation.</p>
+<h2 id="costs" tabindex="-1">Costs</h2>
+<p>Costs (either summoning or activation costs) never go to the stack and must be paid immediately (upon summoning or activation).</p>
+<p>If an activation cost of an effect is mandatory, you cannot choose not to pay it. If do not have the resources to afford it, the effect fizzles. You don't need to pay partial resources in this case. The exception being life costs (see below).</p>
+<p>Typically, costs fall into these categories:</p>
+<h3 id="mana-cost" tabindex="-1">Mana Cost</h3>
+<p>Requires the removal of mana counters from cards you control. If the effect says &quot;pay X mana&quot;, that means it must be paid with mana in this card. If it says &quot;pay any X mana&quot;, you can use mana from any cards you control. In that case, you can remove any amount of mana of each card as long as the total is equal to the cost.</p>
+<h3 id="material%2Fsacrificial-cost" tabindex="-1">Material/Sacrificial Cost</h3>
+<p>This requires you to &quot;sac&quot; (sacrifice) cards. Sacrifice means destroy a card you control. It can be a face-up or face-down card, as long as it is currently on the field and matches the requirements (if the requirements specify any aspect other than card type, they must be face-up as face-down cards do not have any other properties).</p>
+<p>Note that cards that are in the process of being summoned (but have not have its summoning costs paid yet) are not considered to be on the field and cannot be sac'ed.</p>
+<h3 id="life-cost" tabindex="-1">Life Cost</h3>
+<p>Cards will say &quot;pay X life&quot; requiring you to pay from your current life points. If a mandatory effect requires you to pay more life than you currently have, you are obliged to comply and lose the game.</p>
+<h3 id="discard" tabindex="-1">Discard</h3>
+<p>Discard means &quot;send a card from your hand to the graveyard&quot;.</p>
+<h3 id="soul-cost" tabindex="-1">Soul Cost</h3>
+<p>Cards will say &quot;consume x Souls&quot;, requiring you to directly consume Souls from either the shared pool or your personal cache. Note that if this is a Rift Summoning, any Soul cost specified on the card is <em>on top</em> of whatever you already paid to open the Rift.</p>
 <h2 id="spell-speed" tabindex="-1">Spell Speed</h2>
 <p>There are two spell speeds on DimRift; slow means &quot;sorcery&quot; speed, while instant means &quot;instant&quot; speed.</p>
 <ul>
@@ -172,8 +174,8 @@ Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
 <p>After triggers each player gets to add as many Activation effects as desired, using the priority system, starting with the turn's player.</p>
 <h2 id="targeting" tabindex="-1">Targeting</h2>
 <p>Targeting is a unique part of Dimensional Rift because you cannot just choose any card on the field. You actually target zones, not cards, and you must use the card's arrows to determine what other zones it can &quot;reach&quot;.</p>
-<p>When a card says &quot;target creature&quot; or &quot;target card&quot; it actually means &quot;target non-empty creature zone&quot; or &quot;target non-empty zone&quot;. Whichever card is in the targeted zone at time of resolution will be the target of the effect. Targets must be valid both at time of activation and also at time of resolution. So, for example, for a &quot;target creature&quot; effect, there must be a creature on the target zone at time of activation and also at the resolution time. If there is no longer a creature in the zone, the effect fizzles (i.e. is moot). If the card doing the targeting moves, rotates, or has its arrows changed in between activation and resolution, the target zone must still be &quot;reachable&quot; during resolution, or the effect fizzles.</p>
-<p>Non-active zones can still be targeted if there is a valid card in it (unless otherwise specified). For example, if a creature with &quot;Explorer&quot; moves to a non-active zone, it can still be targeted by a &quot;Target creature&quot; effect.</p>
+<p>When a card says &quot;target creature&quot; or &quot;target card&quot; it actually means &quot;target non-empty creature zone&quot; or &quot;target non-empty zone&quot;. Whichever card is in the targeted zone at time of resolution will be the target of the effect. Targets must be valid both at time of activation and also at time of resolution. So, for example, for a &quot;target creature&quot; effect, there must be a creature on the target zone at time of activation and also at the resolution time. If there is no longer a creature in the zone, the effect <a href="/projects/dim-rift/wiki/Fizzle">fizzles</a>. If the card doing the targeting moves, rotates, or has its arrows changed in between activation and resolution, the target zone must still be connected during resolution, or the effect fizzles.</p>
+<p>Non-active zones can still be targeted if there is a valid card in it (unless otherwise specified). For example, if a creature with <a href="/projects/dim-rift/wiki/Explorer">Explorer</a> moves to a non-active zone, it can still be targeted by a &quot;Target creature&quot; effect.</p>
 <p>Note that Monuments do not participate in the targeting system. Monuments cannot have arrows and cannot be orientated other than straight up. They also cannot ever be face-down. Monument zones are not part of the targeting grid, not being adjacent or connected to any other zones.</p>
 <h3 id="implicit-targeting" tabindex="-1">Implicit targeting</h3>
 <p>Targeting must always be done during activation, following the effect lifecycle; however it might not be specified in the Activation Criteria text (before <code>:</code>).</p>
@@ -184,18 +186,305 @@ Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
 <p class="notice">When summoned; target a creature: target creature gets Armor +1.</p>
 <p>Sometimes the targeting will be specified in the Activation Criteria to avoid ambiguity or to facilitate the specification of extra parameters and requirements; sometimes it will only be mentioned on the Resolution Instructions to simplify the wording of the effect. Either way, there is no mechanical difference.</p>
 <h3 id="arrows" tabindex="-1">Arrows</h3>
-<p>Unlike in any other game, where normally any card matching the targeting requirement can be selected, in DimRift &quot;target&quot; always mean &quot;arrow targeting&quot;, meaning that the target must be reachable from the targeting card using its arrows and current orientation on the field.</p>
-<p>Every card has either none, single or double arrows on each of the 8 directions (top, bottom, left, right, and diagonals). Face-up non-monument cards while on the field can be oriented in any of 4 90-degree possible rotations. The orientation of a card must be picked by the player upon summoning it, and cannot be changed arbitrarily (but can be changed by Rotation effects or during the Move Action as established under <a href="/projects/dim-rift/content/turn-structure">Turn Structure</a>).</p>
+<p>Unlike in any other game, where normally any card matching the targeting requirement can be selected, in <strong>Dimensional Rift</strong> &quot;target&quot; always mean &quot;arrow targeting&quot;, meaning that the target must be reachable from the targeting card using its arrows and current orientation on the field.</p>
+<p>Every card has either none, single, double or triple arrows on each of the 8 directions (top, bottom, left, right, and diagonals). Face-up non-monument cards while on the field can be oriented in any of 4 90-degree possible rotations. The orientation of a card must be picked by the player upon summoning it, and cannot be changed arbitrarily (but can be changed by Rotation effects or during the <a href="/projects/dim-rift/wiki/Move_Action">Move Action</a> as established under <a href="/projects/dim-rift/rules/turn-structure">Turn Structure</a>).</p>
 <p>Cards cannot be oriented on non-90-degree angles, and thus orthogonal arrows are always orthogonal and diagonal arrows are always diagonal.</p>
 <p>You can only target cards your card connects to.</p>
-<p>An orthogonal single arrow connects to the next zone on the row/column it points to; while a double arrow connects all the zones in that direction.</p>
-<p>A diagonal single arrow connects the zone in the next row and next column; while a double arrow connects that zone and every next zone until the end of that row.</p>
+<p>An orthogonal arrow connects to the next zones on the row/column it points to, up to the amount of arrows; for example, a double left arrow connects to two zones to the left of the card.</p>
+<p>A diagonal single arrow connects the zone in the next row and next column; while a double arrow connects to a 2x2 grid starting on that zone; and a triple arrow connects to a 3x3 grid.</p>
+<p>You can think of it as each layer of arrows referencing a &quot;ring&quot; around the card. The single arrows connect up to the first ring, and so on.</p>
+<p>Below are some image examples to make it more clear, plus an interactive <a href="/projects/dim-rift/rules/target-practice">Target Practice</a> app.</p>
 <figure style="text-align:center;">
     <img src="/projects/dim-rift/assets/illustrations/targeting-1.svg" width="60%">
     <figcaption>
         Example of a creature with a 3 arrows highlighting which zones it connects to.
     </figcaption>
 </figure>
+<figure style="text-align:center;">
+    <img src="/projects/dim-rift/assets/illustrations/targeting-2.svg" width="60%">
+    <figcaption>
+        Example of an artifact with a 3 arrows highlighting which zones it connects to.
+    </figcaption>
+</figure>
+<h4 style="text-align: center;">Interactive Target Practice</h4>
+<div class="target-grid"><div class="target-row"><div class="target-zone" data-grid-id="1-1"></div><div class="target-zone" data-grid-id="1-2"></div><div class="target-zone" data-grid-id="1-3"></div><div class="target-zone" data-grid-id="1-4"></div><div class="target-zone" data-grid-id="1-5"></div><div class="target-zone" data-grid-id="1-6"></div><div class="target-zone" data-grid-id="1-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="2-1"></div><div class="target-zone" data-grid-id="2-2"></div><div class="target-zone" data-grid-id="2-3"></div><div class="target-zone" data-grid-id="2-4"></div><div class="target-zone" data-grid-id="2-5"></div><div class="target-zone" data-grid-id="2-6"></div><div class="target-zone" data-grid-id="2-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="3-1"></div><div class="target-zone" data-grid-id="3-2"></div><div class="target-zone" data-grid-id="3-3"></div><div class="target-zone" data-grid-id="3-4"></div><div class="target-zone" data-grid-id="3-5"></div><div class="target-zone" data-grid-id="3-6"></div><div class="target-zone" data-grid-id="3-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="4-1"></div><div class="target-zone" data-grid-id="4-2"></div><div class="target-zone" data-grid-id="4-3"></div><div class="target-center">
+            <div class="arrows-row">
+                <p class="target-arrow ↖-single" data-arrow-id="↖">↖</p>
+                <p class="target-arrow ↑-single" data-arrow-id="↑">↑</p>
+                <p class="target-arrow ↗-single" data-arrow-id="↗">↗</p>
+            </div>
+            <div class="arrows-row">
+                <p class="target-arrow ←-single" data-arrow-id="←">←</p>
+                <p>·</p>
+                <p class="target-arrow →-single" data-arrow-id="→">→</p>
+            </div>
+            <div class="arrows-row">
+                <p class="target-arrow ↙-single" data-arrow-id="↙">↙</p>
+                <p class="target-arrow ↓-single" data-arrow-id="↓">↓</p>
+                <p class="target-arrow ↘-single" data-arrow-id="↘">↘</p>
+            </div>
+        </div><div class="target-zone" data-grid-id="4-5"></div><div class="target-zone" data-grid-id="4-6"></div><div class="target-zone" data-grid-id="4-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="5-1"></div><div class="target-zone" data-grid-id="5-2"></div><div class="target-zone" data-grid-id="5-3"></div><div class="target-zone" data-grid-id="5-4"></div><div class="target-zone" data-grid-id="5-5"></div><div class="target-zone" data-grid-id="5-6"></div><div class="target-zone" data-grid-id="5-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="6-1"></div><div class="target-zone" data-grid-id="6-2"></div><div class="target-zone" data-grid-id="6-3"></div><div class="target-zone" data-grid-id="6-4"></div><div class="target-zone" data-grid-id="6-5"></div><div class="target-zone" data-grid-id="6-6"></div><div class="target-zone" data-grid-id="6-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="7-1"></div><div class="target-zone" data-grid-id="7-2"></div><div class="target-zone" data-grid-id="7-3"></div><div class="target-zone" data-grid-id="7-4"></div><div class="target-zone" data-grid-id="7-5"></div><div class="target-zone" data-grid-id="7-6"></div><div class="target-zone" data-grid-id="7-7"></div></div></div>
+<script>
+    const colors = {
+        'center': '#0000ff',
+        'default': '#f0f0f0',
+        'connected': '#ff0000',
+        'hovered': '#00ff00',
+    };
+    const arrowTypes = ['single', 'double', 'triple', 'none'];
+    const arrows = {
+        '↑': 'single',
+        '↗': 'single',
+        '→': 'single',
+        '↘': 'single',
+        '↓': 'single',
+        '↙': 'single',
+        '←': 'single',
+        '↖': 'single'
+    };
+    const connectionAreas = {
+        '↖-single': [[3, 3]],
+        '↑-single': [[3, 4]],
+        '↗-single': [[3, 5]],
+        '←-single': [[4, 3]],
+        '→-single': [[4, 5]],
+        '↙-single': [[5, 3]],
+        '↓-single': [[5, 4]],
+        '↘-single': [[5, 5]],
+        '↖-double': [[2, 2], [2, 3], [3, 2], [3, 3]],
+        '↑-double': [[3, 4], [2, 4]],
+        '↗-double': [[2, 5], [3, 5], [2, 6], [3, 6]],
+        '←-double': [[4, 3], [4, 2]],
+        '→-double': [[4, 5], [4, 6]],
+        '↙-double': [[5, 3], [6, 2], [6, 3], [5, 2]],
+        '↓-double': [[5, 4], [6, 4]],
+        '↘-double': [[5, 5], [6, 6], [6, 5], [5, 6]],
+        '↖-triple': [[1, 1], [1, 2], [1, 3], [2, 1], [3, 1], [2, 2], [3, 2], [2, 3], [3, 3]],
+        '↑-triple': [[3, 4], [2, 4], [1, 4]],
+        '↗-triple': [[1, 5], [1, 6], [1, 7], [2, 5], [3, 5], [2, 6], [3, 6], [2, 7], [3, 7]],
+        '←-triple': [[4, 3], [4, 2], [4, 1]],
+        '→-triple': [[4, 5], [4, 6], [4, 7]],
+        '↙-triple': [[5, 3], [6, 2], [7, 1], [6, 3], [7, 2], [7, 3], [5, 2], [5, 1], [6, 1]],
+        '↓-triple': [[5, 4], [6, 4], [7, 4]],
+        '↘-triple': [[5, 5], [6, 6], [7, 7], [6, 5], [7, 5], [7, 6], [5, 6], [5, 7], [6, 7]],
+    };
+    document.querySelectorAll('.target-arrow').forEach(arrow => {
+        const arrowId = arrow.dataset.arrowId;
+        arrow.addEventListener('click', () => {
+            const target = document.querySelector('.target-center');
+            const arrowType = arrows[arrowId];
+            const nextArrowType = arrowTypes[(arrowTypes.indexOf(arrowType) + 1) % arrowTypes.length];
+
+            arrow.textContent = (nextArrowType === 'none') ? '·' : arrowId;
+            arrows[arrowId] = nextArrowType;
+            arrow.classList.remove(`${arrowId}-${arrowType}`);
+            arrow.classList.add(`${arrowId}-${nextArrowType}`);
+
+            recolorZones();
+            arrow.dispatchEvent(new Event('mouseover'));
+        });
+        arrow.addEventListener('mouseover', () => {
+            const arrowType = arrows[arrowId];
+            recolorZones();
+            updateArrow(arrow, colors.hovered);
+            connectionAreas[`${arrowId}-${arrowType}`].forEach(([i, j]) => {
+                const zone = document.querySelector(`.target-zone[data-grid-id="${i}-${j}"]`);
+                updateZone(zone, colors.hovered);
+            });
+        });
+        arrow.addEventListener('mouseout', () => {
+            recolorZones();
+        });
+    });
+
+    const isConnected = (gridId) => {
+        const allConnected = Object.entries(arrows)
+            .flatMap(([arrow, type]) => connectionAreas[`${arrow}-${type}`] ?? []);
+        return allConnected.some(([i, j]) => `${i}-${j}` === gridId);
+    };
+
+    const recolorArrows = () => {
+        document.querySelectorAll('.target-arrow').forEach(arrow => {
+            updateArrow(arrow, colors.default);
+        });
+    };
+
+    const recolorZones = () => {
+        recolorArrows();
+
+        const zones = document.querySelectorAll('.target-zone');
+        for (const zone of zones) {
+            const gridId = zone.dataset.gridId;
+            const color = isConnected(gridId) ? 'connected' : 'default';
+            updateZone(zone, colors[color]);
+        }
+    };
+
+    const updateArrow = (arrow, color) => {
+        arrow.style.color = color;
+    };
+
+    const updateZone = (zone, color) => {
+        zone.style.borderColor = color;
+        zone.style.backgroundColor = `${color}20`;
+    };
+
+    updateZone(document.querySelector('.target-center'), colors.center);
+    recolorZones();
+</script>
+<style>
+    .target-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .target-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .target-zone, .target-center {
+        width: 80px;
+        height: 80px;
+        border: 2px solid;
+    }
+
+    .target-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4px;
+    }
+
+    .arrows-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .arrows-row p {
+        font-size: 16px;
+        margin: 0;
+        line-height: 80%;
+    }
+
+    .target-arrow {
+        position: relative;
+        cursor: pointer;
+        min-width: 12px;
+        text-align: center;
+    }.↖-double::after, .↖-triple::after {
+        content: '↖';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+    }
+
+    .↖-triple::before {
+        content: '↖';
+        position: absolute;
+        top: 6px;
+        left: 6px;
+    }.↑-double::after, .↑-triple::after {
+        content: '↑';
+        position: absolute;
+        top: 3px;
+        left: 0px;
+    }
+
+    .↑-triple::before {
+        content: '↑';
+        position: absolute;
+        top: 6px;
+        left: 0px;
+    }.↗-double::after, .↗-triple::after {
+        content: '↗';
+        position: absolute;
+        top: 3px;
+        left: -3px;
+    }
+
+    .↗-triple::before {
+        content: '↗';
+        position: absolute;
+        top: 6px;
+        left: -6px;
+    }.←-double::after, .←-triple::after {
+        content: '←';
+        position: absolute;
+        top: 0px;
+        left: 3px;
+    }
+
+    .←-triple::before {
+        content: '←';
+        position: absolute;
+        top: 0px;
+        left: 6px;
+    }.·-double::after, .·-triple::after {
+        content: '·';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .·-triple::before {
+        content: '·';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }.→-double::after, .→-triple::after {
+        content: '→';
+        position: absolute;
+        top: 0px;
+        left: -3px;
+    }
+
+    .→-triple::before {
+        content: '→';
+        position: absolute;
+        top: 0px;
+        left: -6px;
+    }.↙-double::after, .↙-triple::after {
+        content: '↙';
+        position: absolute;
+        top: -3px;
+        left: 3px;
+    }
+
+    .↙-triple::before {
+        content: '↙';
+        position: absolute;
+        top: -6px;
+        left: 6px;
+    }.↓-double::after, .↓-triple::after {
+        content: '↓';
+        position: absolute;
+        top: -3px;
+        left: 0px;
+    }
+
+    .↓-triple::before {
+        content: '↓';
+        position: absolute;
+        top: -6px;
+        left: 0px;
+    }.↘-double::after, .↘-triple::after {
+        content: '↘';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+    }
+
+    .↘-triple::before {
+        content: '↘';
+        position: absolute;
+        top: -6px;
+        left: -6px;
+    }</style>
 <h3 id="target-from" tabindex="-1">Target from</h3>
 <p>When an effect says &quot;target <em>from</em> X&quot; it means to do the targeting operation using the position and arrows from a different card. Essentially, &quot;target as if you were that card&quot;.</p>
 <p>For example:</p>
@@ -212,7 +501,7 @@ Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
 <p>A Connection Chain (no &quot;<em>connection</em>&quot; to <em>Effect Chains</em>) is a specific sequence of cards where each one is connected to the the next card.</p>
 <p>For example:</p>
 <p class="notice">When [this] is part of a Connection Chain connecting every non-monument card on the field (at least 4): [Transform].</p>
-<p>Means that if there is any way to order the cards on the field (at least 4), in a way that each card connects to the next card, you must transform this creature. Naturally this excludes Monuments.</p>
+<p>Means that if there is any way to order the cards on the field (at least 4), in a way that each card connects to the next card, you must transform this creature. Naturally, this excludes Monuments.</p>
 
     </main>
 </body>

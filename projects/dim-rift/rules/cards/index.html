@@ -27,7 +27,7 @@
             <p><a href="/projects/dim-rift/rules/turn-structure">Turn Structure &lt;</a></p>
             
             
-            <p><a href="/projects/dim-rift/rules/effects">&gt; Effects</a></p>
+            <p><a href="/projects/dim-rift/rules/actions">&gt; Actions</a></p>
             
         </div>
         
@@ -36,15 +36,15 @@
 <p>These are the elements specified in each card:</p>
 <ul>
 <li><a href="/projects/dim-rift/wiki/Card_Name">name</a></li>
-<li>flavour text (not available for Beta)</li>
+<li>flavour text (optional)</li>
 <li><a href="/projects/dim-rift/wiki/Card_Type">type</a>: <a href="/projects/dim-rift/wiki/Creature">Creature</a>, <a href="/projects/dim-rift/wiki/Artifact">Artifact</a>, or <a href="/projects/dim-rift/wiki/Monument">Monument</a></li>
 <li><a href="/projects/dim-rift/wiki/Card_Subtype">subtype</a> (for artifacts): <a href="/projects/dim-rift/wiki/Equipment">Equipment</a>, <a href="/projects/dim-rift/wiki/Vehicle">Vehicle</a>, <a href="/projects/dim-rift/wiki/Scroll">Scroll</a>, <a href="/projects/dim-rift/wiki/Trap">Trap</a></li>
-<li>faction (if <a href="/projects/dim-rift/wiki/Alignment">aligned</a>): <a href="/projects/dim-rift/wiki/Men">Men</a>, <a href="/projects/dim-rift/wiki/Fey">Fey</a>, <a href="/projects/dim-rift/wiki/Telur">Telur</a>, <a href="/projects/dim-rift/wiki/Wynn">Wynn</a></li>
+<li>faction (if aligned): <a href="/projects/dim-rift/wiki/Men">Men</a>, <a href="/projects/dim-rift/wiki/Fey">Fey</a>, <a href="/projects/dim-rift/wiki/Telur">Telur</a>, <a href="/projects/dim-rift/wiki/Wynn">Wynn</a></li>
 <li>stats: <a href="/projects/dim-rift/wiki/Attack_Stat">attack</a>, <a href="/projects/dim-rift/wiki/Life_Stat">life</a>, <a href="/projects/dim-rift/wiki/Armor_Stat">armor</a>, <a href="/projects/dim-rift/wiki/Movement_Stat">movement</a>, <a href="/projects/dim-rift/wiki/Knowledge_Stat">knowledge</a></li>
 <li><a href="/projects/dim-rift/wiki/effects">Effect</a>: one ore more effects</li>
-<li><a href="/projects/dim-rift/wiki/arrows">Arrows</a>: none, single or double for each direction</li>
+<li><a href="/projects/dim-rift/wiki/arrows">Arrows</a>: none, single, double or triple for each direction</li>
 </ul>
-<p>Cards can be played from your <a href="/projects/dim-rift/wiki/Hand">hand</a> (or <a href="/projects/dim-rift/wiki/Extra_Deck">Extra Deck</a>) onto the <a href="/projects/dim-rift/wiki/Battlefield">battlefield</a> into any eligible <a href="/projects/dim-rift/wiki/Zone">zones</a>.</p>
+<p>Cards can be played from your hand (or <a href="/projects/dim-rift/wiki/Extra_Deck">Extra Deck</a>) onto the <a href="/projects/dim-rift/wiki/Battlefield">battlefield</a> into any eligible <a href="/projects/dim-rift/wiki/Zone">zones</a>.</p>
 <p>An eligible zone must match the card type, be on your side of the field, be empty, and be active.</p>
 <p>You can play cards <a href="/projects/dim-rift/wiki/face-up">Face-Up</a> or <a href="/projects/dim-rift/wiki/face-down">Face-Down</a> (also referred as &quot;to set&quot;).</p>
 <p>If you play a card face-up, you must choose an <a href="/projects/dim-rift/wiki/Orientation">orientation</a> as part of playing, and you must immediately pay the card's <a href="/projects/dim-rift/wiki/Cost">cost</a> (if any). If you succeed, the card is <a href="/projects/dim-rift/wiki/Summoning">summoned</a> (otherwise it is <a href="/projects/dim-rift/wiki/Discarding">discarded</a>).</p>
@@ -71,16 +71,15 @@
 <p>Unlike Spell cards or Instants on other games, and very much like any other card in this game, unless otherwise stated (and except for Traps), Artifacts remain on the field until they are destroyed by some effect; while some artifacts have continuous effects, activation effects or triggers that can happen many times, others have one-of effects and essentially lock your zones, but can be definitely used for sacrifice fodder.</p>
 <p>There are a few sub-types of Artifacts with special rules:</p>
 <h4 id="equipment" tabindex="-1">Equipment</h4>
-<p>Equipments are artifacts that have &quot;transferable&quot; stats and effects that can be transferred to a creature. These are denoted by a brown square underneath the effect or status icon:</p>
+<p>Equipments are artifacts that have transferable attributes (stats and effects), called <a href="/projects/dim-rift/wiki/Transfer">Transfer</a>, that can be &quot;transferred&quot; to a creature. These are denoted by a beige square underneath the effect or status icon:</p>
 <p class="center">
     <img class="game-icon" src="/projects/dim-rift/assets/icons/transfer.png">
 </p>
 <p>When an Equipment is summoned, its controller must immediately select a connected creature zone (i.e. respecting the arrows). However, this does not target the card currently in the zone, and empty or even inactive zones can be chosen.</p>
 <p>The [equipped] zone is then established and does not move with creature movement. Any face-up creature, while in that zone, immediately gets all the effects and stats transferred, and similarly, immediately lose them if they leave the zone.</p>
 <p>At the end of the equipment's Move Action, or after it is rotated, a different [equipped] zone can be selected (e.g. once per equipment during each Campaign), even if the Equipment card has zero movement or did not reposition nor rotate.</p>
-<p>Attack, Life, Armor, and Movement stats are transferred to the card currently in the zone, as long as any effects that mention the tag [equipped]. The Mana establishes the amount of mana to acquire in the Equipment itself and is not transferred. The Attack, Life, and Armor values specified are only relevant for the transferring, unless the artifact is [Autonomous].</p>
 <h4 id="vehicle" tabindex="-1">Vehicle</h4>
-<p>Vehicles are artifacts that have stats, arrows and effects that can be transferred to a creature, similar to Equipments. They also must have a greater-than-zero Movement stat, and thus can move in the Artifact row. On top of that, as part of their Move Action, they can spend 1 movement point to be &quot;crewed&quot; or &quot;uncrewed&quot;.</p>
+<p>Vehicles are artifacts that have stats, arrows and effects that can be <a href="/projects/dim-rift/wiki/Transfer">transferred</a> to a creature, similar to Equipments. They also must have a greater-than-zero Movement stat, and thus can move in the Artifact row. On top of that, as part of their Move Action, they can spend 1 movement point to be &quot;crewed&quot; or &quot;uncrewed&quot;.</p>
 <p>To do that, target a face-up creature you control from the vehicle and move the vehicle card underneath the target creature card. Now they are bound together and the creature gets the status and [equipped]-effects transferred, similar to an Equipment.</p>
 <p>While crewed, the card is always kept underneath this creature as it moves and is destroyed if the creature is destroyed.</p>
 <p>While crewed, Attack, Life, Armor and Movement stats are combined with the creature, alongside effects tagged with [equipped]. The arrows of the vehicle are also added to the creatures arrows (you can choose the vehicle orientation underneath the creature when crewing). Whenever a player would Rotate the creature, they can rotate each card independently. Vehicles cannot have Mana.</p>

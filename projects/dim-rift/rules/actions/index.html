@@ -24,22 +24,22 @@
         
         <div class="pagination">
             
-            <p><a href="/projects/dim-rift/rules/turn-structure">Turn Structure &lt;</a></p>
+            <p><a href="/projects/dim-rift/rules/cards">Cards &lt;</a></p>
             
             
-            <p><a href="/projects/dim-rift/rules/cards">&gt; Cards</a></p>
+            <p><a href="/projects/dim-rift/rules/effects">&gt; Effects</a></p>
             
         </div>
         
         <h1 id="actions" tabindex="-1">Actions</h1>
 <p>Each face-up card on the field that you control can potentially perform one action per Event. Actions are performed at &quot;slow&quot; speed and can only be performed during the Event Phase, and when the stack is empty (similar to Summons on Main Phases).</p>
-<p>Which possible actions each card can perform is a combination of two things:</p>
+<p>Which possible actions each card can perform is called their <a href="/projects/dim-rift/wiki/Action_Pool">Action Pool</a>, and is a combination of two things:</p>
 <ul>
 <li>the actions that are printed on the card</li>
 <li>the bonus actions that are granted by the choice of Event (Move or Attack)</li>
 </ul>
-<p>For example, a creature with &quot;Action: Move&quot;, if the player chooses that as an action, can move every Event, no matter which. But a creature that does not have &quot;Action: Move&quot; only gets access to that action during Campaign Events.</p>
-<p>Some creatures have special actions that are described in their card; some have basic actions that are defined below; but the two most basic actions that are part of the game rules are Move Action (which is granted by the Campaign Event) and the Attack Action (which is granted by the Battle Event).</p>
+<p>For example, a creature with &quot;Action: Move&quot;, if the player chooses so, can move every Event, no matter which one. But a creature that does not have &quot;Action: Move&quot; only gets access to that action during Campaign Events.</p>
+<p>Some creatures have special actions that are described in their card; some have basic actions that are defined in the rules; but the two most basic actions that are part of the game rules are <a href="/projects/dim-rift/wiki/Move_Action">Move Action</a> (which is granted by the <a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a>) and the <a href="/projects/dim-rift/wiki/Attack_Action">Attack Action</a> (which is granted by the <a href="/projects/dim-rift/wiki/Battle_Event">Battle Event</a>).</p>
 <p>You do not need to perform an Action with every available card, or any at all, if desired.</p>
 <h2 id="move-action" tabindex="-1">Move Action</h2>
 <p>The Move Action consists of two interactions that you can do zero, one, or two of, for the card being moved:</p>
@@ -60,24 +60,30 @@
 </ul>
 <p><strong>Note</strong>: normally it is expected that each player only attack opponent zones, and similarly only block their own zones; but the rules allow for complete flexibility.</p>
 <p>After the blocker (or lack thereof) is established, the Attack Action is resolved.</p>
-<p>For blocked attacks, both creature deals <a href="/projects/dim-rift/wiki/Damage">damage</a> equal to their <a href="/projects/dim-rift/wiki/Attack_Stat">Attack Stat</a> to each other simultaneously. If at any point (as a state-based action) the damage counters on a creature equal or exceed their <a href="/projects/dim-rift/wiki/Life_Stat">Life Stat</a>, they are destroyed.</p>
+<p>For blocked attacks, both creatures deal <a href="/projects/dim-rift/wiki/Damage">damage</a> equal to their <a href="/projects/dim-rift/wiki/Attack_Stat">Attack Stat</a> to each other simultaneously. If at any point (as a state-based action) the damage counters on a creature equal or exceed their <a href="/projects/dim-rift/wiki/Life_Stat">Life Stat</a>, they are destroyed.</p>
 <p><strong>Note</strong>: Damage counters are <strong>NOT</strong> cleared and stay forever.</p>
 <p><strong>Note</strong>: Damage to creatures does <strong>NOT</strong> &quot;pierce&quot; (i.e. extra damage does not bleed to the player).</p>
 <p>For direct attacks, the creature deals damage to the zone's controller equal to their <a href="/projects/dim-rift/wiki/Attack_Stat">Attack Stat</a>.</p>
 <h2 id="basic-actions" tabindex="-1">Basic Actions</h2>
 <p><strong>Activate</strong>: Select [this] or target non-active zone: activate selected zone.</p>
 <p><strong>Attack</strong>: Perform the Attack Action.</p>
-<p><strong>Conscript</strong>: Summon a Creature Token to target empty active creature zone.</p>
-<p><strong>Convoke</strong>: Summon a creature or artifact from your hand or Extra Deck to target empty zone you control.</p>
+<p><strong>Conscript</strong>: Summon a <a href="/projects/dim-rift/wiki/Creature_Token">Creature Token</a> to target empty active creature zone.</p>
+<p><strong>Convoke</strong>: <a href="/projects/dim-rift/wiki/Soul">Soulrift</a> X (up to 3): depending on the chosen value of X, summon face-up on target empty creature zone:</p>
+<ul>
+<li>1: a Creature Token</li>
+<li>2: a creature from your hand (you must pay its Summoning Cost)</li>
+<li>3: an Ally creature from your Extra Deck (you must pay its Summoning Cost but not Rift opening costs)</li>
+</ul>
 <p><strong>Erode</strong>: Sac [this] and another card: draw a card.</p>
-<p><strong>Exchange</strong>: Replace one damage counter with one mana counter on target creature, or vice-versa.</p>
 <p><strong>Maneuver</strong>: Move target artifact as if it had Movement equal to at least this card's Movement.</p>
 <p><strong>Move</strong>: Perform the Move Action.</p>
-<p><strong>Operate</strong>: Select an Activation effect or Action from target artifact: resolve that effect. Ignore any costs or OPT restrictions.</p>
+<p><strong>Operate</strong>: Select an Activation effect or Action from target artifact: resolve that effect. Ignore any mana costs or OPT restrictions.</p>
 <p><strong>Pray</strong>: [this] collects 1 mana.</p>
-<p><strong>Reap</strong>: Separate one Soul from the shared cache into your own personal cache; or, if the shared cache is empty: collect one soul to the shared cache instead.</p>
+<p><strong>Reap</strong>: Separate one <a href="/projects/dim-rift/wiki/Soul">Soul</a> of the lowest available rank from the <a href="/projects/dim-rift/wiki/Aether">Aether</a> and put it on [this]; or, if there are no Souls in the Aether, release a Rank 0 Soul to the Aether.</p>
+<p>Players can Soulrift using Souls on cards you control as if they were in the Aether.</p>
+<p>If a card with Souls is destroyed, return those Souls to the Aether.</p>
 <p><strong>Recycle</strong>: Draw a card; then, discard a card.</p>
-<p><strong>Upgrade</strong>: Sac [this] monument; summon a monument from your hand or Extra Deck in it's place, but with Cost Reduction (1). Move any counters [this] had into the new monument.</p>
+<p><strong>Upgrade</strong>: Sac [this] monument; summon a monument from your hand or Extra Deck in it's place, but with <a href="/projects/dim-rift/wiki/Cost_Discount">Cost Discount</a> 1. Move any counters [this] had into the new monument.</p>
 <p><strong>Wake</strong>: Flip target creature; it's controller gain 1 life.</p>
 
     </main>

@@ -29,9 +29,9 @@
 </div>
 
 <div id="conditions-list"><p data-condition-key="blessed"><a href="/projects/dim-rift/wiki/Blessed"><strong>Blessed</strong></a>: A creature is "Blessed" if and only if another creature you control with at least 1 mana connects to it. The "Blessed" effect is active if and only if the creature is "Blessed".
-</p><p data-condition-key="manalock"><a href="/projects/dim-rift/wiki/Manalock"><strong>Manalock</strong></a>: Target card cannot consume its own mana or activate effects that cost mana until the end of turn. If that card has an effect in this chain that would qualify, that effect fizzles.
-</p><p data-condition-key="prone"><a href="/projects/dim-rift/wiki/Prone"><strong>Prone</strong></a>: Prone creatures cannot perform actions. They can use an "get up" action to lose their Prone condition.</p><p data-condition-key="sealed"><a href="/projects/dim-rift/wiki/Sealed"><strong>Sealed</strong></a>: Sealed creatures have: "Sac [this]: collect an extra Soul". Sealed creatures have: "When destroyed: you pay 2 life."
-</p></div>
+</p><p data-condition-key="manalocked"><a href="/projects/dim-rift/wiki/Manalocked"><strong>Manalocked</strong></a>: [this] cannot consume its own mana or activate effects that cost mana for the duration. If that card has an effect in this chain it became Manalocked that would qualify, that effect fizzles.
+</p><p data-condition-key="prone"><a href="/projects/dim-rift/wiki/Prone"><strong>Prone</strong></a>: Prone creatures cannot perform actions. They can use an "get up" action to lose their Prone condition.</p><p data-condition-key="sealed"><a href="/projects/dim-rift/wiki/Sealed"><strong>Sealed</strong></a>: [this] has its Rank increased by 1 (max 3). [this] has: "Sac [this]: gain 1 life.".
+</p><p data-condition-key="suppressed"><a href="/projects/dim-rift/wiki/Suppressed"><strong>Suppressed</strong></a>: All arrows in [this] are considered to be single arrows for the duration.</p></div>
 
 <script>
   const conditionsList = document.querySelector('#conditions-list');

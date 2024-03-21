@@ -23,11 +23,308 @@
     <main>
         
         
-<p class="notice"><mark>WARNING</mark> While the rest of the website is, in general, WIP, the Wiki is particularly incomplete and unfinished. Usage of these pages is not recommended at this stage.</p>
-
 <h1 id="targeting" tabindex="-1">Targeting</h1>
 <p>Targeting is the action of selecting a connected zone as part of the activation of an Effect or Action.</p>
-<p>See targeting rules under Rules &gt; Effects.</p>
+<p>Unlike in any other game, where normally any card matching the targeting requirement can be selected, in <strong>Dimensional Rift</strong> &quot;target&quot; always mean &quot;arrow targeting&quot;, meaning that the target must be reachable from the targeting card using its arrows and current orientation on the field.</p>
+<p>Every card has either none, single, double or triple arrows on each of the 8 directions (top, bottom, left, right, and diagonals). Face-up non-monument cards while on the field can be oriented in any of 4 90-degree possible rotations. The orientation of a card must be picked by the player upon summoning it, and cannot be changed arbitrarily (but can be changed by Rotation effects or during the <a href="/projects/dim-rift/wiki/Move_Action">Move Action</a> as established under <a href="/projects/dim-rift/rules/turn-structure">Turn Structure</a>).</p>
+<p>Cards cannot be oriented on non-90-degree angles, and thus orthogonal arrows are always orthogonal and diagonal arrows are always diagonal.</p>
+<p>You can only target cards your card connects to.</p>
+<p>An orthogonal arrow connects to the next zones on the row/column it points to, up to the amount of arrows; for example, a double left arrow connects to two zones to the left of the card.</p>
+<p>A diagonal single arrow connects the zone in the next row and next column; while a double arrow connects to a 2x2 grid starting on that zone; and a triple arrow connects to a 3x3 grid.</p>
+<p>You can think of it as each layer of arrows referencing a &quot;ring&quot; around the card. The single arrows connect up to the first ring, and so on.</p>
+<p>Below are some image examples to make it more clear, plus an interactive <a href="/projects/dim-rift/rules/target-practice">Target Practice</a> app.</p>
+<figure style="text-align:center;">
+    <img src="/projects/dim-rift/assets/illustrations/targeting-1.svg" width="60%">
+    <figcaption>
+        Example of a creature with a 3 arrows highlighting which zones it connects to.
+    </figcaption>
+</figure>
+<figure style="text-align:center;">
+    <img src="/projects/dim-rift/assets/illustrations/targeting-2.svg" width="60%">
+    <figcaption>
+        Example of an artifact with a 3 arrows highlighting which zones it connects to.
+    </figcaption>
+</figure>
+<h4 style="text-align: center;">Interactive Target Practice</h4>
+<div class="target-grid"><div class="target-row"><div class="target-zone" data-grid-id="1-1"></div><div class="target-zone" data-grid-id="1-2"></div><div class="target-zone" data-grid-id="1-3"></div><div class="target-zone" data-grid-id="1-4"></div><div class="target-zone" data-grid-id="1-5"></div><div class="target-zone" data-grid-id="1-6"></div><div class="target-zone" data-grid-id="1-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="2-1"></div><div class="target-zone" data-grid-id="2-2"></div><div class="target-zone" data-grid-id="2-3"></div><div class="target-zone" data-grid-id="2-4"></div><div class="target-zone" data-grid-id="2-5"></div><div class="target-zone" data-grid-id="2-6"></div><div class="target-zone" data-grid-id="2-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="3-1"></div><div class="target-zone" data-grid-id="3-2"></div><div class="target-zone" data-grid-id="3-3"></div><div class="target-zone" data-grid-id="3-4"></div><div class="target-zone" data-grid-id="3-5"></div><div class="target-zone" data-grid-id="3-6"></div><div class="target-zone" data-grid-id="3-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="4-1"></div><div class="target-zone" data-grid-id="4-2"></div><div class="target-zone" data-grid-id="4-3"></div><div class="target-center">
+            <div class="arrows-row">
+                <p class="target-arrow ↖-single" data-arrow-id="↖">↖</p>
+                <p class="target-arrow ↑-single" data-arrow-id="↑">↑</p>
+                <p class="target-arrow ↗-single" data-arrow-id="↗">↗</p>
+            </div>
+            <div class="arrows-row">
+                <p class="target-arrow ←-single" data-arrow-id="←">←</p>
+                <p>·</p>
+                <p class="target-arrow →-single" data-arrow-id="→">→</p>
+            </div>
+            <div class="arrows-row">
+                <p class="target-arrow ↙-single" data-arrow-id="↙">↙</p>
+                <p class="target-arrow ↓-single" data-arrow-id="↓">↓</p>
+                <p class="target-arrow ↘-single" data-arrow-id="↘">↘</p>
+            </div>
+        </div><div class="target-zone" data-grid-id="4-5"></div><div class="target-zone" data-grid-id="4-6"></div><div class="target-zone" data-grid-id="4-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="5-1"></div><div class="target-zone" data-grid-id="5-2"></div><div class="target-zone" data-grid-id="5-3"></div><div class="target-zone" data-grid-id="5-4"></div><div class="target-zone" data-grid-id="5-5"></div><div class="target-zone" data-grid-id="5-6"></div><div class="target-zone" data-grid-id="5-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="6-1"></div><div class="target-zone" data-grid-id="6-2"></div><div class="target-zone" data-grid-id="6-3"></div><div class="target-zone" data-grid-id="6-4"></div><div class="target-zone" data-grid-id="6-5"></div><div class="target-zone" data-grid-id="6-6"></div><div class="target-zone" data-grid-id="6-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="7-1"></div><div class="target-zone" data-grid-id="7-2"></div><div class="target-zone" data-grid-id="7-3"></div><div class="target-zone" data-grid-id="7-4"></div><div class="target-zone" data-grid-id="7-5"></div><div class="target-zone" data-grid-id="7-6"></div><div class="target-zone" data-grid-id="7-7"></div></div></div>
+<script>
+    const colors = {
+        'center': '#0000ff',
+        'default': '#f0f0f0',
+        'connected': '#ff0000',
+        'hovered': '#00ff00',
+    };
+    const arrowTypes = ['single', 'double', 'triple', 'none'];
+    const arrows = {
+        '↑': 'single',
+        '↗': 'single',
+        '→': 'single',
+        '↘': 'single',
+        '↓': 'single',
+        '↙': 'single',
+        '←': 'single',
+        '↖': 'single'
+    };
+    const connectionAreas = {
+        '↖-single': [[3, 3]],
+        '↑-single': [[3, 4]],
+        '↗-single': [[3, 5]],
+        '←-single': [[4, 3]],
+        '→-single': [[4, 5]],
+        '↙-single': [[5, 3]],
+        '↓-single': [[5, 4]],
+        '↘-single': [[5, 5]],
+        '↖-double': [[2, 2], [2, 3], [3, 2], [3, 3]],
+        '↑-double': [[3, 4], [2, 4]],
+        '↗-double': [[2, 5], [3, 5], [2, 6], [3, 6]],
+        '←-double': [[4, 3], [4, 2]],
+        '→-double': [[4, 5], [4, 6]],
+        '↙-double': [[5, 3], [6, 2], [6, 3], [5, 2]],
+        '↓-double': [[5, 4], [6, 4]],
+        '↘-double': [[5, 5], [6, 6], [6, 5], [5, 6]],
+        '↖-triple': [[1, 1], [1, 2], [1, 3], [2, 1], [3, 1], [2, 2], [3, 2], [2, 3], [3, 3]],
+        '↑-triple': [[3, 4], [2, 4], [1, 4]],
+        '↗-triple': [[1, 5], [1, 6], [1, 7], [2, 5], [3, 5], [2, 6], [3, 6], [2, 7], [3, 7]],
+        '←-triple': [[4, 3], [4, 2], [4, 1]],
+        '→-triple': [[4, 5], [4, 6], [4, 7]],
+        '↙-triple': [[5, 3], [6, 2], [7, 1], [6, 3], [7, 2], [7, 3], [5, 2], [5, 1], [6, 1]],
+        '↓-triple': [[5, 4], [6, 4], [7, 4]],
+        '↘-triple': [[5, 5], [6, 6], [7, 7], [6, 5], [7, 5], [7, 6], [5, 6], [5, 7], [6, 7]],
+    };
+    document.querySelectorAll('.target-arrow').forEach(arrow => {
+        const arrowId = arrow.dataset.arrowId;
+        arrow.addEventListener('click', () => {
+            const target = document.querySelector('.target-center');
+            const arrowType = arrows[arrowId];
+            const nextArrowType = arrowTypes[(arrowTypes.indexOf(arrowType) + 1) % arrowTypes.length];
+
+            arrow.textContent = (nextArrowType === 'none') ? '·' : arrowId;
+            arrows[arrowId] = nextArrowType;
+            arrow.classList.remove(`${arrowId}-${arrowType}`);
+            arrow.classList.add(`${arrowId}-${nextArrowType}`);
+
+            recolorZones();
+            arrow.dispatchEvent(new Event('mouseover'));
+        });
+        arrow.addEventListener('mouseover', () => {
+            const arrowType = arrows[arrowId];
+            recolorZones();
+            updateArrow(arrow, colors.hovered);
+            connectionAreas[`${arrowId}-${arrowType}`].forEach(([i, j]) => {
+                const zone = document.querySelector(`.target-zone[data-grid-id="${i}-${j}"]`);
+                updateZone(zone, colors.hovered);
+            });
+        });
+        arrow.addEventListener('mouseout', () => {
+            recolorZones();
+        });
+    });
+
+    const isConnected = (gridId) => {
+        const allConnected = Object.entries(arrows)
+            .flatMap(([arrow, type]) => connectionAreas[`${arrow}-${type}`] ?? []);
+        return allConnected.some(([i, j]) => `${i}-${j}` === gridId);
+    };
+
+    const recolorArrows = () => {
+        document.querySelectorAll('.target-arrow').forEach(arrow => {
+            updateArrow(arrow, colors.default);
+        });
+    };
+
+    const recolorZones = () => {
+        recolorArrows();
+
+        const zones = document.querySelectorAll('.target-zone');
+        for (const zone of zones) {
+            const gridId = zone.dataset.gridId;
+            const color = isConnected(gridId) ? 'connected' : 'default';
+            updateZone(zone, colors[color]);
+        }
+    };
+
+    const updateArrow = (arrow, color) => {
+        arrow.style.color = color;
+    };
+
+    const updateZone = (zone, color) => {
+        zone.style.borderColor = color;
+        zone.style.backgroundColor = `${color}20`;
+    };
+
+    updateZone(document.querySelector('.target-center'), colors.center);
+    recolorZones();
+</script>
+<style>
+    .target-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .target-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .target-zone, .target-center {
+        width: 80px;
+        height: 80px;
+        border: 2px solid;
+    }
+
+    .target-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4px;
+    }
+
+    .arrows-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .arrows-row p {
+        font-size: 16px;
+        margin: 0;
+        line-height: 80%;
+    }
+
+    .target-arrow {
+        position: relative;
+        cursor: pointer;
+        min-width: 12px;
+        text-align: center;
+    }.↖-double::after, .↖-triple::after {
+        content: '↖';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+    }
+
+    .↖-triple::before {
+        content: '↖';
+        position: absolute;
+        top: 6px;
+        left: 6px;
+    }.↑-double::after, .↑-triple::after {
+        content: '↑';
+        position: absolute;
+        top: 3px;
+        left: 0px;
+    }
+
+    .↑-triple::before {
+        content: '↑';
+        position: absolute;
+        top: 6px;
+        left: 0px;
+    }.↗-double::after, .↗-triple::after {
+        content: '↗';
+        position: absolute;
+        top: 3px;
+        left: -3px;
+    }
+
+    .↗-triple::before {
+        content: '↗';
+        position: absolute;
+        top: 6px;
+        left: -6px;
+    }.←-double::after, .←-triple::after {
+        content: '←';
+        position: absolute;
+        top: 0px;
+        left: 3px;
+    }
+
+    .←-triple::before {
+        content: '←';
+        position: absolute;
+        top: 0px;
+        left: 6px;
+    }.·-double::after, .·-triple::after {
+        content: '·';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .·-triple::before {
+        content: '·';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }.→-double::after, .→-triple::after {
+        content: '→';
+        position: absolute;
+        top: 0px;
+        left: -3px;
+    }
+
+    .→-triple::before {
+        content: '→';
+        position: absolute;
+        top: 0px;
+        left: -6px;
+    }.↙-double::after, .↙-triple::after {
+        content: '↙';
+        position: absolute;
+        top: -3px;
+        left: 3px;
+    }
+
+    .↙-triple::before {
+        content: '↙';
+        position: absolute;
+        top: -6px;
+        left: 6px;
+    }.↓-double::after, .↓-triple::after {
+        content: '↓';
+        position: absolute;
+        top: -3px;
+        left: 0px;
+    }
+
+    .↓-triple::before {
+        content: '↓';
+        position: absolute;
+        top: -6px;
+        left: 0px;
+    }.↘-double::after, .↘-triple::after {
+        content: '↘';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+    }
+
+    .↘-triple::before {
+        content: '↘';
+        position: absolute;
+        top: -6px;
+        left: -6px;
+    }</style>
+<p>See targeting rules under <a href="/projects/dim-rift/rules/effects">Rules &gt; Effects</a> for a much more in-depth explanation.</p>
 
     </main>
 </body>

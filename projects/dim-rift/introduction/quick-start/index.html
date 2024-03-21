@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/rift.png">
+    <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/projects/dim-rift/">Dimensional Rift</a></h1>
+        <a href="/projects/dim-rift/">Home</a> |
+        <a href="/projects/dim-rift/introduction">Introduction</a> |
+        <a href="/projects/dim-rift/rules">Rules</a> |
+        <a href="/projects/dim-rift/wiki">Wiki</a> |
+        <a href="/projects/dim-rift/references">References</a> |
+        <a href="https://forms.gle/w8wBSuq8a1nRRBc78">Contact</a>
+    </header>
+    <main>
+        
+        <h1 id="quick-start" tabindex="-1">Quick Start</h1>
+<p class="notice"><mark>Note</mark> This Quick Start Guide is still being developed and fine-tuned. While the <a href="/projects/dim-rift/rules">full rules</a> will explain everything you need in details, this page might be confusing or lacking.</p>
+<p>This is a simplified version of the rules covering only key points to get you started with the game. This assumes you have a cursory understanding of TCGs in general.</p>
+<p><strong>Dimensional Rift</strong> is a Yu-Gi-Oh! inspired TCG where cards are played in specific zones in the <a href="/projects/dim-rift/wiki/Battlefield">Battlefield</a>, which is a 5x2 grid for each player.</p>
+<figure style="text-align:center;">
+    <img src="/projects/dim-rift/assets/illustrations/battlefield.svg" width="85%">
+    <figcaption>
+        Dimensional Rift Battlefield (one side)
+    </figcaption>
+</figure>
+<p>There are 3 types of cards, <a href="/projects/dim-rift/wiki/Creature">Creatures</a>, <a href="/projects/dim-rift/wiki/Artifact">Artifacts</a> and <a href="/projects/dim-rift/wiki/Monument">Monuments</a>. They each can only go on their dedicated zone, and they can be played either face-up or face-down (except Monuments, which are always face-up).</p>
+<p>Cards (except Monuments) have arrows that indicate which direction they can target (both effects and attacks). You can only target cards that your card connects to. You can use the arrows printed on the card plus its current orientation and position on the grid to determine which zones it connects to. You can check <a href="/projects/dim-rift/wiki/targeting">the wiki on Targeting</a> for more details on how the arrows work - but for now you can use the interactive application below to get yourself familiarized with the concept:</p>
+<div class="target-grid"><div class="target-row"><div class="target-zone" data-grid-id="1-1"></div><div class="target-zone" data-grid-id="1-2"></div><div class="target-zone" data-grid-id="1-3"></div><div class="target-zone" data-grid-id="1-4"></div><div class="target-zone" data-grid-id="1-5"></div><div class="target-zone" data-grid-id="1-6"></div><div class="target-zone" data-grid-id="1-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="2-1"></div><div class="target-zone" data-grid-id="2-2"></div><div class="target-zone" data-grid-id="2-3"></div><div class="target-zone" data-grid-id="2-4"></div><div class="target-zone" data-grid-id="2-5"></div><div class="target-zone" data-grid-id="2-6"></div><div class="target-zone" data-grid-id="2-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="3-1"></div><div class="target-zone" data-grid-id="3-2"></div><div class="target-zone" data-grid-id="3-3"></div><div class="target-zone" data-grid-id="3-4"></div><div class="target-zone" data-grid-id="3-5"></div><div class="target-zone" data-grid-id="3-6"></div><div class="target-zone" data-grid-id="3-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="4-1"></div><div class="target-zone" data-grid-id="4-2"></div><div class="target-zone" data-grid-id="4-3"></div><div class="target-center">
+            <div class="arrows-row">
+                <p class="target-arrow ↖-single" data-arrow-id="↖">↖</p>
+                <p class="target-arrow ↑-single" data-arrow-id="↑">↑</p>
+                <p class="target-arrow ↗-single" data-arrow-id="↗">↗</p>
+            </div>
+            <div class="arrows-row">
+                <p class="target-arrow ←-single" data-arrow-id="←">←</p>
+                <p>·</p>
+                <p class="target-arrow →-single" data-arrow-id="→">→</p>
+            </div>
+            <div class="arrows-row">
+                <p class="target-arrow ↙-single" data-arrow-id="↙">↙</p>
+                <p class="target-arrow ↓-single" data-arrow-id="↓">↓</p>
+                <p class="target-arrow ↘-single" data-arrow-id="↘">↘</p>
+            </div>
+        </div><div class="target-zone" data-grid-id="4-5"></div><div class="target-zone" data-grid-id="4-6"></div><div class="target-zone" data-grid-id="4-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="5-1"></div><div class="target-zone" data-grid-id="5-2"></div><div class="target-zone" data-grid-id="5-3"></div><div class="target-zone" data-grid-id="5-4"></div><div class="target-zone" data-grid-id="5-5"></div><div class="target-zone" data-grid-id="5-6"></div><div class="target-zone" data-grid-id="5-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="6-1"></div><div class="target-zone" data-grid-id="6-2"></div><div class="target-zone" data-grid-id="6-3"></div><div class="target-zone" data-grid-id="6-4"></div><div class="target-zone" data-grid-id="6-5"></div><div class="target-zone" data-grid-id="6-6"></div><div class="target-zone" data-grid-id="6-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="7-1"></div><div class="target-zone" data-grid-id="7-2"></div><div class="target-zone" data-grid-id="7-3"></div><div class="target-zone" data-grid-id="7-4"></div><div class="target-zone" data-grid-id="7-5"></div><div class="target-zone" data-grid-id="7-6"></div><div class="target-zone" data-grid-id="7-7"></div></div></div>
+<script>
+    const colors = {
+        'center': '#0000ff',
+        'default': '#f0f0f0',
+        'connected': '#ff0000',
+        'hovered': '#00ff00',
+    };
+    const arrowTypes = ['single', 'double', 'triple', 'none'];
+    const arrows = {
+        '↑': 'single',
+        '↗': 'single',
+        '→': 'single',
+        '↘': 'single',
+        '↓': 'single',
+        '↙': 'single',
+        '←': 'single',
+        '↖': 'single'
+    };
+    const connectionAreas = {
+        '↖-single': [[3, 3]],
+        '↑-single': [[3, 4]],
+        '↗-single': [[3, 5]],
+        '←-single': [[4, 3]],
+        '→-single': [[4, 5]],
+        '↙-single': [[5, 3]],
+        '↓-single': [[5, 4]],
+        '↘-single': [[5, 5]],
+        '↖-double': [[2, 2], [2, 3], [3, 2], [3, 3]],
+        '↑-double': [[3, 4], [2, 4]],
+        '↗-double': [[2, 5], [3, 5], [2, 6], [3, 6]],
+        '←-double': [[4, 3], [4, 2]],
+        '→-double': [[4, 5], [4, 6]],
+        '↙-double': [[5, 3], [6, 2], [6, 3], [5, 2]],
+        '↓-double': [[5, 4], [6, 4]],
+        '↘-double': [[5, 5], [6, 6], [6, 5], [5, 6]],
+        '↖-triple': [[1, 1], [1, 2], [1, 3], [2, 1], [3, 1], [2, 2], [3, 2], [2, 3], [3, 3]],
+        '↑-triple': [[3, 4], [2, 4], [1, 4]],
+        '↗-triple': [[1, 5], [1, 6], [1, 7], [2, 5], [3, 5], [2, 6], [3, 6], [2, 7], [3, 7]],
+        '←-triple': [[4, 3], [4, 2], [4, 1]],
+        '→-triple': [[4, 5], [4, 6], [4, 7]],
+        '↙-triple': [[5, 3], [6, 2], [7, 1], [6, 3], [7, 2], [7, 3], [5, 2], [5, 1], [6, 1]],
+        '↓-triple': [[5, 4], [6, 4], [7, 4]],
+        '↘-triple': [[5, 5], [6, 6], [7, 7], [6, 5], [7, 5], [7, 6], [5, 6], [5, 7], [6, 7]],
+    };
+    document.querySelectorAll('.target-arrow').forEach(arrow => {
+        const arrowId = arrow.dataset.arrowId;
+        arrow.addEventListener('click', () => {
+            const target = document.querySelector('.target-center');
+            const arrowType = arrows[arrowId];
+            const nextArrowType = arrowTypes[(arrowTypes.indexOf(arrowType) + 1) % arrowTypes.length];
+
+            arrow.textContent = (nextArrowType === 'none') ? '·' : arrowId;
+            arrows[arrowId] = nextArrowType;
+            arrow.classList.remove(`${arrowId}-${arrowType}`);
+            arrow.classList.add(`${arrowId}-${nextArrowType}`);
+
+            recolorZones();
+            arrow.dispatchEvent(new Event('mouseover'));
+        });
+        arrow.addEventListener('mouseover', () => {
+            const arrowType = arrows[arrowId];
+            recolorZones();
+            updateArrow(arrow, colors.hovered);
+            connectionAreas[`${arrowId}-${arrowType}`].forEach(([i, j]) => {
+                const zone = document.querySelector(`.target-zone[data-grid-id="${i}-${j}"]`);
+                updateZone(zone, colors.hovered);
+            });
+        });
+        arrow.addEventListener('mouseout', () => {
+            recolorZones();
+        });
+    });
+
+    const isConnected = (gridId) => {
+        const allConnected = Object.entries(arrows)
+            .flatMap(([arrow, type]) => connectionAreas[`${arrow}-${type}`] ?? []);
+        return allConnected.some(([i, j]) => `${i}-${j}` === gridId);
+    };
+
+    const recolorArrows = () => {
+        document.querySelectorAll('.target-arrow').forEach(arrow => {
+            updateArrow(arrow, colors.default);
+        });
+    };
+
+    const recolorZones = () => {
+        recolorArrows();
+
+        const zones = document.querySelectorAll('.target-zone');
+        for (const zone of zones) {
+            const gridId = zone.dataset.gridId;
+            const color = isConnected(gridId) ? 'connected' : 'default';
+            updateZone(zone, colors[color]);
+        }
+    };
+
+    const updateArrow = (arrow, color) => {
+        arrow.style.color = color;
+    };
+
+    const updateZone = (zone, color) => {
+        zone.style.borderColor = color;
+        zone.style.backgroundColor = `${color}20`;
+    };
+
+    updateZone(document.querySelector('.target-center'), colors.center);
+    recolorZones();
+</script>
+<style>
+    .target-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .target-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .target-zone, .target-center {
+        width: 80px;
+        height: 80px;
+        border: 2px solid;
+    }
+
+    .target-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4px;
+    }
+
+    .arrows-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .arrows-row p {
+        font-size: 16px;
+        margin: 0;
+        line-height: 80%;
+    }
+
+    .target-arrow {
+        position: relative;
+        cursor: pointer;
+        min-width: 12px;
+        text-align: center;
+    }.↖-double::after, .↖-triple::after {
+        content: '↖';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+    }
+
+    .↖-triple::before {
+        content: '↖';
+        position: absolute;
+        top: 6px;
+        left: 6px;
+    }.↑-double::after, .↑-triple::after {
+        content: '↑';
+        position: absolute;
+        top: 3px;
+        left: 0px;
+    }
+
+    .↑-triple::before {
+        content: '↑';
+        position: absolute;
+        top: 6px;
+        left: 0px;
+    }.↗-double::after, .↗-triple::after {
+        content: '↗';
+        position: absolute;
+        top: 3px;
+        left: -3px;
+    }
+
+    .↗-triple::before {
+        content: '↗';
+        position: absolute;
+        top: 6px;
+        left: -6px;
+    }.←-double::after, .←-triple::after {
+        content: '←';
+        position: absolute;
+        top: 0px;
+        left: 3px;
+    }
+
+    .←-triple::before {
+        content: '←';
+        position: absolute;
+        top: 0px;
+        left: 6px;
+    }.·-double::after, .·-triple::after {
+        content: '·';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .·-triple::before {
+        content: '·';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }.→-double::after, .→-triple::after {
+        content: '→';
+        position: absolute;
+        top: 0px;
+        left: -3px;
+    }
+
+    .→-triple::before {
+        content: '→';
+        position: absolute;
+        top: 0px;
+        left: -6px;
+    }.↙-double::after, .↙-triple::after {
+        content: '↙';
+        position: absolute;
+        top: -3px;
+        left: 3px;
+    }
+
+    .↙-triple::before {
+        content: '↙';
+        position: absolute;
+        top: -6px;
+        left: 6px;
+    }.↓-double::after, .↓-triple::after {
+        content: '↓';
+        position: absolute;
+        top: -3px;
+        left: 0px;
+    }
+
+    .↓-triple::before {
+        content: '↓';
+        position: absolute;
+        top: -6px;
+        left: 0px;
+    }.↘-double::after, .↘-triple::after {
+        content: '↘';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+    }
+
+    .↘-triple::before {
+        content: '↘';
+        position: absolute;
+        top: -6px;
+        left: -6px;
+    }</style>
+<p>The zones on the battlefield must be activated before they can be used. Each player starts with the 3 central artifact zones active. Each turn, if the choose to take the <a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a>, they will get a <a href="/projects/dim-rift/wiki/Summoning_Token">Summoning Token</a> that enables the activation of a new zone. It is of strategic importance to quickly start to active your creature zones so that you can block your opponent attacks by playing creatures.</p>
+<p>Your turn has the regular phases that most TCGs operate with: Start &gt; Draw &gt; Main 1 &gt; Event &gt; Main 2 &gt; End. The difference is that instead of a Battle or Combat Phase, each turn you have to pick a event to perform, between <a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a>, <a href="/projects/dim-rift/wiki/Battle_Event">Battle Event</a> and <a href="/projects/dim-rift/wiki/Rift_Summoning_Event">Rift Summoning Event</a>.</p>
+<p>During your Event Phase, each card you control on the field, one by one, in any order, can perform at most one action chosen from their <a href="/projects/dim-rift/wiki/Action_Pool">Action Pool</a>. The choice of event can give bonus action options to the Action Pool of all cards, and also can have other effects.</p>
+<ul>
+<li><a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a>: the first one you want to take. <a href="/projects/dim-rift/wiki/Active">Activate</a> a new <a href="/projects/dim-rift/wiki/zone">zone</a> and your cards with <a href="/projects/dim-rift/wiki/Movement_Stat">Movement Stat</a> get the &quot;Move&quot; action.</li>
+<li><a href="/projects/dim-rift/wiki/Battle_Event">Battle Event</a>: all creatures get the &quot;Attack&quot; action.</li>
+<li><a href="/projects/dim-rift/wiki/Rift_Summoning_Event">Rift Summoning Event</a>: allows you to access cards from your Extra Deck. Requires the consumption of <a href="/projects/dim-rift/wiki/Soul">Souls</a>.</li>
+</ul>
+<p>You win by reducing your opponent's life to 0. You can do that by <a href="/projects/dim-rift/wiki/Attack_Action">attacking</a> with your creatures and not being <a href="/projects/dim-rift/wiki/Block">blocked</a>. There is no alternative <a href="/projects/dim-rift/wiki/Winning_Condition">Winning Condition</a>.</p>
+<p>Game actions can be either slow (sorcery speed; only at Main Phase) or fast (instant speed):</p>
+<ul>
+<li>slow: <a href="/projects/dim-rift/wiki/Summon">Summon</a> cards from your hand, <a href="/projects/dim-rift/wiki/Set">Set</a> cards from your hand</li>
+<li>fast: activate any card effect already on the field; flip <a href="/projects/dim-rift/wiki/Artifact">Artifact</a> cards face-up</li>
+</ul>
+<p>Card effects of the type <a href="/projects/dim-rift/wiki/Action">Action</a> can only be done during the Event Phase, so you can think of them as super-slow.</p>
+
+    </main>
+</body>
+
+</html>
