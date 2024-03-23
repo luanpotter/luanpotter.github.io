@@ -47,8 +47,13 @@ header h1 a {
 	}
 }
 
-footer {
+body > footer {
+	padding: 4px;
 	font-size: 0.5em;
+}
+
+body > footer > p {
+	text-align: right;
 }
 
 div.pagination {
