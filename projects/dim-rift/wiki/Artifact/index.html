@@ -39,9 +39,14 @@
 <p class="center">
     <img class="game-icon" src="/projects/dim-rift/assets/icons/transfer.png">
 </p>
-<p>When an Equipment is summoned, its controller must immediately select a connected creature zone (i.e. respecting the arrows). However, this does not target the card currently in the zone, and empty or even inactive zones can be chosen.</p>
-<p>The [equipped] zone is then established and does not move with creature movement. Any face-up creature, while in that zone, immediately gets all the effects and stats transferred, and similarly, immediately lose them if they leave the zone.</p>
-<p>At the end of the equipment's Move Action, or after it is rotated, a different [equipped] zone can be selected (e.g. once per equipment during each Campaign), even if the Equipment card has zero movement or did not reposition nor rotate.</p>
+<p>Every Equipment has an action <a href="/projects/dim-rift/wiki/Equip">Equip</a>:</p>
+<blockquote>
+<p>Equip: select a connected creature zone (can be empty or inactive); [this] is now [equipped] to that zone.</p>
+</blockquote>
+<p>When an Equipment is summoned, its controller must immediately perform the <a href="/projects/dim-rift/wiki/Equip">Equip</a> action.</p>
+<p>The [equipped] zone is does not move with creature movement. Any face-up creature, while in that zone, immediately gets all the effects and stats transferred, and similarly, immediately lose them if they leave the zone.</p>
+<p>At the end of the equipment's Move Action, or after it is rotated, the <a href="/projects/dim-rift/wiki/Equip">Equip</a> action can be performed as part of that Move Action (optional).</p>
+<p>If at any point an Equipment no longer connects to the [equipped] zone, it is no longer considered [equipped] to that zone, and must be re-equipped via the <a href="/projects/dim-rift/wiki/Equip">Equip</a> (or <a href="/projects/dim-rift/wiki/Move_Action">Move</a>) action.</p>
 <h4 id="vehicle" tabindex="-1">Vehicle</h4>
 <p>Vehicles are artifacts that have stats, arrows and effects that can be <a href="/projects/dim-rift/wiki/Transfer">transferred</a> to a creature, similar to Equipments. They also must have a greater-than-zero Movement stat, and thus can move in the Artifact row. On top of that, as part of their Move Action, they can spend 1 movement point to be &quot;crewed&quot; or &quot;uncrewed&quot;.</p>
 <p>To do that, target a face-up creature you control from the vehicle and move the vehicle card underneath the target creature card. Now they are bound together and the creature gets the status and [equipped]-effects transferred, similar to an Equipment.</p>
