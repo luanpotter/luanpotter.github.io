@@ -77,6 +77,10 @@ div.pagination p {
 	gap: 8px;
 }
 
+.image-with-text img {
+	max-width: none;
+}
+
 .center {
 	text-align: center;
 }
