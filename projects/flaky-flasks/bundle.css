@@ -1,0 +1,132 @@
+@import url('simple.min.css');
+
+/* override: force dark mode */
+:root {
+  --bg: #212121;
+  --accent-bg: #2b2b2b;
+  --text: #dcdcdc;
+  --text-light: #ababab;
+  --border: #666;
+  --accent: #ffb300;
+  --accent-light: #ffecb3;
+  --code: #f06292;
+  --preformatted: #ccc;
+  --disabled: #111;
+}
+
+/* override column size from simple */
+body {
+ grid-template-columns: 1fr min(60rem,90%) 1fr;
+}
+
+@font-face {
+	font-family: Mayflower;
+	src: url('assets/MayflowerAntique.ttf');
+}
+
+p, li {
+	text-align: justify;
+}
+
+header {
+    font-family: Mayflower;
+}
+
+header h1 {
+	font-size: 4em;
+}
+
+header h1 a {
+	color: white !important;
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+	header h1 {
+		font-size: 2em;
+	}
+}
+
+body > footer {
+	padding: 4px;
+	font-size: 0.5em;
+}
+
+body > footer > p {
+	text-align: right;
+}
+
+div.pagination {
+	display: flex;
+	justify-content: space-between;
+}
+
+div.pagination p {
+	margin: 0;
+}
+
+.game-icon {
+	image-rendering: pixelated;
+	width: 64px;
+	height: 64px;
+}
+
+.image-with-text {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.center {
+	text-align: center;
+}
+
+#card-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 8px;
+}
+
+.card-detail {
+	display: grid;
+	grid-template-columns: 360px calc(100% - 360px);
+	gap: 8px;
+}
+
+.stat-block {
+	padding: 2px;
+	margin: 4px;
+	border: 1px solid;
+	text-decoration: none;
+}
+
+.stat-block img {
+	image-rendering: pixelated;
+	width: 16px;
+	height: 16px;
+}
+
+.filter-section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+}
+
+.filter-section p {
+	margin: 0;
+}
+
+.filter-section .game-icon {
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+}
+
+.filter-section .game-icon.selected {
+	border: 1px solid white;
+}
+
+.filter-section .game-icon:not(.selected) {
+	opacity: 0.5;
+}
