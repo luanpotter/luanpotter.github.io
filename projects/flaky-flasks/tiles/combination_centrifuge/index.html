@@ -30,6 +30,28 @@
 
 <hr>
 
+
+<h3>Rulings</h3>
+
+    <ul>
+        <li>Must operate with exactly two fluids. Void fluids at end of round.</li>
+    </ul>
+
+    <ul>
+        <li>If the colors of both fluids are the same, the output fluid will have the same color (e.g. red + red = red).</li>
+    </ul>
+
+    <ul>
+        <li>If the colors of both fluids are different, the output fluid will have the missing color (e.g. red + blue = green).</li>
+    </ul>
+
+    <ul>
+        <li>The potency of the output fluid is the sum of the potencies of the input fluids.</li>
+    </ul>
+
+<hr>
+
+
 <h4>Metadata</h4>
 
 <pre>{
@@ -46,7 +68,13 @@
         "leftBottom": "fluidOutput",
         "rightBottom": "fluidOutput"
     },
-    "description": "A fluid centrifuge; combines two fluids into one (cycle colors if mismatch; sum the potency)."
+    "description": "A fluid centrifuge; combines two fluids into one (cycle colors if mismatch; sum the potency).",
+    "rulings": [
+        "Must operate with exactly two fluids. Void fluids at end of round.",
+        "If the colors of both fluids are the same, the output fluid will have the same color (e.g. red + red = red).",
+        "If the colors of both fluids are different, the output fluid will have the missing color (e.g. red + blue = green).",
+        "The potency of the output fluid is the sum of the potencies of the input fluids."
+    ]
 }</pre>
     </main>
     <footer>

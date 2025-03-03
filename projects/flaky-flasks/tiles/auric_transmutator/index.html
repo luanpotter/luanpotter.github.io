@@ -27,9 +27,12 @@
 </figure>
 
 <p>Powered by a shard of the Philosopher's Stone; consumes a connected coin to generate that amount of fame.<br>
+<i>Per operation, you can consume a charge</i>: generate that amount of fame + 1 instead; also, unlock all inputs.<br>
 </p>
 
 <hr>
+
+
 
 <h4>Metadata</h4>
 
@@ -39,10 +42,15 @@
     "tier": 3,
     "machine": "Auric Transmutator",
     "background": "machine-1.png",
+    "power": true,
     "bands": {
-        "top": "itemInput"
+        "top": "itemInput",
+        "rightTop": "itemInputLocked",
+        "leftTop": "itemInputLocked",
+        "rightBottom": "itemInputLocked",
+        "leftBottom": "itemInputLocked"
     },
-    "description": "Powered by a shard of the Philosopher's Stone; consumes a connected coin to generate that amount of fame.\n"
+    "description": "Powered by a shard of the Philosopher's Stone; consumes a connected coin to generate that amount of fame.\n[power]: generate that amount of fame + 1 instead; also, unlock all inputs.\n"
 }</pre>
     </main>
     <footer>

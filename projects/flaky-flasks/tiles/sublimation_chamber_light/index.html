@@ -27,10 +27,13 @@
 </figure>
 
 <p>A chamber to sublimate ingredients into light fumes.<br>
-[power]: void a symbol; create 1 [light fume].<br>
+Per operation, void a symbol; create 1 [dark fume] at the end of this turn.<br>
+<i>Per operation, you can consume a charge</i>: you can create 2 [dark fume] instead.<br>
 </p>
 
 <hr>
+
+
 
 <h4>Metadata</h4>
 
@@ -40,13 +43,16 @@
     "tier": 2,
     "machine": "Light Sublimation Chamber",
     "background": "machine-2.png",
+    "power": true,
     "bands": {
+        "top": "itemInput",
         "rightTop": "itemInput",
         "leftTop": "itemInput",
-        "rightBottom": "itemOutput",
-        "leftBottom": "itemOutput"
+        "rightBottom": "itemInput",
+        "leftBottom": "itemInput",
+        "bottom": "itemInput"
     },
-    "description": "A chamber to sublimate ingredients into light fumes.\n[power]: void a symbol; create 1 [light fume].\n"
+    "description": "A chamber to sublimate ingredients into light fumes.\nPer operation, void a symbol; create 1 [dark fume] at the end of this turn.\n[power]: you can create 2 [dark fume] instead.\n"
 }</pre>
     </main>
     <footer>

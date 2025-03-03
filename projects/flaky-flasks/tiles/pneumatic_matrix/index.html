@@ -20,18 +20,20 @@
     <main>
         
         
-<h1>Pipe Matrix [<a href="/projects/flaky-flasks/tiles/tier-3">Tier 3</a>]</h1>
+<h1>Pneumatic Matrix [<a href="/projects/flaky-flasks/tiles/tier-3">Tier 3</a>]</h1>
 
 <figure>
-    <img src="/projects/flaky-flasks/assets/tiles/pneumatic_matrix.png" alt="Pipe Matrix">
+    <img src="/projects/flaky-flasks/assets/tiles/pneumatic_matrix.png" alt="Pneumatic Matrix">
 </figure>
 
 <p>An inscrutable array of pipes and tubes.<br>
-[power]: redistributes input symbol to any direction.<br>
+<i>Per operation, you can consume a charge</i>: redistributes input symbol to any direction.<br>
 As an alternate cost to power, you can discard a card.<br>
 </p>
 
 <hr>
+
+
 
 <h4>Metadata</h4>
 
@@ -39,15 +41,16 @@ As an alternate cost to power, you can discard a card.<br>
     "key": "pneumatic_matrix",
     "count": 4,
     "tier": 3,
-    "machine": "Pipe Matrix",
+    "machine": "Pneumatic Matrix",
     "background": "machine-1.png",
+    "power": true,
     "bands": {
         "top": "itemInput",
         "bottom": "itemOutput",
-        "leftTop": "itemOutput",
-        "rightTop": "itemOutput",
-        "leftBottom": "itemOutput",
-        "rightBottom": "itemOutput"
+        "leftTop": "itemOutputLocked",
+        "rightTop": "itemOutputLocked",
+        "leftBottom": "itemOutputLocked",
+        "rightBottom": "itemOutputLocked"
     },
     "description": "An inscrutable array of pipes and tubes.\n[power]: redistributes input symbol to any direction.\nAs an alternate cost to power, you can discard a card.\n"
 }</pre>
