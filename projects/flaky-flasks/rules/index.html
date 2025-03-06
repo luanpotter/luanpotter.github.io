@@ -20,8 +20,126 @@
     <main>
         
         <h1 id="rules" tabindex="-1">Rules</h1>
-<p>This page will eventually contain the comprehensive rules of the game.</p>
-<p>For now you can access references to cards and tiles.</p>
+<p class="notice"><mark>Note</mark> I have not taken care into properly writing and notably structuring these rules. Please forgiven the messy organization.</p>
+<p>Flaky Flasks can be played by 2-4 players who compete to see who will be the best potioneer at the end.</p>
+<h2 id="objective" tabindex="-1">Objective</h2>
+<p>The objective of the game is to have the most Fame at the end of the 12th round.</p>
+<h2 id="contents" tabindex="-1">Contents</h2>
+<p>The three main components of Flaky Flasks are:</p>
+<ul>
+<li>Cards - these are ingredients and coins and will be used by players to craft potions. Each player will have a starter deck (Tier 0 cards) and be able to purchase new cards from the Card River as they are unlocked.</li>
+<li>Tiles - these are hex pieces the players will use to build their board. Each player start with the singular Tier 0 tile and will be able to purchase new tiles from the Tile Tableau as they are unlocked.</li>
+<li>Panels - these represent the chemistry rules of the universe, and define which potions can be made. The Tier 1 rules are pre-determined, and new tiers will also be unlocked.</li>
+</ul>
+<p>Other game elements include:</p>
+<ul>
+<li>Coins - amount of currency each player has; can be represented by physical coin tokens.</li>
+<li>Fame - victory points each player has; players can use dice or pen and paper to represent their current Fame.</li>
+<li>Fumes - a shared resource; can be represented by physical tokens; there are light and dark fumes.</li>
+</ul>
+<h2 id="setup" tabindex="-1">Setup</h2>
+<p>For the initial setup, give each player:</p>
+<ul>
+<li>their starting deck (composed of 12 Tier 0 cards, the 9 distinct ingredients + 3 Copper Coins)</li>
+<li>an empty board and the Tiler 0 tile (straight piece)</li>
+<li>no coins / fame</li>
+</ul>
+<p>Also setup:</p>
+<ul>
+<li>the Chemistry board with the Tier 1 Panels revealed</li>
+<li>the Tier 1 Card River</li>
+<li>the Tier 1 Tile Tableau</li>
+<li>no light nor dark fumes</li>
+<li>the Rounds and Turn trackers</li>
+</ul>
+<p>Also, use a randomized method to determine the first player.
+For the following rounds, the next player in turn order will be the first player.</p>
+<h2 id="rounds" tabindex="-1">Rounds</h2>
+<p>The game is played during 12 rounds, during each of which each player will be able to brew and sell potions to acquire coins and fame.</p>
+<p>Every set of 4 rounds, a new Tier of components is be unlocked.</p>
+<img src="/projects/flaky-flasks/assets/diagrams/ff-game.svg">
+<p>There are 4 tiers.</p>
+<ul>
+<li>Tier 0 components represent the cards and (single) tile on each player's starter deck (there are no Tier 0 Panels).</li>
+<li>Tier 1 components are available at the start of the game (to purchase, for Cards and Tiles; or to use, for Panels).</li>
+<li>Tier 2 components are unlocked right after Round 4.</li>
+<li>Tier 3 components are unlocked right after Round 8.</li>
+</ul>
+<p>Each round, a turn order is defined by the first player and the clockwise orientation.</p>
+<h2 id="round-structure" tabindex="-1">Round Structure</h2>
+<p>Each round is a self-contained opportunity for players to play cards, propagate symbols, brew potions and sell them.</p>
+<p>Each round is divided into some phases, and contains two Turns:</p>
+<img src="/projects/flaky-flasks/assets/diagrams/ff-round.svg">
+<ul>
+<li>Setup phase: during setup, each player can rearrange their board, and consult their deck before shuffling it.</li>
+<li>Turns: then players will play two turns (see Turn below).</li>
+<li>Cleanup phase: during cleanup, players will recollect their cards, clear any charges, and clean up any lingering effects.</li>
+<li>Market phase: during the market phase, players can take turns making financial transactions (either buying or selling).</li>
+<li>Bargain phase: during bargain, players can perform trades or deals with each other.</li>
+</ul>
+<p>Each phase can either be run simultaneously by all players, or in turn order.</p>
+<h3 id="setup-phase" tabindex="-1">Setup Phase</h3>
+<p>The setup phase can be run simultaneously by all players, as there is no interaction.</p>
+<p>During this phase, players can reposition and rotate tiles on their board to whatever configuration they prefer. They can leave tiles out.</p>
+<p>Players can also consult their deck before shuffling it.</p>
+<h3 id="cleanup-phase" tabindex="-1">Cleanup Phase</h3>
+<p>The cleanup phase can be run simultaneously by all players, as there is no interaction.</p>
+<p>Players must cleanup any charges, recollect their deck, and clean up any lingering effects.</p>
+<h3 id="market-phase" tabindex="-1">Market Phase</h3>
+<p>During the Market Phase, players will will take turns in turn order to perform financial transactions.</p>
+<p>A financial transaction can be either buying or selling something:</p>
+<ul>
+<li>Buy a Card from the Card River: to buy a card, a player must pay its coin cost, and then must trash a card in their deck and replace it with the new card.</li>
+<li>Buy a Tile from the Tile Tableau: to buy a tile, a player must pay its coin cost (defined on the table below).</li>
+<li>Sell a Potion: to sell a potion, a player must first identify the Potion with a Chemistry Panel, and then determine the amount of coins and fame they will receive. If there are multiple applicable rules, the player must at this moment chose which of the rules they will use.</li>
+</ul>
+<p>Once you pass, you can no longer partake on the Market Phase.
+Once all players pass, proceed to the next phase.</p>
+<h3 id="bargain-phase" tabindex="-1">Bargain Phase</h3>
+<p>During the Bargain Phase, players can perform trades or deals with each other.</p>
+<p>In turn order, each player can propose any trade or deal with any other player. The other player can accept or refuse the deal.</p>
+<p>Players can perform a mutually agreed deal to exchange any combination of:</p>
+<ul>
+<li>tiles</li>
+<li>cards (cards must always be exchanged 1:1)</li>
+<li>coins</li>
+<li>enforceable deals</li>
+</ul>
+<p>Players cannot bargain fame.</p>
+<p>Once all players had their turn, the round ends.</p>
+<h2 id="turn-structure" tabindex="-1">Turn Structure</h2>
+<p>Each one of the two turns is divided into steps (some simultaneous, some synchronous):</p>
+<img src="/projects/flaky-flasks/assets/diagrams/ff-turn.svg">
+<ul>
+<li>Draw Phase: each player draws 5 cards from their deck; this step can be done simultaneously.</li>
+<li>Ritual Phase: during the Ritual phase, in turn order, players can play any number of Hex effects from their hand, and might play instant speed Counters.</li>
+<li>Play Phase: during the Play phase, players will asynchronously play cards from their hand to their board, activating Manifest effects or discard them to activate Charm effects.</li>
+<li>Propagate Phase: during the Propagate phase, players will asynchronously propagate symbols on their board.</li>
+<li>Brew Phase: during the Brew phase, players will asynchronously brew potions.</li>
+<li>Discard Phase: at the end of the turn, players must discard any unused cards from their hand.</li>
+</ul>
+<h2 id="cards" tabindex="-1">Cards</h2>
+<p>Cards can be Ingredients or Coins. They can have Effects. Effects can be one of 5 types:</p>
+<p>During the Ritual Phase (these happen synchronously and typically affect other players or shared resources):</p>
+<ul>
+<li>[Hex]: can be activated by discard the card during the Ritual Phase. Typically they represent an attack or buff that affects you, other players and/or shared resources.</li>
+<li>[Counter]: can be played at instant speed during the Ritual Phase to respond to Hex or other Counter effects. Might or might not require discard or another cost.</li>
+</ul>
+<p>During the Play Phase (these are done asynchronously by each player separately):</p>
+<ul>
+<li>[Manifest]: &quot;When played&quot; effects that trigger immediately when the card is played on your board. The card <em>must</em> be played to activate their Manifest effect, but it can be played on a non-connected slot.</li>
+<li>[Charm]: &quot;When discarded&quot; effects that you can choose to activate (instead of Playing) from your hand during the Play Phase.</li>
+<li>[Trait]: a &quot;continuous&quot; / &quot;passive&quot; trait that an ingredient has.</li>
+</ul>
+<p>Some effects can <em>exude fumes</em> (either light or dark) or might care about <em>fume dominance</em>. Fumes are two shared global resource, light fumes and dark fumes. At any given time, a certain amount of each fume is present. Cards that exude fumes will increase the amount of fumes of one of the types. At any given time:</p>
+<ul>
+<li>if there are more light fumes than dark fumes, light fumes are said to dominate.</li>
+<li>if there are more dark fumes than light fumes, dark fumes are said to dominate.</li>
+<li>if there are no fumes or if there are an equal amount of fumes, there is no active dominance.</li>
+</ul>
+<h2 id="tiles" tabindex="-1">Tiles</h2>
+<p>Tiles are placed on your board and compose your alchemical contraption that allows you to brew potions.</p>
+<h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li><a href="/projects/flaky-flasks/cards">Cards</a></li>
 <li><a href="/projects/flaky-flasks/tiles">Tiles</a></li>
