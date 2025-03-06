@@ -180,3 +180,9 @@ div.pagination p {
 .symbol-blue {
   color: rgba(128, 128, 255, 255);
 }
+
+@media print {
+  header {
+    display: none;
+  }
+}
