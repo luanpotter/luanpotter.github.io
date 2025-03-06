@@ -44,8 +44,10 @@
         </div>
         
             <hr>
-            <p></p><p>When an opponent targets you with a &quot;When played&quot; effect: discard this card from your hand; apply the effect to the targeting player instead.</p>
+            
+                <p></p><p>[counter]: Discard when a Hex targets you to affect the caster instead.</p>
 <p></p>
+            
         
     </div>
 </div>
@@ -68,7 +70,16 @@
             "value": 2
         }
     ],
-    "effect": "When an opponent targets you with a \"When played\" effect: discard this card from your hand; apply the effect to the targeting player instead."
+    "effects": [
+        {
+            "type": "counter",
+            "text": "Discard when a Hex targets you to affect the caster instead."
+        }
+    ],
+    "rulings": [
+        "The caster receives the same effect that the targeted player would,\nexcept if it would already receive the effect, or it wouldn't make sense.\nEither way, you are protected.\n",
+        "You _can_ counter a counter (for example, you can [[Mirror Fragment]] a [[Mirror Fragment]])."
+    ]
 }</pre>
     </main>
     <footer>
