@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Flaky Flasks</title>
+    <link rel="icon" type="image/x-icon" href="/projects/flaky-flasks/assets/favicon.png">
+    <link rel="stylesheet" href="/projects/flaky-flasks/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/projects/flaky-flasks/">Flaky Flasks</a></h1>
+        <a href="/projects/flaky-flasks/">Home</a> |
+        <a href="/projects/flaky-flasks/rules">Rules</a> |
+        <a href="/projects/flaky-flasks/wiki">Wiki</a> |
+        <a href="/projects/flaky-flasks/references">References</a> |
+        <a href="https://forms.gle/GeBwY7ZzZrLzzK2PA">Contact</a>
+    </header>
+    <main>
+        
+        
+
+<h1>Wiki</h1>
+
+<div class="filter-section">
+  <p>
+    <strong>Filter:</strong> <input type="text" id="filter-wiki">
+  </p>
+</div>
+
+<ul id="wiki-list">
+
+
+
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Bargain_Phase/">Bargain Phase</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Brew_Step/">Brew Step</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Cleanup_Phase/">Cleanup Phase</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Coin/">Coin</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Discard_Step/">Discard Step</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Draw_Step/">Draw Step</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Fame/">Fame</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Market_Phase/">Market Phase</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Objective/">Objective</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Play_Step/">Play Step</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Propagate_Step/">Propagate Step</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Ritual_Step/">Ritual Step</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Round/">Round</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Setup_Phase/">Setup Phase</a>
+  </li>
+
+  <li>
+    <a href="/projects/flaky-flasks/wiki/Turn/">Turn</a>
+  </li>
+
+</ul>
+
+<script>
+  const wikiList = document.querySelector('#wiki-list');
+  const wikiFilter = document.querySelector('#filter-wiki');
+
+  wikiFilter.addEventListener('input', function () {
+    const value = this.value.toLowerCase();
+    const nodes = [...wikiList.querySelectorAll('li')];
+    nodes.forEach((node) => {
+      const name = node.innerHTML.toLowerCase();
+      const visible = name.includes(value);
+      node.style.display = visible ? 'list-item' : 'none';
+    });
+  });
+</script>
+    </main>
+    <footer>
+        <p>&copy; 2024 Flaky Flasks</p>
+    </footer>
+    
+</body>
+
+</html>

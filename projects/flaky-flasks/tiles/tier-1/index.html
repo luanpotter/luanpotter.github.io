@@ -15,6 +15,8 @@
         <h1><a href="/projects/flaky-flasks/">Flaky Flasks</a></h1>
         <a href="/projects/flaky-flasks/">Home</a> |
         <a href="/projects/flaky-flasks/rules">Rules</a> |
+        <a href="/projects/flaky-flasks/wiki">Wiki</a> |
+        <a href="/projects/flaky-flasks/references">References</a> |
         <a href="https://forms.gle/GeBwY7ZzZrLzzK2PA">Contact</a>
     </header>
     <main>
@@ -38,7 +40,7 @@
             <a href="/projects/flaky-flasks/tiles/alchemical_filter">Alchemical Filter</a>
             <br>
             <small>A simple pipe filter; allows you to choose to void any symbols that pass through.<br>
-[power]: enable locked outputs.<br>
+Per operation, you can consume a charge: enable locked outputs.<br>
 </small>
         </p>
       </div>
@@ -53,7 +55,7 @@
             <small>A small guillotine for symbols; splits a symbol into two equal halves, rounded down.<br>
 For each symbol that comes, two (or zero) symbols come out of same color and shape but value / 2 rounded down.<br>
 A zero-valued symbol ceases to exist. Outputs can exit through any output direction.<br>
-[power]: you can round up instead.<br>
+Per operation, you can consume a charge: you can round up instead.<br>
 </small>
         </p>
       </div>
@@ -66,7 +68,7 @@ A zero-valued symbol ceases to exist. Outputs can exit through any output direct
             <a href="/projects/flaky-flasks/tiles/stamping_press">Stamping Press</a>
             <br>
             <small>A press that joins two symbols together; takes in two symbols of same color and shape and outputs a symbol of that color and shape with the added values.<br>
-[power]: you can join up to 3 symbols instead.<br>
+Per operation, you can consume a charge: you can join up to 3 symbols instead.<br>
 </small>
         </p>
       </div>
@@ -80,9 +82,9 @@ A zero-valued symbol ceases to exist. Outputs can exit through any output direct
             <br>
             <small>A mundane mortar and pestle; grinds down shapes adding rough edges.<br>
 Outputs a symbol of same color and value but shape with +1 side.<br>
-[triangle] -> [square] -> [hexagon] -> [void]<br>
-Must operate. Hexagons are voided.<br>
-[power]: you can choose not to operate.<br>
+▲ -> ■ -> ⬟ -> [void]<br>
+Must operate. ⬟ are voided.<br>
+Per operation, you can consume a charge: you can choose not to operate.<br>
 </small>
         </p>
       </div>
@@ -94,11 +96,11 @@ Must operate. Hexagons are voided.<br>
         <p style="width: 100%">
             <a href="/projects/flaky-flasks/tiles/sandpaper_belt_top">Sandpaper Belt</a>
             <br>
-            <small>A rustic, manually operated sandpaper on a belt; polish shapes by removing one edge.<br>
-Outputs a symbol of same color and value but shape with -1 side.<br>
-[hexagon] -> [square] -> [triangle] -> [void]<br>
-Must operate. Triangles are voided.<br>
-[power]: you can choose not to operate.<br>
+            <small><em>A rustic, manually operated sandpaper on a belt; polish shapes by removing one edge.</em><br>
+Outputs a symbol of same color and value as the input but with its shape reduced by one side.<br>
+I.e., ⬟ -> ■ -> ▲ -> [void]<br>
+Must operate. ▲ are voided.<br>
+Per operation, you can consume a charge: you can choose not to operate.<br>
 </small>
         </p>
       </div>
@@ -110,7 +112,9 @@ Must operate. Triangles are voided.<br>
         <p style="width: 100%">
             <a href="/projects/flaky-flasks/tiles/tallow_candle">Tallow Candle</a>
             <br>
-            <small>A faint tallow candle; each round, at setup: generates 1 unit of power.</small>
+            <small><em>A faint tallow candle.</em><br>
+Each <a href="/projects/flaky-flasks/wiki/Round">Round</a>, at the <a href="/projects/flaky-flasks/wiki/Setup_Phase">Setup Phase</a>: generate 1 <a href="/projects/flaky-flasks/wiki/Charge">Charge</a>.<br>
+</small>
         </p>
       </div>
     </div>
