@@ -68,8 +68,8 @@
 <p>The Ritual Step is the interactive step of the <a href="/projects/flaky-flasks/wiki/Turn">Turn</a>, happening right after the <a href="/projects/flaky-flasks/wiki/Draw_Step">Draw Step</a>.</p>
 <p>All effects that affect either other players or the global state of the game (such as <a href="/projects/flaky-flasks/wiki/Fumes">Fumes</a>) will be activated during this step; namely:</p>
 <ul>
-<li><a href="/projects/flaky-flasks/wiki/Hex">Hex</a> effects</li>
-<li><a href="/projects/flaky-flasks/wiki/Counter">Counter</a> effects</li>
+<li><span class="effect-hex"><a href="/projects/flaky-flasks/wiki/Hex">Hex</a></span> effects</li>
+<li><span class="effect-counter"><a href="/projects/flaky-flasks/wiki/Counter">Counter</a></span> effects</li>
 </ul>
 <p>During the Ritual Step, players will act in turn order, essentially having a sub-turn; in each player's sub-turn, they can, as many times as they wish, activate a <a href="/projects/flaky-flasks/wiki/Hex">Hex</a> effect by discarding an <a href="/projects/flaky-flasks/wiki/Ingredient_Card">Ingredient Card</a> from their hand that has a <a href="/projects/flaky-flasks/wiki/Hex">Hex</a> effect.</p>
 <p>Before resolving each effect, players get the opportunity to respond or pass priority, again in turn order, starting with the first player after the sub-turn player.</p>
@@ -82,10 +82,10 @@
 <li>play a card (ingredient or coin) into one <a href="/projects/flaky-flasks/wiki/Slot">Slot</a> in their board</li>
 <li>
 <ul>
-<li>if the card as a <a href="/projects/flaky-flasks/wiki/Manifest">Manifest</a> effect, it triggers immediately and must be resolved</li>
+<li>if the card as a <span class="effect-manifest"><a href="/projects/flaky-flasks/wiki/Manifest">Manifest</a></span> effect, it triggers immediately and must be resolved</li>
 </ul>
 </li>
-<li>discard a card with a <a href="/projects/flaky-flasks/wiki/Charm">Charm</a>-type effect to immediately resolve its effects</li>
+<li>discard a card with a <span class="effect-charm"><a href="/projects/flaky-flasks/wiki/Charm">Charm</a></span>-type effect to immediately resolve its effects</li>
 </ul>
 <p>After each player is happy with their board state, they can proceed to the <a href="/projects/flaky-flasks/wiki/Propagate_Step">Propagate Step</a>.</p>
 <h4 id="propagate-step" tabindex="-1">Propagate Step</h4>
@@ -94,7 +94,7 @@
 <p>For each ingredient card in play that the player wishes to propagate, they will process each symbol through their machine following any desired path until they reach their <a href="/projects/flaky-flasks/wiki/Cauldron">Cauldron</a>.</p>
 <p>Symbols that reach broken paths are voided. Otherwise, symbols cannot be voided and must be propagated all the way (unless a machine voids them).</p>
 <p>During propagation symbols can be transformed by the tiles they encounter. For example, a <span class="symbol-green">⬟1</span> symbol passing through a <a href="/projects/flaky-flasks/tiles/catalyst_injector_r">Catalyst Injector</a> could become a <span class="symbol-green">⬟3</span>.</p>
-<p>Players do not need to propagate every ingredient, as they can be saved for the next turn (unless the have the <code>Spoils</code> <a href="/projects/flaky-flasks/wiki/Trait">trait</a>).</p>
+<p>Players do not need to propagate every ingredient, as they can be saved for the next turn (unless the have the <code>Spoils</code> <a href="/projects/flaky-flasks/wiki/Trait">trait</a>). However, once they decide to propagate a card, they <em>must</em> propagate all symbols on it (unless they have the <code>Fractured</code> <a href="/projects/flaky-flasks/wiki/Trait">trait</a>).</p>
 <p>After each player no longer wishes to propagate any more cards or symbols, they can proceed to the <a href="/projects/flaky-flasks/wiki/Brew_Step">Brew Step</a>.</p>
 <h4 id="brew-step" tabindex="-1">Brew Step</h4>
 <p>The Brew Step is the penultimate step of a <a href="/projects/flaky-flasks/wiki/Turn">Turn</a>, happening right after the <a href="/projects/flaky-flasks/wiki/Propagate_Step">Propagate Step</a>.</p>
