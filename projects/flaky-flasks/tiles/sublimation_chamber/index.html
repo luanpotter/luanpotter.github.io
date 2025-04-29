@@ -22,15 +22,15 @@
     <main>
         
         
-<h1>Dark Sublimation Chamber [<a href="/projects/flaky-flasks/tiles/tier-2">Tier 2</a>]</h1>
+<h1>Sublimation Chamber [<a href="/projects/flaky-flasks/tiles/tier-2">Tier 2</a>]</h1>
 
 <figure>
-    <img src="/projects/flaky-flasks/assets/tiles/sublimation_chamber_dark.png" alt="Dark Sublimation Chamber">
+    <img src="/projects/flaky-flasks/assets/tiles/sublimation_chamber.png" alt="Sublimation Chamber">
 </figure>
 
-<p>A chamber to sublimate ingredients into dark fumes.<br>
-Per operation, void a symbol; create 1 <span class="dark-fume"><a href="/projects/flaky-flasks/wiki/Dark_Fume">≋</a></span> at the end of this <a href="/projects/flaky-flasks/wiki/Turn">Turn</a>.<br>
-Per operation, you can consume a <a href="/projects/flaky-flasks/wiki/Charge">Charge</a>: you can create 2 <span class="dark-fume"><a href="/projects/flaky-flasks/wiki/Dark_Fume">≋</a></span> instead.<br>
+<p>A chamber to sublimate ingredients into fumes.<br>
+Per operation, void a symbol; create either a <span class="light-fume"><a href="/projects/flaky-flasks/wiki/Light_Fume">≋</a></span> or a <span class="dark-fume"><a href="/projects/flaky-flasks/wiki/Dark_Fume">≋</a></span> at the end of this <a href="/projects/flaky-flasks/wiki/Turn">Turn</a>.<br>
+When powered:: you can create 2 fumes instead.<br>
 </p>
 
 <hr>
@@ -39,17 +39,15 @@ Per operation, you can consume a <a href="/projects/flaky-flasks/wiki/Charge">Ch
 
 
 
-    <h4>Variants</h4><a href="/projects/flaky-flasks/tiles/sublimation_chamber_light"><img width="120px" src="/projects/flaky-flasks/assets/tiles/sublimation_chamber_light.png" alt="Light Sublimation Chamber"></a><hr>
-
 
 <h4>Metadata</h4>
 
 <pre>{
-    "count": 2,
+    "key": "sublimation_chamber",
+    "count": 4,
     "tier": 2,
-    "machine": "Dark Sublimation Chamber",
+    "machine": "Sublimation Chamber",
     "background": "machine-2.png",
-    "power": true,
     "bands": {
         "top": "itemInput",
         "rightTop": "itemInput",
@@ -58,9 +56,7 @@ Per operation, you can consume a <a href="/projects/flaky-flasks/wiki/Charge">Ch
         "leftBottom": "itemInput",
         "bottom": "itemInput"
     },
-    "description": "A chamber to sublimate ingredients into dark fumes.\nPer operation, void a symbol; create 1 [dark fume] at the end of this [[Turn]].\n[power]: you can create 2 [dark fume] instead.\n",
-    "key": "sublimation_chamber_dark",
-    "ref": "sublimation_chamber_light"
+    "description": "A chamber to sublimate ingredients into fumes.\nPer operation, void a symbol; create either a [light fume] or a [dark fume] at the end of this [[Turn]].\n[power]: you can create 2 fumes instead.\n"
 }</pre>
 
     </main>

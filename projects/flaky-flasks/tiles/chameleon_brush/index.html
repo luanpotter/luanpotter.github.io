@@ -22,13 +22,14 @@
     <main>
         
         
-<h1>Tesla Coil [<a href="/projects/flaky-flasks/tiles/tier-3">Tier 3</a>]</h1>
+<h1>Chameleon Brush [<a href="/projects/flaky-flasks/tiles/tier-1">Tier 1</a>]</h1>
 
 <figure>
-    <img src="/projects/flaky-flasks/assets/tiles/tesla_coil.png" alt="Tesla Coil">
+    <img src="/projects/flaky-flasks/assets/tiles/chameleon_brush.png" alt="Chameleon Brush">
 </figure>
 
-<p>A powerful, mysterious coil; redistributes input power to any adjacent tile.<br>
+<p>A simple color replicator; allows you to change the color of a symbol by consuming another symbol.<br>
+When powered:: enable locked inputs.<br>
 </p>
 
 <hr>
@@ -41,20 +42,18 @@
 <h4>Metadata</h4>
 
 <pre>{
-    "key": "tesla_coil",
+    "key": "chameleon_brush",
     "count": 4,
-    "tier": 3,
-    "machine": "Tesla Coil",
-    "background": "machine-1.png",
+    "tier": 1,
+    "machine": "Chameleon Brush",
+    "background": "machine-2.png",
+    "description": "A simple color replicator; allows you to change the color of a symbol by consuming another symbol.\n[power]: enable locked inputs.\n",
     "bands": {
-        "bottom": "powerInput",
-        "top": "powerOutput",
-        "leftTop": "powerOutput",
-        "rightTop": "powerOutput",
-        "leftBottom": "powerOutput",
-        "rightBottom": "powerOutput"
-    },
-    "description": "A powerful, mysterious coil; redistributes input power to any adjacent tile.\n"
+        "top": "itemInput",
+        "leftTop": "itemInputLocked",
+        "rightTop": "itemInputLocked",
+        "bottom": "itemOutput"
+    }
 }</pre>
 
     </main>

@@ -22,14 +22,14 @@
     <main>
         
         
-<h1>Tallow Candle [<a href="/projects/flaky-flasks/tiles/tier-1">Tier 1</a>]</h1>
+<h1>Tallow Candle [<a href="/projects/flaky-flasks/tiles/tier-2">Tier 2</a>]</h1>
 
 <figure>
     <img src="/projects/flaky-flasks/assets/tiles/tallow_candle.png" alt="Tallow Candle">
 </figure>
 
 <p><em>A faint tallow candle.</em><br>
-Each <a href="/projects/flaky-flasks/wiki/Round">Round</a>, at the <a href="/projects/flaky-flasks/wiki/Setup_Phase">Setup Phase</a>: generate 1 <a href="/projects/flaky-flasks/wiki/Charge">Charge</a>.<br>
+Powers adjacent machines.<br>
 </p>
 
 <hr>
@@ -44,12 +44,14 @@ Each <a href="/projects/flaky-flasks/wiki/Round">Round</a>, at the <a href="/pro
 <pre>{
     "key": "tallow_candle",
     "count": 4,
-    "tier": 1,
+    "tier": 2,
     "machine": "Tallow Candle",
     "background": "machine-1.png",
-    "description": "_A faint tallow candle._\nEach [[Round]], at the [[Setup Phase]]: generate 1 [[Charge]].\n",
+    "description": "_A faint tallow candle._\nPowers adjacent machines.\n",
     "bands": {
-        "top": "powerOutput"
+        "top": "powerOutput",
+        "leftTop": "powerOutput",
+        "rightTop": "powerOutput"
     }
 }</pre>
 
