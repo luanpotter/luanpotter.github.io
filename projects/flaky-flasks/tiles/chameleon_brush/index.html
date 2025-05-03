@@ -22,14 +22,15 @@
     <main>
         
         
-<h1>Chameleon Brush [<a href="/projects/flaky-flasks/tiles/tier-1">Tier 1</a>]</h1>
+<h1>Chameleon Brush [<a href="/projects/flaky-flasks/tiles/tier-2">Tier 2</a>]</h1>
 
 <figure>
     <img src="/projects/flaky-flasks/assets/tiles/chameleon_brush.png" alt="Chameleon Brush">
 </figure>
 
-<p>A simple color replicator; allows you to change the color of a symbol by consuming another symbol.<br>
-When powered: enable locked inputs.<br>
+<p>A brush transfigured from a chameleon; it can change the color of a symbol.<br>
+Discard a card, change the color of a symbol to a color present in the discarded card.<br>
+If un-powered, you can only change the color of a symbol to a color not currently in your cauldron.<br>
 </p>
 
 <hr>
@@ -44,14 +45,12 @@ When powered: enable locked inputs.<br>
 <pre>{
     "key": "chameleon_brush",
     "count": 4,
-    "tier": 1,
+    "tier": 2,
     "machine": "Chameleon Brush",
     "background": "machine-2.png",
-    "description": "A simple color replicator; allows you to change the color of a symbol by consuming another symbol.\n[power]: enable locked inputs.\n",
+    "description": "A brush transfigured from a chameleon; it can change the color of a symbol.\nDiscard a card, change the color of a symbol to a color present in the discarded card.\nIf un-powered, you can only change the color of a symbol to a color not currently in your cauldron.\n",
     "bands": {
         "top": "itemInput",
-        "leftTop": "itemInputLocked",
-        "rightTop": "itemInputLocked",
         "bottom": "itemOutput"
     }
 }</pre>

@@ -30,8 +30,8 @@
 
 <p>A small guillotine for symbols; splits a symbol into two equal halves, rounded down.<br>
 For each symbol that comes, two (or zero) symbols come out of same color and shape but value / 2 rounded down.<br>
-A zero-valued symbol ceases to exist. Outputs can exit through any output direction.<br>
-When powered: you can round up instead.<br>
+A zero-valued symbol ceases to exist.<br>
+When powered: for an odd 2X+1 symbol, you can split it in X and X+1 instead of rounding down.<br>
 </p>
 
 <hr>
@@ -50,11 +50,11 @@ When powered: you can round up instead.<br>
     "machine": "Ingredient Guillotine",
     "background": "machine-1.png",
     "bands": {
-        "bottom": "itemInput",
-        "leftBottom": "itemOutput",
-        "rightBottom": "itemOutput"
+        "bottom": "itemOutput",
+        "leftTop": "itemInput",
+        "rightTop": "itemInput"
     },
-    "description": "A small guillotine for symbols; splits a symbol into two equal halves, rounded down.\nFor each symbol that comes, two (or zero) symbols come out of same color and shape but value / 2 rounded down.\nA zero-valued symbol ceases to exist. Outputs can exit through any output direction.\n[power]: you can round up instead.\n"
+    "description": "A small guillotine for symbols; splits a symbol into two equal halves, rounded down.\nFor each symbol that comes, two (or zero) symbols come out of same color and shape but value / 2 rounded down.\nA zero-valued symbol ceases to exist.\n[power]: for an odd 2X+1 symbol, you can split it in X and X+1 instead of rounding down.\n"
 }</pre>
 
     </main>
