@@ -86,7 +86,7 @@
 
   const computePanels = (panels, random) => {
     const results = [];
-    for (const tier of [1, 2, 3]) {
+    for (const tier of [0, 1, 2]) {
       for (const group of ['A', 'B', 'C']) {
         const groupPanels = panels.filter(panel => panel.tier === tier && panel.group === group);
         const randomIndex = random.nextInt(0, groupPanels.length - 1);
