@@ -2,5 +2,5 @@
 
 rm -rf card-press
 mkdir card-press
-(cd ../../card-press && rm -rf dist/ && ./scripts/build.sh --deploy)
+(cd ../../card-press && ./scripts/build.sh --deploy)
 cp -r ../../card-press/dist/* ./card-press
