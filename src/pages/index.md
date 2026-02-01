@@ -4,15 +4,14 @@ title: Luan
 ---
 
 Hello! My name is Luan Nico, and this is my landing page.
+
 Please check my [Github Profile](https://github.com/luanpotter) for more up-to-date information.
 
 ## Bio
 
-I'm a Software Craftsman who loves Open Source and the community, currently in love with Dart/Flutter.
+I'm a Physicist and Software Craftsman who loves OSS and the community; currently in love with Kotlin, Dart & Flutter, and learning about the Universe and its mysteries.
 
-I have worked for more than 10 years professionally and for more years that I can remember as a hobby with a plethora of languages, platforms, and libraries. I like to solve people's problems with technology, and I believe there is always a good solution to every problem and a good problem for every solution; for that reason, I like most programming languages that I have come in contact, and I'm always thrilled to learn something new.
-
-I also love Physics, and I wanted to learn more about how the Universe works since I was a kid. That's why I took Physics as a graduation course, and my love is divided between Physics and Development.
+I have worked for more than a decade professionally (and more years that I can remember as a hobby) with a plethora of languages, platforms, frameworks and libraries. I like to solve people's problems with technology, and I believe there is always a good solution to every problem and a good problem for every solution; for that reason, I like most programming languages that I have come in contact with, and I'm always thrilled to learn something new.
 
 I truly believe in Open Source and I try to make, if possible, everything I do open (libre) and free.
 

@@ -2,17 +2,14 @@
 import Base from "./Base.astro";
 
 interface Props {
-  frontmatter?: {
-    title: string;
-    subtitle?: string;
-  };
+  frontmatter?: { title?: string; subtitle?: string };
   title?: string;
   subtitle?: string;
 }
 
-const { frontmatter, title: propsTitle, subtitle: propsSubtitle } = Astro.props;
-const title = frontmatter?.title ?? propsTitle ?? "";
-const subtitle = frontmatter?.subtitle ?? propsSubtitle;
+const props = Astro.props;
+const title = props.frontmatter?.title ?? props.title ?? "";
+const subtitle = props.frontmatter?.subtitle ?? props.subtitle;
 ---
 
 <Base title={title}>

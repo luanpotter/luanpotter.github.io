@@ -1,13 +1,11 @@
 ---
 interface Props {
-  frontmatter?: {
-    title: string;
-  };
+  frontmatter?: { title?: string };
   title?: string;
 }
 
-const { frontmatter, title: propsTitle } = Astro.props;
-const title = frontmatter?.title ?? propsTitle ?? "Luan";
+const props = Astro.props;
+const title = props.frontmatter?.title ?? props.title ?? "Luan";
 ---
 
 <!DOCTYPE html>
