@@ -35,20 +35,13 @@ jobs:
       - name: Copy projects to dist
         run: cp -r projects dist/projects
 
-      - name: Copy other static files to dist
-        run: |
-          cp -r me dist/me
-          cp -r files dist/files
-          cp keybase.txt dist/keybase.txt
-          ln -s me/avatar.png dist/avatar.png
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: "dist"
 
   deploy:
     environment:
