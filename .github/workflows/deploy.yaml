@@ -34,11 +34,9 @@ jobs:
 
       - name: Copy projects to dist
         run: |
-          cp -r projects dist/projects
-          echo "Projects copied. Contents:"
-          ls -la dist/projects/
-          echo "Total files in dist:"
-          find dist -type f | wc -l
+          cp -r projects/* dist/projects/
+          echo "Total projects copied: $(ls projects/ | wc -l)"
+          echo "Total files in dist: $(find dist -type f | wc -l)"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
