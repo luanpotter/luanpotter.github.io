@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>drop-in - examples</title>
-    <link rel="stylesheet" href="https://luan.xyz/projects/drop-in/drop-in.css" />
+    <link rel="stylesheet" href="drop-in.css" />
   </head>
   <body>
     <div id="root">
@@ -12,9 +12,175 @@
         <a href="."><span>drop-in</span></a>
         <a href="examples.html" class="active"><span>examples</span></a>
         <a href="https://github.com/luanpotter/drop-in"><span>github</span></a>
+        <a href="https://www.npmjs.com/package/drop-in-css"><span>npm</span></a>
       </menu>
       <main>
-        <p>TODO: drop-in examples</p>
+        <p>
+          A collection of examples of different elements and how they are styled; check the source-code for details.
+        </p>
+
+        <fieldset>
+          <legend><span>Typography</span></legend>
+          <section>
+            <p>Regular paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">links</a>.</p>
+            <p>
+              The font is <a href="https://github.com/tonsky/font-writer">Writer</a> by @tonsky, a beautiful monospace
+              font.
+            </p>
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>Buttons</span></legend>
+          <section>
+            <p>
+              Three distinct button "types" (controlled by the <code>.accent</code> and <code>.danger</code> classes):
+            </p>
+            <div>
+              <button>Default Button</button>
+              <button class="accent">Accent Button</button>
+              <button class="danger">Danger Button</button>
+            </div>
+            <p>Disabled states:</p>
+            <div>
+              <button disabled>Disabled</button>
+              <button class="accent" disabled>Disabled Accent</button>
+              <button class="danger" disabled>Disabled Danger</button>
+            </div>
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>Forms</span></legend>
+          <section>
+            <label>
+              Text input
+              <input type="text" placeholder="Enter text..." />
+            </label>
+
+            <label>
+              Select
+              <select>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
+            </label>
+
+            <label>
+              Textarea
+              <textarea rows="3" placeholder="Enter longer text..."></textarea>
+            </label>
+
+            <label>
+              File upload
+              <input type="file" />
+            </label>
+
+            <p>Add a span with <code>.error</code> inside the label:</p>
+            <label>
+              <span>
+                Text Input
+                <span class="error">[This field is required]</span>
+              </span>
+              <input type="text" class="error" placeholder="Showcasing error state" />
+            </label>
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>Fieldset Variations</span></legend>
+          <section>
+            <p>Normal fieldset (shown here). Fieldsets use <code>&lt;legend&gt;</code> for titles.</p>
+          </section>
+        </fieldset>
+
+        <fieldset class="error">
+          <legend>
+            <span>Fieldsets</span>
+            <span class="error">Validation failed</span>
+          </legend>
+          <section>
+            <p>
+              The boxes you have been seeing are <code>&lt;fieldset&gt;</code> with a <code>&lt;legend&gt;</code> for
+              the title.
+            </p>
+            <p>Add class <code>.error</code> to fieldset for error state.</p>
+            <p>Add a span with <code>.error</code> inside legend for the error message.</p>
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>Lists</span></legend>
+          <section>
+            <p>Unordered list:</p>
+            <ul>
+              <li>First item</li>
+              <li>Second item</li>
+              <li>
+                Third item with much, much longer text so that it has to wrap onto multiple lines by the limited nature
+                of finite space.
+              </li>
+            </ul>
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>Code</span></legend>
+          <section>
+            <p>
+              Use <code>&lt;pre&gt;&lt;code&gt;</code> for code blocks, which will be styled with a simple border and
+              background:
+            </p>
+            <pre><code>val results = tasks.mapNotNull { it.runCatching { execute() }.getOrNull() }
+scope.launch { results.forEach { channel.send(it) } }</code></pre>
+            <p>Inline <code>code</code> gets a subtle background.</p>
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>Layouting</span></legend>
+          <section>
+            <p>The <code>&lt;section&gt;</code> element provides a flex column layout with a small gap.</p>
+            <p>
+              The <code>&lt;menu&gt;</code> element creates a horizontal nav bar (add the <code>.active</code> class to
+              selected item):
+            </p>
+            <menu>
+              <a href="#"><span>foo</span></a>
+              <a href="#" class="active"><span>active</span></a>
+              <a href="#"><span>bar</span></a>
+            </menu>
+            <p>Typical page structure:</p>
+            <pre><code>&lt;body&gt;
+  &lt;div id="root"&gt;
+    &lt;menu&gt;...&lt;/menu&gt;
+    &lt;main&gt;
+      &lt;fieldset&gt;...&lt;/fieldset&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+            <p>
+              The <code>#root</code> container provides the central 1-column bordered box layout with
+              <code class="accent">1200px</code> width (it can be used as the React root container, for example).
+            </p>
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>Variable Overrides</span></legend>
+          <section>
+            <p>Override these to customize the theme:</p>
+            <pre><code>:root {
+  --bg: #3c3c3c;      /* backgrounds */
+  --text: #ccc;       /* text color */
+  --accent: #e07020;  /* highlights, active states */
+  --danger: #c04040;  /* errors, destructive actions */
+  --border: #666;     /* borders, muted text */
+  --font: "Writer", monospace;
+}</code></pre>
+          </section>
+        </fieldset>
       </main>
     </div>
   </body>
