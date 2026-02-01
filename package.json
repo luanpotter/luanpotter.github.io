@@ -13,14 +13,16 @@
     "format": "prettier --write src"
   },
   "dependencies": {
-    "astro": "^5.0.0"
+    "@astrojs/mdx": "^4.3.13",
+    "astro": "^5.0.0",
+    "drop-in-css": "^0.1.10"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.0",
     "@types/bun": "^1.3.8",
     "@types/node": "^25.2.0",
     "prettier": "^3.8.0",
-    "prettier-plugin-astro": "^0.14.0",
+    "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.0.0"
   }
 }

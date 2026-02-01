@@ -1,0 +1,6 @@
+{
+  "printWidth": 120,
+  "bracketSameLine": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "plugins": ["prettier-plugin-astro"]
+}

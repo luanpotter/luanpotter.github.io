@@ -18,6 +18,8 @@ const subtitle = props.frontmatter?.subtitle ?? props.subtitle;
       <h1>{title}</h1>
       {subtitle && <p class="subtitle">{subtitle}</p>}
     </header>
-    <slot />
+    <section>
+      <slot />
+    </section>
   </article>
 </Base>

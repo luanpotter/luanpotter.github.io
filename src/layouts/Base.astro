@@ -1,4 +1,6 @@
 ---
+import "drop-in-css";
+
 interface Props {
   frontmatter?: { title?: string };
   title?: string;
@@ -6,9 +8,26 @@ interface Props {
 
 const props = Astro.props;
 const title = props.frontmatter?.title ?? props.title ?? "Luan";
+const pathname = Astro.url.pathname;
+
+const menuItems = [
+  { href: "/", label: "luan" },
+  { href: "/articles/", label: "articles" },
+  { href: "/projects/", label: "projects" },
+  { href: "/stuff/", label: "stuff" },
+];
+
+function isActive(href: string): boolean {
+  if (href === "/") return pathname === "/";
+  return pathname.startsWith(href);
+}
+
+const menuHtml = menuItems
+  .map(({ href, label }) => `<a href="${href}"${isActive(href) ? ' class="active"' : ""}><span>${label}</span></a>`)
+  .join("");
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,8 +37,13 @@ const title = props.frontmatter?.title ?? props.title ?? "Luan";
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
   <body>
-    <main>
-      <slot />
-    </main>
+    <div id="root">
+      <menu set:html={menuHtml} />
+      <main>
+        <section>
+          <slot />
+        </section>
+      </main>
+    </div>
   </body>
 </html>
