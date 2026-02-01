@@ -29,6 +29,11 @@ You can find me at the following places:
 - [LinkedIn](https://www.linkedin.com/in/luan-nico-5baa3627/)
 - [CodeTrace](https://codetrace.com/users/luanpotter)
 
+## Pages
+
+- [Articles](../articles)
+- [Projects](../projects)
+
 ## Projects
 
 - [flame](https://github.com/luanpotter/flame)

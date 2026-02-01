@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const articles: CollectionEntry<"articles">[] = await getCollection("articles");
+articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<Base title="Articles">
+  <h1>Articles</h1>
+  <ul>
+    {
+      articles.map((article) => (
+        <li>
+          <a href={`/articles/${article.slug}/`}>{article.data.title}</a>
+          {article.data.subtitle && (
+            <span class="subtitle"> - {article.data.subtitle}</span>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+  <p><a href="/">Back to home</a></p>
+</Base>

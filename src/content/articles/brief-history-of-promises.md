@@ -1,7 +1,7 @@
 ---
-layout: ../../layouts/Article.astro
 title: A Brief History of Promises
 subtitle: How Promises came about and evolved in Javascript
+date: 2016-10-29
 ---
 
 Most imperative (non-functional) languages have a tendency to perform all their operations synchronously.

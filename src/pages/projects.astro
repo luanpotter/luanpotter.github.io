@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import fs from "node:fs";
+import path from "node:path";
+
+const projectsDir = path.join(process.cwd(), "projects");
+const entries = fs.readdirSync(projectsDir, { withFileTypes: true });
+const projects = entries
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name)
+  .sort();
+---
+
+<Base title="Projects">
+  <h1>Projects</h1>
+  <ul>
+    {
+      projects.map((project) => (
+        <li>
+          <a href={`/projects/${project}/`}>{project}</a>
+        </li>
+      ))
+    }
+  </ul>
+  <p><a href="/">Back to home</a></p>
+</Base>
