@@ -35,7 +35,7 @@ jobs:
       - name: Copy projects to dist
         run: |
           cp -r projects/* dist/projects/
-          echo "Total projects copied: $(ls projects/ | wc -l)"
+          echo "Total projects copied: $(find projects -maxdepth 1 -type d | wc -l)"
           echo "Total files in dist: $(find dist -type f | wc -l)"
 
       - name: Setup Pages
