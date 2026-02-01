@@ -6,9 +6,19 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "prettier --check src",
+    "lint:fix": "prettier --write src",
+    "format": "prettier --write src"
   },
   "dependencies": {
     "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "prettier": "^3.8.0",
+    "prettier-plugin-astro": "^0.14.0",
+    "typescript": "^5.0.0"
   }
 }

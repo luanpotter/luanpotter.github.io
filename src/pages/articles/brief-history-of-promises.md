@@ -18,7 +18,7 @@ Therefore, it's very common to see a method like this:
 
 ```js
 longOperation(args, function (result) {
-    display(result);
+  display(result);
 });
 ```
 
@@ -29,14 +29,14 @@ This is a simple distinction that must be made; for instance, take the following
 ```js
 // test A
 longOperation(args, function (result) {
-    console.log(result);
+  console.log(result);
 });
-console.log('after');
+console.log("after");
 
 // test B
 var result = longOperation(args);
 console.log(result);
-console.log('after');
+console.log("after");
 ```
 
 Note that test B will always give the described result, i.e., it will first print the result and then 'after'. However, one must note that the first (test A) example will always first print 'after' and then prints the result.
@@ -45,14 +45,14 @@ Let's take a look at the following, more in depth example:
 
 ```js
 longOperation1(args, function (result1) {
-    longOperation2(result1, function (result2) {
-        display(result2);
-        triggerScreenChange(function () {
-            warnUser(function (response) {
-                sendServerFeedback(response);
-            });
-        })
+  longOperation2(result1, function (result2) {
+    display(result2);
+    triggerScreenChange(function () {
+      warnUser(function (response) {
+        sendServerFeedback(response);
+      });
     });
+  });
 });
 ```
 
@@ -73,9 +73,9 @@ Well, that seems pretty similar. Firstly, let's study how one would be able to g
 var op = function (args) {
   var callback = null;
   var configurer = {
-    then : function (aCallback) {
+    then: function (aCallback) {
       callback = aCallback;
-    }
+    },
   };
 
   setTimeout(function () {
@@ -93,13 +93,13 @@ Now let's see how we would use the API:
 
 ```js
 op1(args).then(function (result1) {
-    op2(result1).then(function (result2) {
-        op3(result2).then(function (result3) {
-            op4(result3).then(function (result4) {
-                sendServerFeedback(result4);
-            });
-        })
+  op2(result1).then(function (result2) {
+    op3(result2).then(function (result3) {
+      op4(result3).then(function (result4) {
+        sendServerFeedback(result4);
+      });
     });
+  });
 });
 ```
 
@@ -113,19 +113,25 @@ op1(args).then(op2).then(op3).then(op4).then(sendServerFeedback);
 That's right, we can do all that with a single like, as long as our functions are _configurer_ compatible. Now that we understood the concept, let's call our _configurer_ by their actual name: promises.
 So someone could build this incredible library, that's similar to what we already did, but actually returns subsequent promises and also checks for errors and more? Well, of course they did that. Actually, plenty of people did.
 
-One example is *q*, a very simple JS lib that does that; its syntax would look something like this:
+One example is _q_, a very simple JS lib that does that; its syntax would look something like this:
 
 ```js
-Q.fcall(promisedStep1).then(promisedStep2).then(promisedStep3).then(promisedStep4).then(function (value4) {
+Q.fcall(promisedStep1)
+  .then(promisedStep2)
+  .then(promisedStep3)
+  .then(promisedStep4)
+  .then(function (value4) {
     // Do something with value4
-}).catch(function (error) {
+  })
+  .catch(function (error) {
     // Handle any error from all above steps
-}).done();
+  })
+  .done();
 ```
 
 Taken directly from their docs. Pretty neat, hu?
 
-So for some time people were very happy using several of *q*-like libs, but some libs started depending on these promise libs, and things started to get messy again, as one would need to write a converter to convert between different terminologies.
+So for some time people were very happy using several of _q_-like libs, but some libs started depending on these promise libs, and things started to get messy again, as one would need to write a converter to convert between different terminologies.
 Eventually a bunch of people got together and made A+, a spec that all promise libs should follow. Then promises would be interchangeable between libs.
 You should now go read about that here: https://promisesaplus.com/, and then come back.
 
