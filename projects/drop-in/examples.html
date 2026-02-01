@@ -148,12 +148,13 @@ scope.launch { results.forEach { channel.send(it) } }</code></pre>
           <section>
             <p>The <code>&lt;section&gt;</code> element provides a flex column layout with a small gap.</p>
             <p>
-              The <code>&lt;menu&gt;</code> element creates a horizontal nav bar (add the <code>.active</code> class to
-              selected item):
+              The <code>&lt;menu&gt;</code> element creates a horizontal nav bar (accepts the <code>.active</code> and
+              <code>.disabled</code> classes):
             </p>
             <menu>
               <a href="#"><span>foo</span></a>
               <a href="#" class="active"><span>active</span></a>
+              <a href="#" class="disabled"><span>disabled</span></a>
               <a href="#"><span>bar</span></a>
             </menu>
             <p>Typical page structure:</p>
