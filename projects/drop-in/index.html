@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>drop-in</title>
+    <link rel="stylesheet" href="/drop-in.css" />
+  </head>
+  <body>
+    <div id="root">
+      <menu>
+        <a href="/" class="active"><span>drop-in</span></a>
+        <a href="/examples.html"><span>examples</span></a>
+        <a href="https://github.com/luanpotter/drop-in"><span>github</span></a>
+      </menu>
+      <main>
+        <p>The simplest "drop-in" replacement for the browser's default styling.</p>
+        <p>
+          Just
+          <strong>drop-in</strong>
+          to your app and
+          <em>don't think about CSS again</em>
+          .
+        </p>
+
+        <fieldset>
+          <legend>
+            <span>Installation</span>
+          </legend>
+          <section>
+            <p>Install via npm:</p>
+            <code><pre>npm install drop-in-css</pre></code>
+            <p>Or with bun:</p>
+            <code><pre>bun add drop-in-css</pre></code>
+            <p>And then import with your bundler:</p>
+            <code><pre>import 'drop-in-css';</pre></code>
+            <p>Or, if you want, link it directly with:</p>
+            <code>
+              <pre>&lt;link rel="stylesheet" href="https://luan.xyz/projects/drop-in/drop-in.css" /&gt</pre>
+            </code>
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <legend>
+            <span>Features</span>
+          </legend>
+          <section>
+            <ul>
+              <li>minimize ad-hoc CSS - things should look good with just HTML</li>
+              <li>dark theme out-of-the-box; light theme out of the box</li>
+              <li>basic layouts for single column content with menus and content boxes</li>
+              <li>
+                simplified color schema and nice monospace
+                <a href="https://github.com/tonsky/font-writer">Writer</a>
+                font by
+                <a href="https://github.com/tonsky">@tonsky</a>
+              </li>
+              <li>basic styling for links, lists, form elements, buttons</li>
+              <li>add your own specific styles on top as needed</li>
+            </ul>
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <legend>
+            <span>Variables</span>
+          </legend>
+          <section>
+            <p>Customize the theme by overriding these variables:</p>
+            <code>
+              <pre>
+:root {
+  --bg: #3c3c3c;
+  --text: #ccc;
+  --accent: #e07020;
+  --danger: #c04040;
+  --border: #666;
+  --font: "Writer", monospace;
+}</pre
+              >
+            </code>
+          </section>
+        </fieldset>
+      </main>
+    </div>
+  </body>
+</html>
