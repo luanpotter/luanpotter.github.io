@@ -3,6 +3,18 @@
   gap: 1rem;
 }
 
+.columns {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.columns > img {
+  aspect-ratio: 1;
+  object-fit: cover;
+  width: auto;
+}
+
 h2 {
   color: var(--accent);
   font-size: 1rem;
