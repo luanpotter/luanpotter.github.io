@@ -8,14 +8,21 @@ articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <Base title="articles">
-  <ul>
-    {
-      articles.map((article) => (
-        <li>
-          <a href={`/articles/${article.slug}/`}>{article.data.title}</a>
-          {article.data.subtitle && <span class="subtitle"> - {article.data.subtitle}</span>}
-        </li>
-      ))
-    }
-  </ul>
+  <fieldset>
+    <legend>Blog</legend>
+    <p>Coming Soon!</p>
+  </fieldset>
+  <fieldset>
+    <legend>Articles</legend>
+    <ul>
+      {
+        articles.map((article) => (
+          <li>
+            <a href={`/articles/${article.slug}/`}>{article.data.title}</a>
+            {article.data.subtitle && <span class="subtitle"> - {article.data.subtitle}</span>}
+          </li>
+        ))
+      }
+    </ul>
+  </fieldset>
 </Base>
