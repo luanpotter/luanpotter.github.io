@@ -11,14 +11,57 @@ const projects = entries
   .sort();
 ---
 
-<Base title="Projects">
-  <ul>
-    {
-      projects.map((project) => (
-        <li>
-          <a href={`/projects/${project}/`}>{project}</a>
-        </li>
-      ))
-    }
-  </ul>
+<Base title="projects">
+  <fieldset>
+    <legend>Board Games</legend>
+    <p>I've been dabbling with board game design as of late. Here are my current projects:</p>
+    <ul>
+      <li>
+        <a href="https://d12.nexus">Shattered Wilds</a> - a base fantasy setting & new TTRPG system based on D12 dice rolls.
+      </li>
+      <li>
+        <a href="/projects/flaky-flasks">Flaky Flasks</a> - a 2-to-4-player whimsical deck-and-tile-building board game where
+        you and a group of friends compete to see who is the master of brewing fantastical potions.
+      </li>
+      <li>
+        <a href="/projects/dim-rift">Dimensional Rift</a> - a 2-player competitive card game in which two duelists challenge
+        each other in a battle of wits, strategy and luck.
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>Recent Highlights</legend>
+    <p>Here are some projects that I started that I have been working on recently:</p>
+    <ul>
+      <li><a href="https://github.com/luanpotter/flame">flame</a> - lightweight game engine built on Flutter</li>
+      <li><a href="https://github.com/faire/yawn">yawn</a> - type-safe Hibernate queries in Kotlin</li>
+      <li><a href="/projects/card-press">card-press</a> - build print-and-cut PDFs with ease</li>
+      <li><a href="/projects/drop-in">drop-in</a> - minimalist CSS baseline</li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>Gamedev & Blue Fire</legend>
+    <p>
+      <a href="https://blue-fire.xyz">Blue Fire</a> is an open source collective responsible for many projects you know and
+      love, such as the
+      <a href="https://flame-engine.org">Flame Engine</a>,
+      <a href="https://github.com/luanpotter/audioplayers">audioplayers</a>, and many more.
+    </p>
+    <p>I'm the founder and a proud member, and alongside many other incredible contributors from our community.</p>
+    <p>You can join our <a href="https://discord.com/invite/pxrBmy4">Discord Server</a> to learn more!</p>
+  </fieldset>
+  <fieldset>
+    <legend>Hosted Projects</legend>
+    <p>These projects are hosted under <code>luan.xyz</code>:</p>
+    <ul>
+      {
+        projects.map((project) => (
+          <li>
+            <a href={`/projects/${project}/`}>{project}</a>
+          </li>
+        ))
+      }
+      <li><a href="/unicamp">unicamp</a></li>
+    </ul>
+  </fieldset>
 </Base>

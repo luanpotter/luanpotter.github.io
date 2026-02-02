@@ -7,7 +7,7 @@ const articles: CollectionEntry<"articles">[] = await getCollection("articles");
 articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Base title="Articles">
+<Base title="articles">
   <ul>
     {
       articles.map((article) => (

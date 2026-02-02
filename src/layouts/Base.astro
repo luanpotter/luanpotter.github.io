@@ -12,9 +12,10 @@ const pathname = Astro.url.pathname;
 
 const menuItems = [
   { href: "/", label: "luan" },
-  { href: "/articles/", label: "articles" },
-  { href: "/projects/", label: "projects" },
-  { href: "/stuff/", label: "stuff" },
+  { href: "/projects", label: "projects" },
+  { href: "/articles", label: "articles" },
+  { href: "/stuff", label: "stuff" },
+  { href: "https://github.com/luanpotter", label: "github" },
 ];
 
 function isActive(href: string): boolean {
