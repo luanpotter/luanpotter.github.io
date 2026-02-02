@@ -1,16 +1,26 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import Base from "../layouts/Base.astro";
-import { getCollection } from "astro:content";
+import { getArticles, getBlogPosts } from "../utils/collections";
+import { formatDate } from "../utils/dates";
 
-const articles: CollectionEntry<"articles">[] = await getCollection("articles");
-articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const articles = await getArticles();
+const blog = await getBlogPosts();
 ---
 
 <Base title="articles">
   <fieldset>
     <legend>Blog</legend>
-    <p>Coming Soon!</p>
+    <ul>
+      {
+        blog.map((post) => (
+          <li>
+            <code>{formatDate(post.data.date)}</code>
+            <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+            {post.data.subtitle && <span class="muted"> - {post.data.subtitle}</span>}
+          </li>
+        ))
+      }
+    </ul>
   </fieldset>
   <fieldset>
     <legend>Articles</legend>
@@ -18,8 +28,8 @@ articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
       {
         articles.map((article) => (
           <li>
-            <a href={`/articles/${article.slug}/`}>{article.data.title}</a>
-            {article.data.subtitle && <span class="subtitle"> - {article.data.subtitle}</span>}
+            <a href={`/articles/${article.id}/`}>{article.data.title}</a>
+            {article.data.subtitle && <span class="muted"> - {article.data.subtitle}</span>}
           </li>
         ))
       }

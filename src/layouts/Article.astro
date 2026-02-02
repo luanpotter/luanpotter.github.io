@@ -1,22 +1,28 @@
 ---
+import { formatDate } from "../utils/dates";
 import Base from "./Base.astro";
 
 interface Props {
-  frontmatter?: { title?: string; subtitle?: string };
+  frontmatter?: { title?: string; subtitle?: string; date?: Date };
   title?: string;
   subtitle?: string;
+  date?: Date;
 }
 
 const props = Astro.props;
 const title = props.frontmatter?.title ?? props.title ?? "";
 const subtitle = props.frontmatter?.subtitle ?? props.subtitle;
+const date = props.frontmatter?.date ?? props.date;
 ---
 
 <Base title={title}>
   <article>
     <header>
-      <h1>{title}</h1>
-      {subtitle && <p class="subtitle">{subtitle}</p>}
+      <h2>{title}</h2>
+      <div class="columns muted" style={{ marginBottom: "12px" }}>
+        <span>{subtitle}</span>
+        {date && <span>{formatDate(date)}</span>}
+      </div>
     </header>
     <section>
       <slot />

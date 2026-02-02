@@ -1,3 +1,20 @@
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root > main {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 0.2rem 0;
+  font-size: 0.5rem;
+  color: var(--muted);
+}
+
 .actions {
   display: flex;
   gap: 1rem;
@@ -15,10 +32,21 @@
   width: auto;
 }
 
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
 h2 {
   color: var(--accent);
   font-size: 1rem;
   font-weight: bold;
   border-bottom: 1px dotted var(--text);
   width: 100%;
+}
+
+.muted {
+  color: var(--border);
 }

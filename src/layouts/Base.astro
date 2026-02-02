@@ -13,18 +13,21 @@ const pathname = Astro.url.pathname;
 const menuItems = [
   { href: "/", label: "luan" },
   { href: "/projects", label: "projects" },
-  { href: "/articles", label: "articles" },
+  { href: "/articles", label: "articles", alternativePaths: ["/blog"] },
   { href: "/stuff", label: "stuff" },
   { href: "https://github.com/luanpotter", label: "github" },
 ];
 
-function isActive(href: string): boolean {
+function isActive(href: string, alternativePaths: string[]): boolean {
   if (href === "/") return pathname === "/";
-  return pathname.startsWith(href);
+  return pathname.startsWith(href) || alternativePaths.some((path) => pathname.startsWith(path));
 }
 
 const menuHtml = menuItems
-  .map(({ href, label }) => `<a href="${href}"${isActive(href) ? ' class="active"' : ""}><span>${label}</span></a>`)
+  .map(
+    ({ href, label, alternativePaths }) =>
+      `<a href="${href}"${isActive(href, alternativePaths ?? []) ? ' class="active"' : ""}><span>${label}</span></a>`,
+  )
   .join("");
 ---
 
@@ -45,6 +48,13 @@ const menuHtml = menuItems
           <slot />
         </section>
       </main>
+      <footer>
+        Luan Nico •
+        <a href="https://github.com/luanpotter">@luanpotter</a> •
+        <a href="https://luan.xyz">luan.xyz</a> •
+        <a id="toggle-css" href="#">nuke css</a>
+      </footer>
     </div>
+    <script src="../utils/css-toggle.ts"></script>
   </body>
 </html>
