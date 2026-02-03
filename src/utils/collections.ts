@@ -17,6 +17,7 @@ function parseDateFromFilename(id: string): Date {
 export async function getBlogPosts(): Promise<BlogPost[]> {
   const posts = await getCollection("blog");
   return posts
+    .filter((post) => !post.id.startsWith("_"))
     .map((post) => ({
       ...post,
       data: {
