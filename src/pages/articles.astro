@@ -13,10 +13,12 @@ const blog = await getBlogPosts();
     <ul>
       {
         blog.map((post) => (
-          <li>
-            <code>{formatDate(post.data.date)}</code>
-            <a href={`/blog/${post.id}/`}>{post.data.title}</a>
-            {post.data.subtitle && <span class="muted"> - {post.data.subtitle}</span>}
+          <li class="truncate-line">
+            <span class="title">
+              <code>{formatDate(post.data.date)}</code>
+              <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+            </span>
+            {post.data.subtitle && <span class="subtitle muted"> - {post.data.subtitle}</span>}
           </li>
         ))
       }
@@ -27,12 +29,28 @@ const blog = await getBlogPosts();
     <ul>
       {
         articles.map((article) => (
-          <li>
-            <a href={`/articles/${article.id}/`}>{article.data.title}</a>
-            {article.data.subtitle && <span class="muted"> - {article.data.subtitle}</span>}
+          <li class="truncate-line">
+            <span class="title">
+              <a href={`/articles/${article.id}/`}>{article.data.title}</a>
+            </span>
+            {article.data.subtitle && <span class="subtitle muted"> - {article.data.subtitle}</span>}
           </li>
         ))
       }
     </ul>
   </fieldset>
 </Base>
+
+<style>
+  .truncate-line {
+    display: flex;
+  }
+  .truncate-line .title {
+    flex-shrink: 0;
+  }
+  .truncate-line .subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
