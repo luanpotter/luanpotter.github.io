@@ -26,6 +26,9 @@ jobs:
                   bash <(curl -s https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
                   echo "$PWD" >> "$GITHUB_PATH"
 
+            - name: Install cspell and markdownlint
+              run: bun install -g cspell markdownlint-cli
+
             - name: Install dependencies
               run: bun install --frozen-lockfile
 
