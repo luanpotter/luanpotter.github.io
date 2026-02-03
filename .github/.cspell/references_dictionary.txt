@@ -1,6 +1,7 @@
 # people and project names
 audioplayers # https://github.com/luanpotter/audioplayers
 codetrace # codetrace.com
+Cricut # https://cricut.com
 ghostty # https://github.com/ghostty-org/ghostty
 keybase # keybase.io
 luan # https://github.com/luanpotter
