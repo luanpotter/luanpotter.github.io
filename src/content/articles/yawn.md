@@ -1,7 +1,7 @@
 ---
 title: How we tamed Hibernate ORM in Kotlin with Project Yawn
 subtitle: Plus, a big announcement about Faire’s open source initiatives
-date: 2026-02-02
+date: 2025-12-11
 ---
 
 > This article was [originally posted by me on Faire's Tech Blog](https://craft.faire.com/how-we-tamed-hibernate-orm-in-kotlin-with-project-yawn-17692cbbad0e).
