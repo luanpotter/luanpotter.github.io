@@ -12,7 +12,7 @@ const pathname = Astro.url.pathname;
 
 const menuItems = [
   { href: "/", label: "luan" },
-  { href: "/projects", label: "projects" },
+  { href: "/projects", label: "projects", alternativePaths: ["/unicamp"] },
   { href: "/articles", label: "articles", alternativePaths: ["/blog"] },
   { href: "/stuff", label: "stuff" },
   { href: "https://github.com/luanpotter", label: "github" },
