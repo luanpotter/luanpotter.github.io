@@ -8,7 +8,7 @@ I've been meaning to revamp my website for a while; finally, with the launch of 
 - I wanted it to be zero-CSS, just HTML and what your browser gives you
 - I also despise light-mode
 
-While I could expect all users to use some extension to change the CSS of all websites to dark mode (which would def work pretty perfectly on a non-CSS website), I kind of wanted to enshrine dark mode as a first-class experience. But I also just didn't want to write complex, arbitrary, ad-hoc CSS.
+While I could expect all users to use some extension to change the CSS of all websites to dark mode (which would definitely work pretty perfectly on a non-CSS website), I kind of wanted to enshrine dark mode as a first-class experience. But I also just didn't want to write complex, arbitrary, ad-hoc CSS.
 
 I've used [simple css](https://simplecss.org/) on a few projects before ([[1]](/projects/dim-rift),[[2]](/projects/flaky-flasks)), but I wanted something that was equally or even simpler, that I also could "drop in" to any semantic HTML with very basic assumptions, but also that looked the way I wanted it to look, inspired by my very bespoke design inclinations. So I extracted drop-in from [another project](/projects/card-press) and decided to have it on the back as my "default" stylesheet for web projects, including this one.
 
