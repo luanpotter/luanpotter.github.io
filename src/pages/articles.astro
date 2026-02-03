@@ -13,12 +13,14 @@ const blog = await getBlogPosts();
     <ul>
       {
         blog.map((post) => (
-          <li class="truncate-line">
-            <span class="title">
-              <code>{formatDate(post.data.date)}</code>
-              <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+          <li>
+            <span class="truncate-line">
+              <span class="title">
+                <code>{formatDate(post.data.date)}</code>
+                <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+              </span>
+              {post.data.subtitle && <span class="subtitle muted"> - {post.data.subtitle}</span>}
             </span>
-            {post.data.subtitle && <span class="subtitle muted"> - {post.data.subtitle}</span>}
           </li>
         ))
       }
@@ -29,11 +31,13 @@ const blog = await getBlogPosts();
     <ul>
       {
         articles.map((article) => (
-          <li class="truncate-line">
-            <span class="title">
-              <a href={`/articles/${article.id}/`}>{article.data.title}</a>
+          <li>
+            <span class="truncate-line">
+              <span class="title">
+                <a href={`/articles/${article.id}/`}>{article.data.title}</a>
+              </span>
+              {article.data.subtitle && <span class="subtitle muted"> - {article.data.subtitle}</span>}
             </span>
-            {article.data.subtitle && <span class="subtitle muted"> - {article.data.subtitle}</span>}
           </li>
         ))
       }
@@ -44,6 +48,7 @@ const blog = await getBlogPosts();
 <style>
   .truncate-line {
     display: flex;
+    max-width: 100%;
   }
   .truncate-line .title {
     flex-shrink: 0;
