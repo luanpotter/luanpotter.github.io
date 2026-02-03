@@ -1,7 +1,13 @@
+body {
+  font-size: 0.8rem;
+}
+
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* shorter column width for text-based content */
+  width: 800px !important;
 }
 
 #root > main {
@@ -12,12 +18,24 @@ footer {
   text-align: center;
   padding: 0.2rem 0;
   font-size: 0.5rem;
-  color: var(--muted);
+}
+
+footer * {
+  color: var(--border);
+}
+
+blockquote {
+  border-left: 1em solid var(--accent);
+  background-color: var(--bg);
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0.2em;
+  padding-left: 0.5em;
 }
 
 .actions {
   display: flex;
-  gap: 1rem;
+  gap: 8px;
 }
 
 .columns {

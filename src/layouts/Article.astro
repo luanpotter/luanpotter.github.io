@@ -16,16 +16,14 @@ const date = props.frontmatter?.date ?? props.date;
 ---
 
 <Base title={title}>
-  <article>
+  <article style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
     <header>
       <h2>{title}</h2>
-      <div class="columns muted" style={{ marginBottom: "12px" }}>
+      <div class="columns muted">
         <span>{subtitle}</span>
         {date && <span>{formatDate(date)}</span>}
       </div>
     </header>
-    <section>
-      <slot />
-    </section>
+    <slot />
   </article>
 </Base>
