@@ -119,10 +119,10 @@ Q.fcall(promisedStep1)
 
 Taken directly from their docs. Pretty neat, hu?
 
-So for some time people were very happy using several of _q_-like libs, but some libs started depending on these promise libs, and things started to get messy again, as one would need to write a converter to convert between different terminologies. Eventually a bunch of people got together and made A+, a spec that all promise libs should follow. Then promises would be interchangeable between libs. You should now go read about that here: https://promisesaplus.com/, and then come back.
+So for some time people were very happy using several of _q_-like libs, but some libs started depending on these promise libs, and things started to get messy again, as one would need to write a converter to convert between different terminologies. Eventually a bunch of people got together and made [A+, a spec for all promise libs to follow](https://promisesaplus.com).
 
-After that, this standard got accepted as native in JS, and ECMA 6 finally added the Promise object. It is A+ compatible, native, and made obsolete all promises lib. Now everyone could use that and live happily ever after. Read this: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise. Note that this lib also add very interesting methods, like `Promise.all()`, which are of crucial importance for larger apps to remain concise and pretty.
+After that, this standard got accepted as native in JS, and ECMA 6 finally added the Promise object. It is A+ compatible, native, and made obsolete all promises lib. Now everyone could use that and live happily ever after - more details on the story [in this article](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise). It also added very interesting methods, like `Promise.all()`, which are of crucial importance for larger apps to remain concise and pretty.
 
-After that, there was more development, and now we have a Stage 3 proposal for the next release to add the `await`/`async` keywords to the language and change promises once again. Check this out: https://ponyfoo.com/articles/understanding-javascript-async-await
+After that, there was more development, and now we have a Stage 3 proposal for the next release to add the `await`/`async` keywords to the language and [change promises once again](https://ponyfoo.com/articles/understanding-javascript-async-await).
 
 That's it!

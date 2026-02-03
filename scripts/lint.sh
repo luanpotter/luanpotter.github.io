@@ -53,6 +53,7 @@ require_cmd shellcheck
 require_cmd shfmt
 require_cmd actionlint
 require_cmd cspell
+require_cmd markdownlint
 
 # Astro check (TypeScript + Astro validation)
 run_check "Astro Check" bun run check
@@ -79,6 +80,13 @@ fi
 
 # Actionlint for GitHub Actions
 run_check "Actionlint" actionlint
+
+# Markdownlint for markdown files
+if [[ "$FIX" -eq 1 ]]; then
+    run_check "Markdownlint (fix)" markdownlint --fix "src/**/*.md"
+else
+    run_check "Markdownlint" markdownlint "src/**/*.md"
+fi
 
 # CSpell for spell checking
 run_check "CSpell" ./scripts/cspell-run.sh
