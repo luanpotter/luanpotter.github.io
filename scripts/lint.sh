@@ -52,6 +52,7 @@ require_cmd bun
 require_cmd shellcheck
 require_cmd shfmt
 require_cmd actionlint
+require_cmd cspell
 
 # Astro check (TypeScript + Astro validation)
 run_check "Astro Check" bun run check
@@ -78,6 +79,12 @@ fi
 
 # Actionlint for GitHub Actions
 run_check "Actionlint" actionlint
+
+# CSpell for spell checking
+run_check "CSpell" ./scripts/cspell-run.sh
+
+# CSpell dictionary verification
+run_check "CSpell Dictionary" ./scripts/cspell-verify.sh
 
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 if [ "$FAILED" -eq 0 ]; then

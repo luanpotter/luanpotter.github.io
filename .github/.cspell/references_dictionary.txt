@@ -1,0 +1,10 @@
+# people and project names
+audioplayers # https://github.com/luanpotter/audioplayers
+codetrace # codetrace.com
+ghostty # https://github.com/ghostty-org/ghostty
+keybase # keybase.io
+luan # https://github.com/luanpotter
+luanpotter # https://github.com/luanpotter
+nico # https://github.com/luanpotter
+tonsky # https://github.com/tonsky
+vimium # https://github.com/philc/vimium

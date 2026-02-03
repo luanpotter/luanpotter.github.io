@@ -18,7 +18,7 @@ longOperation(args, function (result) {
 });
 ```
 
-This new version of `longOperation`, now written in JS, takes the same `args` as before but also takes a function (making usage of JS incredible powerful functional programing paradigm), that is callback. A callback is not but a function that is going to be "called back" when the first function ends. The existence of such callback, instead of a return statement, should make it clear the first function is asynchronous, i.e., it returns immediately, and just gives the result later on. This is a simple distinction that must be made; for instance, take the following two snippets:
+This new version of `longOperation`, now written in JS, takes the same `args` as before but also takes a function (making usage of JS incredible powerful functional programming paradigm), that is callback. A callback is not but a function that is going to be "called back" when the first function ends. The existence of such callback, instead of a return statement, should make it clear the first function is asynchronous, i.e., it returns immediately, and just gives the result later on. This is a simple distinction that must be made; for instance, take the following two snippets:
 
 ```js
 // test A

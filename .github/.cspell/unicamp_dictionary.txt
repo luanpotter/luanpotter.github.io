@@ -1,0 +1,4 @@
+# Project-specific dictionary (keep sorted alphabetically)
+Acervus # library software at Unicamp
+Susy # Test Runner at Unicamp
+unicamp # my alma mater - https://unicamp.br/

@@ -1,0 +1,7 @@
+# existing words or programming terms
+configurer
+fcall # part of the q javascript promise library
+frontmatter # additional spec on top of markdown
+gamedev
+matcha
+TTRPG # Tabletop Role-Playing Game

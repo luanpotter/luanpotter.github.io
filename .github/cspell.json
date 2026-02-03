@@ -1,0 +1,41 @@
+{
+    "version": "0.2",
+    "language": "en",
+    "flagWords": [
+        "teh",
+        "hte"
+    ],
+    "ignorePaths": [
+        "node_modules",
+        "dist",
+        ".git",
+        "*.min.js",
+        "*.min.css",
+        "projects/**",
+        "public/files/**"
+    ],
+    "dictionaries": [
+        "en_US",
+        "softwareTerms",
+        "references_dictionary",
+        "unicamp_dictionary",
+        "words_dictionary"
+    ],
+    "dictionaryDefinitions": [
+        {
+            "name": "references_dictionary",
+            "path": "./.cspell/references_dictionary.txt",
+            "addWords": true
+        },
+        {
+            "name": "words_dictionary",
+            "path": "./.cspell/words_dictionary.txt",
+            "addWords": true
+        },
+        {
+            "name": "unicamp_dictionary",
+            "path": "./.cspell/unicamp_dictionary.txt",
+            "addWords": true
+        }
+    ]
+}
