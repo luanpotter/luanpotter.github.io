@@ -48,7 +48,7 @@ longOperation1(args, function (result1) {
 });
 ```
 
-As you can see, the code quickly gets a mess as the lines get further and further to the right. This phenomenon shared by every imperative C-like language is labeled callback hell, or more appropriately, Pyramid of Doom (referencing the triangular shape formed by each line start).
+As you can see, the code quickly gets a mess as the lines get further and further to the right. This phenomenon shared by every imperative C-like language is labelled callback hell, or more appropriately, Pyramid of Doom (referencing the triangular shape formed by each line start).
 
 How can we make it prettier and easier to understand? Well, let's begin with a simple premise (no pun intended): instead of receiving a callback, the function will return an object that will work as a configurer, that will allow you to setup the callback later on. The API will look like something like this:
 

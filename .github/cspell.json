@@ -1,6 +1,6 @@
 {
     "version": "0.2",
-    "language": "en",
+    "language": "en-GB",
     "flagWords": [
         "teh",
         "hte"
@@ -15,7 +15,7 @@
         "public/files/**"
     ],
     "dictionaries": [
-        "en_US",
+        "en-gb",
         "softwareTerms",
         "references_dictionary",
         "unicamp_dictionary",
