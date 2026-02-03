@@ -1,10 +1,13 @@
 # people and project names
 audioplayers # https://github.com/luanpotter/audioplayers
 codetrace # codetrace.com
+CRDB # CockroachDB, https://www.cockroachlabs.com
 Cricut # https://cricut.com
+detekt # https://github.com/detekt/detekt
 ghostty # https://github.com/ghostty-org/ghostty
 keybase # keybase.io
 luan # https://github.com/luanpotter
 luanpotter # https://github.com/luanpotter
+sqldelight # https://github.com/sqldelight/sqldelight
 tonsky # https://github.com/tonsky
 vimium # https://github.com/philc/vimium
