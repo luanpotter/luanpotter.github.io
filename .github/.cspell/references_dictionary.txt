@@ -1,12 +1,9 @@
 # people and project names
 audioplayers # https://github.com/luanpotter/audioplayers
-bluesky # https://bsky.app/
 codetrace # https://codetrace.com
 CRDB # CockroachDB, https://www.cockroachlabs.com
 detekt # https://github.com/detekt/detekt
 ghostty # https://github.com/ghostty-org/ghostty
-hyprland # https://hyprland.org
-Intelli # IntelliJ, https://www.jetbrains.com/idea/
 keybase # https://keybase.io
 luan # https://github.com/luanpotter
 luanpotter # https://github.com/luanpotter
