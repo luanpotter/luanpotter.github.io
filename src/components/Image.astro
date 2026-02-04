@@ -1,0 +1,15 @@
+---
+interface Props {
+  image: {
+    src: string;
+  };
+  legend?: string;
+}
+
+const { image, legend } = Astro.props;
+---
+
+<figure style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
+  <img src={image.src} alt={legend} style={{ maxWidth: "80%", height: "auto" }} />
+  {legend && <figcaption>{legend}</figcaption>}
+</figure>

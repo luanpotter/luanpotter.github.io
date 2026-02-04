@@ -1,0 +1,9 @@
+# programming terms or APIs
+fcall # part of the q javascript promise library
+fieldset # HTML tag
+figcaption # HTML tag
+frontmatter # additional spec on top of markdown
+nowrap # CSS property
+onclick # HTML attribute
+readdir # Node.js function
+stylesheet # CSS file

@@ -1,6 +1,4 @@
-# existing words or programming terms
-fcall # part of the q javascript promise library
-frontmatter # additional spec on top of markdown
+# existing words or abbreviations
 gamedev
 matcha
 TTRPG # Tabletop Role-Playing Game
