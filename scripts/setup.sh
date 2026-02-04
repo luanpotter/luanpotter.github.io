@@ -21,6 +21,7 @@ fi
 
 install_hook() {
     echo -e "${BLUE}▶ Installing pre-commit hook...${NC}"
+    mkdir -p "$(dirname "$HOOK_PATH")"
     cp "$HOOK_SOURCE" "$HOOK_PATH"
     chmod +x "$HOOK_PATH"
     echo -e "${GREEN}✓ Pre-commit hook installed${NC}\n"
