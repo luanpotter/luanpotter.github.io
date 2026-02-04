@@ -89,7 +89,8 @@ else
 fi
 
 # CSpell for spell checking
-run_check "CSpell" ./scripts/cspell-run.sh
+cspell_version=$(cspell --version)
+run_check "CSpell $cspell_version" ./scripts/cspell-run.sh
 
 # CSpell dictionary verification
 run_check "CSpell Dictionary" ./scripts/cspell-verify.sh
