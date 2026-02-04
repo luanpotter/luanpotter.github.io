@@ -19,7 +19,7 @@ const blog = await getBlogPosts();
                 <code>{formatDate(post.data.date)}</code>
                 <a href={`/blog/${post.id}/`}>{post.data.title}</a>
               </span>
-              {post.data.subtitle && <span class="subtitle muted"> - {post.data.subtitle}</span>}
+              {post.data.subtitle && <span class="subtitle muted">&nbsp;- {post.data.subtitle}</span>}
             </span>
           </li>
         ))
@@ -36,7 +36,7 @@ const blog = await getBlogPosts();
               <span class="title">
                 <a href={`/articles/${article.id}/`}>{article.data.title}</a>
               </span>
-              {article.data.subtitle && <span class="subtitle muted"> - {article.data.subtitle}</span>}
+              {article.data.subtitle && <span class="subtitle muted">&nbsp;- {article.data.subtitle}</span>}
             </span>
           </li>
         ))
