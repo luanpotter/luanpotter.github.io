@@ -24,6 +24,12 @@ footer * {
   color: var(--border);
 }
 
+figcaption {
+  font-size: 0.75em;
+  font-style: italic;
+  text-align: center;
+}
+
 blockquote {
   border-left: 1em solid var(--accent);
   background-color: var(--bg);

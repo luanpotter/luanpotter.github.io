@@ -1,0 +1,22 @@
+---
+title: Hexagons
+subtitle: An add-on with drawing utilities for hex maps for Foundry VTT
+---
+
+import Image from "../../../components/Image.astro";
+import HexagonsImage from "./hexagons-in-action.png";
+
+For a while now I've been tinkering with a custom TTRPG system based on 2d12 rolls and associated setting called [Shattered Wilds](https://d12.nexus). It is not intended to be a groundbreaking innovative system, but rather a different take on classic D&D and other fantasy-coated systems - while implementing some of my own ideas.
+
+Amongst the many things I wanted to change or do differently, using hexagonal maps for encounters always stood out to me as a superior alternative for the more tactical and nuanced combat I sought ([they are the bestagons](https://www.youtube.com/watch?v=thOifuHs6eY), after all).
+
+However, after initial in-person sessions, I soon realized there would be some challenges when transitioning to the virtual realm. Firstly I started to look for satisfying hex-grid-aligned encounter-level map assets; but (due to not finding any and also to changing my mind about their relevance) eventually I opted for using bare grids with minimalist abstractions, akin to the ones I'd been jotting over my dry-erase hexagonal mat. The challenge then shifted: I realized the drawing tools on [Foundry VTT](https://foundryvtt.com/) (the virtual environment I use - and highly recommend) were not very well suited for swiftly improvising the kinds of annotations I was intending to plot over the grid.
+
+To make the tactical situation of the battle clearer to digest for the players and myself, it would be ideal if my quick drawings would just "snap" to the hexagonal lattice. A wall instead of a straight line would just hug the edges of the hexes; a bush or tree would just be a stamp over one hex; and so on. On our minds, it is trivial to derive (and "colour") the nuanced scene from the simplified geometry, but not the other way around when one is calculating one's next move.
+
+And not founding any comprehensive hexagon-drawing toolkit, I decided to make a quick module for it. It has tools for drafting lines, shapes, and stamps, all aligned to the lattice of your current map. If doing these kinds of sketches over hexagonal grids sounds like something that would fit your games, take a look at **hexagons** on [GitHub](https://github.com/luanpotter/shattered-wilds/tree/master/packages/hexagons) and [Foundry VTT](https://foundryvtt.com/packages/hexagons). Contributions are very welcome!
+
+<Image
+  image={HexagonsImage}
+  legend="An actual example from a scene in a previous campaign; I used the hexagons module to sketch the lay of the land of several possible encounters during prep and very quickly make any adjustments due to player actions and interactions."
+/>
