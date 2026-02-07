@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check",
+    "check": "astro check --minimumFailingSeverity warning",
     "lint": "prettier --check src",
     "lint:fix": "prettier --write src",
     "format": "prettier --write src"
