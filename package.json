@@ -16,7 +16,8 @@
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/rss": "^4.0.15",
     "astro": "^5.0.0",
-    "drop-in-css": "^0.1.10"
+    "drop-in-css": "^0.1.10",
+    "feed": "^5.2.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.0",
