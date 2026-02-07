@@ -1,5 +1,4 @@
 # people and project names
-astrojs # https://astro.build/
 audioplayers # https://github.com/luanpotter/audioplayers
 codetrace # https://codetrace.com
 CRDB # CockroachDB, https://www.cockroachlabs.com
@@ -10,5 +9,4 @@ luan # https://github.com/luanpotter
 luanpotter # https://github.com/luanpotter
 sqldelight # https://github.com/sqldelight/sqldelight
 tonsky # https://github.com/tonsky
-ultrahtml # https://www.npmjs.com/package/ultrahtml
 vimium # https://github.com/philc/vimium

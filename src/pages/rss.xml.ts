@@ -1,4 +1,3 @@
----
 import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx";
 import rss, { type RSSFeedItem } from "@astrojs/rss";
 import type { APIContext } from "astro";
@@ -57,4 +56,3 @@ export async function GET(context: APIContext) {
     items,
   });
 }
----
