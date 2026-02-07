@@ -1,7 +1,8 @@
 # luanpotter.github.io
 
 [![CI](https://img.shields.io/github/actions/workflow/status/luanpotter/luanpotter.github.io/ci.yaml?logo=github&style=flat-square)](https://github.com/luanpotter/luanpotter.github.io/actions/workflows/ci.yaml)
-[![Deployment](https://img.shields.io/github/actions/workflow/status/luanpotter/luanpotter.github.io/deploy.yaml?label=deployment&logo=github&style=flat-square)](https://luan.xyz)
+[![Deployment](https://img.shields.io/github/actions/workflow/status/luanpotter/luanpotter.github.io/deploy.yaml?label=deployment&logo=github&style=flat-square&color=blue)](https://luan.xyz)
+[![RSS](https://img.shields.io/badge/feed-rss-e07020?style=flat-square&logo=rss)](https://luan.xyz/rss.xml)
 
 A home for my stuff, built with [astro](https://astro.build) and deployed to [GitHub Pages](https://luan.xyz).
 
