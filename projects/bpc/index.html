@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bpc</title>
+    <link rel="icon" type="image/svg+xml" href="https://luan.xyz/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://luan.xyz/projects/drop-in/drop-in.css"
+    />
+    <style>
+      .op {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        border: 1px solid;
+      }
+      .plus {
+        color: teal;
+        border-color: teal;
+      }
+      .minus {
+        color: orange;
+        border-color: orange;
+      }
+      .times {
+        color: pink;
+        border-color: pink;
+      }
+      .divided {
+        color: purple;
+        border-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <main>
+        <fieldset>
+          <legend>BP Calculator</legend>
+
+          <section>
+            <div>
+              <strong>Legend:</strong>
+              <span class="op plus">+</span>
+              <span class="op minus">-</span>
+              <span class="op times">*</span>
+              <span class="op divided">/</span>
+            </div>
+            <hr style="margin: 16px 0" />
+            <label>
+              Innermost circle
+              <input type="text" placeholder="10" id="circle-1" />
+            </label>
+            <label>
+              Second circle
+              <input type="text" placeholder="*3 *2" id="circle-2" />
+            </label>
+            <label>
+              Third circle
+              <input type="text" placeholder="/20" id="circle-3" />
+            </label>
+            <label>
+              Outermost circle
+              <input type="text" placeholder="+5 +3 -2" id="circle-4" />
+            </label>
+            <label>
+              Centre color and operations in order (in -> out)
+              <input
+                type="text"
+                placeholder="* square triangle round1 round2 round3"
+                id="centre"
+              />
+            </label>
+            <label>
+              Markings as value:shape pairs, separated by spaces
+              <input
+                type="text"
+                placeholder="1:cross 5:dots 8:diamond 12:slash"
+                id="markings"
+              />
+            </label>
+            <button id="calculate">Calculate</button>
+            <div id="result">Awaiting calculation.</div>
+          </section>
+        </fieldset>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
