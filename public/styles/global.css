@@ -14,29 +14,10 @@ body {
   flex: 1;
 }
 
-footer {
-  text-align: center;
-  padding: 0.2rem 0;
-  font-size: 0.5rem;
-}
-
-footer * {
-  color: var(--border);
-}
-
 figcaption {
   font-size: 0.75em;
   font-style: italic;
   text-align: center;
-}
-
-blockquote {
-  border-left: 1em solid var(--accent);
-  background-color: var(--bg);
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0.2em;
-  padding-left: 0.5em;
 }
 
 .actions {
@@ -62,16 +43,4 @@ blockquote {
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-}
-
-h2 {
-  color: var(--accent);
-  font-size: 1rem;
-  font-weight: bold;
-  border-bottom: 1px dotted var(--text);
-  width: 100%;
-}
-
-.muted {
-  color: var(--border);
 }
