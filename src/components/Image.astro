@@ -4,12 +4,13 @@ interface Props {
     src: string;
   };
   legend?: string;
+  maxWidth?: string;
 }
 
-const { image, legend } = Astro.props;
+const { image, legend, maxWidth } = Astro.props;
 ---
 
 <figure style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
-  <img src={image.src} alt={legend} style={{ maxWidth: "80%", height: "auto" }} />
+  <img src={image.src} alt={legend} style={{ maxWidth: maxWidth || "80%", height: "auto" }} />
   {legend && <figcaption>{legend}</figcaption>}
 </figure>
