@@ -5,19 +5,17 @@ date: 2026-02-09
 ---
 
 import Image from "@/components/Image.astro";
-import CricutTutorial00 from "./cricut-tutorial-00.jpg";
-import CricutTutorial01 from "./cricut-tutorial-01.jpg";
-import CricutTutorial02 from "./cricut-tutorial-02.jpg";
+import PictureStack from "./cricut-tutorial-stack.jpg";
+import PictureSheet from "./cricut-tutorial-sheet.jpg";
+import PictureHeavyCardstock from "./cricut-tutorial-heavy-cardstock.png";
+import PictureCut from "./cricut-tutorial-cut.jpg";
+import PictureSleeved from "./cricut-tutorial-sleeved.jpg";
 
-> For a more historical exploration of how I got here, check out [The Card Press Saga](/blog/2026-02-03-the-card-press-saga).
+> For more historical context and details about the [card-press](https://luan.xyz/projects/card-press) tool, see [The Card Press Saga](/blog/2026-02-03-the-card-press-saga).
 
 This is a step-by-step tutorial on how to use a printer (that can handle cardstock or photographic paper) paired with a [Cricut](https://cricut.com) (we have the **Cricut Maker 4** but should be adaptable to other models) to automatically print then cut MTG-sized cards.
 
-<Image
-  image={CricutTutorial02}
-  maxWidth="50%"
-  legend="A complete deck for the Arkhtide TCG open-beta - fully automated."
-/>
+<Image image={PictureStack} maxWidth="50%" legend="A complete deck for the Arkhtide TCG open-beta - fully automated." />
 
 ### Preparation
 
@@ -49,14 +47,22 @@ Having made your choice, load a sufficient amount of sheets (according to your P
 
 1. Load the first printed (and dried) page of the PDF into the Cricut mat (I use the Blue / Light Grip but depending on wear and tear it might be slightly too strong or too weak). Try to align it to the top left to the best of your abilities, as the Cricut will not haphazardly scan the entire mat for the cut marks.
 
-   <Image image={CricutTutorial00} maxWidth="50%" legend="Loading the printed page onto the mat." />
+   <Image image={PictureSheet} maxWidth="50%" legend="Loading the printed page onto the mat." />
 
 1. Start to "Make It" (the template) on the Cricut Design Space (you do not need to load any images or change anything). Click "Continue" and then "I've Already Printed". I use the "Heavy Cardstock" material setting, which I have favourited. Load the mat and start; let the machine do the work while you focus on what really matters (overseeing it with an air of superiority).
 
-   <Image image={CricutTutorial01} maxWidth="50%" legend="Cards freshly peeled from the mat." />
+   <Image
+     image={PictureHeavyCardstock}
+     maxWidth="50%"
+     legend="The Base Material setting I use. Despite the label it can cut 300 gsm without issues."
+   />
 
 1. Unload and peel the cards (depending on the adhesive strength, you might need to be very gentle not to bend them).
+
+   <Image image={PictureCut} maxWidth="50%" legend="Cards freshly peeled from the mat." />
 
 1. _`[optional]`_ If called by the design of your cards, you can use the **Kadomaru Pro** to round the corners (its smallest setting is the closest I found to the standard MTG border-radius).
 
 And rinse and repeat! The Cricut software will require just one more click to re-do the same cut for the next page. You can very effectively alternate between collecting pages from the printer before they fall, attaching the next dry sheet onto the mat, and coding your next million-dollar project on the side.
+
+<Image image={PictureSleeved} maxWidth="50%" legend="The final product, sleeved and ready for playtesting." />
