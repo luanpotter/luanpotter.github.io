@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/rift.png">
+    <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/projects/dim-rift/">Dimensional Rift</a></h1>
+        <a href="/projects/dim-rift/">Home</a> |
+        <a href="/projects/dim-rift/introduction">Introduction</a> |
+        <a href="/projects/dim-rift/rules">Rules</a> |
+        <a href="/projects/dim-rift/wiki">Wiki</a> |
+        <a href="/projects/dim-rift/references">References</a> |
+        <a href="https://forms.gle/w8wBSuq8a1nRRBc78">Contact</a>
+    </header>
+    <main>
+        
+        
+<h1 id="turn-structure" tabindex="-1">Turn Structure</h1>
+<p>At the start of the duel, each player must shuffle their <a href="/projects/dim-rift/wiki/Main_Deck">Main Decks</a> and offer for the opponent to optionally cut.</p>
+<p>They also should setup the field and play area accordingly so that both players are clear on where each zone is.</p>
+<p>Then, players must play Jan-Ken-Pon (rock, paper, scissors) until one player wins; that player immediately picks who is going to start the game. If this not the first game of the match, and the previous duel had a losing player, that player gets to pick instead.</p>
+<p>After that, each player will <strong>draw 5 cards from their <a href="/projects/dim-rift/wiki/Main_Deck">Main Deck</a></strong> onto their hands (this is their starting hands).</p>
+<p>Each player can then take turns to Mulligan until they are both satisfied. The Mulligan rule is: set aside the current hand and draw a new hand of <code>X - 1</code> cards. After all rounds of Mulligan, shuffle the set-aside cards and the rest of the deck together.</p>
+<h2 id="turn-phases" tabindex="-1">Turn Phases</h2>
+<p>Turns are divided into a sequence of phases that must be followed in order:</p>
+<figure style="text-align:center;">
+    <img src="/projects/dim-rift/assets/illustrations/turn-structure.svg">
+</figure>
+<h3 id="begin-phases" tabindex="-1">Begin Phases</h3>
+<p>Nothing happens a priori during this phase, but it serves as a point of reference for effects that trigger <code>at the beginning of the turn</code> or other <a href="/projects/dim-rift/wiki/Fast_Speed">Fast Speed</a> effects. The turn player must then choose their event in order to proceed to the <a href="/projects/dim-rift/wiki/Event_Phase">Event Phase</a>.</p>
+<h3 id="event" tabindex="-1">Event</h3>
+<p>The turn player must pick one <strong>Event</strong> to perform that turn: <a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a> or <a href="/projects/dim-rift/wiki/Battle_Event">Battle Event</a>. This choice must be made immediately at the start of the Event Phase and cannot be changed later for the turn.</p>
+<p>Regardless of the choice, during the Event Phase, the turn player can have each of their face-up cards on the battlefield perform one <a href="/projects/dim-rift/wiki/Action">Action</a> at <a href="/projects/dim-rift/wiki/Slow_Speed">Slow Speed</a>. No cards can be played from the hand or extra deck during this phase, except for effects that explicitly allow it (such as <a href="/projects/dim-rift/wiki/Transform">Transform</a> or <a href="/projects/dim-rift/wiki/Conscript">Conscript</a>).</p>
+<h4 id="campaign-event" tabindex="-1">Campaign Event</h4>
+<p>At the start of a <strong>Campaign Event</strong>, the turn player must choose one of their inactive creature or monument zones to conquer (represented by putting a marker onto it). If they have already conquered all their 6 non-artifact zones, they must draw a card instead. This must be done immediately when starting the <strong>Campaign Event</strong>.</p>
+<p>As a bonus for having chosen this event, every face-up creature the player controls gets the <a href="/projects/dim-rift/wiki/March">March Action</a> added to their <a href="/projects/dim-rift/wiki/Action_Pool">Action Pool</a>.</p>
+<p>Then the player can proceed to perform Actions with their face-up cards as part of any <a href="/projects/dim-rift/wiki/Event_Phase">Event Phase</a>.</p>
+<p>This is certainly the first event a player will choose in a duel, because at the very first turn they won't have any creature available to benefit from the <a href="/projects/dim-rift/wiki/Battle_Event">Battle Event</a>.</p>
+<h4 id="battle-event" tabindex="-1">Battle Event</h4>
+<p>As a bonus for taking the Battle Event, every face-up creature gets the <a href="/projects/dim-rift/wiki/Strike">Strike Action</a> added to their <a href="/projects/dim-rift/wiki/Action_Pool">action pool</a>.</p>
+<p>Then the player can proceed to perform Actions with their face-up cards as part of any <a href="/projects/dim-rift/wiki/Event_Phase">Event Phase</a>.</p>
+<h3 id="deployment-phase" tabindex="-1">Deployment Phase</h3>
+<p>During this phase, the turn player can perform the following <a href="/projects/dim-rift/wiki/Slow_Speed">Slow Speed</a> game actions:</p>
+<ul>
+<li><a href="/projects/dim-rift/wiki/Summon">Summon</a> or <a href="/projects/dim-rift/wiki/Set">Set</a> cards from their hand onto valid, <a href="/projects/dim-rift/wiki/Conquered">conquered</a> zones they own;</li>
+<li><a href="/projects/dim-rift/wiki/Summon">Summon</a> up to one card from their <a href="/projects/dim-rift/wiki/Fables_Deck">Fables Deck</a> onto valid, <a href="/projects/dim-rift/wiki/Conquered">conquered</a> zones they own.</li>
+</ul>
+<h3 id="draw-phase" tabindex="-1">Draw Phase</h3>
+<p>This is the &quot;end phase&quot; of the turn; other than <a href="/projects/dim-rift/wiki/Fast_Speed">Fast Speed</a> effects and triggers, the turn player must draw one card from their <a href="/projects/dim-rift/wiki/Main_Deck">Main Deck</a> into their hand. This is mandatory if there are any cards left to draw (but decking out does not cause game loss).</p>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Dimensional Rift</p>
+    </footer>
+    
+</body>
+
+</html>
