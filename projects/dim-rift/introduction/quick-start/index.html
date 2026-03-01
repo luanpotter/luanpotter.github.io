@@ -25,15 +25,15 @@
         <h1 id="quick-start" tabindex="-1">Quick Start</h1>
 <p class="notice"><mark>Note</mark> This Quick Start Guide is still being developed and fine-tuned. While the <a href="/projects/dim-rift/rules">full rules</a> will explain everything you need in details, this page might be confusing or lacking.</p>
 <p>This is a simplified version of the rules covering only key points to get you started with the game. This assumes you have a cursory understanding of TCGs in general.</p>
-<p><strong>Dimensional Rift</strong> is a Yu-Gi-Oh!-inspired TCG where cards are played in specific zones in the <a href="/projects/dim-rift/wiki/Battlefield">Battlefield</a>, which is a 5x2 grid for each player.</p>
+<p><strong>Dimensional Rift</strong> is a <em>Yu-Gi-Oh!</em>-inspired TCG in which cards are played to specific zones in the <a href="/projects/dim-rift/wiki/Battlefield">Battlefield</a> (a 5x2 grid for each player).</p>
 <figure style="text-align:center;">
     <img src="/projects/dim-rift/assets/illustrations/battlefield.svg" width="85%">
     <figcaption>
         Dimensional Rift Battlefield (one side)
     </figcaption>
 </figure>
-<p>There are 3 types of cards, <a href="/projects/dim-rift/wiki/Creature">Creatures</a>, <a href="/projects/dim-rift/wiki/Artifact">Artifacts</a> and <a href="/projects/dim-rift/wiki/Monument">Monuments</a>. They each can only go on their dedicated zone, and they can be played either face-up or face-down (except Monuments, which are always face-up).</p>
-<p>Cards (except Monuments) have arrows that indicate which direction they can target (both effects and attacks). You can only target cards that your card connects to. You can use the arrows printed on the card plus its current orientation and position on the grid to determine which zones it connects to. You can check <a href="/projects/dim-rift/wiki/Targeting">the wiki on Targeting</a> for more details on how the arrows work - but for now you can use the interactive application below to get yourself familiarized with the concept:</p>
+<p>There are 3 types of cards, <a href="/projects/dim-rift/wiki/Creature">Creatures</a>, <a href="/projects/dim-rift/wiki/Artifact">Artifacts</a> and <a href="/projects/dim-rift/wiki/Monument">Monuments</a>. They each can only go on their dedicated zones, and they can be played either <a href="/projects/dim-rift/wiki/Face-Up">Face-Up</a> or <a href="/projects/dim-rift/wiki/Face-Down">Face-Down</a> (except Monuments, which are always face-up).</p>
+<p>Creatures and Artifacts have arrows that indicate which direction they can target (both for effects and actions, such as <a href="/projects/dim-rift/wiki/Strike">Strike</a>). You can only target cards that your card connects to. You can use the arrows printed on the card plus its current orientation and position on the grid to determine which zones it connects to. You can check <a href="/projects/dim-rift/wiki/Targeting">the wiki on Targeting</a> for more details on how the arrows work - but for now you can use the interactive application below to get yourself familiarized with the concept:</p>
 <div class="target-grid"><div class="target-row"><div class="target-zone" data-grid-id="1-1"></div><div class="target-zone" data-grid-id="1-2"></div><div class="target-zone" data-grid-id="1-3"></div><div class="target-zone" data-grid-id="1-4"></div><div class="target-zone" data-grid-id="1-5"></div><div class="target-zone" data-grid-id="1-6"></div><div class="target-zone" data-grid-id="1-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="2-1"></div><div class="target-zone" data-grid-id="2-2"></div><div class="target-zone" data-grid-id="2-3"></div><div class="target-zone" data-grid-id="2-4"></div><div class="target-zone" data-grid-id="2-5"></div><div class="target-zone" data-grid-id="2-6"></div><div class="target-zone" data-grid-id="2-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="3-1"></div><div class="target-zone" data-grid-id="3-2"></div><div class="target-zone" data-grid-id="3-3"></div><div class="target-zone" data-grid-id="3-4"></div><div class="target-zone" data-grid-id="3-5"></div><div class="target-zone" data-grid-id="3-6"></div><div class="target-zone" data-grid-id="3-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="4-1"></div><div class="target-zone" data-grid-id="4-2"></div><div class="target-zone" data-grid-id="4-3"></div><div class="target-center">
             <div class="arrows-row">
                 <p class="target-arrow ↖-single" data-arrow-id="↖">↖</p>
@@ -58,7 +58,10 @@
         'connected': '#ff0000',
         'hovered': '#00ff00',
     };
-    const arrowTypes = ['single', 'double', 'triple', 'none'];
+    const orthoArrowTypes = ['single', 'double', 'none'];
+    const diagArrowTypes = ['single', 'none'];
+    const isDiagonal = (id) => ['↖', '↗', '↙', '↘'].includes(id);
+    const getArrowTypes = (id) => isDiagonal(id) ? diagArrowTypes : orthoArrowTypes;
     const arrows = {
         '↑': 'single',
         '↗': 'single',
@@ -78,29 +81,18 @@
         '↙-single': [[5, 3]],
         '↓-single': [[5, 4]],
         '↘-single': [[5, 5]],
-        '↖-double': [[2, 2], [2, 3], [3, 2], [3, 3]],
-        '↑-double': [[3, 4], [2, 4]],
-        '↗-double': [[2, 5], [3, 5], [2, 6], [3, 6]],
-        '←-double': [[4, 3], [4, 2]],
-        '→-double': [[4, 5], [4, 6]],
-        '↙-double': [[5, 3], [6, 2], [6, 3], [5, 2]],
-        '↓-double': [[5, 4], [6, 4]],
-        '↘-double': [[5, 5], [6, 6], [6, 5], [5, 6]],
-        '↖-triple': [[1, 1], [1, 2], [1, 3], [2, 1], [3, 1], [2, 2], [3, 2], [2, 3], [3, 3]],
-        '↑-triple': [[3, 4], [2, 4], [1, 4]],
-        '↗-triple': [[1, 5], [1, 6], [1, 7], [2, 5], [3, 5], [2, 6], [3, 6], [2, 7], [3, 7]],
-        '←-triple': [[4, 3], [4, 2], [4, 1]],
-        '→-triple': [[4, 5], [4, 6], [4, 7]],
-        '↙-triple': [[5, 3], [6, 2], [7, 1], [6, 3], [7, 2], [7, 3], [5, 2], [5, 1], [6, 1]],
-        '↓-triple': [[5, 4], [6, 4], [7, 4]],
-        '↘-triple': [[5, 5], [6, 6], [7, 7], [6, 5], [7, 5], [7, 6], [5, 6], [5, 7], [6, 7]],
+        '↑-double': [[3, 4], [2, 4], [1, 4]],
+        '←-double': [[4, 3], [4, 2], [4, 1]],
+        '→-double': [[4, 5], [4, 6], [4, 7]],
+        '↓-double': [[5, 4], [6, 4], [7, 4]],
     };
     document.querySelectorAll('.target-arrow').forEach(arrow => {
         const arrowId = arrow.dataset.arrowId;
         arrow.addEventListener('click', () => {
             const target = document.querySelector('.target-center');
             const arrowType = arrows[arrowId];
-            const nextArrowType = arrowTypes[(arrowTypes.indexOf(arrowType) + 1) % arrowTypes.length];
+            const types = getArrowTypes(arrowId);
+            const nextArrowType = types[(types.indexOf(arrowType) + 1) % types.length];
 
             arrow.textContent = (nextArrowType === 'none') ? '·' : arrowId;
             arrows[arrowId] = nextArrowType;
@@ -203,145 +195,87 @@
         cursor: pointer;
         min-width: 12px;
         text-align: center;
-    }.↖-double::after, .↖-triple::after {
+    }.↖-double::after {
         content: '↖';
         position: absolute;
-        top: 3px;
-        left: 3px;
-    }
-
-    .↖-triple::before {
-        content: '↖';
-        position: absolute;
-        top: 6px;
-        left: 6px;
-    }.↑-double::after, .↑-triple::after {
+        inset: 0;
+        text-align: center;
+        transform: translate(3px, 3px);
+    }.↑-double::after {
         content: '↑';
         position: absolute;
-        top: 3px;
-        left: 0px;
-    }
-
-    .↑-triple::before {
-        content: '↑';
-        position: absolute;
-        top: 6px;
-        left: 0px;
-    }.↗-double::after, .↗-triple::after {
+        inset: 0;
+        text-align: center;
+        transform: translate(0px, 3px);
+    }.↗-double::after {
         content: '↗';
         position: absolute;
-        top: 3px;
-        left: -3px;
-    }
-
-    .↗-triple::before {
-        content: '↗';
-        position: absolute;
-        top: 6px;
-        left: -6px;
-    }.←-double::after, .←-triple::after {
+        inset: 0;
+        text-align: center;
+        transform: translate(-3px, 3px);
+    }.←-double::after {
         content: '←';
         position: absolute;
-        top: 0px;
-        left: 3px;
-    }
-
-    .←-triple::before {
-        content: '←';
-        position: absolute;
-        top: 0px;
-        left: 6px;
-    }.·-double::after, .·-triple::after {
+        inset: 0;
+        text-align: center;
+        transform: translate(3px, 0px);
+    }.·-double::after {
         content: '·';
         position: absolute;
-        top: 0px;
-        left: 0px;
-    }
-
-    .·-triple::before {
-        content: '·';
-        position: absolute;
-        top: 0px;
-        left: 0px;
-    }.→-double::after, .→-triple::after {
+        inset: 0;
+        text-align: center;
+        transform: translate(0px, 0px);
+    }.→-double::after {
         content: '→';
         position: absolute;
-        top: 0px;
-        left: -3px;
-    }
-
-    .→-triple::before {
-        content: '→';
-        position: absolute;
-        top: 0px;
-        left: -6px;
-    }.↙-double::after, .↙-triple::after {
+        inset: 0;
+        text-align: center;
+        transform: translate(-3px, 0px);
+    }.↙-double::after {
         content: '↙';
         position: absolute;
-        top: -3px;
-        left: 3px;
-    }
-
-    .↙-triple::before {
-        content: '↙';
-        position: absolute;
-        top: -6px;
-        left: 6px;
-    }.↓-double::after, .↓-triple::after {
+        inset: 0;
+        text-align: center;
+        transform: translate(3px, -3px);
+    }.↓-double::after {
         content: '↓';
         position: absolute;
-        top: -3px;
-        left: 0px;
-    }
-
-    .↓-triple::before {
-        content: '↓';
-        position: absolute;
-        top: -6px;
-        left: 0px;
-    }.↘-double::after, .↘-triple::after {
+        inset: 0;
+        text-align: center;
+        transform: translate(0px, -3px);
+    }.↘-double::after {
         content: '↘';
         position: absolute;
-        top: -3px;
-        left: -3px;
-    }
-
-    .↘-triple::before {
-        content: '↘';
-        position: absolute;
-        top: -6px;
-        left: -6px;
+        inset: 0;
+        text-align: center;
+        transform: translate(-3px, -3px);
     }</style>
-<p>The zones on the battlefield must be activated before they can be used. Each player starts with the 3 central artifact zones active. Each turn, if they choose to take the <a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a>, they will get a <a href="/projects/dim-rift/wiki/Summoning_Token">Summoning Token</a> that enables the activation of a new zone. It is of strategic importance to quickly start to active your creature zones so that you can block your opponent attacks by playing creatures.</p>
-<p>Your turn has the regular phases that most TCGs operate with: Start &gt; Draw &gt; Main 1 &gt; Event &gt; Main 2 &gt; End. The difference is that instead of a Battle or Combat Phase, each turn you have to pick a event to perform, between <a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a>, <a href="/projects/dim-rift/wiki/Battle_Event">Battle Event</a> and <a href="/projects/dim-rift/wiki/Rift_Summoning_Event">Rift Summoning Event</a>.</p>
-<p>During your Event Phase, each card you control on the field, one by one, in any order, can perform at most one action chosen from their <a href="/projects/dim-rift/wiki/Action_Pool">Action Pool</a>. The choice of event can give bonus action options to the Action Pool of all cards, and also can have other effects.</p>
+<p>Non-artifact zones on the battlefield must be <a href="/projects/dim-rift/wiki/Conquered">Conquered</a> before they can be used (all artifact zones are always active). Each turn, if they choose to take the <a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a>, they can <a href="/projects/dim-rift/wiki/Conquer">Conquer</a> one new zone. If there are no more zones to conquer, they can draw a card instead. It is of strategic importance to quickly start to active your creature zones so that you can <a href="/projects/dim-rift/wiki/Strike">Strike</a> and block your opponent attacks by playing creatures.</p>
+<p>Your turn has 2 relevant phases: the <a href="/projects/dim-rift/wiki/Event_Phase">Event Phase</a>, in which you can use <a href="/projects/dim-rift/wiki/Action">Actions</a> and must pick either <a href="/projects/dim-rift/wiki/Campaign_Phase">Campaign Phase</a> or <a href="/projects/dim-rift/wiki/Battle_Phase">Battle Phase</a>; and the <a href="/projects/dim-rift/wiki/Deployment_Phase">Deployment Phase</a>, in which you can play cards onto the battlefield.</p>
+<p>During your Event Phase, each card you control on the field, one by one, in any order, can perform at most one <a href="/projects/dim-rift/wiki/Action">Action</a> chosen from their <a href="/projects/dim-rift/wiki/Action_Pool">Action Pool</a>. The choice of event can give bonus action options to the Action Pool of all your cards:</p>
 <ul>
-<li><a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a>: the first one you want to take. <a href="/projects/dim-rift/wiki/Active">Activate</a> a new <a href="/projects/dim-rift/wiki/zone">zone</a> and your cards with <a href="/projects/dim-rift/wiki/Movement_Stat">Movement Stat</a> get the &quot;Move&quot; action.</li>
-<li><a href="/projects/dim-rift/wiki/Battle_Event">Battle Event</a>: all creatures get the &quot;Attack&quot; action.</li>
-<li><a href="/projects/dim-rift/wiki/Rift_Summoning_Event">Rift Summoning Event</a>: allows you to access cards from your Extra Deck. Requires the consumption of <a href="/projects/dim-rift/wiki/Soul">Souls</a>.</li>
+<li><a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a>: the first one you want to take. <a href="/projects/dim-rift/wiki/Conquer">Conquer</a> a new <a href="/projects/dim-rift/wiki/zone">zone</a> and all your creatures get the <a href="/projects/dim-rift/wiki/March">March Action</a>.</li>
+<li><a href="/projects/dim-rift/wiki/Battle_Event">Battle Event</a>: all your creatures get the <a href="/projects/dim-rift/wiki/Strike">Strike Action</a>.</li>
 </ul>
-<p>You win by reducing your opponent's life to 0. You can do that by <a href="/projects/dim-rift/wiki/Attack_Action">attacking</a> with your creatures and not being <a href="/projects/dim-rift/wiki/Block">blocked</a>. There is no alternative <a href="/projects/dim-rift/wiki/Winning_Condition">Winning Condition</a>.</p>
-<p>Game actions can be either slow (sorcery speed; only at Main Phase) or instant (instant speed):</p>
+<p>You win by reducing your opponent's life from 6 to 0. You can do that by <a href="/projects/dim-rift/wiki/Strike">striking</a> with your creatures while not being <a href="/projects/dim-rift/wiki/Block">blocked</a>. There is no alternative <a href="/projects/dim-rift/wiki/Winning_Condition">Win Conditions</a>.</p>
+<p>Game actions can be either <a href="/projects/dim-rift/wiki/Slow_Speed">Slow Speed</a> (sorcery speed) or <a href="/projects/dim-rift/wiki/Fast_Speed">Fast Speed</a> (instant speed):</p>
 <ul>
-<li>slow: <a href="/projects/dim-rift/wiki/Summon">Summon</a> cards from your hand, <a href="/projects/dim-rift/wiki/Set">Set</a> cards from your hand</li>
-<li>instant: activate any card effect already on the field; flip <a href="/projects/dim-rift/wiki/Artifact">Artifact</a> cards face-up</li>
+<li>slow (during <a href="/projects/dim-rift/wiki/Deployment_Phase">Deployment Phase</a>): <a href="/projects/dim-rift/wiki/Summon">Summon</a> or <a href="/projects/dim-rift/wiki/Set">Set</a> cards from your hand, <a href="/projects/dim-rift/wiki/Summon">Summon</a> at most one card per Deployment from your <a href="/projects/dim-rift/wiki/Fables_Deck">Fables Deck</a></li>
+<li>slow (during <a href="/projects/dim-rift/wiki/Event_Phase">Event Phase</a>): perform one <a href="/projects/dim-rift/wiki/Action">Action</a> per face-up card you control on the field, such as <a href="/projects/dim-rift/wiki/Strike">Strike</a>, <a href="/projects/dim-rift/wiki/March">March</a>, or additional actions they have in their <a href="/projects/dim-rift/wiki/Action_Pool">Action Pool</a></li>
+<li>fast (any time): activate any effect from cards already on the field; flip <a href="/projects/dim-rift/wiki/Artifact">Artifact</a> cards face-up</li>
 </ul>
-<p>Card effects of the type <a href="/projects/dim-rift/wiki/Action">Action</a> can only be done during the Event Phase, so you can think of them as super-slow.</p>
 <h2 id="simple-game-flow" tabindex="-1">Simple Game Flow</h2>
 <ul>
 <li>Decide who goes first using Jan-Ken-Pon (the winner decides who goes first).</li>
 <li>Each player starts by drawing 5 cards, and then can <a href="/projects/dim-rift/wiki/Mulligan">Mulligan</a> in turn order.</li>
-<li>Once they are both satisfied, each player gets a <a href="/projects/dim-rift/wiki/Preparations">Preparations</a> turn (set any cards).</li>
-<li>Then the first player can start their turn. They <em>do</em> draw a card and <em>can</em> attack in the first turn (though they won't be able to).</li>
-<li>Normal turns follow the turn structure described below:</li>
+<li>The first player will take the <a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a> and choose a zone to activate; then during their <a href="/projects/dim-rift/wiki/Deployment_Phase">Deployment Phase</a>, they can choose to <a href="/projects/dim-rift/wiki/Summon">Summon</a> or <a href="/projects/dim-rift/wiki/Set">Set</a> one card to that zone plus any <a href="/projects/dim-rift/wiki/Artifact">Artifacts</a> they want; finally, they draw a card to end their turn.</li>
+<li>Turns continue alternating; on your second turn, you will have a meaningful choice between <a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a> and <a href="/projects/dim-rift/wiki/Battle_Event">Battle Event</a>.</li>
 </ul>
-<figure style="text-align:center;">
-    <img src="/projects/dim-rift/assets/illustrations/turn-structure.svg">
-</figure>
+<h2 id="notes" tabindex="-1">Notes</h2>
 <ul>
-<li>On each players' first turn, they will probably want to choose the <a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a>.</li>
-<li>There is no Summoning Sickness.</li>
-<li>While you can <a href="/projects/dim-rift/wiki/Flip">flip</a> Artifacts at instant speed (as part of resolving one of its effects), creatures must be targeted in order to be flipped.</li>
+<li>There is no <em>Summoning Sickness</em>, but due to turn structure, you only get to <a href="/projects/dim-rift/wiki/Action">act</a> with cards the next <a href="/projects/dim-rift/wiki/Event_Phase">event</a> after they are <a href="/projects/dim-rift/wiki/Deployment_Phase">deployed</a>.</li>
+<li>While you can <a href="/projects/dim-rift/wiki/Flip">flip</a> Artifacts at instant speed (as part of resolving any of their effects, or for any reason), creatures must be targeted in order to be flipped (unless they have <a href="/projects/dim-rift/wiki/Ambush">Ambush</a>).</li>
+<li>You can only <a href="/projects/dim-rift/wiki/Summon">Summon</a>, <a href="/projects/dim-rift/wiki/Set">Set</a>, or <a href="/projects/dim-rift/wiki/March">March</a> targeting <a href="/projects/dim-rift/wiki/Conquered">Conquered</a> zones you control. But you can <a href="/projects/dim-rift/wiki/Strike">Strike</a> targeting any creature zones.</li>
 </ul>
 
     </main>

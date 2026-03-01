@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/rift.png">
+    <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/projects/dim-rift/">Dimensional Rift</a></h1>
+        <a href="/projects/dim-rift/">Home</a> |
+        <a href="/projects/dim-rift/introduction">Introduction</a> |
+        <a href="/projects/dim-rift/rules">Rules</a> |
+        <a href="/projects/dim-rift/wiki">Wiki</a> |
+        <a href="/projects/dim-rift/references">References</a> |
+        <a href="https://forms.gle/w8wBSuq8a1nRRBc78">Contact</a>
+    </header>
+    <main>
+        
+        
+<h1 id="arrows" tabindex="-1">Arrows</h1>
+<p>Unlike in other TCGs, where normally any card matching the targeting requirement can be selected, in Dimensional Rift &quot;target&quot; always mean &quot;arrow targeting&quot;, meaning that the target must be reachable from the targeting card using its arrows and current orientation on the field.</p>
+<p>Every card has either none, single, double arrows on each of the 8 directions (top, bottom, left, right, and diagonals) - though double diagonal arrows do not exist. Face-up non-monument cards while on the field can be oriented in any of their four 90-degree possible rotations. The orientation of a card must be picked by the player upon summoning it, and cannot be changed arbitrarily (but can be changed by move or rotation effects).</p>
+<p>Cards cannot be oriented on non-90-degree angles, and thus orthogonal arrows are always orthogonal and diagonal arrows are always diagonal.</p>
+<p>You can only target cards the targeting card connects to.</p>
+<p>A single orthogonal arrow connects to the next zone on the row/column it points to; a double orthogonal arrows connects to all zones in its direction.</p>
+<p>A diagonal arrow connects the zone in the next row and next column where it points to. There are no double diagonal arrows.</p>
+<p>Below are some image examples to make it more clear, plus there is an interactive <a href="/projects/dim-rift/rules/target-practice">Target Practice</a> app.</p>
+<figure style="text-align:center;">
+    <img src="/projects/dim-rift/assets/illustrations/targeting.svg" width="60%">
+    <figcaption>
+        Example of a creature with a 3 arrows highlighting which zones it connects to.
+    </figcaption>
+</figure>
+<h4 style="text-align: center;">Interactive Target Practice</h4>
+<div class="target-grid"><div class="target-row"><div class="target-zone" data-grid-id="1-1"></div><div class="target-zone" data-grid-id="1-2"></div><div class="target-zone" data-grid-id="1-3"></div><div class="target-zone" data-grid-id="1-4"></div><div class="target-zone" data-grid-id="1-5"></div><div class="target-zone" data-grid-id="1-6"></div><div class="target-zone" data-grid-id="1-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="2-1"></div><div class="target-zone" data-grid-id="2-2"></div><div class="target-zone" data-grid-id="2-3"></div><div class="target-zone" data-grid-id="2-4"></div><div class="target-zone" data-grid-id="2-5"></div><div class="target-zone" data-grid-id="2-6"></div><div class="target-zone" data-grid-id="2-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="3-1"></div><div class="target-zone" data-grid-id="3-2"></div><div class="target-zone" data-grid-id="3-3"></div><div class="target-zone" data-grid-id="3-4"></div><div class="target-zone" data-grid-id="3-5"></div><div class="target-zone" data-grid-id="3-6"></div><div class="target-zone" data-grid-id="3-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="4-1"></div><div class="target-zone" data-grid-id="4-2"></div><div class="target-zone" data-grid-id="4-3"></div><div class="target-center">
+            <div class="arrows-row">
+                <p class="target-arrow ↖-single" data-arrow-id="↖">↖</p>
+                <p class="target-arrow ↑-single" data-arrow-id="↑">↑</p>
+                <p class="target-arrow ↗-single" data-arrow-id="↗">↗</p>
+            </div>
+            <div class="arrows-row">
+                <p class="target-arrow ←-single" data-arrow-id="←">←</p>
+                <p>·</p>
+                <p class="target-arrow →-single" data-arrow-id="→">→</p>
+            </div>
+            <div class="arrows-row">
+                <p class="target-arrow ↙-single" data-arrow-id="↙">↙</p>
+                <p class="target-arrow ↓-single" data-arrow-id="↓">↓</p>
+                <p class="target-arrow ↘-single" data-arrow-id="↘">↘</p>
+            </div>
+        </div><div class="target-zone" data-grid-id="4-5"></div><div class="target-zone" data-grid-id="4-6"></div><div class="target-zone" data-grid-id="4-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="5-1"></div><div class="target-zone" data-grid-id="5-2"></div><div class="target-zone" data-grid-id="5-3"></div><div class="target-zone" data-grid-id="5-4"></div><div class="target-zone" data-grid-id="5-5"></div><div class="target-zone" data-grid-id="5-6"></div><div class="target-zone" data-grid-id="5-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="6-1"></div><div class="target-zone" data-grid-id="6-2"></div><div class="target-zone" data-grid-id="6-3"></div><div class="target-zone" data-grid-id="6-4"></div><div class="target-zone" data-grid-id="6-5"></div><div class="target-zone" data-grid-id="6-6"></div><div class="target-zone" data-grid-id="6-7"></div></div><div class="target-row"><div class="target-zone" data-grid-id="7-1"></div><div class="target-zone" data-grid-id="7-2"></div><div class="target-zone" data-grid-id="7-3"></div><div class="target-zone" data-grid-id="7-4"></div><div class="target-zone" data-grid-id="7-5"></div><div class="target-zone" data-grid-id="7-6"></div><div class="target-zone" data-grid-id="7-7"></div></div></div>
+<script>
+    const colors = {
+        'center': '#0000ff',
+        'default': '#f0f0f0',
+        'connected': '#ff0000',
+        'hovered': '#00ff00',
+    };
+    const orthoArrowTypes = ['single', 'double', 'none'];
+    const diagArrowTypes = ['single', 'none'];
+    const isDiagonal = (id) => ['↖', '↗', '↙', '↘'].includes(id);
+    const getArrowTypes = (id) => isDiagonal(id) ? diagArrowTypes : orthoArrowTypes;
+    const arrows = {
+        '↑': 'single',
+        '↗': 'single',
+        '→': 'single',
+        '↘': 'single',
+        '↓': 'single',
+        '↙': 'single',
+        '←': 'single',
+        '↖': 'single'
+    };
+    const connectionAreas = {
+        '↖-single': [[3, 3]],
+        '↑-single': [[3, 4]],
+        '↗-single': [[3, 5]],
+        '←-single': [[4, 3]],
+        '→-single': [[4, 5]],
+        '↙-single': [[5, 3]],
+        '↓-single': [[5, 4]],
+        '↘-single': [[5, 5]],
+        '↑-double': [[3, 4], [2, 4], [1, 4]],
+        '←-double': [[4, 3], [4, 2], [4, 1]],
+        '→-double': [[4, 5], [4, 6], [4, 7]],
+        '↓-double': [[5, 4], [6, 4], [7, 4]],
+    };
+    document.querySelectorAll('.target-arrow').forEach(arrow => {
+        const arrowId = arrow.dataset.arrowId;
+        arrow.addEventListener('click', () => {
+            const target = document.querySelector('.target-center');
+            const arrowType = arrows[arrowId];
+            const types = getArrowTypes(arrowId);
+            const nextArrowType = types[(types.indexOf(arrowType) + 1) % types.length];
+
+            arrow.textContent = (nextArrowType === 'none') ? '·' : arrowId;
+            arrows[arrowId] = nextArrowType;
+            arrow.classList.remove(`${arrowId}-${arrowType}`);
+            arrow.classList.add(`${arrowId}-${nextArrowType}`);
+
+            recolorZones();
+            arrow.dispatchEvent(new Event('mouseover'));
+        });
+        arrow.addEventListener('mouseover', () => {
+            const arrowType = arrows[arrowId];
+            recolorZones();
+            updateArrow(arrow, colors.hovered);
+            connectionAreas[`${arrowId}-${arrowType}`].forEach(([i, j]) => {
+                const zone = document.querySelector(`.target-zone[data-grid-id="${i}-${j}"]`);
+                updateZone(zone, colors.hovered);
+            });
+        });
+        arrow.addEventListener('mouseout', () => {
+            recolorZones();
+        });
+    });
+
+    const isConnected = (gridId) => {
+        const allConnected = Object.entries(arrows)
+            .flatMap(([arrow, type]) => connectionAreas[`${arrow}-${type}`] ?? []);
+        return allConnected.some(([i, j]) => `${i}-${j}` === gridId);
+    };
+
+    const recolorArrows = () => {
+        document.querySelectorAll('.target-arrow').forEach(arrow => {
+            updateArrow(arrow, colors.default);
+        });
+    };
+
+    const recolorZones = () => {
+        recolorArrows();
+
+        const zones = document.querySelectorAll('.target-zone');
+        for (const zone of zones) {
+            const gridId = zone.dataset.gridId;
+            const color = isConnected(gridId) ? 'connected' : 'default';
+            updateZone(zone, colors[color]);
+        }
+    };
+
+    const updateArrow = (arrow, color) => {
+        arrow.style.color = color;
+    };
+
+    const updateZone = (zone, color) => {
+        zone.style.borderColor = color;
+        zone.style.backgroundColor = `${color}20`;
+    };
+
+    updateZone(document.querySelector('.target-center'), colors.center);
+    recolorZones();
+</script>
+<style>
+    .target-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .target-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .target-zone, .target-center {
+        width: 80px;
+        height: 80px;
+        border: 2px solid;
+    }
+
+    .target-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4px;
+    }
+
+    .arrows-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .arrows-row p {
+        font-size: 16px;
+        margin: 0;
+        line-height: 80%;
+    }
+
+    .target-arrow {
+        position: relative;
+        cursor: pointer;
+        min-width: 12px;
+        text-align: center;
+    }.↖-double::after {
+        content: '↖';
+        position: absolute;
+        inset: 0;
+        text-align: center;
+        transform: translate(3px, 3px);
+    }.↑-double::after {
+        content: '↑';
+        position: absolute;
+        inset: 0;
+        text-align: center;
+        transform: translate(0px, 3px);
+    }.↗-double::after {
+        content: '↗';
+        position: absolute;
+        inset: 0;
+        text-align: center;
+        transform: translate(-3px, 3px);
+    }.←-double::after {
+        content: '←';
+        position: absolute;
+        inset: 0;
+        text-align: center;
+        transform: translate(3px, 0px);
+    }.·-double::after {
+        content: '·';
+        position: absolute;
+        inset: 0;
+        text-align: center;
+        transform: translate(0px, 0px);
+    }.→-double::after {
+        content: '→';
+        position: absolute;
+        inset: 0;
+        text-align: center;
+        transform: translate(-3px, 0px);
+    }.↙-double::after {
+        content: '↙';
+        position: absolute;
+        inset: 0;
+        text-align: center;
+        transform: translate(3px, -3px);
+    }.↓-double::after {
+        content: '↓';
+        position: absolute;
+        inset: 0;
+        text-align: center;
+        transform: translate(0px, -3px);
+    }.↘-double::after {
+        content: '↘';
+        position: absolute;
+        inset: 0;
+        text-align: center;
+        transform: translate(-3px, -3px);
+    }</style>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Dimensional Rift</p>
+    </footer>
+    
+</body>
+
+</html>
