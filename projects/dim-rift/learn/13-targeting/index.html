@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/rift.png">
+    <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
+  </head>
+
+  <body>
+    
+<style>
+  /* override column size from bundle.css */
+  body {
+    grid-template-columns: 1fr min(80rem, 90%) 1fr;
+  }
+</style>
+
+<main>
+  
+  <div class="pagination">
+    
+    <p><a href="/projects/dim-rift/learn/12-deployment-phase">Deployment Phase &lt;</a></p>
+     
+    <p><a href="/projects/dim-rift/learn/14-actions-1">&gt; Actions (1)</a></p>
+    
+  </div>
+  
+  <div id="onboarding-root"><h1 id="targeting" tabindex="-1">Targeting</h1>
+<h2 id="arrows" tabindex="-1">Arrows</h2>
+<p>Every non-monument card has <strong>arrows</strong> that determine what cards it <strong>connects to</strong>. A card can only target cards that are connected to it via arrows. See the example below or play with our <a href="/projects/dim-rift/rules/target-practice">targeting practice tool</a> to understand how each arrow works.</p>
+<figure style="text-align:center;">
+    <img src="/projects/dim-rift/assets/illustrations/targeting.svg" width="30%">
+    <figcaption>
+        Example: A creature with 3 arrows showing which zones it connects to.
+    </figcaption>
+</figure>
+<h2 id="target" tabindex="-1">Target</h2>
+<p>When a card effect uses the word <code>target</code>, it is a shorthand for <code>target a zone</code>. For example, &quot;target creature&quot; means &quot;target a creature zone (with a creature in it)&quot;.</p>
+<p>The targeted zone must be valid both during declaration and resolution, but the target itself might change. The effect will <strong><a href="/projects/dim-rift/wiki/Fizzle">fizzle</a></strong> (fail to resolve), if:</p>
+<ul>
+<li>If the targeting card no longer connects to the target zone, or has left the battlefield</li>
+<li>If the card (or lack thereof) in targeted zone is no longer a valid target</li>
+</ul>
+<div class="buttons">
+  <a href="/projects/dim-rift/learn/14-actions-1" class="button">Next: Actions (1)</a>
+</div>
+</div>
+</main>
+
+  </body>
+</html>

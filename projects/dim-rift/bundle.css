@@ -66,6 +66,12 @@ div.pagination p {
   margin: 0;
 }
 
+.inline-game-icon {
+  image-rendering: pixelated;
+  width: 26px;
+  height: 26px;
+}
+
 .game-icon {
   image-rendering: pixelated;
   width: 64px;
@@ -147,4 +153,70 @@ div.pagination p {
   font-size: 0.8em;
   color: #ccc;
   margin-top: 8px;
+}
+
+.learn-toc {
+  line-height: 2.2;
+  font-size: 1.1em;
+}
+
+.learn-toc li::marker {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+#onboarding-root {
+  font-size: 1.6em;
+  text-align: justify;
+}
+
+#onboarding-root h1 {
+  text-align: center;
+  margin-top: 0;
+  border-bottom: 1px solid white;
+}
+
+#onboarding-root h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+  border-bottom: 1px solid white;
+  margin-bottom: 0;
+}
+
+#onboarding-root {
+  p,
+  ul {
+    margin-top: 6px;
+  }
+}
+
+#onboarding-root .buttons {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#onboarding-root .buttons .button {
+  text-align: center;
+  font-size: 1em;
+  width: 450px;
+}
+
+#onboarding-root .columns {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: stretch;
+  gap: 16px;
+}
+
+#onboarding-root .columns-reversed {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: stretch;
+  gap: 16px;
+}
+
+#onboarding-root .icon-row {
+  margin: 16px 0 0 0;
+  text-align: center;
 }
