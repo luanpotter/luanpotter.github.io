@@ -53,15 +53,11 @@
     <img class="game-icon" src="/projects/dim-rift/assets/icons/e-optional-trigger.png">
     <img class="game-icon" src="/projects/dim-rift/assets/icons/e-optional-opt-trigger.png">
 </p>
-<p>Triggers happen as a response to something. They immediately go to the Stack, following standard MTG rules. There is no &quot;missed timing&quot; in Dimensional Rift because that is a stupid concept.</p>
-<p>There are three different &quot;trigger words&quot; with slightly different timings:</p>
-<ul>
-<li><code>When</code> are the most numerous triggers; they happen <em>before</em> something happens, going to the stack to be resolved on top of its trigger.</li>
-<li><code>After</code> effects only trigger and go to the stack <em>after</em> the trigger fully resolves.</li>
-<li><code>At</code> is used for phases, and go to the stack at the start of the phase, at the same time as other &quot;At&quot; triggers.</li>
-</ul>
-<p>If multiple triggers proc at the same time, players can choose how to order them on the stack, starting with the turn's player (following standard MTG's rules).</p>
-<p>Trigger's can be replacement effects if they also contain the word <code>instead</code>. In that case they replace an effect or action already on the Stack with a different one.</p>
+<p>Triggers happen as a response to something. They always start with the word <code>When</code>, and follow standard MTG rules. There is no &quot;missed timing&quot; in Dimensional Rift because that is a stupid concept.</p>
+<p>They are added to the stack <em>immediately after</em> its trigger occurs. Some triggers are state checks, and only proc once each time the condition changes from false to true.</p>
+<p>Triggers can also be to proc on phase changes (such as, <code>When it's the start of your turn</code>). All such transition triggers for the same phase change are simultaneous.</p>
+<p>If multiple triggers proc simultaneously, players can choose how to order them on the stack, starting with the turn's player (following MTG's APNAP rules).</p>
+<p>Triggers are considered &quot;replacement effects&quot; instead if they contain the word <code>instead</code> (typically also containing the word <code>would</code>). In those cases, they don't go to the Stack themselves, but rather replace an effect or game action already on the Stack with a modified version.</p>
 <h3 id="activation" tabindex="-1">Activation</h3>
 <p class="center">
     <img class="game-icon" src="/projects/dim-rift/assets/icons/e-activation.png">
