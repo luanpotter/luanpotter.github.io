@@ -142,15 +142,12 @@ cards:
       life: 2
       will: 1
     effects:
-      - action: pray
       - type: trigger
         oncePerTurn: true
         optional: false
         desc: "When flipped: target is [Suppressed]."
-      - type: trigger
-        oncePerTurn: false
-        optional: true
-        desc: "When [this] [Prays]: [this] collects one (additional) mana."
+      - type: action
+        desc: "[Pray]; then, [Pray]."
     arrows:
       top: single
       left: single
@@ -223,7 +220,7 @@ cards:
       - type: action
         desc: "While [Blessed]: [Strike]."
       - type: continuous
-        desc: "While [this] [Strike | Strikes]: [this] has +1 [Might] and the blocker has -1 [Might]."
+        desc: "While [this] [Strike | Strikes] a creature: [this] has +1 [Might] and the blocker has -1 [Might]."
     arrows:
       left: single
       right: single
@@ -327,6 +324,8 @@ cards:
     name: Fishing Boat
     faction: men
     type: artifact
+    stats:
+      will: 1
     flavor: |
       Altaria was renowned for its sprawling navy; the fishing boats
       were the backbone of the kingdom's economy.
@@ -335,7 +334,7 @@ cards:
         desc: "Connected creatures have +1 Life."
       - type: activation
         oncePerTurn: true
-        desc: "Consume any 1 mana: rotate target."
+        desc: "Consume any 2 mana: rotate target."
     arrows:
       top: double
   holy_caravel:
@@ -379,9 +378,11 @@ cards:
     stats:
       will: 3
     effects:
-      - keyword: versatile
+      - keyword: scaffold
       - type: continuous
         desc: 'All creatures have "Action: [Pray]."'
+      - type: action
+        desc: "Consume any 3 mana: [Research]."
   fountain_of_youth:
     name: Fountain of Youth
     faction: men
@@ -389,6 +390,7 @@ cards:
     stats:
       will: 2
     effects:
+      - keyword: scaffold
       - type: activation
         oncePerTurn: false
         desc: "Consume 2 mana: heal 1 damage and [Cleanse] chosen face-up creature."
@@ -402,7 +404,7 @@ cards:
     subType: ally
     extra: true
     stats:
-      might: 3
+      might: 2
       life: 3
     effects:
       - type: cost
@@ -413,7 +415,6 @@ cards:
     arrows:
       top: single
       left: double
-      bottom: single
   righteous_knight_of_the_queen:
     name: Righteous Knight of the Queen
     faction: men
@@ -421,11 +422,11 @@ cards:
     subType: ally
     extra: true
     flavor: |
-      "To thee I pledge my sword, my life, and my soul; your majesty; my Queen.
-      All hail Queen Brittany II!"
+      "To thee I pledge my sword, my life, and my soul;
+      your majesty; my Queen. All hail Queen Brittany II!"
     stats:
       might: 3
-      life: 3
+      life: 2
       will: 2
     effects:
       - type: cost
@@ -433,15 +434,12 @@ cards:
       - action: conscript
       - type: activation
         oncePerTurn: true
-        desc: "Consume 2 mana; [this] is [Protected] until the end of turn."
-      - type: activation
-        oncePerTurn: true
-        desc: "Consume 2 mana: destroy target artifact."
+        desc: "Consume 2 mana: destroy target artifact. If you did, this is [Protected] until end of turn."
     arrows:
-      top: single
+      top: double
       topRight: single
-      topLeft: single
-      right: double
+      right: single
+      bottomRight: single
   high_priestess_of_altaria:
     name: High Priestess of Altaria
     faction: men
@@ -449,7 +447,7 @@ cards:
     subType: ally
     extra: true
     stats:
-      might: 2
+      might: 1
       life: 5
       will: 1
     effects:
@@ -480,16 +478,13 @@ cards:
       will: 3
     effects:
       - type: cost
-        desc: "Sac at least 3 cards with at least 3 combined mana: summon."
-      - keyword: evasive
+        desc: "Sac at least 3 cards with at least 3 combined mana: summon; then, [this] or target creature is [Prone]."
       - type: activation
-        oncePerTurn: false
-        desc: "Consume 1 mana: target creature is [Weakened] and has [Evasive] until the end of turn."
+        oncePerTurn: true
+        desc: "Consume 1 mana: until end of turn, [this] or target creature is [Weakened] and has [Evasive]."
     arrows:
-      top: double
-      left: single
-      right: single
-      bottom: double
+      left: double
+      right: double
   sword_of_theranor:
     name: Sword of Theranor
     faction: men
@@ -519,17 +514,17 @@ cards:
     faction: men
     type: monument
     extra: true
-    stats:
-      will: 3
     effects:
       - type: cost
-        desc: "Sac or discard at least 3 cards: summon. [this] collects the amount of mana on the sac'ed cards."
+        desc: "Sac or discard at least 3 cards: summon; [this] collects the amount of mana on the sac'ed cards."
       - type: continuous
-        desc: 'Mana on this card can be used to pay for "non-any" mana costs.'
+        desc: 'You can use mana on this card to pay for "non-any" mana costs.'
       - type: trigger
         oncePerTurn: false
         optional: true
-        desc: "When mana on a card you control would be lost due to it being destroyed: move that mana to [this] instead."
+        desc: "When mana on a card would be lost due to it being destroyed: move that mana to [this] instead."
+    rulings:
+      - "The trigger effect applies to opponent's cards as well."
   avatar_of_the_false_god_galadon:
     name: "Avatar of the False God, Galadon"
     faction: men

@@ -17,7 +17,7 @@ cards:
       - type: trigger
         oncePerTurn: true
         optional: false
-        desc: "When [this] has 3 mana or more: [Transform] [this]."
+        desc: "When [this] has 3 or more mana: [Transform] [this]."
     arrows:
       top: single
       left: double
@@ -78,11 +78,11 @@ cards:
       life: 2
       will: 2
     effects:
-      - keyword: evasive
       - type: trigger
         oncePerTurn: true
         optional: false
         desc: "When it's the 2nd start of your turn since [this] was summoned: [Transform] [this]."
+      - keyword: evasive
       - type: activation
         oncePerTurn: false
         desc: "Consume 1 mana: target collects 1 mana."
@@ -133,7 +133,7 @@ cards:
       - type: trigger
         oncePerTurn: true
         optional: true
-        desc: "When [this] has visited all your creature zones at least once: [Transform] [this]."
+        desc: "When [this] has visited all your creature zones: [Transform] [this]."
       - type: activation
         oncePerTurn: true
         desc: "Consume any 1 mana: [Shift]."
@@ -191,6 +191,7 @@ cards:
       life: 1
     effects:
       - action: march
+      - keyword: explorer
       - type: trigger
         oncePerTurn: true
         optional: true
@@ -246,8 +247,7 @@ cards:
     type: artifact
     subType: scroll
     flavor: |
-      Even the sacred Fey Transformation ritual
-      wasn't impervious to dark arts.
+      No Fey could resist hearing the unmistakable call of Nature herself.
     stats:
       will: 3
     effects:
@@ -275,7 +275,6 @@ cards:
         optional: false
         desc: "When summoned: target creature is [Protected] until the end of the turn; it collects 1 mana."
     arrows:
-      top: single
       topRight: single
       topLeft: single
   violent_winds:
@@ -374,7 +373,7 @@ cards:
     flavor: |
       "They met in a tiny tree house, in which Theranor could barely fit. Luckily the atmosphere was amiable, so the paladins felt comfortable doffing their bulky outfits." — _A Brief History of Altaria_, p. 34
     effects:
-      - keyword: versatile
+      - keyword: scaffold
       - type: continuous
         desc: 'All creatures have: "[Explorer]".'
       - type: activation
@@ -387,7 +386,7 @@ cards:
     flavor: |
       The big-lettered "FEY ONLY" on the sign had to later be prefixed with "non-transformed".
     effects:
-      - keyword: versatile
+      - keyword: scaffold
       - type: continuous
         desc: 'All creatures have: "[Evasive]."'
       - type: activation
@@ -413,7 +412,7 @@ cards:
       - action: strike
       - type: activation
         oncePerTurn: false
-        desc: "Consume any 2 mana: target is [Weakened]."
+        desc: "Discard a card: target is [Weakened]."
     arrows:
       top: single
       topRight: single
@@ -428,6 +427,7 @@ cards:
     stats:
       might: 4
       life: 4
+      will: 1
     effects:
       - type: cost
         desc: "[Transformed]: summon."
@@ -445,7 +445,8 @@ cards:
     type: creature
     subType: feyBeast
     flavor: |
-      One would be eternally grateful for the honor of having met these incredible creatures.
+      One would be eternally grateful for the honor of
+      having met these incredible creatures.
     stats:
       might: 2
       life: 4

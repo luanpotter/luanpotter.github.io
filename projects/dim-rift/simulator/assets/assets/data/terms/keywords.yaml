@@ -14,13 +14,13 @@ keywords:
     name: "Cleanse"
     description: "Clear all conditions from a card."
     inlineDescription: "Clear all conditions."
-  versatile:
-    name: "Versatile"
-    description: "Counts as any one card type - creature, artifact, or monument - when being sacrificed."
+  scaffold:
+    name: "Scaffold"
+    description: "Can be sac'ed instead of paying the summoning cost of a monument."
     inline: true
     baseEffect:
       type: continuous
-      desc: "[Versatile]."
+      desc: "[Scaffold]."
   explorer:
     name: "Explorer"
     description: "[this] can target any creature zone you control for its [March] action (including inactive zones)."
