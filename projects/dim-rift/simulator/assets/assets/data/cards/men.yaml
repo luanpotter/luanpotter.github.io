@@ -32,7 +32,7 @@ cards:
       - action: strike
       - type: trigger
         optional: true
-        desc: "When [this] fights target creature, while [Blessed]: [Sidestep] target."
+        desc: "When [this] fights target creature, while [Blessed]: you can [Sidestep] target."
       - type: activation
         oncePerTurn: false
         desc: "Sac target artifact: [Sidestep] [this]."

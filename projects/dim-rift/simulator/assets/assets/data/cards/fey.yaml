@@ -165,7 +165,7 @@ cards:
       - action: strike
       - type: trigger
         optional: false
-        desc: "When [this] declares a [Strike] against target creature; chose an attachment from target: destroy that attachment."
+        desc: "When [this] declares a [Strike] against target creature; choose an attachment from target: destroy that attachment."
     arrows:
       top: double
   savage_hyena:
@@ -286,7 +286,7 @@ cards:
       - type: trigger
         optional: false
         desc: |
-          When summoned; target all connected face-up creatures; for each target, chose either:
+          When summoned; target all connected face-up creatures; for each target, choose either:
           (1) [Cleanse] it;
           (2) heal 2 damage; or
           (3) collect 3 mana.
