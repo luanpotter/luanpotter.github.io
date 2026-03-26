@@ -11,7 +11,6 @@ cards:
       life: 2
     effects:
       - type: trigger
-        oncePerTurn: false
         optional: false
         desc: "When flipped: this is [Protected] until end of turn."
       - action: pray
@@ -29,11 +28,9 @@ cards:
     stats:
       might: 1
       life: 2
-      will: 1
     effects:
       - action: strike
       - type: trigger
-        oncePerTurn: false
         optional: true
         desc: "When [this] fights target creature, while [Blessed]: [Sidestep] target."
       - type: activation
@@ -67,6 +64,26 @@ cards:
       right: single
       bottomRight: single
       bottomLeft: single
+  noble_squire:
+    name: Noble Squire
+    faction: men
+    type: creature
+    subType: human
+    stats:
+      might: 1
+      life: 3
+    effects:
+      - action: research
+      - type: continuous
+        desc: "While [this] [Strike | Strikes]: +1 [Might]."
+      - type: trigger
+        optional: true
+        desc: "When target creature would take damage: [this] can take that damage instead."
+    arrows:
+      top: double
+      bottom: single
+      bottomRight: single
+      bottomLeft: single
   crafty_diplomat:
     name: Crafty Diplomat
     faction: men
@@ -89,27 +106,6 @@ cards:
       left: single
       right: single
       bottom: single
-  noble_squire:
-    name: Noble Squire
-    faction: men
-    type: creature
-    subType: human
-    stats:
-      might: 1
-      life: 3
-    effects:
-      - action: research
-      - type: continuous
-        desc: "While [this] [Strike | Strikes]: +1 [Might]."
-      - type: trigger
-        oncePerTurn: false
-        optional: true
-        desc: "When target creature would take damage: [this] can take that damage instead."
-    arrows:
-      top: double
-      bottom: single
-      bottomRight: single
-      bottomLeft: single
   deceitful_acolyte:
     name: Deceitful Acolyte
     faction: men
@@ -122,7 +118,6 @@ cards:
     effects:
       - keyword: ambush
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned: deal 1 damage to target creature."
       - type: continuous
@@ -143,7 +138,6 @@ cards:
       will: 1
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When flipped: target is [Suppressed]."
       - type: action
@@ -168,9 +162,8 @@ cards:
     effects:
       - action: pray
       - type: trigger
-        oncePerTurn: true
         optional: true
-        desc: "When [this] collects mana: heal 1 damage from target."
+        desc: "When [this] collects mana: you can heal 1 damage from target."
       - type: activation
         oncePerTurn: false
         desc: "Consume 1 mana: target collects 1 mana."
@@ -194,10 +187,9 @@ cards:
         desc: "Consume any 2 mana: summon."
       - action: pray
       - type: trigger
-        oncePerTurn: false
         optional: true
         name: "Smite"
-        desc: "When [this] declares a [Strike]; consume 1 mana: [this] gets +1 [Might] for this [Strike]."
+        desc: "When [this] declares a [Strike]; you can consume 1 mana: [this] gets +1 [Might] for this [Strike]."
     rulings:
       - "The Smite effect can be activated multiple times during the same [Strike] action."
     arrows:
@@ -271,7 +263,6 @@ cards:
       life: 2
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned: target collects 1 mana."
       - action: equip
@@ -290,9 +281,8 @@ cards:
       might: 1
     effects:
       - type: trigger
-        oncePerTurn: true
-        optional: false
-        desc: "When summoned: [Equip] [this]."
+        optional: true
+        desc: "When summoned: you can [Equip] [this]."
       - action: equip
       - type: continuous
         transfer: true
@@ -362,7 +352,6 @@ cards:
       will: 2
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned: [Cleanse] and remove all damage, mana and attachments from target. It can act again during this event if it had already."
     arrows:
@@ -500,11 +489,10 @@ cards:
     effects:
       - type: cost
         desc: "Consume any 1 mana from artifacts; sac 1 artifact: summon."
-      - action: equip
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned: [Cleanse] target."
+      - action: equip
       - action: strike
         transfer: true
     arrows:
@@ -520,8 +508,7 @@ cards:
       - type: continuous
         desc: 'You can use mana on this card to pay for "non-any" mana costs.'
       - type: trigger
-        oncePerTurn: false
-        optional: true
+        optional: false
         desc: "When mana on a card would be lost due to it being destroyed: move that mana to [this] instead."
     rulings:
       - "The trigger effect applies to opponent's cards as well."
@@ -544,7 +531,6 @@ cards:
       - type: continuous
         desc: "No creatures can [Pray] while [this] is on the field."
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When [this] would be destroyed: destroy [this] and all connected creatures instead."
     arrows:

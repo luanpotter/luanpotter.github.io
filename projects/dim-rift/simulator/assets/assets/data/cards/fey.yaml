@@ -9,13 +9,11 @@ cards:
       life: 2
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When flipped: [Sidestep] [this]."
       - type: action
         desc: "Move one mana from target to [this]."
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When [this] has 3 or more mana: [Transform] [this]."
     arrows:
@@ -35,7 +33,6 @@ cards:
     effects:
       - action: strike
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When [this] has fought with 2 different creatures: [Transform] [this]."
       - type: continuous
@@ -56,7 +53,6 @@ cards:
       life: 3
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When [this] is targeted a second time by your opponent, after that effect resolves: [Transform] [this]."
       - type: activation
@@ -79,7 +75,6 @@ cards:
       will: 2
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When it's the 2nd start of your turn since [this] was summoned: [Transform] [this]."
       - keyword: evasive
@@ -87,7 +82,6 @@ cards:
         oncePerTurn: false
         desc: "Consume 1 mana: target collects 1 mana."
       - type: trigger
-        oncePerTurn: false
         optional: false
         desc: "When [this] has zero mana: destroy [this]."
     arrows:
@@ -106,12 +100,10 @@ cards:
       life: 4
     effects:
       - type: trigger
-        oncePerTurn: true
-        optional: true
+        optional: false
         desc: "When flipped: target is [Inspired]."
       - action: conscript
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When connected to at least 3 Creature Tokens: [Transform] [this]."
     arrows:
@@ -131,8 +123,7 @@ cards:
       - action: march
       - keyword: explorer
       - type: trigger
-        oncePerTurn: true
-        optional: true
+        optional: false
         desc: "When [this] has visited all your creature zones: [Transform] [this]."
       - type: activation
         oncePerTurn: true
@@ -151,20 +142,17 @@ cards:
       will: 1
     effects:
       - action: march
-      - type: trigger
-        oncePerTurn: true
-        optional: true
-        desc: |
-          When [this] [March | Marches]:
-          target creature is [Prone].
       - type: activation
         oncePerTurn: true
         desc: "[Shift]."
+      - type: trigger
+        optional: false
+        desc: "When [this] moves: target creature is [Prone]."
     arrows:
       topRight: single
       topLeft: single
-      left: double
-      right: double
+      left: single
+      right: single
   rampaging_boar:
     name: Rampaging Boar
     faction: fey
@@ -176,7 +164,6 @@ cards:
     effects:
       - action: strike
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When [this] declares a [Strike] against target creature; chose an attachment from target: destroy that attachment."
     arrows:
@@ -193,9 +180,8 @@ cards:
       - action: march
       - keyword: explorer
       - type: trigger
-        oncePerTurn: true
         optional: true
-        desc: "When [this] [March | Marches]: destroy target artifact with no mana."
+        desc: "When [this] [March | Marches]: you can destroy target artifact with no mana."
     arrows:
       top: double
       left: single
@@ -210,9 +196,8 @@ cards:
       life: 1
     effects:
       - type: trigger
-        oncePerTurn: true
-        optional: false
-        desc: "When summoned: deal 3 damage to target [Prone] creature."
+        optional: true
+        desc: "When summoned: you can deal 3 damage to target [Prone] creature."
       - action: strike
       - keyword: evasive
     arrows:
@@ -232,7 +217,6 @@ cards:
     effects:
       - keyword: ambush
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned: target creature is [Prone]."
       - type: action
@@ -252,7 +236,6 @@ cards:
       will: 3
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned; sac two creatures: [Transform] target creature with [Transform]; the transformation is [Prone]."
     arrows:
@@ -271,7 +254,6 @@ cards:
       will: 1
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned: target creature is [Protected] until the end of the turn; it collects 1 mana."
     arrows:
@@ -286,7 +268,6 @@ cards:
       will: 2
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: >
           When summoned; target all connected creatures: for each target, it is [Prone]; or if it was already [Prone], it is also [Weakened].
@@ -303,7 +284,6 @@ cards:
       will: 1
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: |
           When summoned; target all connected face-up creatures; for each target, chose either:
@@ -326,7 +306,6 @@ cards:
       will: 2
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned: [Sidestep] target; if you did, it is [Suppressed]."
     arrows:
@@ -338,7 +317,6 @@ cards:
     subType: scroll
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned: deal 2 damage to all connected face-up creatures and collect 2 mana on all connected face-up artifacts."
     arrows:
@@ -354,7 +332,6 @@ cards:
       life: 2
     effects:
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned: target creature is [Inspired] until the end of the turn."
       - action: equip
@@ -406,7 +383,6 @@ cards:
       - type: cost
         desc: "[Transformed]: summon."
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned: [Sidestep] target creature."
       - action: strike
@@ -506,7 +482,6 @@ cards:
       - type: cost
         desc: "Sac at least 1 artifacts: summon."
       - type: trigger
-        oncePerTurn: true
         optional: false
         desc: "When summoned: all face-up creatures are [Prone]."
   deep_forest_temple:
