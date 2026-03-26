@@ -1,0 +1,48 @@
+factions:
+  men:
+    name: Men of Altaria
+    description: |
+      Men are industrious, city-dwelling and urban; an ambitious people of strength, order, and religion, adepts of divine-based magic granted by their one god, [Galadon](/cards/card-index/avatar_of_the_false_god_galadon).
+
+      They inhabit many cities and towns sprawling the central and northern fields of Valtora, forming a kingdom called Altaria. It is surrounded by the lands of the other races, except for northward, where their dominion extends until the ocean. While human ships might dwell in the rivers and coasts on their land for trade and commerce, few venture deep into the sea, and none that has dared to go far has returned.
+
+      Their Fables Deck can be accessed mostly by paying mana to bring out powerful allies, angels and other servants of their god; while their Main Deck has a mix of clergy and the military, with a supporting
+      backrow of [[Equipment]] and [[Vehicle]] artifacts.
+    mechanics:
+      - "Pray"
+      - "Blessed"
+  fey:
+    name: The Fey
+    description: |
+      The Fey are a short, nature-dwelling, gnome-like people of slim, multi-colored, horned bodies that transform into animals and beasts, while being adepts of nature-based magic.
+
+      They inhabit the woods down south, and exactly how deep into the forest they venture is unknown, though there is definitely a limit, as the deeper one goes the denser and more dangerous it becomes.
+
+      Fey cards mostly access the Fables Deck via the Transform/Transformed mechanic, but they still have a powerful Scroll, monument and boss that are summoned via other costs. On the Main Deck, they have access to a variety of [[Scroll | Scrolls]] that double down as both powerful one-of effects or sources of [[Hidden Sacrifice]]. They are all about movement and having to clean up their spent scrolls via sac outlets.
+    mechanics:
+      - "Transform"
+      - "Prone"
+  telur:
+    name: The Telur
+    description: |
+      Telur are half-hobbit/half-dwarf-like people of the hills, of short stature, stout, and with very large hands, very dexterous, and proud of their advanced engineering and magical contraptions.
+
+      They inhabit the hills to the west, until before they start to become dunes and end in a deadly desert where none can survive.
+
+      The Telur have [[Creature Token]] creation cards and use the extra deck by sacrificing a combination of artifacts and creatures. They are less likely to generate or consume mana (though that ability can be amended to their deck through strategic Draft choices). Their Main Deck is filled with the powerful Artifacts concocted by their engineers, that can be fully unlocked by leveraging their creatures with the [[Maneuver]] action.
+    mechanics:
+      - "Maneuver"
+      - "Conduit"
+      - "Re-target"
+  wynn:
+    name: The Wynn
+    description: |
+      Wynn are purple, soft skinned elf-like people, taller and slimmer than humans, that live on the mountain-tops and tunnels; adepts of elemental magic of primal power their spells come with an unsettling cost.
+
+      They inhabit the mountains and peaks to the east, at least until they become too cold and snowy to any survive.
+
+      The Wynn access their Fables Deck via deranged creature sacrifices, in which they attach the consumed cards face-down to the summoned Fables to fuel their most powerful effects.
+    mechanics:
+      - "Shadowwalker"
+      # Reap
+      # attachments ?

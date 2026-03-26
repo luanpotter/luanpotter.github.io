@@ -1,0 +1,1217 @@
+cards:
+  # clay_construct:
+  #   name: Clay Construct
+  #   type: creature
+  #   subType: construct
+  #   flavor: |
+  #     One of the mysterious constructs still defending the ruins; it was a machine of destruction - for both sides.
+  #   stats:
+  #     life: 5
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When flipped: [Suppress] target until end of turn."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: false
+  #       desc: "After [this] battles with another creature: consume any 1 mana or sac [this]."
+  #   arrows:
+  #     right: double
+  #     left: double
+  # scrap_construct:
+  #   name: Scrap Construct
+  #   type: creature
+  #   subType: construct
+  #   flavor: |
+  #     One of the mysterious constructs still defending the ruins; it would drip and expand, involving and absorbing any artifacts nearby.
+  #   stats:
+  #     life: 4
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When flipped; if [this] was targeted by an artifact: [this] is [Protected] until the end of turn."
+  #     - type: continuous
+  #       desc: "If [this] does not connect to at least one artifact: sac [this]."
+  #   arrows:
+  #     top: single
+  #     bottomRight: single
+  #     bottomLeft: single
+  #     right: single
+  #     left: single
+  # spiked_construct:
+  #   name: Spiked Construct
+  #   type: creature
+  #   subType: construct
+  #   flavor: |
+  #     One of the mysterious constructs still defending the ruins; its metal spikes could easily pierce armor (or flesh).
+  #   stats:
+  #     life: 4
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When flipped: deal 1 damage to target creature."
+  #     - type: continuous
+  #       desc: "Creatures cannot be played to empty zones [this] connects to."
+  #   arrows:
+  #     top: single
+  #     left: single
+  #     right: single
+  #     bottom: single
+  # voracious_bramut:
+  #   name: Voracious Bramut
+  #   type: creature
+  #   subType: monster
+  #   flavor: |
+  #     The bramuts were ancient creatures, slow to move, but always ready to ambush. Easy to miss, too. Especially if you were seeing the forest for the trees.
+  #   stats:
+  #     might: 3
+  #     life: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: [this] can immediately [Strike] target creature."
+  #     - type: continuous
+  #       desc: "[this] cannot be moved."
+  #   arrows:
+  #     topRight: single
+  #     topLeft: single
+  # aberrant_growth:
+  #   name: Aberrant Growth
+  #   type: creature
+  #   subType: monster
+  #   flavor: |
+  #     The sages and researchers were still debating if the growths were natural. While some were benign, happy to be left alone, others sought relentless growth.
+  #   stats:
+  #     might: 2
+  #     life: 3
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac a creature: summon."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned; target all connected empty active creature zones: summon a Creature Token on each."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: false
+  #       desc: "When [this] destroys another creature: summon a Creature Token in its place."
+  #   arrows:
+  #     top: single
+  #     bottom: single
+  #     left: single
+  #     right: single
+  # enraged_vipalus:
+  #   name: Enraged Vipalus
+  #   type: creature
+  #   subType: monster
+  #   flavor: |
+  #     Most vipali were calm and collected creatures. Not this one.
+  #   stats:
+  #     might: 2
+  #     life: 3
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When flipped: [Sidestep] target."
+  #     - action: strike
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "At the end of your turn, if [this] has not battled this turn: deal 1 damage to [this]."
+  #   arrows:
+  #     top: single
+  #     bottomRight: single
+  #     bottomLeft: single
+  # watchful_simeant:
+  #   name: Watchful Simeant
+  #   type: creature
+  #   subType: monster
+  #   flavor: |
+  #     The simeants live on roads and less populated flat areas, and are always praying tricks on their prey.
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: flip target."
+  #     - action: march
+  #     - action: maneuver
+  #     - keyword: explorer
+  #   arrows:
+  #     top: single
+  #     topLeft: single
+  #     topRight: single
+  #     bottom: double
+  # nimble_surek:
+  #   name: Nimble Surek
+  #   type: creature
+  #   subType: monster
+  #   flavor: |
+  #     The sureks are known for their dexterity and their ability to move through anywhere, from the densest of forests to the tallest of mountains.
+  #   stats:
+  #     might: 1
+  #     life: 1
+  #   effects:
+  #     - keyword: explorer
+  #     - action: strike
+  #     - type: continuous
+  #       desc: "[Evasive]."
+  #   arrows:
+  #     top: single
+  #     left: single
+  #     right: single
+  #     bottomRight: single
+  #     bottomLeft: single
+  # vicious_wral:
+  #   name: Vicious Wral
+  #   type: creature
+  #   subType: monster
+  #   flavor: |
+  #     One could find wrals all over Valtora, but they were specially adapted to the mountainous regions of the east. Not as strong as a horse, but much more deadly.
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #     will: 1
+  #   effects:
+  #     - type: cost
+  #       desc: "Discard 1 card: summon."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When [this] [Strike | Strikes]: +1 [Might]."
+  #   arrows:
+  #     top: double
+  #     topLeft: single
+  #     topRight: single
+  #     bottom: single
+  # serene_bry:
+  #   name: Serene Bry
+  #   type: creature
+  #   subType: monster
+  #   flavor: |
+  #     Despite their size, a bry could often become translucent, and very hard to see. If you did get to spot it without being attacked, though, many claimed that it would bring about a sense of calm.
+  #   stats:
+  #     might: 1
+  #     life: 1
+  #     will: 2
+  #   effects:
+  #     - keyword: explorer
+  #     - type: action
+  #       desc: "Consume 1 will: deal 1 damage to your opponent."
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Discard 1 card: target gains 1 mana."
+  #   arrows:
+  #     top: double
+  #     left: double
+  #     right: double
+  #     bottomRight: single
+  #     bottomLeft: single
+  # guardian_caneiv:
+  #   name: Guardian Caneiv
+  #   type: creature
+  #   subType: monster
+  #   flavor: |
+  #     A rare sight these days, a caneiv could quickly become either a loyal companion or a fierce opponent.
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: true
+  #       desc: "When flipped: +1 [Might]."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: true
+  #       desc: "When target creature is destroyed: +1 [Life]."
+  #   arrows:
+  #     top: double
+  #     bottomRight: single
+  #     bottomLeft: single
+  # ra_ebur_great_white_wyvern:
+  #   name: Ra'ebur, Great White Wyvern
+  #   type: creature
+  #   subType: monster
+  #   flavor: |
+  #     After the Ancient Wyvern shaped the lands of Valtora, it is said to have disappeared, leaving only its two children behind. Ra'ebur was as white as ivory and had piercing blue eyes.
+  #   stats:
+  #     might: 4
+  #     life: 5
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac or discard 2 cards: summon, then draw a card."
+  #     - keyword: explorer
+  #   arrows:
+  #     top: single
+  # re_abus_great_black_wyvern:
+  #   name: Re'abus, Great Black Wyvern
+  #   type: creature
+  #   subType: monster
+  #   flavor: |
+  #     After the Ancient Wyvern shaped the lands of Valtora, it is said to have disappeared, leaving only its two children behind. Re'abus was dark as tar and had piercing red eyes.
+  #   stats:
+  #     might: 4
+  #     life: 5
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac or discard 2 cards: summon, then draw a card."
+  #     - keyword: explorer
+  #   arrows:
+  #     top: single
+  # secluded_wyvern_rider:
+  #   name: Secluded Wyvern Rider
+  #   type: creature
+  #   subType: mercenary
+  #   flavor: |
+  #     Only one person was known to be crazy enough to try to ride a baby Wyvern. One can imagine the parents were not thrilled, so the rider was rarely seen.
+  #   stats:
+  #     might: 3
+  #     life: 3
+  #   effects:
+  #     - keyword: shadowwalker
+  #     - action: march
+  #     - action: strike
+  #     - type: continuous
+  #       desc: "If [this] connects to a creature you control: [this] cannot perform any Actions."
+  #   arrows:
+  #     top: double
+  #     left: single
+  #     right: single
+  #     bottom: double
+  # gusty_aer_specter:
+  #   name: Gusty Aer Specter
+  #   type: creature
+  #   subType: spirit
+  #   stats:
+  #     might: 1
+  #     life: 3
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: [Sidestep] target."
+  #     - keyword: fading
+  #     - action: march
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: double
+  #     left: single
+  #     right: single
+  # kindled_ignis_specter:
+  #   name: Kindled Ignis Specter
+  #   type: creature
+  #   subType: spirit
+  #   stats:
+  #     might: 3
+  #     life: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: deal 1 damage to target."
+  #     - keyword: fading
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: double
+  # misty_aqua_specter:
+  #   name: Misty Aqua Specter
+  #   type: creature
+  #   subType: spirit
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: target is [Manalocked]."
+  #     - keyword: fading
+  #     - action: march
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: double
+  # sparking_fulgur_specter:
+  #   name: Sparking Fulgur Specter
+  #   type: creature
+  #   subType: spirit
+  #   stats:
+  #     life: 4
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: target is [Suppressed]."
+  #     - keyword: fading
+  #   arrows:
+  #     top: single
+  #     left: single
+  #     right: single
+  # devious_banshee:
+  #   name: Devious Banshee
+  #   type: creature
+  #   subType: spirit
+  #   stats:
+  #     might: 1
+  #     life: 2
+  #     will: 1
+  #   effects:
+  #     - keyword: fading
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Consume any 1 will: target is [Suppressed]."
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Consume any 2 will: target is [Weakened]."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     left: single
+  #     right: single
+  # obscured_wraith:
+  #   name: Obscured Wraith
+  #   type: creature
+  #   subType: spirit
+  #   stats:
+  #     might: 1
+  #     life: 2
+  #     will: 1
+  #   effects:
+  #     - keyword: fading
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Consume any 1 will: target is [Manalocked]."
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Consume any 3 will: target is [Protected]."
+  #   arrows:
+  #     top: single
+  #     topLeft: single
+  #     topRight: single
+  #     bottom: double
+  # bygone_ghoul:
+  #   name: Bygone Ghoul
+  #   type: creature
+  #   subType: spirit
+  #   stats:
+  #     might: 1
+  #     life: 1
+  #   effects:
+  #     - keyword: shadowwalker
+  #     - keyword: fading
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: 'When destroyed: target creature is [Cursed] with "Deal 2 damage to target creature you control.".'
+  #   arrows:
+  #     top: double
+  # frail_apparition:
+  #   name: Frail Apparition
+  #   type: creature
+  #   subType: spirit
+  #   stats:
+  #     might: 1
+  #     life: 1
+  #   effects:
+  #     - keyword: shadowwalker
+  #     - keyword: fading
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: 'When destroyed: target creature is [Cursed] with "Sac target artifact".'
+  #   arrows:
+  #     top: double
+  # the_twin_blades:
+  #   name: The Twin Blades
+  #   type: creature
+  #   subType: mercenary
+  #   flavor: |
+  #     Who said a Telur and a Fey could not work together? Actually, no one said that; but they would meet a swift end (or two) if they did.
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When flipped: [Sidestep] target."
+  #     - type: continuous
+  #       desc: "While [this] is oriented vertically: +1 Might."
+  #     - type: continuous
+  #       desc: "While [this] is oriented horizontally: +1 Life."
+  #     - action: strike
+  #   arrows:
+  #     topRight: single
+  #     topLeft: single
+  #     left: single
+  #     right: single
+  #     bottom: double
+  # filthy_rogue:
+  #   name: Filthy Rogue
+  #   type: creature
+  #   subType: mercenary
+  #   stats:
+  #     might: 1
+  #     life: 3
+  #     will: 1
+  #   effects:
+  #     - keyword: shadowwalker
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When flipped: chose an attachment from target and attach it to [this]."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: true
+  #       desc: "When [this] deals damage to a non-connected creature: deal 2 extra damage."
+  #   arrows:
+  #     topRight: single
+  #     topLeft: single
+  #     top: single
+  #     bottom: double
+  # magical_apprentice:
+  #   name: Magical Apprentice
+  #   type: creature
+  #   subType: mercenary
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #     will: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When flipped: target is [Manalocked] until end of turn."
+  #     - action: research
+  #     - type: action
+  #       desc: "Consume 1 will: target creature or [this] either (1) is dealt 1 damage or (2) heals 1 damage."
+  #     - type: action
+  #       desc: "Consume 2 will: target creature has [Inspired] until the end of turn."
+  #   arrows:
+  #     top: double
+  #     left: single
+  #     right: single
+  #     bottom: single
+  # shielded_warrior:
+  #   name: Shielded Warrior
+  #   type: creature
+  #   subType: mercenary
+  #   stats:
+  #     might: 1
+  #     life: 3
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When flipped, if this was targeted by a [Strike]: cancel that [Strike]."
+  #   arrows:
+  #     topLeft: single
+  #     top: single
+  #     topRight: single
+  #     bottom: double
+  # mercenary_brigade:
+  #   name: Mercenary Brigade
+  #   type: creature
+  #   subType: mercenary
+  #   stats:
+  #     might: 1
+  #     life: 2
+  #     will: 1
+  #   effects:
+  #     - keyword: shadowwalker
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: flip target."
+  #     - action: strike
+  #     - type: action
+  #       desc: "Consume any 1 will: [Conscript]."
+  #   arrows:
+  #     top: double
+  #     left: single
+  #     right: single
+  #     bottomRight: single
+  #     bottomLeft: single
+  # shadowy_figure:
+  #   name: Shadowy Figure
+  #   type: creature
+  #   subType: mercenary
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #   effects:
+  #     - keyword: shadowwalker
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When flipped: deal 1 damage to target creature."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When destroyed: deal 1 damage to target creature."
+  #   arrows:
+  #     top: single
+  # gritty_swashbuckler:
+  #   name: Gritty Swashbuckler
+  #   type: creature
+  #   subType: mercenary
+  #   flavor: |
+  #     Grittiness is a double-edged rapier.
+  #   stats:
+  #     might: 1
+  #     life: 2
+  #   effects:
+  #     - action: strike
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "After [this] [Attacks]: [Sidestep] [this]."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  # anti_magical_field_device:
+  #   name: Anti-Magical Field Device
+  #   type: artifact
+  #   effects:
+  #     - type: cost
+  #       desc: "Consume any 2 will: summon."
+  #     - type: continuous
+  #       desc: "Cards [this] connects to are [Manalocked]."
+  #     - action: research
+  #   arrows:
+  #     top: double
+  #     left: single
+  #     right: single
+  # artifact_evacuation_device:
+  #   name: Artifact Evacuation Device
+  #   type: artifact
+  #   effects:
+  #     - type: activation
+  #       oncePerTurn: true
+  #       desc: "Pay 3 life; target any artifacts: destroy all. If you destroyed exactly 2: draw a card."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When destroyed: collect 2 mana on target."
+  #   arrows:
+  #     top: double
+  #     left: double
+  #     right: double
+  #     bottom: single
+  # double_chariots:
+  #   name: Double Chariots
+  #   type: artifact
+  #   stats:
+  #     will: 1
+  #   flavor: |
+  #     People come, people go.
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: [Sidestep] target."
+  #     - type: action
+  #       desc: 'Target creature gains "Action: March" until end of turn.'
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Consume any 1 mana; target two cards of the same type you control: swap them."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     left: single
+  #     right: single
+  # mana_rock:
+  #   name: Mana Rock
+  #   type: artifact
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: target either (1) gains or (2) consumes 1 mana."
+  #     - type: action
+  #       desc: "Target either (1) gains or (2) consumes 1 mana."
+  #   arrows:
+  #     top: double
+  # energetic_release_capsule:
+  #   name: Energetic Release Capsule
+  #   type: artifact
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: deal 1 damage to target."
+  #     - type: activation
+  #       oncePerTurn: true
+  #       desc: "Consume 1 will: deal 1 damage to all connected face-up creatures."
+  #   arrows:
+  #     top: double
+  # illusory_projection:
+  #   name: Illusory Projection
+  #   type: artifact
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: sac target creature."
+  #     - type: action
+  #       desc: "Consume 1 will: [Conscript]."
+  #   arrows:
+  #     top: single
+  # superfluous_mirror:
+  #   name: Superfluous Mirror
+  #   type: artifact
+  #   flavor: |
+  #     It was not the most useful of artifacts, except for those who could see it for what it was.
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: flip all connected cards."
+  #     - type: continuous
+  #       desc: "You can see any cards [this] connects to."
+  #     - type: action
+  #       desc: "Target exactly two creatures: each target gains 2 mana."
+  #   arrows:
+  #     top: double
+  # double_or_nothing:
+  #   name: Double or Nothing
+  #   type: artifact
+  #   flavor: |
+  #     "Wait a second, wasn't that the same card you just played, again?"
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: target has [Re-target] for the current chain."
+  #     - type: action
+  #       desc: "Perform an Action with target creature you control."
+  #     - type: continuous
+  #       desc: "Each orthogonal arrow single arrow of every card [this] connects to is a double-arrow."
+  #   arrows:
+  #     top: double
+  # token_of_resilience:
+  #   name: Token of Resilience
+  #   type: artifact
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: continuous
+  #       desc: "[this] cannot gain mana."
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Consume 1 will: target creature is [Protected] until the end of turn."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When [this] has zero will: sac it."
+  #   arrows:
+  #     top: single
+  # decaying_tome:
+  #   name: Decaying Tome
+  #   type: artifact
+  #   flavor: |
+  #     Deep within the Royal Library of Lithanur, on the most secluded of shelves, the sages found the decaying tome, barely holding together; but it would take a lot of research to actually decipher it.
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: [Research]; then, your opponent can [Research]."
+  #     - type: action
+  #       desc: "Consume any 1 will: choose a [[Stat]] to add to __the list__ (the possible choices are: [[Might]] or [[Life]]; __the list__ starts empty)."
+  #     - type: activation
+  #       oncePerTurn: true
+  #       desc: "Consume any 1 will: target creature gets +1 to all Stats on __the list__ until end of turn."
+  #   arrows:
+  #     top: single
+  # sword_and_shield:
+  #   name: Sword & Shield
+  #   type: artifact
+  #   subType: equipment
+  #   stats:
+  #     might: 1
+  #     life: 1
+  #   effects:
+  #     - type: action
+  #       transfer: true
+  #       desc: "Attack."
+  #   arrows:
+  #     top: single
+  # # side_dagger:
+  # #   name: Side Dagger
+  # #   type: artifact
+  # #   subType: equipment
+  # #   stats:
+  # #     might: 1
+  # #   effects:
+  # #     - type: trigger
+  # #       oncePerTurn: true
+  # #       optional: false
+  # #       desc: "When summoned: [Equip] [this]."
+  # #   arrows:
+  # #     top: single
+  # #     topRight: single
+  # #     topLeft: single
+  # swift_boots:
+  #   name: Swift Boots
+  #   type: artifact
+  #   subType: equipment
+  #   flavor: |
+  #     Not quite the whole seven leagues,
+  #     but still pretty swifty.
+  #   stats:
+  #     armor: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: [Sidestep] target."
+  #     - type: activation
+  #       oncePerTurn: true
+  #       transfer: true
+  #       desc: "[Shift]."
+  #   arrows:
+  #     top: double
+  #     left: single
+  #     right: single
+  # shrouded_veil:
+  #   name: Shrouded Veil
+  #   type: artifact
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: target creature is [Protected] and [Suppressed] until end of turn."
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "At the start of your turn: either (1) consume any 1 mana or (2) sac this."
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Target creature cannot be targeted by [Strike | Strikes]."
+  #   arrows:
+  #     top: single
+  # thunderous_avalanche:
+  #   name: Thunderous Avalanche
+  #   type: artifact
+  #   subType: scroll
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: deal 3 damage to each connected creature."
+  #   arrows:
+  #     top: double
+  # chained_lightning:
+  #   name: Chained Lightning
+  #   type: artifact
+  #   subType: scroll
+  #   stats:
+  #     will: 3
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: deal 2 damage to target and it consumes 2 mana. Before this effect resolves: the controller of the targeted card must target a new card from its arrows and resolve this effect. Each zone can only be targeted once during each chain."
+  #   arrows:
+  #     top: single
+  #   rulings:
+  #     - "Cards must be targeted until it is not possible to continue. They key is deciding the most advantageous order to target cards."
+  # chained_blessing:
+  #   name: Chained Blessing
+  #   type: artifact
+  #   subType: scroll
+  #   stats:
+  #     will: 3
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: heal 2 damage and add 2 mana to target. Before this effect resolves: the controller of the targeted card must target a new card from its arrows and resolve this effect. Each zone can only be targeted once during each chain."
+  #   arrows:
+  #     top: single
+  #   rulings:
+  #     - "Cards must be targeted until it is not possible to continue. They key is deciding the most advantageous order to target cards."
+  # battle_cart:
+  #   name: Battle Cart
+  #   type: artifact
+  #   subType: vehicle
+  #   stats:
+  #     movement: 3
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: [Suppress] target creature."
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Discard 1 card: crew/uncrew [this]."
+  #     - type: continuous
+  #       transfer: true
+  #       desc: '[equipped] has "Action: Strike" and "Action: March".'
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When destroyed: deal 1 damage to target creature or to your opponent."
+  #   arrows:
+  #     top: triple
+  #     bottomRight: single
+  #     bottomLeft: single
+  # pompous_carriage:
+  #   name: Pompous Carriage
+  #   type: artifact
+  #   subType: vehicle
+  #   stats:
+  #     armor: 3
+  #     movement: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: [Suppress] target creature."
+  #     - type: continuous
+  #       transfer: true
+  #       desc: '[equipped] has "Action: Recycle".'
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When destroyed, if [this] was destroyed while crewed and [equipped] was also destroyed: any Souls released by [equipped] are released on target creature instead of the [[Aether]]."
+  #   arrows:
+  #     top: single
+  # tamed_wral:
+  #   name: Tamed Wral
+  #   type: artifact
+  #   subType: vehicle
+  #   flavor: |
+  #     The Wynn were the first to tame wrals for riding. Their smaller size and agility compared to horses made them much more adaptable to the uneven and cliffy terrain of the mountain peaks.
+  #   stats:
+  #     might: 1
+  #     movement: 3
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: flip target."
+  #     - keyword: autonomous
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: true
+  #       transfer: true
+  #       desc: "When [equipped] declares an attack; consume any 3 will: [equipped] does not take damage from this combat."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: true
+  #       transfer: true
+  #       desc: "When [equipped] destroy a creature: [equipped] gains 2 mana."
+  #   arrows:
+  #     top: double
+  #     bottomRight: single
+  #     bottomLeft: single
+  # ensnare_creature:
+  #   name: Ensnare Creature
+  #   type: artifact
+  #   subType: trap
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target creature declares an Action: that creature is knocked [Prone] instead."
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target creature activates an Activation effect: [Manalock] that creature instead."
+  #   arrows:
+  #     top: double
+  # unexpected_response:
+  #   name: Unexpected Response
+  #   type: artifact
+  #   subType: trap
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target card activates an Activation effect; pay 3 life: select a different Activation effect from any card on the field; resolve that effect instead, ignoring costs."
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target card activates an effect: modify any one number from the resolution portion of the effect text by one (note: you cannot change sign but you can go to zero), and resolve the new version instead."
+  #   arrows:
+  #     top: double
+  #     topRight: single
+  #     topLeft: single
+  # cylindrical_concoction:
+  #   name: Cylindrical Concoction
+  #   type: artifact
+  #   subType: trap
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If you are dealt damage by your opponent: all damage dealt to you by your opponent this chain is dealt to your opponent instead, and vice-versa (note: this does not include paying costs.)."
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target creature is dealt X damage: you gain X life instead."
+  #   arrows:
+  #     top: single
+  # attack_reaction:
+  #   name: Attack Reaction
+  #   type: artifact
+  #   subType: trap
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target creature battles: that creature gets +2 Attack until end of turn."
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target creature battles: that creature gets +2 Armor until end of turn."
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target creature battles: that creature gets +2 Life until end of turn."
+  #   arrows:
+  #     top: single
+  #     topRight: double
+  #     topLeft: double
+  # lunar_sighting:
+  #   name: Lunar Sighting
+  #   type: artifact
+  #   subType: trap
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target creature would be summoned to target zone: set that creature instead (note: this includes flips)."
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target creature would activate an Activation effect; pay 2 life: flip that creature face-down instead."
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target creature would perform an Action; pay 3 life: flip that creature face-down instead."
+  #   arrows:
+  #     top: double
+  #     topRight: double
+  #     topLeft: double
+  # hidden_strings:
+  #   name: Hidden Strings
+  #   type: artifact
+  #   subType: trap
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target creature declares an Attack Action: choose a new valid target for that attack."
+  #     - type: trigger
+  #       optional: false
+  #       oncePerTurn: true
+  #       desc: "If target creature activates an effect that targets one card: choose a new valid target for that effect."
+  #   arrows:
+  #     top: double
+  #     topRight: double
+  #     topLeft: double
+  # monolith:
+  #   name: Monolith
+  #   type: monument
+  #   extra: true
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac 1 artifact: summon."
+  #     - type: action
+  #       desc: "Choose one card you control and one card your opponent controls: add 1 mana to each."
+  #     - action: upgrade
+  #     - action: erode
+  # battle_arena:
+  #   name: Battle Arena
+  #   type: monument
+  #   extra: true
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac 1 creature: summon."
+  #     - type: continuous
+  #       desc: "Creatures you control get +1 [Might] and -1 Armor (min 0)."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "At the end of your turn, if you did not [Strike] this turn: [this] gets a damage counter."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When destroyed: you take damage equal to the # of damage counters on [this]."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When [this] has 3 damage counters or more: destroy [this]."
+  # royal_library_of_lithanur:
+  #   name: Royal Library of Lithanur
+  #   extra: true
+  #   type: monument
+  #   flavor: |
+  #     "They say in every library there is a single book that can answer the question that burns like a fire in the mind." — Lemony Snicket
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac 3 cards of different card types (creature, artifact, monument): summon."
+  #     - type: action
+  #       desc: "Consume any 2 will: draw a card."
+  #     - action: upgrade
+  #     - action: erode
+  # white_flag:
+  #   name: White Flag
+  #   type: monument
+  #   extra: true
+  #   effects:
+  #     - type: cost
+  #       desc: "Discard 1 card: summon."
+  #     - type: continuous
+  #       desc: "All creatures on the field get -2 Attack (min 0)."
+  #     - type: trigger
+  #       optional: true
+  #       oncePerTurn: true
+  #       desc: "At the beginning of your next turn after this was summoned: sac [this] and draw a card."
+  # bustling_market:
+  #   name: Bustling Market
+  #   type: monument
+  #   extra: true
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: cost
+  #       desc: "Deal 1 damage to a creature you control: summon."
+  #     - type: action
+  #       desc: "Choose two costs from:\n (1) consume X mana;\n (2) pay X life;\n (3) discard X cards;\n (4) sac X cards;\nthen, once this turn, when paying a summoning cost: apply Cost Discount X."
+  #     - type: action
+  #       desc: "[Upgrade]. | [Erode]."
+  # fertile_fields:
+  #   name: Fertile Fields
+  #   type: monument
+  #   extra: true
+  #   effects:
+  #     - type: cost
+  #       desc: "Discard 1 card: summon."
+  #     - type: action
+  #       desc: "Collect 1 mana on [this]."
+  #     - type: action
+  #       desc: "Consume any 1 will: Recycle."
+  #     - type: action
+  #       desc: "[Upgrade]. | [Erode]."
+  # flimsy_scaffolding:
+  #   name: Flimsy Scaffolding
+  #   type: monument
+  #   extra: true
+  #   effects:
+  #     - type: cost
+  #       desc: "Knock a creature you control [Prone]: summon this to an inactive monument zone."
+  #     - type: activation
+  #       oncePerTurn: true
+  #       desc: "Sac [this], a creature, and an artifact: activate this zone."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: true
+  #       desc: "Whenever a [Prone] creature gets up: its controller gain 1 life."
+  # military_academy:
+  #   name: Military Academy
+  #   type: monument
+  #   extra: true
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac a creature: summon; then, summon a Creature Token to the zone the sac'ed creature was."
+  #     - type: action
+  #       desc: "Consume any 2 mana; choose empty zone on the battlefield: summon a [[Creature Token]]."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: false
+  #       desc: "If you control more than 3 Creature Tokens: sac one of them."
+  #     - type: action
+  #       desc: "[Upgrade]. | [Erode]."
+  # panoramic_ziggurat:
+  #   name: Panoramic Ziggurat
+  #   type: monument
+  #   extra: true
+  #   stats:
+  #     will: 3
+  #   effects:
+  #     - type: cost
+  #       desc: "Reveal your hand to your opponent: summon."
+  #     - type: activation
+  #       oncePerTurn: true
+  #       desc: "Choose an arrow of a card on the field: that arrow is now a triple arrow until the end of turn."
+  #     - action: erode
+  # revitalizing_refectory:
+  #   name: Revitalizing Refectory
+  #   type: monument
+  #   stats:
+  #     will: 1
+  #   extra: true
+  #   effects:
+  #     - type: cost
+  #       desc: "Pay X life, where X is the number of creatures on the field: summon."
+  #     - type: action
+  #       desc: "Collect 1 mana on [this]."
+  #     - type: activation
+  #       oncePerTurn: true
+  #       desc: "Consume 2 will: heal 1 damage from chosen creature."
+  #     - type: action
+  #       desc: "[Upgrade]. | [Erode]."
+  # restless_mausoleum:
+  #   name: Restless Mausoleum
+  #   type: monument
+  #   extra: true
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac any number of creatures (min 1): summon."
+  #     - type: action
+  #       desc: "Release a (Rank 0) Soul."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When a player Soulrifts: they first pay 1 life."
+  #     - type: action
+  #       desc: "[Upgrade]. | [Erode]."

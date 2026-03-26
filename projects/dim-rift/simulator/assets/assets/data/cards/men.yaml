@@ -1,0 +1,561 @@
+cards:
+  hardened_peasant:
+    name: Hardened Peasant
+    faction: men
+    type: creature
+    subType: human
+    flavor: |
+      The hard work of many peasants keeps the kingdom of Altaria fed.
+    stats:
+      might: 1
+      life: 2
+    effects:
+      - type: trigger
+        oncePerTurn: false
+        optional: false
+        desc: "When flipped: this is [Protected] until end of turn."
+      - action: pray
+      - type: continuous
+        desc: "While [this] has an attachment: +1 [Might]."
+    arrows:
+      top: double
+      left: single
+      right: single
+  fearless_sentinel:
+    name: Fearless Sentinel
+    faction: men
+    type: creature
+    subType: human
+    stats:
+      might: 1
+      life: 2
+      will: 1
+    effects:
+      - action: strike
+      - type: trigger
+        oncePerTurn: false
+        optional: true
+        desc: "When [this] fights target creature, while [Blessed]: [Sidestep] target."
+      - type: activation
+        oncePerTurn: false
+        desc: "Sac target artifact: [Sidestep] [this]."
+    arrows:
+      top: single
+      topRight: single
+      topLeft: single
+      bottom: double
+  city_watchman:
+    name: City Watchman
+    faction: men
+    type: creature
+    subType: human
+    flavor: |
+      The cities of Altaria thrive under the rule of law, enforced by the royal guards of Her Majesty, Queen Brittany II.
+    stats:
+      might: 2
+      life: 2
+    effects:
+      - action: pray
+      - type: continuous
+        desc: "While [Blessed]: [Evasive]."
+      - type: activation
+        oncePerTurn: true
+        desc: "Consume any 1 mana: [Conscript]."
+    arrows:
+      top: single
+      left: single
+      right: single
+      bottomRight: single
+      bottomLeft: single
+  crafty_diplomat:
+    name: Crafty Diplomat
+    faction: men
+    type: creature
+    subType: human
+    flavor: |
+      It was said that he could make an offer one couldn't refuse.
+    stats:
+      life: 4
+      will: 1
+    effects:
+      - action: march
+      - keyword: explorer
+      - type: activation
+        oncePerTurn: true
+        desc: "Consume 1 mana: until end of turn, target creature is [Inspired] but cannot [Strike]."
+    arrows:
+      topRight: single
+      topLeft: single
+      left: single
+      right: single
+      bottom: single
+  noble_squire:
+    name: Noble Squire
+    faction: men
+    type: creature
+    subType: human
+    stats:
+      might: 1
+      life: 3
+    effects:
+      - action: research
+      - type: continuous
+        desc: "While [this] [Strike | Strikes]: +1 [Might]."
+      - type: trigger
+        oncePerTurn: false
+        optional: true
+        desc: "When target creature would take damage: [this] can take that damage instead."
+    arrows:
+      top: double
+      bottom: single
+      bottomRight: single
+      bottomLeft: single
+  deceitful_acolyte:
+    name: Deceitful Acolyte
+    faction: men
+    type: creature
+    subType: human
+    stats:
+      might: 1
+      life: 3
+      will: 2
+    effects:
+      - keyword: ambush
+      - type: trigger
+        oncePerTurn: true
+        optional: false
+        desc: "When summoned: deal 1 damage to target creature."
+      - type: continuous
+        desc: "Connected creatures are [Suppressed]."
+    arrows:
+      top: single
+      left: single
+      right: single
+      bottom: single
+  orderly_cleric:
+    name: Orderly Cleric
+    faction: men
+    type: creature
+    subType: human
+    stats:
+      might: 2
+      life: 2
+      will: 1
+    effects:
+      - action: pray
+      - type: trigger
+        oncePerTurn: true
+        optional: false
+        desc: "When flipped: target is [Suppressed]."
+      - type: trigger
+        oncePerTurn: false
+        optional: true
+        desc: "When [this] [Prays]: [this] collects one (additional) mana."
+    arrows:
+      top: single
+      left: single
+      right: single
+      bottomRight: single
+      bottomLeft: single
+  devout_priest:
+    name: Devout Priest
+    faction: men
+    type: creature
+    subType: human
+    flavor: |
+      "Let the light of Galadon shine through me, and I shall be His tool."
+    stats:
+      might: 1
+      life: 3
+      will: 1
+    effects:
+      - action: pray
+      - type: trigger
+        oncePerTurn: true
+        optional: true
+        desc: "When [this] collects mana: heal 1 damage from target."
+      - type: activation
+        oncePerTurn: false
+        desc: "Consume 1 mana: target collects 1 mana."
+    arrows:
+      top: double
+      left: single
+      right: single
+  paladin_of_hope:
+    name: Paladin of Hope
+    faction: men
+    type: creature
+    subType: human
+    flavor: |
+      "The Guild of Paladins still hoped that one day Theranor would return to lead them." — _A Brief History of Altaria_, p. 194
+    stats:
+      might: 2
+      life: 3
+      will: 2
+    effects:
+      - type: cost
+        desc: "Consume any 2 mana: summon."
+      - action: pray
+      - type: trigger
+        oncePerTurn: false
+        optional: true
+        name: "Smite"
+        desc: "When [this] declares a [Strike]; consume 1 mana: [this] gets +1 [Might] for this [Strike]."
+    rulings:
+      - "The Smite effect can be activated multiple times during the same [Strike] action."
+    arrows:
+      top: single
+      topRight: single
+      topLeft: single
+      left: single
+      right: single
+      bottom: double
+  erratic_street_vandal:
+    name: Erratic Street Vandal
+    faction: men
+    type: creature
+    subType: human
+    stats:
+      might: 1
+      life: 2
+    effects:
+      - keyword: evasive
+      - type: action
+        desc: "While [Blessed]: [Strike]."
+      - type: continuous
+        desc: "While [this] [Strike | Strikes]: [this] has +1 [Might] and the blocker has -1 [Might]."
+    arrows:
+      left: single
+      right: single
+      topRight: single
+      bottomLeft: single
+  telur_emissary:
+    name: Telur Emissary
+    faction: men
+    type: creature
+    subType: telur
+    stats:
+      might: 2
+      life: 2
+    effects:
+      - action: maneuver
+      - keyword: explorer
+      - keyword: conduit
+    arrows:
+      top: single
+      bottom: single
+      bottomLeft: single
+      bottomRight: single
+  valiant_horse:
+    name: Valiant Horse
+    faction: men
+    type: creature
+    subType: beast
+    stats:
+      might: 1
+      life: 1
+    effects:
+      - action: march
+      - type: continuous
+        desc: |
+          Connected creatures have
+          "Action: [Strike]."
+    arrows:
+      topRight: single
+      topLeft: single
+      left: double
+      right: double
+  gauntlet_of_faith:
+    name: Gauntlet of Faith
+    faction: men
+    type: artifact
+    subType: equipment
+    stats:
+      life: 2
+    effects:
+      - type: trigger
+        oncePerTurn: true
+        optional: false
+        desc: "When summoned: target collects 1 mana."
+      - action: equip
+      - action: pray
+        transfer: true
+    arrows:
+      top: single
+      topRight: single
+      topLeft: single
+  side_dagger:
+    name: Side Dagger
+    faction: men
+    type: artifact
+    subType: equipment
+    stats:
+      might: 1
+    effects:
+      - type: trigger
+        oncePerTurn: true
+        optional: false
+        desc: "When summoned: [Equip] [this]."
+      - action: equip
+      - type: continuous
+        transfer: true
+        desc: "[Evasive]."
+    arrows:
+      top: single
+      topRight: single
+      topLeft: single
+  sacred_texts:
+    name: Sacred Texts
+    faction: men
+    type: artifact
+    stats:
+      will: 3
+    effects:
+      - type: continuous
+        desc: "The mana on [this] cannot be consumed by means other than its own effects."
+      - type: activation
+        oncePerTurn: true
+        desc: "Transfer 1 mana from [this] to target or vice-versa."
+    arrows:
+      topRight: single
+      topLeft: single
+      top: single
+      bottom: double
+      left: single
+      right: single
+  fishing_boat:
+    name: Fishing Boat
+    faction: men
+    type: artifact
+    flavor: |
+      Altaria was renowned for its sprawling navy; the fishing boats
+      were the backbone of the kingdom's economy.
+    effects:
+      - type: continuous
+        desc: "Connected creatures have +1 Life."
+      - type: activation
+        oncePerTurn: true
+        desc: "Consume any 1 mana: rotate target."
+    arrows:
+      top: double
+  holy_caravel:
+    name: Holy Caravel
+    faction: men
+    type: artifact
+    stats:
+      will: 1
+    effects:
+      - type: continuous
+        desc: "Connected creatures have +1 [Might]."
+      - type: action
+        name: "Cannons"
+        desc: "Deal 1 damage to target creature; if you did, target can [Research]."
+    arrows:
+      topRight: single
+      topLeft: single
+      bottom: double
+  scroll_of_erasure:
+    name: Scroll of Erasure
+    faction: men
+    type: artifact
+    subType: scroll
+    stats:
+      will: 2
+    effects:
+      - type: trigger
+        oncePerTurn: true
+        optional: false
+        desc: "When summoned: [Cleanse] and remove all damage, mana and attachments from target. It can act again during this event if it had already."
+    arrows:
+      top: double
+      topRight: single
+      topLeft: single
+  towering_lighthouse:
+    name: Towering Lighthouse
+    faction: men
+    type: monument
+    flavor: |
+      Scattered across the rivers and coast of Altaria there were lighthouses to guide the kingdom's vessels and spirits.
+    stats:
+      will: 3
+    effects:
+      - keyword: versatile
+      - type: continuous
+        desc: 'All creatures have "Action: [Pray]."'
+  fountain_of_youth:
+    name: Fountain of Youth
+    faction: men
+    type: monument
+    stats:
+      will: 2
+    effects:
+      - type: activation
+        oncePerTurn: false
+        desc: "Consume 2 mana: heal 1 damage and [Cleanse] chosen face-up creature."
+      - type: activation
+        oncePerTurn: false
+        desc: "Discard a card: [this] collects 2 mana."
+  blasphemous_servant_of_our_lord:
+    name: Blasphemous Servant of Our Lord
+    faction: men
+    type: creature
+    subType: ally
+    extra: true
+    stats:
+      might: 3
+      life: 3
+    effects:
+      - type: cost
+        desc: "Consume any 3 mana then sac a non-[Blessed] face-up creature: summon."
+      - action: strike
+      - type: continuous
+        desc: "While [this] [Strike | Strikes]: +2 [Might]."
+    arrows:
+      top: single
+      left: double
+      bottom: single
+  righteous_knight_of_the_queen:
+    name: Righteous Knight of the Queen
+    faction: men
+    type: creature
+    subType: ally
+    extra: true
+    flavor: |
+      "To thee I pledge my sword, my life, and my soul; your majesty; my Queen.
+      All hail Queen Brittany II!"
+    stats:
+      might: 3
+      life: 3
+      will: 2
+    effects:
+      - type: cost
+        desc: "Sac a [Blessed] creature then consume any 3 mana: summon."
+      - action: conscript
+      - type: activation
+        oncePerTurn: true
+        desc: "Consume 2 mana; [this] is [Protected] until the end of turn."
+      - type: activation
+        oncePerTurn: true
+        desc: "Consume 2 mana: destroy target artifact."
+    arrows:
+      top: single
+      topRight: single
+      topLeft: single
+      right: double
+  high_priestess_of_altaria:
+    name: High Priestess of Altaria
+    faction: men
+    type: creature
+    subType: ally
+    extra: true
+    stats:
+      might: 2
+      life: 5
+      will: 1
+    effects:
+      - type: cost
+        desc: "Consume any 5 mana: summon."
+      - type: action
+        desc: "[Pray], then you can deal 1 damage to target creature."
+      - type: continuous
+        desc: "You can see any cards connected to [this]."
+      - type: activation
+        oncePerTurn: false
+        desc: "Consume 1 mana: connected creatures are permanently [Blessed]."
+    arrows:
+      top: single
+      right: double
+      left: double
+      bottomRight: single
+      bottomLeft: single
+  fallen_archangel:
+    name: Fallen Archangel
+    faction: men
+    type: creature
+    subType: manifestation
+    extra: true
+    stats:
+      might: 3
+      life: 3
+      will: 3
+    effects:
+      - type: cost
+        desc: "Sac at least 3 cards with at least 3 combined mana: summon."
+      - keyword: evasive
+      - type: activation
+        oncePerTurn: false
+        desc: "Consume 1 mana: target creature is [Weakened] and has [Evasive] until the end of turn."
+    arrows:
+      top: double
+      left: single
+      right: single
+      bottom: double
+  sword_of_theranor:
+    name: Sword of Theranor
+    faction: men
+    type: artifact
+    subType: equipment
+    extra: true
+    flavor: |
+      "After the Cataclysm, only Theranor's sword was recovered;
+      still a legendary symbol of hope for the paladins, and all Men of Altaria."
+      — _A Brief History of Altaria_, p. 169
+    stats:
+      might: 2
+    effects:
+      - type: cost
+        desc: "Consume any 1 mana from artifacts; sac 1 artifact: summon."
+      - action: equip
+      - type: trigger
+        oncePerTurn: true
+        optional: false
+        desc: "When summoned: [Cleanse] target."
+      - action: strike
+        transfer: true
+    arrows:
+      top: double
+  church_of_the_new_covenant:
+    name: Church of the New Covenant
+    faction: men
+    type: monument
+    extra: true
+    stats:
+      will: 3
+    effects:
+      - type: cost
+        desc: "Sac or discard at least 3 cards: summon. [this] collects the amount of mana on the sac'ed cards."
+      - type: continuous
+        desc: 'Mana on this card can be used to pay for "non-any" mana costs.'
+      - type: trigger
+        oncePerTurn: false
+        optional: true
+        desc: "When mana on a card you control would be lost due to it being destroyed: move that mana to [this] instead."
+  avatar_of_the_false_god_galadon:
+    name: "Avatar of the False God, Galadon"
+    faction: men
+    type: creature
+    subType: manifestation
+    extra: true
+    flavor: |
+      They say to never meet your heroes.
+    stats:
+      might: 7
+      life: 7
+    effects:
+      - type: cost
+        desc: "Sac at least 3 cards with a combined mana of at least 7: summon."
+      - type: continuous
+        desc: "[Inspired]."
+      - type: continuous
+        desc: "No creatures can [Pray] while [this] is on the field."
+      - type: trigger
+        oncePerTurn: true
+        optional: false
+        desc: "When [this] would be destroyed: destroy [this] and all connected creatures instead."
+    arrows:
+      topLeft: single
+      top: single
+      topRight: single
+      left: single
+      right: single
+      bottom: single

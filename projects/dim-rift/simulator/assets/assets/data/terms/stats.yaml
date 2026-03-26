@@ -1,0 +1,26 @@
+stats:
+  might:
+    name: Might
+    description: "Amount of damage [this] deals to other creatures when [[Fighting]]."
+    details: |
+      A card's **Might** determines how much [[Damage Counters | damage]] a [[Creature | creature]] deals to other creatures when [[Fighting]].
+
+      This can either be triggered by the creature itself performing the [[Strike Action]] or as a result of it blocking another creatures's [[Strike Action | Strike]].
+  will:
+    name: Will
+    description: |
+      Amount of mana [this] collects when summoned; or it can be sac'ed faced down to pay for "any" mana costs.
+    details: |
+      A card's **Will** has two functions:
+
+      - when the card is [[Summon | summoned]], collect [[Mana Counter | mana]] equivalent to this value onto the card; 
+      - if the card is set, before it has been summoned; you can [[Sacrifice | sac]] it face-down through the [[Hidden Sacrifice]] mechanic in order to pay for mana costs.
+
+      You can never get both benefits from a single card. Either it is sac'd (or destroyed) face-down, or it is eventually summoned.
+  life:
+    name: Life
+    description: "Amount of damage [this] can receive before being destroyed."
+    details: |
+      A card's **Life** determines how many [[Damage | damage counters]] a [[Creature | creature]] can sustain before being destroyed. It is essentially the value of the creature maximum damage threshold.
+
+      It is important to note that creatures do not have a first-class concept of "current life". Each card on the field has a fixed number of damage counters and their maximum life, which is just referred to as "Life". If a creature receives a "+1 Life" bonus, the number of damage counters it has does not change (which means that their effective "current life" increases).

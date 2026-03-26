@@ -1,0 +1,564 @@
+cards:
+  # disheveled_researcher:
+  #   name: Disheveled Researcher
+  #   faction: wynn
+  #   type: creature
+  #   subType: wynn
+  #   flavor: |
+  #     Knowledge has a cost,
+  #     but it is worth any price.
+  #   stats:
+  #     might: 1
+  #     life: 2
+  #     movement: 1
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When flipped: draw a card."
+  #     - type: action
+  #       desc: "Pay 1 life: [Reap]. Then, you can look at the top card of your deck."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When destroyed: discard a card."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: single
+  # suspicious_mountaineer:
+  #   name: Suspicious Mountaineer
+  #   faction: wynn
+  #   type: creature
+  #   subType: wynn
+  #   flavor: |
+  #     Few from the other races would truly trust the Wynn. It didn't help that it were often the same ones who would "volunteer" to their sacrifices.
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #     will: 1
+  #     movement: 4
+  #   effects:
+  #     - keyword: shadowwalker
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When flipped: target creature is [Sealed]."
+  #     - type: continuous
+  #       desc: "You can choose this face-up creature as a target for another creature's [Shadowwalker] effect."
+  #     - keyword: explorer
+  #     - action: march
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     left: single
+  #     right: single
+  #     bottom: single
+  # prophetic_seer:
+  #   name: Prophetic Seer
+  #   faction: wynn
+  #   type: creature
+  #   subType: wynn
+  #   flavor: |
+  #     "It is a rare puppet who can see her own strings. Probably not a particularly happy one."
+  #   stats:
+  #     might: 1
+  #     life: 3
+  #     will: 1
+  #     movement: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When flipped: your opponent selects a zone in the battlefield. The next time they have to make a target selection for which that zone would be a valid target, they must target that zone."
+  #     - type: continuous
+  #       desc: "You can see any cards [this] connects to."
+  #     - action: wake
+  #     - type: action
+  #       name: "Prophecy"
+  #       desc: "Sac [this]: target creature is destroyed at the end of the next turn."
+  #   arrows:
+  #     top: double
+  #     topRight: single
+  #     topLeft: single
+  #     bottomRight: double
+  #     bottomLeft: double
+  # ghastly_shaman:
+  #   name: Ghastly Shaman
+  #   faction: wynn
+  #   type: creature
+  #   subType: wynn
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #     will: 2
+  #     movement: 2
+  #   effects:
+  #     - keyword: shadowwalker
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       name: "Curse"
+  #       desc: "When flipped; consume any 1 will: target creature cannot perform the Move Action (ever)."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: true
+  #       desc: "When a card with mana that [this] connects to is destroyed, consume any that much will: draw a card."
+  #     - type: action
+  #       desc: "Pay 1 life: [Reap]."
+  #   arrows:
+  #     top: single
+  #     left: single
+  #     right: single
+  #     bottomRight: single
+  #     bottomLeft: single
+  # veiled_necromancer:
+  #   name: Veiled Necromancer
+  #   faction: wynn
+  #   type: creature
+  #   subType: wynn
+  #   flavor: |
+  #     When the Necromancer unveiled himself,
+  #     it was already too late.
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #     will: 2
+  #     movement: 2
+  #   effects:
+  #     - keyword: shadowwalker
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When flipped; consume any X will: deal X damage to target creature (note: [this] only collects mana **after** flip effects)."
+  #     - type: action
+  #       desc: "Pay 1 life: [Reap]."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: true
+  #       desc: "When target non-token creature you control is destroyed, consume 1 will: summon a Creature Token in its place."
+  #   arrows:
+  #     top: double
+  #     bottom: single
+  #     bottomRight: single
+  #     bottomLeft: single
+  # elemental_magus:
+  #   name: Elemental Magus
+  #   faction: wynn
+  #   type: creature
+  #   subType: wynn
+  #   stats:
+  #     might: 1
+  #     life: 2
+  #     will: 3
+  #     movement: 1
+  #   effects:
+  #     - keyword: shadowwalker
+  #     - type: action
+  #       desc: "Consume 1 will: deal 2 damage to target creature."
+  #     - type: action
+  #       desc: "Consume 1 will: [this] has at least single arrows in all directions."
+  #     - type: action
+  #       desc: "Consume 2 will: destroy target artifact."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     left: single
+  #     bottom: double
+  # spirit_caller:
+  #   name: Spirit Caller
+  #   faction: wynn
+  #   type: creature
+  #   subType: wynn
+  #   stats:
+  #     might: 1
+  #     life: 2
+  #     movement: 2
+  #   effects:
+  #     - keyword: shadowwalker
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When flipped: release a Soul (note: Rank 0)."
+  #     - action: march
+  #     - action: strike
+  #     - action: reap
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     left: single
+  #     right: single
+  #     bottom: single
+  # morbid_rites:
+  #   name: Morbid Rites
+  #   faction: wynn
+  #   type: artifact
+  #   subType: scroll
+  #   flavor: |
+  #     "Even upon death, protocol must be observed." — _Quistar Melandrebuk_
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned; pay X life: X target creatures are [Sealed]. If exactly 2 creatures were [Sealed] this way: draw a card."
+  #   arrows:
+  #     top: double
+  #     topRight: single
+  #     topLeft: single
+  # scroll_of_forsaking:
+  #   name: Scroll of Forsaking
+  #   faction: wynn
+  #   type: artifact
+  #   subType: scroll
+  #   stats:
+  #     will: 3
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: target Creature Tokens are flipped face down. You gain 3 life per token flipped this way. If there are no Creature Tokens in the battlefield: draw a card instead."
+  #   arrows:
+  #     top: triple
+  #     topRight: triple
+  #     topLeft: triple
+  # enigmatic_tome:
+  #   name: Enigmatic Tome
+  #   faction: wynn
+  #   type: artifact
+  #   subType: equipment
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: continuous
+  #       transfer: true
+  #       desc: "If [this] is rotated north-side up: [equipped] gets +2 Attack."
+  #     - type: continuous
+  #       transfer: true
+  #       desc: "If [this] is rotated east-side up: [equipped] gets +2 Armor."
+  #     - type: continuous
+  #       transfer: true
+  #       desc: "If [this] is rotated west-side up: [equipped] gets +2 Movement."
+  #     - type: continuous
+  #       transfer: true
+  #       desc: "If [this] is rotated south-side up: [equipped] gets +2 Life."
+  #   arrows:
+  #     top: single
+  #     left: single
+  #     right: single
+  #     bottom: single
+  # sacrificial_dagger:
+  #   name: Sacrificial Dagger
+  #   faction: wynn
+  #   type: artifact
+  #   subType: equipment
+  #   rank: 1
+  #   flavor: |
+  #     The blade is sharp, but it's the handle that hurts the most.
+  #   stats:
+  #     might: 1
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac 1 card: summon."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: false
+  #       desc: "When summoned: deal 1 damage to target creature."
+  #     - type: trigger
+  #       transfer: true
+  #       oncePerTurn: false
+  #       optional: true
+  #       desc: "When [equipped] attacks another creature you control: destroy that creature before damage calculation."
+  #     - type: trigger
+  #       transfer: true
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When [equipped] destroys a creature: collect their Soul on [this] instead of the [[Aether]]."
+  #   arrows:
+  #     top: single
+  # altar_of_despair:
+  #   name: Altar of Despair
+  #   faction: wynn
+  #   type: artifact
+  #   flavor: |
+  #     "Lovely. The specimen will do just fine."
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: false
+  #       desc: "When summoned: deal 1 damage to target creature."
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Sac target creature: the Rank of their released Soul is increased by 1 (max 3)."
+  #     - type: continuous
+  #       desc: "Cards [this] connects to have: \"When destroyed: you gain 2 life.\""
+  #   arrows:
+  #     top: single
+  #     topRight: double
+  #     topLeft: double
+  # obsidian_rune_stone:
+  #   name: Obsidian Rune Stone
+  #   faction: wynn
+  #   type: artifact
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: false
+  #       desc: "When summoned: [Manalock] target until end of turn."
+  #     - type: action
+  #       desc: "Consume 2 will: Deal 2 damage to your opponent."
+  #     - type: action
+  #       desc: "Consume 2 will: target creature gets [Resilient] until the end of turn."
+  #     - type: action
+  #       desc: "Pay 2 life: [this] gains 1 mana."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: double
+  # ancient_ossuary_relic:
+  #   name: Ancient Ossuary Relic
+  #   faction: wynn
+  #   type: artifact
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: false
+  #       desc: "When summoned: [Manalock] target until end of turn."
+  #     - type: action
+  #       desc: "Consume 2 will: destroy target artifact."
+  #     - type: action
+  #       desc: "Consume 2 will: target creature is [Sealed]."
+  #     - type: action
+  #       desc: "If [this] has zero will: [Recycle]."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: double
+  # hidden_tunnel_network:
+  #   name: Hidden Tunnel Network
+  #   faction: wynn
+  #   type: monument
+  #   flavor: |
+  #     "Theranor would later recount that their entire kingdom was connected by a vast hidden network of tunnels. Few other humans have seen it and lived past the next Wynn ritual."
+  #     — _A Brief History of Altaria_, p. 89
+  #   effects:
+  #     - type: continuous
+  #       desc: "Creatures and artifacts you control have +1 Movement."
+  #     - type: action
+  #       desc: "Choose any number of face-down cards of the same type you control: secretly swap them any way you desire."
+  #     - type: activation
+  #       oncePerTurn: true
+  #       desc: "Select a face-down creature you control: flip it, and if you did: [Reap]."
+  #     - type: action
+  #       desc: "[Upgrade]. | [Erode]."
+  # frozen_shrine_of_the_fallen:
+  #   name: Frozen Shrine of the Fallen
+  #   faction: wynn
+  #   type: monument
+  #   rank: 1
+  #   extra: true
+  #   stats:
+  #     will: 2
+  #   effects:
+  #     - type: cost
+  #       desc: "Soulrift 1: summon."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "At your opponent's end of turn; sac a face-down creature: draw two cards."
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Consume 1 will: you can see chosen card on the field."
+  #     - action: upgrade
+  # primordial_underworld_entity:
+  #   name: Primordial Underworld Entity
+  #   faction: wynn
+  #   type: creature
+  #   subType: manifestation
+  #   flavor: |
+  #     Apocalypse would be an understatement.
+  #   rank: 3
+  #   extra: true
+  #   stats:
+  #     might: 6
+  #     life: 6
+  #     movement: 6
+  #   effects:
+  #     - type: cost
+  #       desc: "Soulrift 6: summon."
+  #     - type: continuous
+  #       desc: "Resilient | Inspired | Explorer."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "At the end of your turn: [Recycle]. If the discarded card would have released a Soul when destroyed: [Reap] that Soul."
+  #     - type: action
+  #       desc: "Soulrift 2: draw a card."
+  #     - type: action
+  #       desc: "Soulrift 2: destroy target artifact or [Sealed] creature."
+  #   arrows:
+  #     top: double
+  #     topRight: single
+  #     topLeft: single
+  #     left: double
+  #     right: double
+  #     bottomRight: single
+  #     bottomLeft: single
+  # eldritch_sorcerer:
+  #   name: Eldritch Sorcerer
+  #   faction: wynn
+  #   type: creature
+  #   subType: ally
+  #   rank: 1
+  #   extra: true
+  #   stats:
+  #     might: 3
+  #     life: 4
+  #     will: 3
+  #     movement: 4
+  #   effects:
+  #     - type: cost
+  #       desc: "Soulrift 3: summon."
+  #     - type: activation
+  #       oncePerTurn: true
+  #       desc: "Soulrift 1: [this] has [Inspired] until the end of turn."
+  #     - type: action
+  #       desc: "Consume 1 will: target creature is [Sealed]."
+  #     - type: action
+  #       desc: "Consume 2 will: [this] gets either (1) +1 Attack or (2) +1 Armor."
+  #   arrows:
+  #     top: double
+  #     bottomRight: single
+  #     bottomLeft: single
+  # elder_sage_of_the_mountaintop:
+  #   name: Elder Sage of the Mountaintop
+  #   faction: wynn
+  #   type: creature
+  #   subType: ally
+  #   flavor: |
+  #     He had been there for as long as anyone could remember, but you just _had_ to Rift Summon him.
+  #   extra: true
+  #   rank: 1
+  #   stats:
+  #     might: 3
+  #     life: 3
+  #     will: 3
+  #     movement: 1
+  #   effects:
+  #     - type: cost
+  #       desc: "Soulrift 3: summon."
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Transfer 1 mana from [this] to target card, or vice-versa."
+  #     - action: convoke
+  #     - action: conscript
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Consume 2 will: target creature is [Sealed]."
+  #   arrows:
+  #     top: single
+  #     left: double
+  #     bottomRight: single
+  # harbinger_of_desolation:
+  #   name: Harbinger of Desolation
+  #   faction: wynn
+  #   type: creature
+  #   subType: ally
+  #   flavor: |
+  #     It wasn't good news - it was _never_ good news.
+  #   rank: 2
+  #   extra: true
+  #   stats:
+  #     might: 4
+  #     life: 2
+  #     armor: 2
+  #     movement: 1
+  #     will: 2
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac 2 creatures and at least 1 artifact: summon."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: destroy target Rank 0 face-up creature."
+  #     - action: strike
+  #     - type: action
+  #       desc: "Pay 1 life: [Reap]."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When [this] is sac'ed for a summoning cost: it can count as up to 3 generic card sacrifices."
+  #   arrows:
+  #     top: double
+  #     bottom: single
+  #     bottomRight: single
+  #     bottomLeft: single
+  # deep_dwelling_horror:
+  #   name: Deep-dwelling Horror
+  #   faction: wynn
+  #   type: creature
+  #   subType: manifestation
+  #   rank: 2
+  #   extra: true
+  #   stats:
+  #     might: 4
+  #     life: 5
+  #     armor: 1
+  #     movement: 2
+  #   effects:
+  #     - type: cost
+  #       desc: "Choose any three costs: (1) Soulrift 2; (2) sac 2 creatures; (3) consume any 2 mana; or (4) discard 2 cards: summon."
+  #     - keyword: explorer
+  #     - action: strike
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: false
+  #       desc: "When this declares an Attack Action against a creature, after combat resolves: sac another creature. If you can't, sac [this]."
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Target creature is [Sealed]."
+  #   arrows:
+  #     top: double
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: single
+  #     bottomRight: double
+  #     bottomLeft: double
+  # locket_of_the_ineffable_void:
+  #   name: Locket of the Ineffable Void
+  #   faction: wynn
+  #   type: artifact
+  #   subType: equipment
+  #   rank: 1
+  #   extra: true
+  #   stats:
+  #     might: 3
+  #   effects:
+  #     - type: cost
+  #       desc: "Soulrift 1: summon."
+  #     - type: action
+  #       transfer: true
+  #       desc: "Reap."
+  #     - type: action
+  #       transfer: true
+  #       desc: "Convoke."
+  #     - type: trigger
+  #       transfer: true
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "At the end of your turn: deal 1 damage to [equipped]."
+  #   arrows:
+  #     top: single

@@ -1,0 +1,85 @@
+actions:
+  march:
+    name: "March"
+    description: "Move to target empty, [[Conquer | conquered]] creature zone you control, rotating to desired orientation."
+    details: |
+      Target an empty, conquered creature zone you control: move [this] to it, and then, optionally, rotate it to a different orientation.
+
+      The destination zone must be targeted beforehand, but the final rotation can be chosen at resolution.
+
+      A card can "jump over" other cards like a chess Knight to move; but it cannot move to an occupied zone.
+
+      Creatures with [[Explorer]] can target any (conquered or non-conquered) zones to move regardless of their arrows.
+  strike:
+    name: "Strike"
+    description: "Target creature zone to fight with blocker or deal direct damage."
+    details: |
+      Target a creature zone (other than the one the attacking creature is in). Typically, a player will target their opponent's zones for attacking.
+
+      Then, the Blocker (if any) must be determined; following these rules:
+
+      - If the targeted zone has a creature, that creature _must_ block the attack (except if it has [[Fading]]).
+      - If not, if the attacking creature has [[Evasive]], it cannot be blocked and this will be a direct attack.
+      - If not, if the controller of the zone has a creature that can target the zone, they can optionally select one such creature to block the attack.
+      - If they chose not to or can't, the other player has a choice to block as well.
+      - If not, creature is attacking the controller of the zone directly.
+
+      **Note**: normally it is expected that each player only attack opponent zones, and similarly only block their own zones; but the rules allow any interaction for full flexibility.
+
+      After the blocker (or lack thereof) is established, the **Strike Action** is added to the chain to be resolved.
+
+      For blocked attacks, both creatures deal [[Damage | damage]] equal to their [[Might Stat]] to each other simultaneously. If at any point (as a state-based action) the damage counters on a creature equal or exceed their [[Life Stat]], they are destroyed.
+
+      For direct attacks, regardless of the [[Might Stat]] of the creature (as long as it is greater than 0), the controller of the zone loses 1 [[HP]].
+
+      **Note**: Damage counters are **NOT** cleared at any step and stay forever!!!!!!!!!!!.
+
+      **Note**: Damage to creatures does **NOT** "pierce" (i.e. extra damage does not bleed to the player).
+
+      **Note**: a creature cannot attack or be blocked by itself, even if it is moved before the attack resolves. It can however certain attack and block allied cards.
+
+      **Note**: creatures do not "tap"/"exhaust"/"exert" to attack or block as there is no tapping in [e:game]. However cards on the field can only perform one action per Event.
+
+      **Note**: while [[Summoning]] can typically only be done during the [[Deployment Phase]], there is no "summoning sickness" in [e:game]. If via an effect such as [[Transform]] or [[Conscript]] a new creature is summoned during an [[Event]], it _can_ perform one action during that event.
+
+      **Note**: blocking is _not_ an Action, but rather considered part of the [[Strike]] action itself.
+  research:
+    name: "Research"
+    aliases:
+      - "Researches"
+    description: "Draw a card; then, discard a card."
+    inline: true
+    rulings:
+      - "This is a single effect, and thus cannot be interrupted."
+      - "Discarding a card is not a cost."
+  equip:
+    name: "Equip"
+    aliases:
+      - "Equips"
+    description: "Attach [this] to target creature."
+    rulings:
+      - "This action is only available for equipments."
+      - "See [[Equipment]] for a full explanation of this action."
+  conscript:
+    name: "Conscript"
+    description: "Summon a [[Creature Token]] to target empty active creature zone."
+    rulings:
+      - "This action is only available for creatures."
+      - "The Creature Token must be face-up (you can choose the orientation)."
+      - "If the zone is no longer empty when this effect resolves: it fizzles."
+  # faction-related
+  pray:
+    name: "Pray"
+    aliases:
+      - "Prays"
+    description: "[this] collects 1 mana."
+    faction: men
+    rulings:
+      - "This action is only available for creatures."
+  maneuver:
+    name: "Maneuver"
+    description: "Re-organize any number of connected artifacts you control into any number of connected artifact zones."
+    faction: "telur"
+    rulings:
+      - "You _can_ switch them."
+      - "You _can_ re-organize face-down artifacts. This action does _not_ target."

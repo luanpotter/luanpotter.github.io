@@ -1,0 +1,543 @@
+cards:
+  # crafty_engineer:
+  #   name: Crafty Engineer
+  #   faction: telur
+  #   type: creature
+  #   subType: telur
+  #   flavor: |
+  #     It was a known Telur saying that "if the contraption didn't fix the problem, then the problem must've been wrong."
+  #   stats:
+  #     might: 1
+  #     life: 2
+  #     movement: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When flipped: [Re-target]."
+  #     - keyword: conduit
+  #     - action: operate
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     left: single
+  #     right: single
+  #     bottom: single
+  # a_l_armstrong:
+  #   name: A.L. Armstrong
+  #   faction: telur
+  #   type: creature
+  #   subType: telur
+  #   flavor: |
+  #     There was an ongoing bet between Dana Kar and A.L. to see if Dana's mechanical arms could outperform A.L.'s organic ones. Let's just say "Armstrong" wasn't his actual last name.
+  #   stats:
+  #     might: 3
+  #     life: 2
+  #     movement: 1
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: [Suppress] target creature until end of turn."
+  #     - action: wake
+  #     - action: maneuver
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When an artifact that is connected to [this] moves: draw a card."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: single
+  # ramshackle_convoy:
+  #   name: Ramshackle Convoy
+  #   faction: telur
+  #   type: creature
+  #   subType: telur
+  #   flavor: |
+  #     As they waddled around, periodically but inexorably, some Telur kept being dropped on the waysides.
+  #   stats:
+  #     might: 1
+  #     life: 3
+  #     movement: 2
+  #     will: 1
+  #   effects:
+  #     - keyword: explorer
+  #     - action: march
+  #     - action: maneuver
+  #     - type: activation
+  #       oncePerTurn: true
+  #       desc: "Consume 1 will: [this] has [Inspired] until the end of turn."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "After [this] battles: [Conscript]."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     left: triple
+  # dexterous_acrobat:
+  #   name: Dexterous Acrobat
+  #   faction: telur
+  #   type: creature
+  #   subType: telur
+  #   stats:
+  #     might: 1
+  #     life: 4
+  #     movement: 5
+  #   effects:
+  #     - keyword: conduit
+  #     - action: march
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When flipped: move [this]."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When [this] was used as a [Conduit], after that chain resolves: move [this]."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     left: double
+  #     bottomLeft: single
+  #     bottom: single
+  # enlightened_builder:
+  #   name: Enlightened Builder
+  #   faction: telur
+  #   type: creature
+  #   subType: telur
+  #   stats:
+  #     might: 1
+  #     life: 2
+  #     movement: 2
+  #     will: 1
+  #   effects:
+  #     - action: operate
+  #     - action: maneuver
+  #     - action: activate
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Sac 1 artifact: target creature has [Resilient] until the end of turn."
+  #     - type: activation
+  #       oncePerTurn: false
+  #       desc: "Sac 2 artifacts: target creature has [Resilient]."
+  #   arrows:
+  #     top: single
+  #     left: single
+  #     right: single
+  #     bottom: single
+  #     bottomRight: single
+  #     bottomLeft: single
+  # skilled_operator:
+  #   name: Skilled Operator
+  #   faction: telur
+  #   type: creature
+  #   subType: telur
+  #   stats:
+  #     might: 1
+  #     life: 2
+  #     will: 2
+  #     movement: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When flipped: flip target."
+  #     - type: action
+  #       desc: "[March]. | [Maneuver]. | [Operate]."
+  #     - type: continuous
+  #       desc: "[Defender]. | [Inspired]."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When destroyed: flip target."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     left: single
+  #     bottom: single
+  #     bottomRight: single
+  # biomechanical_convolution:
+  #   name: Biomechanical Convolution
+  #   faction: telur
+  #   type: artifact
+  #   flavor: |
+  #     Sometimes Telur engineering
+  #     would go too far...
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: move target creature or artifact 1 zone."
+  #     - type: action
+  #       desc: "Sac target creature: summon Creature Tokens on X target empty creature zones, where X is between 1 and the sac'ed creature's Rank (inclusive)."
+  #     - type: activation
+  #       oncePerTurn: true
+  #       desc: "Sac [this]: target has +2 Armor until the end of turn."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: double
+  # unstable_engine:
+  #   name: Unstable Engine
+  #   faction: telur
+  #   type: artifact
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: move target."
+  #     - type: action
+  #       name: Energy Release
+  #       desc: "Deal 1 damage to target creature. Then, if you did: [Recycle]."
+  #     - type: continuous
+  #       desc: "Connected creatures can't take damage from other Artifacts once per turn per creature."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "At the end of your turn, if you didn't use Energy Release this turn: put 1 damage counter on [this]."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "If [this] has 3 or more damage counters: deal 3 damage to all connected creatures; then, destroy [this], and you lose 3 life."
+  #   arrows:
+  #     top: single
+  # autonomous_submarine:
+  #   name: Autonomous Submarine
+  #   faction: telur
+  #   type: artifact
+  #   subType: vehicle
+  #   stats:
+  #     might: 1
+  #     armor: 1
+  #     movement: 5
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: [Manalock] target until end of turn."
+  #     - keyword: autonomous
+  #     - keyword: explorer
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "After [this] moves between two Artifact zones: heal 1 damage from target creature."
+  #   arrows:
+  #     top: double
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: single
+  #     bottomLeft: double
+  #     bottomRight: double
+  # pneumatic_potato_pounder:
+  #   name: Pneumatic Potato Pounder
+  #   faction: telur
+  #   type: artifact
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When summoned: deal 1 damage to target creature."
+  #     - type: action
+  #       desc: "Deal 1 damage to target creature."
+  #     - type: action
+  #       desc: "Consume any 3 will: deal 2 damage to target creature."
+  #   arrows:
+  #     top: triple
+  # scapegoat:
+  #   name: Scapegoat
+  #   faction: telur
+  #   type: artifact
+  #   subType: scroll
+  #   stats:
+  #     will: 3
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned; Soulrift 1: summon Creature Tokens on all connected empty creature zones (note: yours and your opponent's)."
+  #   arrows:
+  #     top: double
+  #     topRight: double
+  #     topLeft: double
+  # protection_goggles:
+  #   name: Protection Goggles
+  #   faction: telur
+  #   type: artifact
+  #   subType: equipment
+  #   stats:
+  #     armor: 1
+  #     life: 1
+  #     movement: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: [Manalock] target until end of turn."
+  #     - type: action
+  #       desc: "Target a face-down card: you can see it; then: its controller gain 1 life."
+  #     - type: continuous
+  #       transfer: true
+  #       desc: "[equipped] can [Operate]."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When [this] is destroyed by your opponent: draw a card."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: triple
+  # studded_leather_gloves:
+  #   name: Studded Leather Gloves
+  #   faction: telur
+  #   type: artifact
+  #   subType: equipment
+  #   stats:
+  #     might: 1
+  #     armor: 1
+  #     movement: 2
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: [Manalock] target until end of turn."
+  #     - action: recycle
+  #     - type: continuous
+  #       transfer: true
+  #       desc: "[equipped] can [Maneuver]."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: true
+  #       desc: "When [this] is destroyed by your opponent: draw a card."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     bottom: triple
+  # scrapyard_reanimator:
+  #   name: Scrapyard Reanimator
+  #   faction: telur
+  #   type: artifact
+  #   stats:
+  #     will: 1
+  #   effects:
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When summoned: move target as if it had Explorer."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: true
+  #       desc: "When connected non-token in a creature zone is destroyed: summon a Creature Token on that zone. You must consume any 1 mana to activate this effect past the first time each turn."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     left: single
+  #     right: single
+  #     bottom: double
+  # lookout_tower:
+  #   name: Lookout Tower
+  #   faction: telur
+  #   type: monument
+  #   effects:
+  #     - type: activation
+  #       oncePerTurn: true
+  #       desc: "Choose a face-up card on the field: it has [Conduit] until the end of turn."
+  #     - action: upgrade
+  #     - action: erode
+  # dana_kar_perfect_conduit:
+  #   name: Dana Kar, Perfect Conduit
+  #   faction: telur
+  #   type: creature
+  #   subType: ally
+  #   rank: 1
+  #   extra: true
+  #   flavor: |
+  #     While others would call it a convoluted monstrosity, with it Dana could reach any corner of the workshop — or the battlefield.
+  #   stats:
+  #     life: 2
+  #     will: 2
+  #     movement: 2
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac or discard 1 card: summon."
+  #     - keyword: re_target
+  #     - keyword: conduit
+  #     - keyword: defender
+  #   arrows:
+  #     top: double
+  #     topRight: double
+  #     topLeft: double
+  #     right: double
+  #     left: double
+  #     bottom: double
+  #     bottomRight: double
+  #     bottomLeft: double
+  # zold_hek_the_facilitator:
+  #   name: Zold Hek, The Facilitator
+  #   faction: telur
+  #   type: creature
+  #   subType: ally
+  #   flavor: |
+  #     "I'm just here to facilitate the right people to be in the right place at the right time." — _Zold Hek_
+  #   rank: 2
+  #   extra: true
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #     armor: 2
+  #     movement: 3
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac 2 creatures and an artifact: summon."
+  #     - keyword: conduit
+  #     - keyword: explorer
+  #     - type: action
+  #       desc: "[Maneuver]. | [Operate]. | [Activate]."
+  #   arrows:
+  #     topRight: single
+  #     topLeft: single
+  #     right: single
+  #     left: single
+  #     bottom: triple
+  # ledo_forp_telur_leader:
+  #   name: Ledo Forp, Telur Leader
+  #   faction: telur
+  #   type: creature
+  #   subType: ally
+  #   flavor: |
+  #     "Later, Theranor would have reported that Ledo accepted their peace offer with open arms." — _A Brief History of Altaria_, p. 29
+  #   rank: 2
+  #   extra: true
+  #   stats:
+  #     might: 2
+  #     life: 2
+  #     armor: 1
+  #     movement: 1
+  #     will: 1
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac 2 creatures: summon."
+  #     - keyword: conduit
+  #     - keyword: defender
+  #     - type: continuous
+  #       desc: "Creatures you control [this] connects to get +1 [Might]."
+  #   arrows:
+  #     top: double
+  #     bottom: double
+  # auspicious_airship:
+  #   name: Auspicious Airship
+  #   faction: telur
+  #   rank: 1
+  #   extra: true
+  #   type: artifact
+  #   subType: equipment
+  #   flavor: |
+  #     With some minor Soulrift infusion, the Telur engineering knew no bounds.
+  #     After all, what could possibly go wrong?
+  #   stats:
+  #     armor: 2
+  #     movement: 1
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac 1 artifact: summon."
+  #     - type: continuous
+  #       transfer: true
+  #       desc: "[equipped] has [Conduit], [Explorer] and cannot be [Suppressed]."
+  #     - type: action
+  #       transfer: true
+  #       desc: "Move."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "When destroyed, if it was crewed: deal 1 damage to all connected creatures."
+  #   arrows:
+  #     top: single
+  #     topRight: double
+  #     topLeft: double
+  # mana_negation_contraption:
+  #   name: Mana Negation Contraption
+  #   faction: telur
+  #   rank: 1
+  #   extra: true
+  #   type: artifact
+  #   flavor: |
+  #     "Those fancy-pants mana-hungry human mages won't know what hit them!" — _Dana Kar, Chief Telur Engineer_
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac 3 artifacts with at least 1 mana among them: summon; then, draw a card."
+  #     - type: continuous
+  #       desc: "[Manalock] all connected cards for as long as they are connected."
+  #     - type: action
+  #       desc: "Pay 1 life: Recycle."
+  #     - type: trigger
+  #       oncePerTurn: true
+  #       optional: false
+  #       desc: "At the end of your turn: pay 1 life."
+  #   arrows:
+  #     top: double
+  #     right: double
+  #     left: double
+  #     bottom: double
+  # meticulously_engineered_contraption_of_homogeneity_advancement:
+  #   name: Meticulously Engineered Contraption of Homogeneity Advancement
+  #   faction: telur
+  #   rank: 3
+  #   extra: true
+  #   type: artifact
+  #   subType: vehicle
+  #   stats:
+  #     might: 5
+  #     armor: 5
+  #     movement: 5
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac 5 cards: summon."
+  #     - type: continuous
+  #       transfer: true
+  #       desc: "Autonomous. | Inspired. | Conduit."
+  #     - action: march
+  #     - type: action
+  #       transfer: true
+  #       desc: "Consume any 2 will: destroy target artifact."
+  #     - type: trigger
+  #       oncePerTurn: false
+  #       optional: false
+  #       transfer: true
+  #       desc: "When [equipped] deals damage to a creature: consume that much mana from that creature."
+  #   arrows:
+  #     top: single
+  #     topRight: single
+  #     topLeft: single
+  #     right: single
+  #     left: single
+  #     bottom: single
+  #     bottomRight: single
+  #     bottomLeft: single
+  # pivotal_transmission_central:
+  #   name: Pivotal Transmission Central
+  #   faction: telur
+  #   rank: 2
+  #   extra: true
+  #   type: monument
+  #   effects:
+  #     - type: cost
+  #       desc: "Sac 3 cards, at least one of which with [Conduit]: summon."
+  #     - type: action
+  #       desc: For each card on the field, choose either (1) it has or (2) it loses [Conduit].
+  #     - type: action
+  #       desc: "Permanently [Manalock] chosen card with [Conduit]."
+  #     - type: continuous
+  #       desc: "Cards with [Conduit] count as two for the purposes of paying Rift Summoning sacrificial costs."

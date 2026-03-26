@@ -1,0 +1,52 @@
+conditions:
+  blessed:
+    name: "Blessed"
+    shortCode: "BLS"
+    description: >
+      A card is "Blessed" while a creature with at least 1 mana connects to it.
+      The "Blessed" effect is active while the card is "Blessed".
+    faction: men
+    rulings:
+      - "Creatures from your opponent _can_ bless your cards."
+      - 'Two creatures can "bless" each other if they both have mana and the appropriate arrows.'
+      - 'Cards are considered to be Blessed if they satisfy the condition even if they do not have a "Blessed" effect.'
+  prone:
+    name: "Prone"
+    shortCode: "PRN"
+    description: 'Any Action performed by a Prone creature has its effect replaced with: "Get Up - [this] clears Prone."'
+    faction: fey
+    rulings:
+      - 'A Prone creature can always choose to perform the "Get Up" action, even if it had no other actions available.'
+  protected:
+    name: "Protected"
+    shortCode: "PRT"
+    inlineDescription: "Cannot receive damage."
+    description: "The creature cannot receive damage."
+  suppressed:
+    name: "Suppressed"
+    shortCode: "SUP"
+    aliases:
+      - "Suppress"
+    description: "Ignore diagonal arrows and consider orthogonal arrows at most single arrows."
+  manalocked:
+    name: "Manalocked"
+    shortCode: "MLK"
+    aliases:
+      - "Manalock"
+    description: |
+      The card cannot gain nor consume its own mana, and cannot activate effects that cost mana.
+      If it has an effect in the current chain that would qualify, that effect fizzles.
+  cursed:
+    name: "Cursed"
+    shortCode: "CRS"
+    description: "When the card is destroyed; the player who placed the curse resolves the Curse effect from it."
+  weakened:
+    name: "Weakened"
+    shortCode: "WKN"
+    inlineDescription: "-2 [Might]."
+    description: "The creature has -2 [Might] (min 0)."
+  inspired:
+    name: "Inspired"
+    shortCode: "INS"
+    inlineDescription: "Can perform an extra distinct Action each Event."
+    description: "The card can perform an extra Action each Event, but not the same Action twice."
