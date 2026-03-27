@@ -53233,11 +53233,11 @@ e=new A.a1M(a2.a,a2.b,a6,!1,e,a4,B.aF,0,new A.du(a3,0,0,j),a6,new A.X([]),new A.
 e.aT(B.aF,a6,a6,a6,0,new A.l(f),a6,a6,a6)
 a5.ab(e)}}},
 aav(a,b,c,d){var s=this,r=A.a8a(s.gM().a4,b),q=t.Kl,p=A.b([],q)
-if(B.b.bM(r,new A.avH()))B.b.F(p,A.b([new A.E("\ud83d\udea9 Campaign (C)",new A.avI(s,b)),new A.E("\u2694 Battle (B)",new A.avJ(s,b))],q))
-if(B.b.bM(r,new A.avK())){A:{if(B.b1===c){q="\u2192 Deployment (Space)"
-break A}if(B.e0===c){q="\u2192 End Turn (Space)"
-break A}q="\u2192 Next (Space)"
-break A}p.push(new A.E(q,new A.avL(s,b)))}if(B.b.bM(r,new A.avM())&&p.length===0)p.push(new A.E("\u23ed Pass (Space)",new A.avN(s,b)))
+if(B.b.bM(r,new A.avH()))B.b.F(p,A.b([new A.E("Campaign (C)",new A.avI(s,b)),new A.E("Battle (B)",new A.avJ(s,b))],q))
+if(B.b.bM(r,new A.avK())){A:{if(B.b1===c){q="To Deployment (Space)"
+break A}if(B.e0===c){q="End Turn (Space)"
+break A}q="Next (Space)"
+break A}p.push(new A.E(q,new A.avL(s,b)))}if(B.b.bM(r,new A.avM())&&p.length===0)p.push(new A.E("Pass (Space)",new A.avN(s,b)))
 return p},
 acF(a,b){var s,r
 if(b)return"Blocker Declaration"
