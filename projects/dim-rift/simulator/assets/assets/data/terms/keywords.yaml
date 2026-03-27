@@ -9,7 +9,7 @@ keywords:
   sidestep:
     name: "Sidestep"
     inlineDescription: "Move to an empty active or inactive adjacent zone."
-    description: "Move a creature to an empty adjacent zone (either active or inactive), rotating to desired orientation."
+    description: "Move a card to an empty adjacent zone (either active or inactive), rotating to desired orientation."
   cleanse:
     name: "Cleanse"
     description: "Clear all conditions from a card."
