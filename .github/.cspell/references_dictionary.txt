@@ -2,6 +2,7 @@
 audioplayers # https://github.com/luanpotter/audioplayers
 codetrace # https://codetrace.com
 CRDB # CockroachDB, https://www.cockroachlabs.com
+Cricut # https://cricut.com
 detekt # https://github.com/detekt/detekt
 ghostty # https://github.com/ghostty-org/ghostty
 keybase # https://keybase.io

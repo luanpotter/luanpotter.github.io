@@ -12,6 +12,7 @@ import PictureCut from "./cricut-tutorial-cut.jpg";
 import PictureSleeved from "./cricut-tutorial-sleeved.jpg";
 
 > For more historical context and details about the [card-press](https://luan.xyz/projects/card-press) tool, see [The Card Press Saga](/blog/2026-02-03-the-card-press-saga).
+> The tutorial was updated on 2026-04-04 to include lamination and foil processes - see more details on [Card Pipeline Improvements](/blog/2026-04-04-card-pipeline-improvements).
 
 This is a step-by-step tutorial on how to use a printer (that can handle cardstock or photographic paper) paired with a [Cricut](https://cricut.com) (we have the **Cricut Maker 4** but should be adaptable to other models) to automatically print then cut MTG-sized cards.
 
@@ -39,17 +40,21 @@ There are 3 factors to consider when selecting your paper:
 
 Having made your choice, load a sufficient amount of sheets (according to your PDF) into the printer.
 
+You can also use holographic / iridescent cardstock to make foil cards! The process is exactly the same, you just print on top of the foil paper (_not_ the adhesive / vinyl ones), but make sure your printer is configured to accept it.
+
 ### Execution
 
 1. Kick off the print job for the entire PDF. Make sure to configure the printer for the type of paper you chose (notably, the type of finish - lest a very inky mess ensues). If you are manually attending and have free cycles in between other steps, you can cancel the in-print drying, _very carefully_ dry the sheets to the side, and let the following pages get a head-start. Surprisingly, when using glossy photo paper, it is the printing that is the bottleneck rather than the cutting.
 
 1. _`[optional]`_ If you are doing card backs, wait for all pages to finish, recollect them, flip them, and print the backs.
 
+1. _`[optional]`_ If you are doing lamination, you can laminate the sheets once they are dry. Make sure to use the `0.3 mm` pouches for both ideal card feel and best Cricut smoothness. Laminating before cutting makes removing the cards from the Cricut mat later a breeze, and precludes the need of using backing cards on the sleeves later! It is also a pretty quick addition to the pipeline when compared to the timing of other steps.
+
 1. Load the first printed (and dried) page of the PDF into the Cricut mat (I use the Blue / Light Grip but depending on wear and tear it might be slightly too strong or too weak). Try to align it to the top left to the best of your abilities, as the Cricut will not haphazardly scan the entire mat for the cut marks.
 
    <Image image={PictureSheet} maxWidth="50%" legend="Loading the printed page onto the mat." />
 
-1. Start to "Make It" (the template) on the Cricut Design Space (you do not need to load any images or change anything). Click "Continue" and then "I've Already Printed". I use the "Heavy Cardstock" material setting, which I have favourited. Load the mat and start; let the machine do the work while you focus on what really matters (overseeing it with an air of superiority).
+1. Start to "Make It" (the template) on the Cricut Design Space (you do not need to load any images or change anything). Click "Continue" and then "I've Already Printed". I use the "Heavy Cardstock" material setting, which I have favourited (if you are laminating, you will need a custom profile - I use max pressure and 4x passes). Load the mat and start; let the machine do the work while you focus on what really matters (overseeing it with an air of superiority).
 
    <Image
      image={PictureHeavyCardstock}
@@ -57,7 +62,7 @@ Having made your choice, load a sufficient amount of sheets (according to your P
      legend="The Base Material setting I use. Despite the label it can cut 300 gsm without issues."
    />
 
-1. Unload and peel the cards (depending on the adhesive strength, you might need to be very gentle not to bend them).
+1. Unload and peel the cards (depending on the adhesive strength, you might need to be very gentle not to bend them, unless they are laminated).
 
    <Image image={PictureCut} maxWidth="50%" legend="Cards freshly peeled from the mat." />
 

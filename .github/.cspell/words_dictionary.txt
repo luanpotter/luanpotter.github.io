@@ -1,4 +1,10 @@
 # existing words or abbreviations
+cardstock
+dialog
+dialogs
 gamedev
+laminator
 matcha
+playtest
+playtesting
 TTRPG # Tabletop Role-Playing Game
