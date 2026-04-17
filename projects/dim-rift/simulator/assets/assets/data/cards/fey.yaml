@@ -57,7 +57,7 @@ cards:
         desc: "When [this] is targeted a second time by your opponent, after that effect resolves: [Transform] [this]."
       - type: activation
         oncePerTurn: true
-        desc: "Consume 1 mana: deal 1 damage to target creature."
+        desc: "Consume 1 mana: [Burst]."
     arrows:
       top: double
       topRight: single
@@ -198,7 +198,7 @@ cards:
       - type: trigger
         optional: true
         desc: "When summoned: you can deal 3 damage to target [Prone] creature."
-      - action: strike
+      - action: burst
       - keyword: evasive
     arrows:
       top: single
@@ -310,8 +310,8 @@ cards:
         desc: "When summoned: [Sidestep] target; if you did, it is [Suppressed]."
     arrows:
       top: double
-  verdant_burst:
-    name: Verdant Burst
+  verdant_surge:
+    name: Verdant Surge
     faction: fey
     type: artifact
     subType: scroll
@@ -333,7 +333,7 @@ cards:
     effects:
       - type: trigger
         optional: false
-        desc: "When summoned: target creature is [Inspired] until the end of the turn."
+        desc: "When summoned: target creature is [Inspired]."
       - action: equip
       - type: activation
         oncePerTurn: false
@@ -377,7 +377,7 @@ cards:
     subType: feyBeast
     stats:
       might: 3
-      life: 3
+      life: 4
       will: 1
     effects:
       - type: cost
@@ -402,7 +402,7 @@ cards:
     subType: feyBeast
     stats:
       might: 4
-      life: 4
+      life: 5
       will: 1
     effects:
       - type: cost
@@ -425,7 +425,7 @@ cards:
       having met these incredible creatures.
     stats:
       might: 2
-      life: 4
+      life: 5
       will: 2
     effects:
       - type: cost
@@ -458,7 +458,7 @@ cards:
       - type: cost
         desc: "[Transformed]: summon."
       - keyword: re_target
-      - action: march
+      - action: strike
       - type: continuous
         desc: "While a creature does not connect to [this] it cannot deal damage when blocking [Strike | Strikes] from [this]."
     arrows:
@@ -511,6 +511,8 @@ cards:
     effects:
       - type: cost
         desc: "Sac 3 [Prone] creatures: summon."
+      - type: action
+        desc: "[March]; then, [Burst]."
       - type: continuous
         desc: "[Inspired]."
       - type: activation
@@ -518,7 +520,7 @@ cards:
         desc: "Consume any 3 mana: [Transform] target creature with [Transform]."
       - type: activation
         oncePerTurn: false
-        desc: "Consume any 3 mana: deal 3 damage to target [Prone] creature."
+        desc: "Consume any 3 mana: target creature is [Prone]."
     arrows:
       top: single
       topRight: single

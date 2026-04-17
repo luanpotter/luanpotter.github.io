@@ -1,7 +1,7 @@
 stats:
   might:
     name: Might
-    description: "Amount of damage [this] deals to other creatures when [[Fighting]]."
+    description: "Damage [this] deals to other creatures when [[Fighting]]."
     details: |
       A card's **Might** determines how much [[Damage Counters | damage]] a [[Creature | creature]] deals to other creatures when [[Fighting]].
 
@@ -9,7 +9,7 @@ stats:
   will:
     name: Will
     description: |
-      Amount of mana [this] collects when summoned; or it can be sac'ed faced down to pay for "any" mana costs.
+      Mana [this] collects when summoned or pays for when sac'ed face-down.
     details: |
       A card's **Will** has two functions:
 
@@ -19,7 +19,7 @@ stats:
       You can never get both benefits from a single card. Either it is sac'd (or destroyed) face-down, or it is eventually summoned.
   life:
     name: Life
-    description: "Amount of damage [this] can receive before being destroyed."
+    description: "Damage [this] can sustain before being destroyed."
     details: |
       A card's **Life** determines how many [[Damage | damage counters]] a [[Creature | creature]] can sustain before being destroyed. It is essentially the value of the creature maximum damage threshold.
 

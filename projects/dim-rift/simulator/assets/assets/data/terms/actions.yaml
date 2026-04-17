@@ -30,7 +30,7 @@ actions:
 
       For blocked attacks, both creatures deal [[Damage | damage]] equal to their [[Might Stat]] to each other simultaneously. If at any point (as a state-based action) the damage counters on a creature equal or exceed their [[Life Stat]], they are destroyed.
 
-      For direct attacks, regardless of the [[Might Stat]] of the creature (as long as it is greater than 0), the controller of the zone loses 1 [[HP]].
+      For direct attacks, regardless of the [[Might Stat]] of the creature (as long as it is greater than 0), the controller of the zone loses 1 [[HP]] and [[Draw | draws]] a card.
 
       **Note**: Damage counters are **NOT** cleared at any step and stay forever!!!!!!!!!!!.
 
@@ -43,15 +43,11 @@ actions:
       **Note**: while [[Summoning]] can typically only be done during the [[Deployment Phase]], there is no "summoning sickness" in [e:game]. If via an effect such as [[Transform]] or [[Conscript]] a new creature is summoned during an [[Event]], it _can_ perform one action during that event.
 
       **Note**: blocking is _not_ an Action, but rather considered part of the [[Strike]] action itself.
-  research:
-    name: "Research"
+  burst:
+    name: "Burst"
     aliases:
-      - "Researches"
-    description: "Draw a card; then, discard a card."
-    inline: true
-    rulings:
-      - "This is a single effect, and thus cannot be interrupted."
-      - "Discarding a card is not a cost."
+      - "Bursts"
+    description: "Deal 1 damage to all connected face-up creatures."
   equip:
     name: "Equip"
     aliases:
@@ -65,7 +61,7 @@ actions:
     description: "Summon a [[Creature Token]] to target empty active creature zone."
     rulings:
       - "This action is only available for creatures."
-      - "The Creature Token must be face-up (you can choose the orientation)."
+      - "The Creature Token must always be face-up (you can choose the orientation)."
       - "If the zone is no longer empty when this effect resolves: it fizzles."
   # faction-related
   pray:
@@ -78,7 +74,7 @@ actions:
       - "This action is only available for creatures."
   maneuver:
     name: "Maneuver"
-    description: "Re-organize any number of connected artifacts you control into any number of connected artifact zones."
+    description: "Re-organize any number of connected artifacts you control into any number of your connected artifact zones."
     faction: "telur"
     rulings:
       - "You _can_ switch them."

@@ -30,12 +30,11 @@ cards:
       life: 2
     effects:
       - action: strike
-      - type: trigger
-        optional: true
-        desc: "When [this] fights target creature, while [Blessed]: you can [Sidestep] target."
+      - type: action
+        desc: "While [Blessed]: [Burst]."
       - type: activation
         oncePerTurn: false
-        desc: "Sac target artifact: [Sidestep] [this]."
+        desc: "Sac target artifact: [Sidestep] target or [this]."
     arrows:
       top: single
       topRight: single
@@ -73,7 +72,7 @@ cards:
       might: 1
       life: 3
     effects:
-      - action: research
+      - keyword: explorer
       - type: continuous
         desc: "While [this] [Strike | Strikes]: +1 [Might]."
       - type: trigger
@@ -260,7 +259,7 @@ cards:
     type: artifact
     subType: equipment
     stats:
-      life: 2
+      life: 1
     effects:
       - type: trigger
         optional: false
@@ -338,7 +337,7 @@ cards:
         desc: "Connected creatures have +1 [Might]."
       - type: action
         name: "Cannons"
-        desc: "Deal 1 damage to target creature; if you did, target can [Research]."
+        desc: "Deal 1 damage to target creature; then, target [Burst | Bursts]."
     arrows:
       topRight: single
       topLeft: single
@@ -371,7 +370,7 @@ cards:
       - type: continuous
         desc: 'All creatures have "Action: [Pray]."'
       - type: action
-        desc: "Consume any 3 mana: [Research]."
+        desc: "Consume any 3 mana; choose a creature you control: chosen creature can [Shift]."
   fountain_of_youth:
     name: Fountain of Youth
     faction: men
@@ -393,14 +392,13 @@ cards:
     subType: ally
     extra: true
     stats:
-      might: 2
-      life: 3
+      might: 3
+      life: 4
     effects:
       - type: cost
         desc: "Consume any 3 mana then sac a non-[Blessed] face-up creature: summon."
-      - action: strike
-      - type: continuous
-        desc: "While [this] [Strike | Strikes]: +2 [Might]."
+      - type: action
+        desc: "[Strike] target; then, target [Bursts]."
     arrows:
       top: single
       left: double
@@ -415,7 +413,7 @@ cards:
       your majesty; my Queen. All hail Queen Brittany II!"
     stats:
       might: 3
-      life: 2
+      life: 3
       will: 2
     effects:
       - type: cost
@@ -423,7 +421,7 @@ cards:
       - action: conscript
       - type: activation
         oncePerTurn: true
-        desc: "Consume 2 mana: destroy target artifact. If you did, this is [Protected] until end of turn."
+        desc: "Consume 2 mana: destroy target artifact; then, if you did, this is [Protected] until end of turn."
     arrows:
       top: double
       topRight: single
@@ -463,7 +461,7 @@ cards:
     extra: true
     stats:
       might: 3
-      life: 3
+      life: 4
       will: 3
     effects:
       - type: cost
@@ -493,7 +491,8 @@ cards:
         optional: false
         desc: "When summoned: [Cleanse] target."
       - action: equip
-      - action: strike
+      - type: action
+        desc: "[Strike]; then, [Burst]."
         transfer: true
     arrows:
       top: double
@@ -526,6 +525,7 @@ cards:
     effects:
       - type: cost
         desc: "Sac at least 3 cards with a combined mana of at least 7: summon."
+      - action: burst
       - type: continuous
         desc: "[Inspired]."
       - type: continuous

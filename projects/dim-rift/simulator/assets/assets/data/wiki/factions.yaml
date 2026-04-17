@@ -6,8 +6,7 @@ factions:
 
       They inhabit many cities and towns sprawling the central and northern fields of Valtora, forming a kingdom called Altaria. It is surrounded by the lands of the other races, except for northward, where their dominion extends until the ocean. While human ships might dwell in the rivers and coasts on their land for trade and commerce, few venture deep into the sea, and none that has dared to go far has returned.
 
-      Their Fables Deck can be accessed mostly by paying mana to bring out powerful allies, angels and other servants of their god; while their Main Deck has a mix of clergy and the military, with a supporting
-      backrow of [[Equipment]] and [[Vehicle]] artifacts.
+      Their Fables Deck can be accessed mostly by paying mana to bring out powerful allies, angels and other servants of their god; while their Main Deck has a mix of clergy and the military, with a supporting backrow of [[Equipment]] and naval artifacts.
     mechanics:
       - "Pray"
       - "Blessed"
