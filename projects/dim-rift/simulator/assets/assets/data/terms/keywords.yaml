@@ -34,6 +34,8 @@ keywords:
       - "[this] can be targeted by effects or actions regardless of the activation status of its zone."
   shift:
     name: "Shift"
+    aliases:
+      - "Shifts"
     description: "Swap [this] with target card of the same type you control."
     faction: fey
   evasive:

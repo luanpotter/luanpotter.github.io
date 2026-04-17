@@ -337,7 +337,7 @@ cards:
         desc: "Connected creatures have +1 [Might]."
       - type: action
         name: "Cannons"
-        desc: "Deal 1 damage to target creature; then, target [Burst | Bursts]."
+        desc: "Deal 1 damage to target creature; then, target [Bursts]."
     arrows:
       topRight: single
       topLeft: single
@@ -370,7 +370,7 @@ cards:
       - type: continuous
         desc: 'All creatures have "Action: [Pray]."'
       - type: action
-        desc: "Consume any 3 mana; choose a creature you control: chosen creature can [Shift]."
+        desc: "Consume any 3 mana; choose a creature you control: chosen creature [Shifts]."
   fountain_of_youth:
     name: Fountain of Youth
     faction: men

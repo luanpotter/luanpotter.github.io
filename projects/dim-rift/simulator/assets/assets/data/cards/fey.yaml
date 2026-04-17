@@ -368,7 +368,7 @@ cards:
         desc: 'All creatures have: "[Evasive]."'
       - type: activation
         oncePerTurn: false
-        desc: "Sac an artifact: heal 1 damage from chosen face-up creature."
+        desc: "Discard a card: heal 1 damage from chosen face-up creature."
   the_lone_wolf:
     name: The Lone Wolf
     faction: fey
