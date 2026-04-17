@@ -1,11 +1,18 @@
 actions:
+  reorient:
+    name: "Reorient"
+    description: "Rotate [this] in place to a different orientation."
+    details: |
+      Rotate [this] in place to a different orientation (any of the four 90-degree rotations).
+
+      This action does not involve moving to a different zone; the card stays in place and only changes its facing.
   march:
     name: "March"
     description: "Move to target empty, [[Conquer | conquered]] creature zone you control, rotating to desired orientation."
     details: |
-      Target an empty, conquered creature zone you control: move [this] to it, and then, optionally, rotate it to a different orientation.
+      Target a different empty, conquered creature zone you control: move [this] to it, and then, optionally, rotate it to a different orientation.
 
-      The destination zone must be targeted beforehand, but the final rotation can be chosen at resolution.
+      The destination zone must be a different zone from the one the creature is currently in, and must be targeted beforehand, but the final rotation can be chosen at resolution.
 
       A card can "jump over" other cards like a chess Knight to move; but it cannot move to an occupied zone.
 
@@ -29,6 +36,8 @@ actions:
       After the blocker (or lack thereof) is established, the **Strike Action** is added to the chain to be resolved.
 
       For blocked attacks, both creatures deal [[Damage | damage]] equal to their [[Might Stat]] to each other simultaneously. If at any point (as a state-based action) the damage counters on a creature equal or exceed their [[Life Stat]], they are destroyed.
+
+      However, during a [[Battle Event]], the attacking creature has **First Strike** against active blockers. This means the attacker deals its damage first; if the active blocker is destroyed before it can deal damage back, the attacker takes no damage. Passive blocks (where the creature in the targeted zone must block) are always simultaneous as normal.
 
       For direct attacks, regardless of the [[Might Stat]] of the creature (as long as it is greater than 0), the controller of the zone loses 1 [[HP]] and [[Draw | draws]] a card.
 
