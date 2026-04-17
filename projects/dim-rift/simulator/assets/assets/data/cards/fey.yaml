@@ -408,6 +408,7 @@ cards:
       - type: cost
         desc: "[Transformed]: summon."
       - action: march
+      - action: burst
     arrows:
       top: double
       topRight: single
@@ -511,12 +512,11 @@ cards:
     effects:
       - type: cost
         desc: "Sac 3 [Prone] creatures: summon."
-      - type: action
-        desc: "[March]; then, [Burst]."
       - type: continuous
         desc: "[Inspired]."
-      - type: activation
-        oncePerTurn: false
+      - type: action
+        desc: "[March]; then, [Burst]."
+      - type: action
         desc: "Consume any 3 mana: [Transform] target creature with [Transform]."
       - type: activation
         oncePerTurn: false

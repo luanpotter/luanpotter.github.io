@@ -153,24 +153,25 @@
 </ul>
 <p>As in MTG, Slow speed effects can only be activated during your own Deployment Phase (for summons) or Event Phase (for actions); when the stack is empty; and you have priority.</p>
 <p>Note that flipping an artifact card face-up can be considered as part of activating a trigger or activation effect. For example, if you have priority and want to respond to a chain with the effect of a face-down card, you can flip it face up, pay for its Cost, put any &quot;When summoned&quot; triggers on the stack and immediately put one of its activation or trigger effects on the stack, before passing priority to your opponent.</p>
-<h2 id="the-stack-%26-chains" tabindex="-1">The Stack &amp; Chains</h2>
-<p>Dimensional Rift makes uses of the concept called Stack in <em>MTG</em> or Chains in <em>Yu-Gi-Oh!</em>.</p>
-<p>While the mechanism works exactly like MTG's Stack (and not like Yu-Gi-Oh!'s chains), both terms can be used in the game to define different facets of the same construct. Cards can refer to &quot;the current chain&quot; or &quot;in this chain&quot; to refer to any effects currently or subsequently added to the Stack until the Stack is completely empty (at what point that Chain is completed and new Chains can start).</p>
-<p>Since we are following MTG rules, effects <strong>can</strong> be added to the stack while it is not empty; triggers never &quot;miss timing&quot; like in Yu-Gi-Oh!.</p>
-<p>Stack based effects must be activated by following the following (completely standard) lifecycle:</p>
-<p class="notice">
-Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
-</p>
-<p>Then the Stack starts to resolve in backwards order. Each single Effect resolution cannot be interrupted; triggers just go to the Stack after that. However, as stated, the stack does not need to be empty for effects to be added to it.</p>
+<h2 id="the-stack" tabindex="-1">The Stack</h2>
+<p>Dimensional Rift makes uses of the concept called Stack in <em>MTG</em>. Effects <strong>can</strong> be added to the stack while it is not empty; triggers never &quot;miss timing&quot; like in <em>Yu-Gi-Oh!</em>.</p>
+<p>Stack based effects (or game actions) must be activated by following the declaration lifecycle:</p>
+<figure style="text-align:center;">
+    <img src="/projects/dim-rift/assets/illustrations/declaration-flow.svg" width="80%">
+    <figcaption>
+        Diagram illustrating the declaration flow for stack-based effects.
+    </figcaption>
+</figure>
+<p>Then the Stack starts to resolve in backwards order. Each single Effect resolution cannot be interrupted; triggers just go to the Stack after that. However, as stated, the Stack does not need to be empty for effects to be added to it.</p>
 <p>Triggers always go into the Stack as soon as they proc and the current effect finishes resolving (regardless of optionality); first the current player's turn triggers, and then the opponent's. Each player can order their triggers as desired.</p>
 <p>After triggers each player gets to add as many Activation effects as desired, using the priority system, starting with the turn's player.</p>
 <h2 id="targeting" tabindex="-1">Targeting</h2>
 <p>Targeting is a unique part of Dimensional Rift because you cannot just choose any card on the field. You actually target zones, not cards, and you must use the card's arrows to determine what other zones it can &quot;reach&quot;.</p>
-<p>When a card says &quot;target creature&quot; or &quot;target card&quot; it is just shorthand meaning &quot;target non-empty creature zone&quot; or &quot;target non-empty zone&quot;. Whichever card is in the targeted zone at time of resolution will be the target of the effect. Targets must be valid both at time of activation and also at time of resolution. So, for example, for a &quot;target creature&quot; effect, there must be a creature on the target zone at time of activation and also at the resolution time. If there is no longer a creature in the zone, the effect <a href="/projects/dim-rift/wiki/Fizzle">fizzles</a>. If the card doing the targeting moves, rotates, or has its arrows changed in between activation and resolution, the target zone must still be connected during resolution, or the effect fizzles.</p>
+<p>When a card says &quot;target creature&quot; or &quot;target card&quot; it is just shorthand meaning &quot;target non-empty creature zone&quot; or &quot;target non-empty zone&quot;. Whichever card is in the targeted zone at time of resolution will be the target of the effect. Targets must be valid both at time of activation and also at time of resolution. So, for example, for a &quot;target creature&quot; effect, there must be a creature on the target zone at time of activation and also at the resolution time. If there is no longer a creature in the zone, the effect <a href="/projects/dim-rift/wiki/Fizzle">fizzles</a>. If the source card moves, rotates, or has its arrows changed in between activation and resolution, the target zone must still be connected during resolution, or the effect fizzles.</p>
 <p>Inactive zones can still be targeted if there is a valid card in it (unless otherwise specified). For example, if a creature with <a href="/projects/dim-rift/wiki/Explorer">Explorer</a> moves to a inactive zone, it can still be targeted by a &quot;Target creature&quot; effect.</p>
 <p>Note that Monuments do not participate in the targeting system. Monuments cannot have arrows and cannot be orientated other than straight up. They also cannot ever be face-down. Monument zones are not part of the targeting grid, not being adjacent or connected to any other zones.</p>
 <h3 id="implicit-targeting" tabindex="-1">Implicit targeting</h3>
-<p>Targeting must always be done during activation, following the effect lifecycle; however it might not be specified in the Activation Criteria text (before <code>:</code>).</p>
+<p>Targeting must always be done during activation, following the declaration lifecycle; however, it might not be specified in the Activation Criteria text (before <code>:</code>).</p>
 <p>In fact, the mere presence of the word &quot;target&quot; in any part of the effect is an implicit shorthand to call out that this card requires targeting during activation.</p>
 <p>For example, if an effect were to read:</p>
 <p class="notice">When summoned: deal 1 damage to target creature.</p>
@@ -408,11 +409,6 @@ Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
         text-align: center;
         transform: translate(-3px, -3px);
     }</style>
-<h3 id="target-from" tabindex="-1">Target from</h3>
-<p>When an effect says &quot;target <em>from</em> X&quot; it means to do the targeting operation using the position and arrows from a different card. Essentially, &quot;target as if you were that card&quot;.</p>
-<p>For example:</p>
-<p class="notice">When [equipped] destroys a creature; target an artifact from that creature; consume 1 mana: destroy target.
-</p><p>Means you use the position and arrows of the destroyed creature to do the targeting.</p>
 <h3 id="choosing" tabindex="-1">Choosing</h3>
 <p>The word &quot;choose&quot; also has special meanings in effects, depending on what kind of &quot;choosing&quot; is being done.</p>
 <p>Some effects, typically from Monuments, might allow you to &quot;choose&quot; cards or zones. This essentially works exactly like targeting but with no arrow requirements (so like targeting is in other games). You can choose any card or zone according to the specified requirements, and must do so at the targeting phase (even if the word choose is at the Resolution Instructions).</p>
@@ -421,11 +417,6 @@ Declaration ➙ Costs ➙ Targeting (or Choosing) ➙ Goes to the Stack
 <h3 id="connected" tabindex="-1">Connected</h3>
 <p>A card is considered Connected to another card if it has arrows that connect to that card. That does not mean target; instead it refers to all cards or zones that this card <em>could</em> target.</p>
 <p>Some effects might affect &quot;all connected face-up cards&quot;. This does not require targeting. The affected cards are determined upon resolution.</p>
-<h3 id="connection-chain" tabindex="-1">Connection Chain</h3>
-<p>A Connection Chain (no &quot;<em>connection</em>&quot; to <em>Effect Chains</em>) is a specific sequence of cards where each one is connected to the the next card.</p>
-<p>For example:</p>
-<p class="notice">When [this] is part of a Connection Chain connecting every non-monument card on the field (at least 4): [Transform].</p>
-<p>Means that if there is any way to order the cards on the field (at least 4), in a way that each card connects to the next card, you must transform this creature. Naturally, this excludes Monuments.</p>
 
 </main>
 <footer>

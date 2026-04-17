@@ -101,9 +101,8 @@ keywords:
   re_target:
     name: "Re-target"
     description: >
-      When this card is targeted; immediately before that effect/attack resolves:
-      choose a new valid target zone using [this]'s arrows.
+      When this card is declared as a target; you can instead choose a different valid target for that effect.
     baseEffect:
       type: trigger
-      optional: false
+      optional: true
       desc: "[Re-target]."
