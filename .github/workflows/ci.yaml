@@ -15,6 +15,11 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
 
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "22"
+
             - name: Setup Bun
               uses: oven-sh/setup-bun@v2
 
@@ -27,7 +32,7 @@ jobs:
                   echo "$PWD" >> "$GITHUB_PATH"
 
             - name: Install cspell and markdownlint
-              run: bun install -g cspell markdownlint-cli
+              run: bun install -g cspell@10.0.0 markdownlint-cli@0.48.0
 
             - name: Install dependencies
               run: bun install --frozen-lockfile
