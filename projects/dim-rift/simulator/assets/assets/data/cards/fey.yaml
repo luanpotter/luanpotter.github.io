@@ -407,8 +407,10 @@ cards:
     effects:
       - type: cost
         desc: "[Transformed]: summon."
-      - action: march
-      - action: burst
+      - type: trigger
+        optional: false
+        name: "Maul"
+        desc: "When a creature blocks [this]: that creature is [Prone]."
     arrows:
       top: double
       topRight: single
