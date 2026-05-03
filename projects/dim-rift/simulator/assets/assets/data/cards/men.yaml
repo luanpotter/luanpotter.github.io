@@ -185,10 +185,10 @@ cards:
       - type: cost
         desc: "Consume any 2 mana: summon."
       - action: pray
-      - type: trigger
-        optional: true
+      - type: activation
+        oncePerTurn: false
         name: "Smite"
-        desc: "When [this] declares a [Strike]; you can consume 1 mana: [this] gets +1 [Might] for this [Strike]."
+        desc: "During [this]'s [Strike] action: consume 1 mana; [this] gets +1 [Might] for this [Strike]."
     rulings:
       - "The Smite effect can be activated multiple times during the same [Strike] action."
     arrows:
