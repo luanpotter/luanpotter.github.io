@@ -83,7 +83,7 @@ actions:
       - "This action is only available for creatures."
   maneuver:
     name: "Maneuver"
-    description: "Re-organize any number of connected artifacts you control into any number of your connected artifact zones."
+    description: "Re-organize any number of connected artifacts you control into any number of your connected artifact zones you own."
     faction: "telur"
     rulings:
       - "You _can_ switch them."

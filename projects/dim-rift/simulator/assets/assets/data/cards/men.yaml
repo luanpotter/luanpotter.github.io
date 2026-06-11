@@ -461,8 +461,8 @@ cards:
     extra: true
     stats:
       might: 3
-      life: 4
       will: 3
+      life: 3
     effects:
       - type: cost
         desc: "Sac at least 3 cards with at least 3 combined mana: summon; then, [this] or target creature is [Prone]."
@@ -524,15 +524,13 @@ cards:
       life: 7
     effects:
       - type: cost
-        desc: "Sac at least 3 cards with a combined mana of at least 7: summon."
-      - action: burst
+        desc: "Sac at least 3 creatures with a combined mana of at least 7: summon."
       - type: continuous
         desc: "[Inspired]."
+      - type: action
+        desc: "[Burst]; then, [Sidestep] target creature."
       - type: continuous
-        desc: "No creatures can [Pray] while [this] is on the field."
-      - type: trigger
-        optional: false
-        desc: "When [this] would be destroyed: destroy [this] and all connected creatures instead."
+        desc: "No creatures can [Pray]."
     arrows:
       topLeft: single
       top: single

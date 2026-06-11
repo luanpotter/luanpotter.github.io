@@ -377,8 +377,8 @@ cards:
     subType: feyBeast
     stats:
       might: 3
-      life: 4
       will: 1
+      life: 3
     effects:
       - type: cost
         desc: "[Transformed]: summon."
@@ -401,7 +401,7 @@ cards:
     type: creature
     subType: feyBeast
     stats:
-      might: 4
+      might: 2
       life: 5
       will: 1
     effects:
@@ -428,7 +428,7 @@ cards:
       having met these incredible creatures.
     stats:
       might: 2
-      life: 5
+      life: 4
       will: 2
     effects:
       - type: cost
@@ -437,11 +437,11 @@ cards:
         desc: "[Inspired]."
       - type: action
         name: "Tail Whip"
-        desc: "Consume 1 mana: all connected face-up creatures are [Prone]."
+        desc: "Consume 2 mana: all connected face-up creatures are [Prone]."
       - type: activation
         oncePerTurn: false
         name: "Shred"
-        desc: "Destroy up to 3 target Scrolls: [this] collects 1 mana for each."
+        desc: "Sac up to 3 target Scrolls: [this] collects 1 mana for each."
     arrows:
       top: single
       topRight: single
@@ -460,10 +460,12 @@ cards:
     effects:
       - type: cost
         desc: "[Transformed]: summon."
-      - keyword: re_target
-      - action: strike
-      - type: continuous
-        desc: "While a creature does not connect to [this] it cannot deal damage when blocking [Strike | Strikes] from [this]."
+      - type: activation
+        oncePerTurn: true
+        desc: "March."
+      - type: activation
+        oncePerTurn: true
+        desc: "Shift."
     arrows:
       top: double
       topRight: single
@@ -508,8 +510,8 @@ cards:
     flavor: |
       "I am all nature; nature is but me."
     stats:
-      might: 5
-      will: 3
+      might: 3
+      will: 5
       life: 7
     effects:
       - type: cost
@@ -518,11 +520,9 @@ cards:
         desc: "[Inspired]."
       - type: action
         desc: "[March]; then, [Burst]."
-      - type: action
-        desc: "Consume any 3 mana: [Transform] target creature with [Transform]."
       - type: activation
         oncePerTurn: false
-        desc: "Consume any 3 mana: target creature is [Prone]."
+        desc: "Consume any 3 mana: [Transform] target creature if it has [Transform]; then, either way, target is [Prone]."
     arrows:
       top: single
       topRight: single
