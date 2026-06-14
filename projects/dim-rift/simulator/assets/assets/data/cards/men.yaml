@@ -465,7 +465,10 @@ cards:
       life: 3
     effects:
       - type: cost
-        desc: "Sac at least 3 cards with at least 3 combined mana: summon; then, [this] or target creature is [Prone]."
+        desc: "Sac at least 3 cards with at least 3 combined mana: summon."
+      - type: trigger
+        optional: false
+        desc: "When summoned: [this] or target creature is [Prone]."
       - type: activation
         oncePerTurn: true
         desc: "Consume 1 mana: until end of turn, [this] or target creature is [Weakened] and has [Evasive]."
