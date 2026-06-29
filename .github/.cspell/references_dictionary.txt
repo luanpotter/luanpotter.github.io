@@ -5,6 +5,7 @@ CRDB # CockroachDB, https://www.cockroachlabs.com
 Cricut # https://cricut.com
 detekt # https://github.com/detekt/detekt
 ghostty # https://github.com/ghostty-org/ghostty
+Kadomaru # corner cutter brand
 keybase # https://keybase.io
 luan # https://github.com/luanpotter
 luanpotter # https://github.com/luanpotter
