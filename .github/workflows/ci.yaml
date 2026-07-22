@@ -23,8 +23,21 @@ jobs:
             - name: Setup Bun
               uses: oven-sh/setup-bun@v2
 
+            - name: Setup Python
+              uses: actions/setup-python@v7
+              with:
+                  python-version: "3.13"
+
+            - name: Setup uv
+              uses: astral-sh/setup-uv@v9
+              with:
+                  version: "0.11.30"
+
+            - name: Provision resume venv
+              run: uv sync --project resume --frozen
+
             - name: Install shellcheck
-              run: sudo apt-get install -y shellcheck shfmt
+              run: sudo apt-get update && sudo apt-get install -y shellcheck shfmt
 
             - name: Install actionlint
               run: |

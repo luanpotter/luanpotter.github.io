@@ -26,11 +26,35 @@ jobs:
         with:
           bun-version: latest
 
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v9
+        with:
+          version: "0.11.30"
+
+      - name: Provision resume venv
+        run: uv sync --project resume --frozen
+
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck shfmt
+
+      - name: Install actionlint
+        run: |
+          bash <(curl -s https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+          echo "$PWD" >> "$GITHUB_PATH"
+
+      - name: Install cspell and markdownlint
+        run: bun install -g cspell@10.0.0 markdownlint-cli@0.48.0
+
       - name: Install dependencies
         run: bun install
 
       - name: Build site
-        run: bun run build
+        run: ./scripts/build.sh
 
       - name: Copy projects to dist
         run: |

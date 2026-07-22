@@ -16,3 +16,7 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# rendercv / resume
+resume/.venv/
+resume/dist/

@@ -1,0 +1,10 @@
+cv:
+    name: Luan Nico
+    email: contact@luan.xyz
+    website: https://luan.xyz
+    social_networks:
+        - network: GitHub
+          username: luanpotter
+    sections:
+        Welcome:
+            - WIP

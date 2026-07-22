@@ -3,11 +3,8 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-CYAN='\033[0;36m'
-BLUE='\033[0;34m'
-NC='\033[0m'
+# shellcheck source=scripts/_lib.sh
+source ./scripts/_lib.sh
 
 FAILED=0
 FIX=0
@@ -17,46 +14,35 @@ if [[ "${1:-}" == "--fix" ]]; then
     FIX=1
 fi
 
-require_cmd() {
-    if ! command -v "$1" &>/dev/null; then
-        echo -e "${RED}✗ Required command not found:${NC} $1"
-        echo -e "  Run ${BLUE}./scripts/setup.sh${NC} to install dependencies"
-        exit 1
-    fi
-}
-
 run_check() {
     local name="$1"
     shift
-    echo -e "${BLUE}▶ Running:${NC} $name"
+    info "Running: $name"
     if "$@"; then
-        echo -e "${GREEN}✓ Passed:${NC} $name\n"
+        success "Passed: $name"
+        echo
     else
-        echo -e "${RED}✗ Failed:${NC} $name\n"
+        fail "Failed: $name"
+        echo
         FAILED=1
     fi
 }
 
 if [[ "$FIX" -eq 1 ]]; then
-    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo -e "${CYAN}                    Fixing All Issues                        ${NC}"
-    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
+    banner "Fixing All Issues"
 else
-    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo -e "${CYAN}                    Running All Checks                       ${NC}"
-    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
+    banner "Running All Checks"
 fi
 
 # Check required commands
-require_cmd bun
-require_cmd shellcheck
-require_cmd shfmt
-require_cmd actionlint
-require_cmd cspell
-require_cmd markdownlint
+require_cmds bun uv shellcheck shfmt actionlint cspell markdownlint
 
 # Astro check (TypeScript + Astro validation)
 run_check "Astro Check" bun run check
+
+# Resume schema validation (rendercv has no validate subcommand; this renders
+# with every output disabled, which still runs the Pydantic schema validation)
+run_check "Resume schema (rendercv)" uv run --project resume rendercv render resume/resume.yaml -nopdf -notyp -nomd -nohtml -nopng
 
 # Prettier formatting
 if [[ "$FIX" -eq 1 ]]; then
@@ -95,11 +81,10 @@ run_check "CSpell $cspell_version" ./scripts/cspell-run.sh
 # CSpell dictionary verification
 run_check "CSpell Dictionary" ./scripts/cspell-verify.sh
 
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 if [ "$FAILED" -eq 0 ]; then
-    echo -e "${GREEN}✓ All checks passed!${NC}"
+    banner "All checks passed!" green
     exit 0
 else
-    echo -e "${RED}✗ Some checks failed!${NC}"
+    banner "Some checks failed!"
     exit 1
 fi

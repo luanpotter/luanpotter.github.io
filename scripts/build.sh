@@ -3,31 +3,22 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-NC='\033[0m'
+# shellcheck source=scripts/_lib.sh
+source ./scripts/_lib.sh
 
-info() { echo -e "${BLUE}▶${NC} $1"; }
-success() { echo -e "${GREEN}✓${NC} $1"; }
-error() {
-    echo -e "${RED}✗${NC} $1"
-    exit 1
-}
+require_cmds bun uv
 
-require_cmd() {
-    if ! command -v "$1" &>/dev/null; then
-        echo -e "${RED}✗ Required command not found:${NC} $1"
-        echo -e "  Run ${BLUE}./scripts/setup.sh${NC} to install dependencies"
-        exit 1
-    fi
-}
+# Clean previous build output
+info "Cleaning dist and resume output folders..."
+rm -rf dist resume/dist
+mkdir -p resume/dist
 
-require_cmd bun
-
-# Clean previous build
-info "Cleaning dist folder..."
-rm -rf dist
+# Install JS dependencies (idempotent)
+info "Installing JS dependencies..."
+if ! bun install; then
+    error "bun install failed"
+fi
+success "JS dependencies ready"
 
 # Run linting first
 info "Running lint checks..."
@@ -36,6 +27,21 @@ if ! ./scripts/lint.sh; then
 fi
 success "Lint passed"
 
+# Render resume (PDF + HTML) via rendercv into resume/dist/
+info "Rendering resume..."
+if ! uv run --project resume rendercv render resume/resume.yaml \
+    --pdf-path dist/resume.pdf \
+    --html-path dist/resume.html \
+    --typst-path dist/resume.typ \
+    --markdown-path dist/resume.md \
+    --dont-generate-png; then
+    error "Resume rendering failed"
+fi
+if [[ ! -f resume/dist/resume.pdf ]] || [[ ! -f resume/dist/resume.html ]]; then
+    error "Resume output missing after rendering"
+fi
+success "Resume rendered"
+
 # Build the static site
 info "Building static site..."
 if ! bun run build; then
@@ -43,9 +49,19 @@ if ! bun run build; then
 fi
 success "Build completed"
 
+# Publish resume artifacts into dist/ (mirrors the projects/* post-build copy)
+info "Publishing resume artifacts..."
+mkdir -p dist/me/resume
+cp resume/dist/resume.pdf dist/me/resume.pdf
+cp resume/dist/resume.html dist/me/resume.html
+cp resume/dist/resume.html dist/me/resume/index.html
+
 # Verify output
 if [[ ! -f dist/index.html ]]; then
     error "Build output missing: dist/index.html"
+fi
+if [[ ! -f dist/me/resume.pdf ]] || [[ ! -f dist/me/resume.html ]]; then
+    error "Resume artifacts missing in dist/"
 fi
 
 # Report
@@ -54,6 +70,6 @@ TOTAL_SIZE=$(du -sh dist | cut -f1)
 
 echo ""
 success "Static site built successfully!"
-echo -e "  ${BLUE}Files:${NC} $FILE_COUNT"
-echo -e "  ${BLUE}Size:${NC}  $TOTAL_SIZE"
-echo -e "  ${BLUE}Output:${NC} dist/"
+echo "  Files:  $FILE_COUNT"
+echo "  Size:   $TOTAL_SIZE"
+echo "  Output: dist/"

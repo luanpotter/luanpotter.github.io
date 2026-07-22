@@ -1,0 +1,9 @@
+[project]
+name = "luan-resume"
+version = "0"
+description = "Resume rendering via rendercv"
+requires-python = ">=3.13"
+dependencies = ["rendercv[full]"]
+
+[tool.uv]
+required-version = ">=0.11"
