@@ -5,10 +5,10 @@ cv:
     email: contact@luan.xyz
     website: https://luan.xyz
     social_networks:
-        - network: LinkedIn
-          username: luan-nico
         - network: GitHub
           username: luanpotter
+        - network: LinkedIn
+          username: luan-nico
     custom_connections:
         - placeholder: g.dev/luannico
           url: https://g.dev/luannico
@@ -46,7 +46,7 @@ cv:
               summary: Joined Faire since the very beginning and helped to scale our Kotlin backend to support hundreds of thousands of users, high throughput of concurrent requests (specially during events), and $3B+ in GMV.
               highlights:
                   - Led implementation for multiple successful Faire Fashion Week events, ensuring our systems could handle the increase in load and traffic;
-                  - Founded and architected the engineering of the Ads team, adding promoted listings for brands, including payments / ledgers, analytics, and reporting;
+                  - Founded and architected the engineering of the Ads team, adding promoted listings for brands, including payments processing and ledgers, analytics, and reporting;
                   - Led the FLARE backend, our in-house, user-facing, LLM-powered application platform, allowing other teams to seamlessly provide production-grade AI-powered experiences to our users, embedding Python into our Kotlin ecosystem.
             - company: Blue Fire
               position: OSS Maintainer
@@ -55,7 +55,7 @@ cv:
               summary: Blue Fire is our collective of passionate developers who love OSS and sharing projects with the world, responsible for the Flame Game Engine & much more.
               highlights:
                   - Created and helped maintain many of the community-beloved packages, such as [flame](https://github.com/luanpotter/flame), [audioplayers](https://github.com/luanpotter/audioplayers), [ordered_set](https://github.com/luanpotter/ordered_set), [gamepads](https://github.com/flame-engine/gamepads), [vscode-dart-import](https://github.com/luanpotter/vscode-dart-import), [dart-benchmark-action](https://github.com/luanpotter/dart-benchmark-action), and many bridge packages;
-                  - Contributed PRs to the Dart and Flutter ecosystem, including the [dart sdk](https://github.com/dart-lang/sdk), [flutter](https://github.com/flutter/flutter), [flutter/plugins](https://github.com/flutter-team-archive/plugins), [vector_math.dart](https://github.com/google/vector_math.dart), [mobx.dart](https://github.com/mobxjs/mobx.dart), [melos](https://github.com/invertase/melos), [tiled.dart](https://github.com/flame-engine/tiled.dart), and more;
+                  - Contributed PRs to the Dart and Flutter ecosystem, including the [dart sdk](https://github.com/dart-lang/sdk), [flutter](https://github.com/flutter/flutter), [flutter/plugins](https://github.com/flutter/packages), [vector_math.dart](https://github.com/google/vector_math.dart), [mobx.dart](https://github.com/mobxjs/mobx.dart), [melos](https://github.com/invertase/melos), [tiled.dart](https://github.com/flame-engine/tiled.dart), and more;
                   - Gave talks and workshops at conferences, meetups, and online events about Flutter, Dart, and game development.
             - company: Dextra Sistemas
               position: Software Engineer
@@ -64,7 +64,7 @@ cv:
               location: Campinas, Brazil
               summary: Dextra (Dexsense) is a software consultancy company that helps other companies to build their products and services, with a focus on quality, scalability, and maintainability.
               highlights:
-                  - Worked on several dozens of different projects, for different clients, with different technologies, platforms, and frameworks, including web, mobile, and backend development;
+                  - Worked on several dozens of different projects, for a variety of clients and business needs, with a plethora of technologies, platforms, and frameworks, including web, mobile, and backend development;
                   - Backend technologies included Java, Ruby, Node.js, and many databases, ORMs, platforms such as Google Cloud, AWS, and more;
                   - Frontend technologies included Angular, React, Vue.js for web, and cross-platform mobile development with React Native and Flutter.
         projects:
@@ -94,6 +94,9 @@ cv:
             - reversed_number: _Construindo Jogos usando Flame_ - Flutter Talks Brazil 2019 (São Paulo, Brazil)
 design:
     theme: harvard
+    header:
+        connections:
+            show_icons: true
     page:
         size: a4
         top_margin: 0.5in
