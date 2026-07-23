@@ -55,7 +55,7 @@ fi
 run_check "Build" bun run build
 
 # Shellcheck for bash scripts
-run_check "Shellcheck" shellcheck scripts/*.sh
+run_check "Shellcheck" shellcheck -x scripts/*.sh
 
 # Shfmt for bash script formatting
 if [[ "$FIX" -eq 1 ]]; then

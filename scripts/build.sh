@@ -27,17 +27,16 @@ if ! ./scripts/lint.sh; then
 fi
 success "Lint passed"
 
-# Render resume (PDF + HTML) via rendercv into resume/dist/
+# Render resume PDF via rendercv into resume/dist/
 info "Rendering resume..."
 if ! uv run --project resume rendercv render resume/resume.yaml \
     --pdf-path dist/resume.pdf \
-    --html-path dist/resume.html \
     --typst-path dist/resume.typ \
-    --markdown-path dist/resume.md \
-    --dont-generate-png; then
+    --dont-generate-png \
+    --dont-generate-markdown; then
     error "Resume rendering failed"
 fi
-if [[ ! -f resume/dist/resume.pdf ]] || [[ ! -f resume/dist/resume.html ]]; then
+if [[ ! -f resume/dist/resume.pdf ]]; then
     error "Resume output missing after rendering"
 fi
 success "Resume rendered"
@@ -49,18 +48,16 @@ if ! bun run build; then
 fi
 success "Build completed"
 
-# Publish resume artifacts into dist/ (mirrors the projects/* post-build copy)
+# Publish resume PDF into dist/ (mirrors the projects/* post-build copy)
 info "Publishing resume artifacts..."
-mkdir -p dist/me/resume
+mkdir -p dist/me
 cp resume/dist/resume.pdf dist/me/resume.pdf
-cp resume/dist/resume.html dist/me/resume.html
-cp resume/dist/resume.html dist/me/resume/index.html
 
 # Verify output
 if [[ ! -f dist/index.html ]]; then
     error "Build output missing: dist/index.html"
 fi
-if [[ ! -f dist/me/resume.pdf ]] || [[ ! -f dist/me/resume.html ]]; then
+if [[ ! -f dist/me/resume.pdf ]]; then
     error "Resume artifacts missing in dist/"
 fi
 
