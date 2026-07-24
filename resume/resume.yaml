@@ -87,7 +87,7 @@ cv:
               start_date: 2023-03
               end_date: present
               summary: A Flutter plugin to handle gamepad input across multiple platforms.
-        invited_talks:
+        Talks:
             - reversed_number: Transforming Wholesale with AI - Waterloo Tech Week 2025 (Kitchener-Waterloo, Canada) & Toronto Tech Week 2025 (Toronto, Canada)
             - reversed_number: 'Flame 3D: Hands-On Workshop - Flutter & Friends 2025 (Stockholm, Sweden)'
             - reversed_number: 3D Game Development with Flutter and Flame - Flutter & Friends 2024 (Stockholm, Sweden)

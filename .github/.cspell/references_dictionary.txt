@@ -4,11 +4,17 @@ codetrace # https://codetrace.com
 CRDB # CockroachDB, https://www.cockroachlabs.com
 Cricut # https://cricut.com
 detekt # https://github.com/detekt/detekt
+droidcon # https://www.droidcon.com
+Flamecon # Flame community conference, https://www.youtube.com/@FlameEngineDev
+Fluttercon # https://fluttercon.com
 ghostty # https://github.com/ghostty-org/ghostty
+Jochum # Jochum van der Ploeg, https://github.com/wolfenrain
 Kadomaru # corner cutter brand
 keybase # https://keybase.io
 luan # https://github.com/luanpotter
 luanpotter # https://github.com/luanpotter
+Ploeg # Jochum van der Ploeg, https://github.com/wolfenrain
+Renan # Renan C. Araújo, https://github.com/renancaraujo
 sqldelight # https://github.com/sqldelight/sqldelight
 tonsky # https://github.com/tonsky
 vimium # https://github.com/philc/vimium
