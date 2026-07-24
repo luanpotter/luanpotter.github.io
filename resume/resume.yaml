@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
 cv:
     name: Luan Nico
-    headline: Staff Software Engineer @ Faire | Flutter & Dart GDE | OSS Maintainer @ Blue Fire
+    headline: Staff Software Engineer @ Faire | Dart & Flutter GDE | OSS Maintainer @ Blue Fire
     email: contact@luan.xyz
     website: https://luan.xyz
     social_networks:
@@ -15,15 +15,15 @@ cv:
           fontawesome_icon: google
     sections:
         About:
-            - Hi! I'm a **Physicist**, **Software Craftsman**, & **Game Developer** who believes in OSS and the community; currently in love with Kotlin, Dart, & Flutter, and learning about the Universe and its mysteries.
             - >
-                I have worked for more than a decade professionally (and more years than I can remember as a hobby) with a plethora of languages, platforms, frameworks, and libraries.
+                Hi! I'm a **Physicist**, **Software Craftsman**, and **Game Developer** who strongly believes in OSS and its community.
+            - >
+                I have worked for more than a decade professionally (and even longer as a hobby) with a plethora of languages, platforms, frameworks, and libraries.
                 I like to solve people's problems with technology, and I believe there is always a good solution to every problem and a good problem for every solution;
-                for that reason, I like most programming languages, and I'm always thrilled to learn something new.
+                for that reason, I'm always thrilled to learn and explore new technologies.
             - >
-                I truly believe in **Open Source** and I try to make, if possible, everything I do open (libre) and free.
-                Today I mainly work with **Kotlin** on my day-to-day job and with **Dart/Flutter** and the **Flame Engine** that I created on the off hours.
-                I am a **Dart & Flutter GDE** and I have many contributions to the ecosystem, as well as many talks that I've given over the years.
+                Today I mainly work with **Kotlin** on my day job and with **Dart/Flutter** and the **Flame Engine**, which I created on the side.
+                I am a **Dart & Flutter GDE** with numerous PR contributions to the ecosystem, as well as a speaker at conferences and events.
         education:
             - institution: Universidade Estadual de Campinas
               area: Physics
@@ -42,54 +42,57 @@ cv:
               position: Staff Software Engineer
               start_date: 2019-09
               end_date: present
-              location: Waterloo, ON
-              summary: Joined Faire since the very beginning and helped to scale our Kotlin backend to support hundreds of thousands of users, high throughput of concurrent requests (specially during events), and $3B+ in GMV.
+              location: Waterloo, Canada
+              summary: Joined [Faire](https://www.faire.com) at its early days and helped to scale our **Kotlin backend** to support hundreds of thousands of users, high request throughput (especially during events), and $3B+ in GMV.
               highlights:
-                  - Led implementation for multiple successful Faire Fashion Week events, ensuring our systems could handle the increase in load and traffic;
-                  - Founded and architected the engineering of the Ads team, adding promoted listings for brands, including payments processing and ledgers, analytics, and reporting;
-                  - Led the FLARE backend, our in-house, user-facing, LLM-powered application platform, allowing other teams to seamlessly provide production-grade AI-powered experiences to our users, embedding Python into our Kotlin ecosystem.
+                  - Drove multiple successful **Faire Fashion Week** events, ensuring our systems could sustain the increase in traffic efficiently;
+                  - Architected, as the founding engineer, Faire's **Ads platform**, including payments processing and ledgers, analytics, and reporting;
+                  - Led the **FLARE backend**, our in-house, user-facing, LLM-based application platform, allowing other teams to seamlessly provide production-grade AI-powered experiences to our users, embedding Python into our Kotlin ecosystem.
             - company: Blue Fire
               position: OSS Maintainer
               start_date: 2017-10
               end_date: present
-              summary: Blue Fire is our collective of passionate developers who love OSS and sharing projects with the world, responsible for the Flame Game Engine & much more.
+              summary: '[Blue Fire](https://blue-fire.xyz) is our collective of passionate developers who love OSS and sharing projects with the world, responsible for maintaining the **Flame game engine** and adjacent packages.'
               highlights:
-                  - Created and helped maintain many of the community-beloved packages, such as [flame](https://github.com/luanpotter/flame), [audioplayers](https://github.com/luanpotter/audioplayers), [ordered_set](https://github.com/luanpotter/ordered_set), [gamepads](https://github.com/flame-engine/gamepads), [vscode-dart-import](https://github.com/luanpotter/vscode-dart-import), [dart-benchmark-action](https://github.com/luanpotter/dart-benchmark-action), and many bridge packages;
-                  - Contributed PRs to the Dart and Flutter ecosystem, including the [dart sdk](https://github.com/dart-lang/sdk), [flutter](https://github.com/flutter/flutter), [flutter/plugins](https://github.com/flutter/packages), [vector_math.dart](https://github.com/google/vector_math.dart), [mobx.dart](https://github.com/mobxjs/mobx.dart), [melos](https://github.com/invertase/melos), [tiled.dart](https://github.com/flame-engine/tiled.dart), and more;
-                  - Gave talks and workshops at conferences, meetups, and online events about Flutter, Dart, and game development.
+                  - '**Created and then helped maintain** many of the widely-used packages, such as [flame](https://github.com/luanpotter/flame), [audioplayers](https://github.com/luanpotter/audioplayers), [ordered_set](https://github.com/luanpotter/ordered_set), [gamepads](https://github.com/flame-engine/gamepads), [vscode-dart-import](https://github.com/luanpotter/vscode-dart-import), [dart-benchmark-action](https://github.com/luanpotter/dart-benchmark-action), and many bridge packages;'
+                  - '**Contributed PRs** to Dart/Flutter repositories, including the [dart sdk](https://github.com/dart-lang/sdk), [flutter](https://github.com/flutter/flutter), [flutter/plugins](https://github.com/flutter/packages), [vector_math.dart](https://github.com/google/vector_math.dart), [mobx.dart](https://github.com/mobxjs/mobx.dart), [melos](https://github.com/invertase/melos), [tiled.dart](https://github.com/flame-engine/tiled.dart), and more;'
+                  - Gave **talks and workshops** at conferences, meetups, and online events about Flutter, Dart, and game development; including several Flamecons.
             - company: Dextra Sistemas
               position: Software Engineer
               start_date: 2014-01
               end_date: 2019-09
               location: Campinas, Brazil
-              summary: Dextra (Dexsense) is a software consultancy company that helps other companies to build their products and services, with a focus on quality, scalability, and maintainability.
+              summary: Dextra (Dexsense) is a software consultancy that helps clients build their products and services, with a focus on quality, maintainability, and constant iteration.
               highlights:
-                  - Worked on several dozens of different projects, for a variety of clients and business needs, with a plethora of technologies, platforms, and frameworks, including web, mobile, and backend development;
-                  - Backend technologies included Java, Ruby, Node.js, and many databases, ORMs, platforms such as Google Cloud, AWS, and more;
-                  - Frontend technologies included Angular, React, Vue.js for web, and cross-platform mobile development with React Native and Flutter.
-        projects:
+                  - Worked on several dozen different projects, for a variety of clients and business needs, with a wide range of technologies, platforms, and frameworks, including **web, mobile, and backend** development;
+                  - Backend technologies included **Java**, **Ruby**, **Node.js**, and multiple **databases**, **ORMs**, and infrastructure such as **Google Cloud**, **AWS**, and more;
+                  - Frontend technologies included **Angular**, **React**, **Vue.js** for web, and cross-platform mobile development with **React Native** and **Flutter**.
+        OSS Projects:
+            - name: "[yawn](https://github.com/faire/yawn)"
+              start_date: 2025-09
+              end_date: present
+              summary: A Kotlin-first, fully type-safe ORM I built on top of Hibernate with expressive, Criteria-style query syntax built using custom KSP-generated entity metadata - used and relied upon by Faire's backend services.
             - name: "[flame](https://flame-engine.org/)"
               start_date: 2017-10
               end_date: present
-              location:
               summary: >
                   Flame is a simple, modular, flexible, open-source, cross-platform 2D game engine I created on top of Flutter,
                   maintained by a vibrant community of game developers and core members of the Blue Fire collective.
-                  It is a Flutter Favorite and the established way to create games with Flutter.
+                  It is a Flutter Favorite and the established way to create games with Flutter, with more than 10k stars on GitHub.
             - name: "[audioplayers](https://github.com/luanpotter/audioplayers)"
               start_date: 2017-10
               end_date: present
-              summary: A Flutter plugin to play multiple simultaneously audio files, works for Android, iOS, Linux, macOS, Windows, and web.
+              summary: A Flutter plugin to play multiple audio files simultaneously, supporting Android, iOS, Linux, macOS, Windows, and web.
             - name: "[gamepads](https://github.com/flame-engine/gamepads)"
               start_date: 2023-03
               end_date: present
               summary: A Flutter plugin to handle gamepad input across multiple platforms.
         invited_talks:
-            - reversed_number: Transforming Wholesale with AI - Waterloo Tech Week 2025 (Kitchener-Waterloo, Canada) and Toronto Tech Week 2025 (Toronto, Canada)
-            - reversed_number: Flame 3D - Hands-On Workshop - Flutter & Friends 2025 (Stockholm, Sweden)
-            - reversed_number: 3D Game Development with Flutter & Flame - Flutter & Friends 2024 (Stockholm, Sweden)
-            - reversed_number: 3D Games With Flame - Fluttercon USA 2024 (New York City, USA)
-            - reversed_number: Flame and (pseudo) 3D - Fluttercon EU 2023 / droidcon Berlin (Berlin, Germany)
+            - reversed_number: Transforming Wholesale with AI - Waterloo Tech Week 2025 (Kitchener-Waterloo, Canada) & Toronto Tech Week 2025 (Toronto, Canada)
+            - reversed_number: 'Flame 3D: Hands-On Workshop - Flutter & Friends 2025 (Stockholm, Sweden)'
+            - reversed_number: 3D Game Development with Flutter and Flame - Flutter & Friends 2024 (Stockholm, Sweden)
+            - reversed_number: 3D Games with Flame - Fluttercon USA 2024 (New York City, United States)
+            - reversed_number: Flame and (Pseudo)-3D - Fluttercon EU 2023 / Droidcon Berlin (Berlin, Germany)
             - reversed_number: Building Games Using Flame - Flutter Europe 2020 (Warsaw, Poland)
             - reversed_number: _Construindo Jogos usando Flame_ - Flutter Talks Brazil 2019 (São Paulo, Brazil)
 design:
