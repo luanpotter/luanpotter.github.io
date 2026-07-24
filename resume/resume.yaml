@@ -78,7 +78,7 @@ cv:
               summary: >
                   Flame is a simple, modular, flexible, open-source, cross-platform 2D game engine I created on top of Flutter,
                   maintained by a vibrant community of game developers and core members of the Blue Fire collective.
-                  It is a Flutter Favorite and the established way to create games with Flutter, with more than 10k stars on GitHub.
+                  It is the established way to create games with Flutter, with more than 10k stars on GitHub, a Flutter Favorite, and core part of the [Flutter Games Toolkit](https://flutter.dev/games).
             - name: "[audioplayers](https://github.com/luanpotter/audioplayers)"
               start_date: 2017-10
               end_date: present
@@ -108,5 +108,7 @@ design:
         right_margin: 0.5in
         show_footer: false
         show_top_note: false
+settings:
+    pdf_title: "Luan Nico"
 locale:
     language: english
