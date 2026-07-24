@@ -1,4 +1,4 @@
-import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx";
+import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx/container-renderer";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { loadRenderers } from "astro:container";
 import { render } from "astro:content";
@@ -40,10 +40,10 @@ const renderForRSS = async (context: FeedContext, entry: ContentEntry) => {
 };
 
 const toRSSItem = async (context: FeedContext, entry: ContentEntry): Promise<Item> => ({
-  id: entry.path,
+  id: `${context.baseUrl}${entry.path}`,
   title: entry.data.title,
   description: entry.data.subtitle!,
-  link: `${context.baseUrl}/${entry.path}`,
+  link: `${context.baseUrl}${entry.path}`,
   date: entry.data.date,
   published: entry.data.date,
   content: await renderForRSS(context, entry),
