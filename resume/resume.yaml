@@ -19,10 +19,10 @@ cv:
                 Hi! I'm a **Physicist**, **Software Craftsman**, and **Game Developer** who strongly believes in OSS and its community.
             - >
                 I have worked for more than a decade professionally (and even longer as a hobby) with a plethora of languages, platforms, frameworks, and libraries.
-                I like to solve people's problems with technology, and I believe there is always a good solution to every problem and a good problem for every solution;
+                I like to solve people's problems, and I believe there is always a good solution to every problem and a good problem for every solution;
                 for that reason, I'm always thrilled to learn and explore new technologies.
             - >
-                Today I mainly work with **Kotlin** on my day job and with **Dart/Flutter** and the **Flame Engine**, which I created on the side.
+                Today I mainly work with **Kotlin** at my day job and with **Dart/Flutter** and the **Flame Engine**, which I created on the side.
                 I am a **Dart & Flutter GDE** with numerous PR contributions to the ecosystem, as well as a speaker at conferences and events.
         education:
             - institution: Universidade Estadual de Campinas
@@ -43,19 +43,19 @@ cv:
               start_date: 2019-09
               end_date: present
               location: Waterloo, Canada
-              summary: Joined [Faire](https://www.faire.com) at its early days and helped to scale our **Kotlin backend** to support hundreds of thousands of users, high request throughput (especially during events), and $3B+ in GMV.
+              summary: Joined [Faire](https://www.faire.com) in its early days and helped to scale our **Kotlin backend** to support hundreds of thousands of users, high request throughput (especially during events), and $3B+ in GMV.
               highlights:
-                  - Drove multiple successful **Faire Fashion Week** events, ensuring our systems could sustain the increase in traffic efficiently;
-                  - Architected, as the founding engineer, Faire's **Ads platform**, including payments processing and ledgers, analytics, and reporting;
-                  - Led the **FLARE backend**, our in-house, user-facing, LLM-based application platform, allowing other teams to seamlessly provide production-grade AI-powered experiences to our users, embedding Python into our Kotlin ecosystem.
+                  - Led multiple successful **Faire Fashion Week** events, ensuring our systems could sustain the increase in traffic efficiently with zero downtime;
+                  - Architected, as the founding engineer, Faire's **Ads platform**, including payment processing and ledgers, analytics, and reporting, today representing a significant portion of Faire's profitability;
+                  - Designed the **FLARE backend**, our in-house, user-facing, LLM-based application platform, allowing other teams to provide production-grade AI-powered experiences to users, and embedding **Python** into our **Kotlin** ecosystem.
             - company: Blue Fire
               position: OSS Maintainer
               start_date: 2017-10
               end_date: present
               summary: '[Blue Fire](https://blue-fire.xyz) is our collective of passionate developers who love OSS and sharing projects with the world, responsible for maintaining the **Flame game engine** and adjacent packages.'
               highlights:
-                  - '**Created and then helped maintain** many of the widely-used packages, such as [flame](https://github.com/luanpotter/flame), [audioplayers](https://github.com/luanpotter/audioplayers), [ordered_set](https://github.com/luanpotter/ordered_set), [gamepads](https://github.com/flame-engine/gamepads), [vscode-dart-import](https://github.com/luanpotter/vscode-dart-import), [dart-benchmark-action](https://github.com/luanpotter/dart-benchmark-action), and many bridge packages;'
-                  - '**Contributed PRs** to Dart/Flutter repositories, including the [dart sdk](https://github.com/dart-lang/sdk), [flutter](https://github.com/flutter/flutter), [flutter/plugins](https://github.com/flutter/packages), [vector_math.dart](https://github.com/google/vector_math.dart), [mobx.dart](https://github.com/mobxjs/mobx.dart), [melos](https://github.com/invertase/melos), [tiled.dart](https://github.com/flame-engine/tiled.dart), and more;'
+                  - '**Created and helped maintain** many widely-used packages, such as [flame](https://github.com/luanpotter/flame), [audioplayers](https://github.com/luanpotter/audioplayers), [ordered_set](https://github.com/luanpotter/ordered_set), [gamepads](https://github.com/flame-engine/gamepads), [vscode-dart-import](https://github.com/luanpotter/vscode-dart-import), [dart-benchmark-action](https://github.com/luanpotter/dart-benchmark-action), and many bridge packages;'
+                  - '**Contributed PRs** to Dart/Flutter repositories, e.g. [dart sdk](https://github.com/dart-lang/sdk), [flutter](https://github.com/flutter/flutter), [flutter/plugins](https://github.com/flutter/packages), [vector_math.dart](https://github.com/google/vector_math.dart), [mobx.dart](https://github.com/mobxjs/mobx.dart), [melos](https://github.com/invertase/melos), [tiled.dart](https://github.com/flame-engine/tiled.dart), and more;'
                   - Gave **talks and workshops** at conferences, meetups, and online events about Flutter, Dart, and game development; including several Flamecons.
             - company: Dextra Sistemas
               position: Software Engineer
@@ -64,14 +64,14 @@ cv:
               location: Campinas, Brazil
               summary: Dextra (Dexsense) is a software consultancy that helps clients build their products and services, with a focus on quality, maintainability, and constant iteration.
               highlights:
-                  - Worked on several dozen different projects, for a variety of clients and business needs, with a wide range of technologies, platforms, and frameworks, including **web, mobile, and backend** development;
-                  - Backend technologies included **Java**, **Ruby**, **Node.js**, and multiple **databases**, **ORMs**, and infrastructure such as **Google Cloud**, **AWS**, and more;
-                  - Frontend technologies included **Angular**, **React**, **Vue.js** for web, and cross-platform mobile development with **React Native** and **Flutter**.
+                  - Worked on several dozen different projects, for a variety of clients and business needs, including **web, mobile, and backend** development;
+                  - Implemented backends using **Java**, **Ruby**, **Node.js**, and multiple **databases**, **ORMs**, and infrastructure such as **Google Cloud**, **AWS**, and more;
+                  - Developed frontends using **Angular**, **React**, **Vue.js** for web, and cross-platform mobile frameworks with **React Native** and **Flutter**.
         OSS Projects:
             - name: "[yawn](https://github.com/faire/yawn)"
               start_date: 2025-09
               end_date: present
-              summary: A Kotlin-first, fully type-safe ORM I built on top of Hibernate with expressive, Criteria-style query syntax built using custom KSP-generated entity metadata - used and relied upon by Faire's backend services.
+              summary: A Kotlin-first, fully type-safe ORM I built for expressive, Criteria-style query syntax using KSP-generated entity metadata - used and relied upon by Faire's backend services.
             - name: "[flame](https://flame-engine.org/)"
               start_date: 2017-10
               end_date: present
