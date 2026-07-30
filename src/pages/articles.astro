@@ -49,11 +49,16 @@ const blog = await getBlogPosts();
   .truncate-line {
     display: flex;
     max-width: 100%;
+    min-width: 0;
   }
   .truncate-line .title {
-    flex-shrink: 0;
+    display: inline-flex;
+    gap: 0.75ch;
+    min-width: 0;
   }
   .truncate-line .subtitle {
+    flex: 1;
+    min-width: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
