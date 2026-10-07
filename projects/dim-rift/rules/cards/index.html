@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>Dimensional Rift</title>
-    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/rift.png">
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/_icon-gen/mana.png">
     <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
   </head>
 
@@ -34,17 +34,17 @@
 <li>name</li>
 <li>flavour text (optional) - has no mechanical implication</li>
 <li><a href="/projects/dim-rift/wiki/Card_Type">type</a>: <a href="/projects/dim-rift/wiki/Creature">Creature</a>, <a href="/projects/dim-rift/wiki/Artifact">Artifact</a>, or <a href="/projects/dim-rift/wiki/Monument">Monument</a></li>
-<li><a href="/projects/dim-rift/wiki/Card_Subtype">subtype</a> (relevant for artifacts): <a href="/projects/dim-rift/wiki/Equipment">Equipment</a>, <a href="/projects/dim-rift/wiki/Scroll">Scroll</a>, etc</li>
+<li>subtype (relevant for artifacts): <a href="/projects/dim-rift/wiki/Equipment">Equipment</a>, <a href="/projects/dim-rift/wiki/Scroll">Scroll</a>, etc</li>
 <li>faction (if aligned): <a href="/projects/dim-rift/wiki/Men">Men</a>, <a href="/projects/dim-rift/wiki/Fey">Fey</a>, <a href="/projects/dim-rift/wiki/Telur">Telur</a>, <a href="/projects/dim-rift/wiki/Wynn">Wynn</a></li>
 <li>stats: <a href="/projects/dim-rift/wiki/Might">Might</a>, <a href="/projects/dim-rift/wiki/Will">Will</a>, and <a href="/projects/dim-rift/wiki/Life">Life</a></li>
-<li><a href="/projects/dim-rift/wiki/effects">Effect</a>: one ore more effects</li>
-<li><a href="/projects/dim-rift/wiki/arrows">Arrows</a>: single or double orthogonal arrows or single diagonal arrows</li>
+<li><a href="/projects/dim-rift/wiki/Effect">Effect</a>: one ore more effects</li>
+<li><a href="/projects/dim-rift/wiki/Arrows">Arrows</a>: single or double orthogonal arrows or single diagonal arrows</li>
 </ul>
 <p>Cards can be <a href="/projects/dim-rift/wiki/Play">played</a> from the hand (or <a href="/projects/dim-rift/wiki/Fables_Deck">Fables Deck</a>) onto the <a href="/projects/dim-rift/wiki/Battlefield">battlefield</a> into any eligible <a href="/projects/dim-rift/wiki/Zone">zones</a>.</p>
 <p>An eligible <a href="/projects/dim-rift/wiki/Zone">zone</a> must match the card type, be on the player's of the field, be empty, and be <a href="/projects/dim-rift/wiki/Conquered">conquered</a> (if creature or monument).</p>
 <p>Cards can be played <a href="/projects/dim-rift/wiki/Face-Up">face-up</a> or <a href="/projects/dim-rift/wiki/Face-Down">face-down</a> (also referred as &quot;to set&quot;).</p>
-<p>If a card is played face-up, an <a href="/projects/dim-rift/wiki/Orientation">orientation</a> must be chosen as part of playing, and the card's <a href="/projects/dim-rift/wiki/Cost">cost</a> must immediately be paid (if any). If successful, the card is <a href="/projects/dim-rift/wiki/Summoning">summoned</a> (otherwise it is send to the <a href="/projects/dim-rift/wiki/Graveyard">Graveyard</a>).</p>
-<p>If played face-down (<a href="/projects/dim-rift/wiki/Set">set</a>), the card is not summoned yet. No costs need to be paid. When a face-down card is <a href="/projects/dim-rift/wiki/Flip">flipped</a>, it is immediately summoned, by paying its costs and choosing the orientation. If that fails for any reason, the card is <a href="/projects/dim-rift/wiki/Destroy">destroyed</a> instead. If summoned, first an orientation is picked for the face-up position of the card; then any <code>When flipped</code>-effects activate; then <a href="/projects/dim-rift/wiki/Mana">Mana</a> is collected; and finally, <code>When summoned</code>-effects trigger.</p>
+<p>If a card is played face-up, an <a href="/projects/dim-rift/wiki/Orientation">orientation</a> must be chosen as part of playing, and the card's <a href="/projects/dim-rift/wiki/Cost">cost</a> must immediately be paid (if any). If successful, the card is <a href="/projects/dim-rift/wiki/Summon">summoned</a> (otherwise it is send to the <a href="/projects/dim-rift/wiki/Graveyard">Graveyard</a>).</p>
+<p>If played face-down (<a href="/projects/dim-rift/wiki/Set">set</a>), the card is not summoned yet. No costs need to be paid. When a face-down card is <a href="/projects/dim-rift/wiki/Flip">flipped</a>, it is immediately summoned, by paying its costs and choosing the orientation. If that fails for any reason, the card is <a href="/projects/dim-rift/wiki/Destroy">destroyed</a> instead. If summoned, first an orientation is picked for the face-up position of the card; then any <code>When flipped</code>-effects activate; then <a href="/projects/dim-rift/wiki/Mana_Counter">Mana</a> is collected; and finally, <code>When summoned</code>-effects trigger.</p>
 <p>Cards played from your <a href="/projects/dim-rift/wiki/Fables_Deck">Fables Deck</a>, as well as Monuments, can only be summoned (i.e. played face-up).</p>
 <h2 id="card-types" tabindex="-1">Card Types</h2>
 <h3 id="creatures" tabindex="-1">Creatures</h3>
@@ -67,7 +67,7 @@
 <p>Unlike <em>Spell</em> cards or <em>Instants</em> on other games, and very much like any other card in this game, unless otherwise stated, Artifacts remain on the field until they are destroyed by some effect; while some artifacts have continuous effects, activation effects, or triggers that can happen many times, others have one-of effects and essentially lock your zones (such as <a href="/projects/dim-rift/wiki/Scroll">Scrolls</a>), but can still used for sacrifice fodder.</p>
 <p>There are a few sub-types of Artifacts with special rules:</p>
 <h4 id="equipment" tabindex="-1">Equipment</h4>
-<p>Equipments are artifacts that can be <a href="/projects/dim-rift/wiki/Attached">Attached</a> to creature imbuing them with transferable properties (<a href="/projects/dim-rift/wiki/Might">Might</a>, <a href="/projects/dim-rift/wiki/Life">Life</a>, and up to one effect).</p>
+<p>Equipments are artifacts that can be attached to a creature via the <a href="/projects/dim-rift/wiki/Equip">Equip</a> action, imbuing them with transferable properties (<a href="/projects/dim-rift/wiki/Might">Might</a>, <a href="/projects/dim-rift/wiki/Life">Life</a>, and up to one effect).</p>
 <p>Every Equipment has the action <a href="/projects/dim-rift/wiki/Equip">Equip</a>:</p>
 <blockquote>
 <p>Equip: Attach [this] to target creature.</p>
@@ -81,7 +81,7 @@
 <p>When a card is destroyed, all attached cards are destroyed with it. Attachments can also be directly destroyed by certain card effects.</p>
 <h4 id="scroll" tabindex="-1">Scroll</h4>
 <p>Scrolls have a powerful, one-off, &quot;When summoned:&quot; trigger effect, and then are essentially clutter until they can be destroyed.</p>
-<p>They have a special rule regarding their <a href="/projects/dim-rift/wiki/Will">Will</a>: unlike other cards, they do not acquire Mana counters when summoned; in fact their &quot;mana&quot; is considered &quot;spent&quot; when their effect activates. However, their can still be sac'ed face-down for their Mana cost via the <a href="/projects/dim-rift/wiki/Hidden_Sacrifice">Hidden Sacrifice</a> rule, before they are ever <a href="/projects/dim-rift/wiki/Flip">flipped</a>.</p>
+<p>They have a special rule regarding their <a href="/projects/dim-rift/wiki/Will">Will</a>: unlike other cards, they do not acquire Mana counters when summoned; in fact their &quot;mana&quot; is considered &quot;spent&quot; when their effect activates. However, they can still be sac'ed face-down for their Will to count towards a mana cost via the <a href="/projects/dim-rift/wiki/Hidden_Sacrifice">Hidden Sacrifice</a> rule, before they are ever <a href="/projects/dim-rift/wiki/Flip">flipped</a>.</p>
 <h3 id="monuments" tabindex="-1">Monuments</h3>
 <figure style="text-align:center;">
     <img src="/projects/dim-rift/assets/_card-gen/towering_lighthouse.png" width="30%">

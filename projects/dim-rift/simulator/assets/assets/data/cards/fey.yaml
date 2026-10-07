@@ -12,9 +12,11 @@ cards:
         optional: false
         desc: "When flipped: [Sidestep] [this]."
       - type: action
+        name: Learn
         desc: "Move one mana from target to [this]."
       - type: trigger
         optional: false
+        name: Transform
         desc: "When [this] has 3 or more mana: [Transform] [this]."
     arrows:
       top: single
@@ -31,9 +33,10 @@ cards:
       might: 1
       life: 3
     effects:
-      - action: strike
+      - effect: strike
       - type: trigger
         optional: false
+        name: Transform
         desc: "When [this] has fought with 2 different creatures: [Transform] [this]."
       - type: continuous
         desc: "Can only target a creature for a [Strike] if that creature has fought with [this] before."
@@ -49,14 +52,16 @@ cards:
     subType: fey
     stats:
       might: 1
-      will: 1
+      will: 2
       life: 3
     effects:
       - type: trigger
         optional: false
+        name: Transform
         desc: "When [this] is targeted a second time by your opponent, after that effect resolves: [Transform] [this]."
       - type: activation
         oncePerTurn: true
+        name: Burst
         desc: "Consume 1 mana: [Burst]."
     arrows:
       top: double
@@ -72,14 +77,16 @@ cards:
     stats:
       might: 2
       life: 2
-      will: 2
+      will: 3
     effects:
       - type: trigger
         optional: false
+        name: Transform
         desc: "When it's the 2nd start of your turn since [this] was summoned: [Transform] [this]."
       - keyword: evasive
       - type: activation
         oncePerTurn: false
+        name: Teach
         desc: "Consume 1 mana: target collects 1 mana."
       - type: trigger
         optional: false
@@ -97,14 +104,16 @@ cards:
       Not only was she floating in dreams like dandelions;
       she could gather the Fey to fulfill them.
     stats:
+      might: 0
       life: 4
     effects:
       - type: trigger
         optional: false
         desc: "When flipped: target is [Inspired]."
-      - action: conscript
+      - effect: conscript
       - type: trigger
         optional: false
+        name: Transform
         desc: "When connected to at least 3 Creature Tokens: [Transform] [this]."
     arrows:
       top: single
@@ -120,13 +129,15 @@ cards:
       life: 1
       will: 1
     effects:
-      - action: march
+      - effect: march
       - keyword: explorer
       - type: trigger
         optional: false
+        name: Transform
         desc: "When [this] has visited all your creature zones: [Transform] [this]."
       - type: activation
         oncePerTurn: true
+        name: Shift
         desc: "Consume any 1 mana: [Shift]."
     arrows:
       left: double
@@ -141,9 +152,10 @@ cards:
       life: 1
       will: 1
     effects:
-      - action: march
+      - effect: march
       - type: activation
         oncePerTurn: true
+        name: Shift
         desc: "[Shift]."
       - type: trigger
         optional: false
@@ -162,10 +174,10 @@ cards:
       might: 1
       life: 2
     effects:
-      - action: strike
+      - effect: strike
       - type: trigger
         optional: false
-        desc: "When [this] declares a [Strike] against target creature; choose an attachment from target: destroy that attachment."
+        desc: "When [this] declares a [Strike] against a creature; choose an attachment from it: destroy that attachment."
     arrows:
       top: double
   savage_hyena:
@@ -177,11 +189,11 @@ cards:
       might: 3
       life: 1
     effects:
-      - action: march
+      - effect: march
       - keyword: explorer
       - type: trigger
         optional: true
-        desc: "When [this] [March | Marches]: you can destroy target artifact with no mana."
+        desc: "When [this] moves: you can destroy target artifact with no mana."
     arrows:
       top: double
       left: single
@@ -198,7 +210,7 @@ cards:
       - type: trigger
         optional: true
         desc: "When summoned: you can deal 3 damage to target [Prone] creature."
-      - action: burst
+      - effect: burst
       - keyword: evasive
     arrows:
       top: single
@@ -220,6 +232,7 @@ cards:
         optional: false
         desc: "When summoned: target creature is [Prone]."
       - type: action
+        name: Shift
         desc: "[Shift]."
     arrows:
       top: single
@@ -270,7 +283,7 @@ cards:
       - type: trigger
         optional: false
         desc: >
-          When summoned; target all connected creatures: for each target, it is [Prone]; or if it was already [Prone], it is also [Weakened].
+          When summoned; target all connected face-up creatures: for each target, it is [Prone]; or if it was already [Prone], it also has [Weak].
     arrows:
       topRight: single
       top: double
@@ -334,10 +347,11 @@ cards:
       - type: trigger
         optional: false
         desc: "When summoned: target creature is [Inspired]."
-      - action: equip
+      - effect: equip
       - type: activation
         oncePerTurn: false
         transfer: true
+        name: Cleanse
         desc: "[Cleanse] [this]."
     arrows:
       topRight: single
@@ -352,9 +366,10 @@ cards:
     effects:
       - keyword: scaffold
       - type: continuous
-        desc: 'All creatures have: "[Explorer]".'
+        desc: "All creatures have [Explorer]."
       - type: activation
         oncePerTurn: false
+        name: Prone
         desc: "Sac an artifact: chosen face-up creature is [Prone]."
   secluded_fey_pond:
     name: Secluded Fey Pond
@@ -365,14 +380,15 @@ cards:
     effects:
       - keyword: scaffold
       - type: continuous
-        desc: 'All creatures have: "[Evasive]."'
+        desc: "All creatures have [Evasive]."
       - type: activation
         oncePerTurn: false
+        name: Heal
         desc: "Discard a card: heal 1 damage from chosen face-up creature."
   the_lone_wolf:
     name: The Lone Wolf
     faction: fey
-    extra: true
+    fabled: true
     type: creature
     subType: feyBeast
     stats:
@@ -385,10 +401,11 @@ cards:
       - type: trigger
         optional: false
         desc: "When summoned: [Sidestep] target creature."
-      - action: strike
+      - effect: strike
       - type: activation
         oncePerTurn: false
-        desc: "Discard a card: target is [Weakened]."
+        name: Frighten
+        desc: "Discard a card: target has [Weak]."
     arrows:
       top: single
       topRight: single
@@ -397,7 +414,7 @@ cards:
   the_mighty_bear:
     name: The Mighty Bear
     faction: fey
-    extra: true
+    fabled: true
     type: creature
     subType: feyBeast
     stats:
@@ -420,7 +437,7 @@ cards:
   zion_and_shawarma_formidable_rats:
     name: Zion & Shawarma, Formidable Rats
     faction: fey
-    extra: true
+    fabled: true
     type: creature
     subType: feyBeast
     flavor: |
@@ -441,7 +458,7 @@ cards:
       - type: activation
         oncePerTurn: false
         name: "Shred"
-        desc: "Sac up to 3 target Scrolls: [this] collects 1 mana for each."
+        desc: "Sac up to 3 connected Scrolls: [this] collects 1 mana for each."
     arrows:
       top: single
       topRight: single
@@ -450,7 +467,7 @@ cards:
   the_soaring_eagle:
     name: The Soaring Eagle
     faction: fey
-    extra: true
+    fabled: true
     type: creature
     subType: feyBeast
     stats:
@@ -462,10 +479,12 @@ cards:
         desc: "[Transformed]: summon."
       - type: activation
         oncePerTurn: true
-        desc: "March."
+        name: March
+        desc: "[March]."
       - type: activation
         oncePerTurn: true
-        desc: "Shift."
+        name: Shift
+        desc: "[Shift]."
     arrows:
       top: double
       topRight: single
@@ -478,7 +497,7 @@ cards:
   unavoidable_tremors:
     name: Unavoidable Tremors
     faction: fey
-    extra: true
+    fabled: true
     type: artifact
     subType: scroll
     flavor: |
@@ -492,19 +511,19 @@ cards:
   deep_forest_temple:
     name: Deep Forest Temple
     faction: fey
-    extra: true
+    fabled: true
     type: monument
     effects:
       - type: cost
         desc: "Consume any 2 mana and sac 3 cards: summon."
       - type: continuous
-        desc: "[Prone] creatures are [Weakened]."
+        desc: "[Prone] creatures have [Weak]."
       - type: continuous
         desc: "[Prone] creatures with [Transform] can [Transform] at the end of each turn."
   mother_nature:
     name: Mother Nature
     faction: fey
-    extra: true
+    fabled: true
     type: creature
     subType: manifestation
     flavor: |
@@ -517,11 +536,13 @@ cards:
       - type: cost
         desc: "Sac 3 [Prone] creatures: summon."
       - type: continuous
-        desc: "[Inspired]."
+        desc: "[Explorer]; [Inspired]."
       - type: action
+        name: Manifest
         desc: "[March]; then, [Burst]."
       - type: activation
         oncePerTurn: false
+        name: Revere
         desc: "Consume any 3 mana: [Transform] target creature if it has [Transform]; then, either way, target is [Prone]."
     arrows:
       top: single

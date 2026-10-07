@@ -13,9 +13,9 @@ cards:
       - type: trigger
         optional: false
         desc: "When flipped: this is [Protected] until end of turn."
-      - action: pray
+      - effect: pray
       - type: continuous
-        desc: "While [this] has an attachment: +1 [Might]."
+        desc: "While [this] has an attachment: [this] gets +1 [Might]."
     arrows:
       top: double
       left: single
@@ -29,12 +29,14 @@ cards:
       might: 1
       life: 2
     effects:
-      - action: strike
+      - effect: strike
       - type: action
+        name: Burst
         desc: "While [Blessed]: [Burst]."
       - type: activation
         oncePerTurn: false
-        desc: "Sac target artifact: [Sidestep] target or [this]."
+        name: Sidestep
+        desc: "Sac a connected artifact: [Sidestep] [this] or target."
     arrows:
       top: single
       topRight: single
@@ -51,11 +53,12 @@ cards:
       might: 2
       life: 2
     effects:
-      - action: pray
+      - effect: pray
       - type: continuous
         desc: "While [Blessed]: [Evasive]."
       - type: activation
         oncePerTurn: true
+        name: Conscript
         desc: "Consume any 1 mana: [Conscript]."
     arrows:
       top: single
@@ -91,13 +94,15 @@ cards:
     flavor: |
       It was said that he could make an offer one couldn't refuse.
     stats:
+      might: 0
       life: 4
       will: 1
     effects:
-      - action: march
+      - effect: march
       - keyword: explorer
       - type: activation
         oncePerTurn: true
+        name: Inspire
         desc: "Consume 1 mana: until end of turn, target creature is [Inspired] but cannot [Strike]."
     arrows:
       topRight: single
@@ -118,9 +123,11 @@ cards:
       - keyword: ambush
       - type: trigger
         optional: false
-        desc: "When summoned: deal 1 damage to target creature."
-      - type: continuous
-        desc: "Connected creatures are [Suppressed]."
+        desc: "When summoned: connected creatures are [Suppressed]."
+      - type: activation
+        oncePerTurn: false
+        name: Reprimand
+        desc: "Consume 1 mana: deal 1 damage to target creature."
     arrows:
       top: single
       left: single
@@ -140,6 +147,7 @@ cards:
         optional: false
         desc: "When flipped: target is [Suppressed]."
       - type: action
+        name: Atone
         desc: "[Pray]; then, [Pray]."
     arrows:
       top: single
@@ -159,12 +167,13 @@ cards:
       life: 3
       will: 1
     effects:
-      - action: pray
+      - effect: pray
       - type: trigger
         optional: true
         desc: "When [this] collects mana: you can heal 1 damage from target."
       - type: activation
         oncePerTurn: false
+        name: Enlighten
         desc: "Consume 1 mana: target collects 1 mana."
     arrows:
       top: double
@@ -184,11 +193,11 @@ cards:
     effects:
       - type: cost
         desc: "Consume any 2 mana: summon."
-      - action: pray
+      - effect: pray
       - type: activation
         oncePerTurn: false
         name: "Smite"
-        desc: "During [this]'s [Strike] action: consume 1 mana; [this] gets +1 [Might] for this [Strike]."
+        desc: "During [this]'s [Strike] action; consume 1 mana: [this] gets +1 [Might] for this [Strike]."
     rulings:
       - "The Smite effect can be activated multiple times during the same [Strike] action."
     arrows:
@@ -209,9 +218,10 @@ cards:
     effects:
       - keyword: evasive
       - type: action
+        name: Strike
         desc: "While [Blessed]: [Strike]."
       - type: continuous
-        desc: "While [this] [Strike | Strikes] a creature: [this] has +1 [Might] and the blocker has -1 [Might]."
+        desc: "While [this] [Strike | Strikes] a creature: [this] gets +1 [Might] and the blocker gets -1 [Might]."
     arrows:
       left: single
       right: single
@@ -226,9 +236,9 @@ cards:
       might: 2
       life: 2
     effects:
-      - action: maneuver
+      - effect: maneuver
       - keyword: explorer
-      - keyword: conduit
+      - condition: conduit
     arrows:
       top: single
       bottom: single
@@ -243,11 +253,9 @@ cards:
       might: 1
       life: 1
     effects:
-      - action: march
+      - effect: march
       - type: continuous
-        desc: |
-          Connected creatures have
-          "Action: [Strike]."
+        desc: "Connected creatures can [Strike]."
     arrows:
       topRight: single
       topLeft: single
@@ -264,8 +272,8 @@ cards:
       - type: trigger
         optional: false
         desc: "When summoned: target collects 1 mana."
-      - action: equip
-      - action: pray
+      - effect: equip
+      - effect: pray
         transfer: true
     arrows:
       top: single
@@ -282,7 +290,7 @@ cards:
       - type: trigger
         optional: true
         desc: "When summoned: you can [Equip] [this]."
-      - action: equip
+      - effect: equip
       - type: continuous
         transfer: true
         desc: "[Evasive]."
@@ -301,6 +309,7 @@ cards:
         desc: "The mana on [this] cannot be consumed by means other than its own effects."
       - type: activation
         oncePerTurn: true
+        name: Indoctrinate
         desc: "Transfer 1 mana from [this] to target or vice-versa."
     arrows:
       topRight: single
@@ -320,9 +329,10 @@ cards:
       were the backbone of the kingdom's economy.
     effects:
       - type: continuous
-        desc: "Connected creatures have +1 Life."
+        desc: "Connected creatures get +1 [Life]."
       - type: activation
         oncePerTurn: true
+        name: Rotate
         desc: "Consume any 2 mana: rotate target."
     arrows:
       top: double
@@ -334,10 +344,10 @@ cards:
       will: 1
     effects:
       - type: continuous
-        desc: "Connected creatures have +1 [Might]."
+        desc: "Connected creatures get +1 [Might]."
       - type: action
-        name: "Cannons"
-        desc: "Deal 1 damage to target creature; then, target [Bursts]."
+        name: Cannons
+        desc: "Deal 1 damage to target creature; then, target [Burst | Bursts]."
     arrows:
       topRight: single
       topLeft: single
@@ -368,9 +378,10 @@ cards:
     effects:
       - keyword: scaffold
       - type: continuous
-        desc: 'All creatures have "Action: [Pray]."'
+        desc: "All creatures can [Pray]."
       - type: action
-        desc: "Consume any 3 mana; choose a creature you control: chosen creature [Shifts]."
+        name: Shift
+        desc: "Consume any 3 mana; choose a creature you control: chosen creature [Shift | Shifts] with target."
   fountain_of_youth:
     name: Fountain of Youth
     faction: men
@@ -381,16 +392,18 @@ cards:
       - keyword: scaffold
       - type: activation
         oncePerTurn: false
+        name: Cleanse
         desc: "Consume 2 mana: heal 1 damage and [Cleanse] chosen face-up creature."
       - type: activation
         oncePerTurn: false
+        name: Refresh
         desc: "Discard a card: [this] collects 2 mana."
   blasphemous_servant_of_our_lord:
     name: Blasphemous Servant of Our Lord
     faction: men
     type: creature
     subType: ally
-    extra: true
+    fabled: true
     stats:
       might: 3
       life: 4
@@ -398,7 +411,8 @@ cards:
       - type: cost
         desc: "Consume any 3 mana then sac a non-[Blessed] face-up creature: summon."
       - type: action
-        desc: "[Strike] target; then, target [Bursts]."
+        name: Unholy Mace
+        desc: "[Strike] target; then, target [Burst | Bursts]."
     arrows:
       top: single
       left: double
@@ -407,7 +421,7 @@ cards:
     faction: men
     type: creature
     subType: ally
-    extra: true
+    fabled: true
     flavor: |
       "To thee I pledge my sword, my life, and my soul;
       your majesty; my Queen. All hail Queen Brittany II!"
@@ -418,9 +432,10 @@ cards:
     effects:
       - type: cost
         desc: "Sac a [Blessed] creature then consume any 3 mana: summon."
-      - action: conscript
+      - effect: conscript
       - type: activation
         oncePerTurn: true
+        name: Protect
         desc: "Consume 2 mana: destroy target artifact; then, if you did, this is [Protected] until end of turn."
     arrows:
       top: double
@@ -432,7 +447,7 @@ cards:
     faction: men
     type: creature
     subType: ally
-    extra: true
+    fabled: true
     stats:
       might: 1
       life: 5
@@ -441,11 +456,13 @@ cards:
       - type: cost
         desc: "Consume any 5 mana: summon."
       - type: action
+        name: Absolve
         desc: "[Pray], then you can deal 1 damage to target creature."
       - type: continuous
         desc: "You can see any cards connected to [this]."
       - type: activation
         oncePerTurn: false
+        name: Bless
         desc: "Consume 1 mana: connected creatures are permanently [Blessed]."
     arrows:
       top: single
@@ -458,7 +475,7 @@ cards:
     faction: men
     type: creature
     subType: manifestation
-    extra: true
+    fabled: true
     stats:
       might: 3
       will: 3
@@ -471,7 +488,8 @@ cards:
         desc: "When summoned: [this] or target creature is [Prone]."
       - type: activation
         oncePerTurn: true
-        desc: "Consume 1 mana: until end of turn, [this] or target creature is [Weakened] and has [Evasive]."
+        name: Corrupt
+        desc: "Consume 1 mana: until end of turn, [this] or target creature has [Weak] and [Evasive]."
     arrows:
       left: double
       right: double
@@ -480,7 +498,7 @@ cards:
     faction: men
     type: artifact
     subType: equipment
-    extra: true
+    fabled: true
     flavor: |
       "After the Cataclysm, only Theranor's sword was recovered;
       still a legendary symbol of hope for the paladins, and all Men of Altaria."
@@ -493,9 +511,10 @@ cards:
       - type: trigger
         optional: false
         desc: "When summoned: [Cleanse] target."
-      - action: equip
+      - effect: equip
       - type: action
-        desc: "[Strike]; then, [Burst]."
+        name: Burst
+        desc: "[Burst]."
         transfer: true
     arrows:
       top: double
@@ -503,7 +522,7 @@ cards:
     name: Church of the New Covenant
     faction: men
     type: monument
-    extra: true
+    fabled: true
     effects:
       - type: cost
         desc: "Sac or discard at least 3 cards: summon; [this] collects the amount of mana on the sac'ed cards."
@@ -519,7 +538,7 @@ cards:
     faction: men
     type: creature
     subType: manifestation
-    extra: true
+    fabled: true
     flavor: |
       They say to never meet your heroes.
     stats:
@@ -531,9 +550,10 @@ cards:
       - type: continuous
         desc: "[Inspired]."
       - type: action
+        name: Expel
         desc: "[Burst]; then, [Sidestep] target creature."
       - type: continuous
-        desc: "No creatures can [Pray]."
+        desc: "Creatures cannot [Pray]."
     arrows:
       topLeft: single
       top: single

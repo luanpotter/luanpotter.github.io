@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>Dimensional Rift</title>
-    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/icons/rift.png">
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/_icon-gen/mana.png">
     <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
   </head>
 
@@ -25,7 +25,7 @@
 <p>When an effect targets, it is actually targeting a zone, not any specific card. At the time of activation, the target must satisfy all targeting criteria. However, it must also do so at resolution. If the board changed in a way that a new, valid target is now at the targeted zone, the effect resolves without issues. However, if the zone is no longer a valid target as specified by the effect, the effect fizzles. For example, if an effect says <code>target creature</code>, when resolving, there must still be a creature on the selected creature zone. If the zone was left empty, the effect fizzles. If a different creature switched places and is now on the zone, the effect resolves targeting that new creature.</p>
 <p>Alternatively, if the card that originated the effect is destroyed, the effect also fizzles. Cards must be on the field to resolve effects. If it was moved, but can still target the selected zone, the effect will still resolve.</p>
 <p>Typically, if an effect fizzles, nothing happens at resolution. Resources that were spent are still spent. The effect or action is still considered to have been &quot;activated&quot;, so it still satisfies &quot;once per turn&quot; restrictions. If it is an action, the card is considered to have used its action for the turn, even when it fizzles. There is no <a href="/projects/dim-rift/wiki/Strike">Strike</a> &quot;replay&quot;. If a blocked attack becomes an unblocked direct attack to a zone, players are no longer allowed to proactively block (passive blocking still happens).</p>
-<p>When cards with costs are summoned, if the player fails to pail the cost, the summon is considered to have fizzled, and the card is sent to the graveyard. &quot;When destroyed&quot; effects are not triggered because the card was never summoned to begin with.</p>
+<p>When cards with costs are summoned, if the player fails to pail the cost, the summon is considered to have fizzled, and the card is sent to the graveyard without triggering &quot;When summoned&quot; effects.</p>
 
 </main>
 <footer>
