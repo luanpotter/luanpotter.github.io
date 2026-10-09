@@ -88,7 +88,7 @@ div.pagination p {
   text-align: center;
 }
 
-#card-grid {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
