@@ -28,7 +28,6 @@
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li><code>[this]</code> is used to refer to the card itself. Sometimes it can also be used to refer to &quot;this card's zone&quot;</li>
-<li><code>[equipped]</code> is used to refer to the card either equipped or crewed by [this]</li>
 </ul>
 <h2 id="costs-%26-effects" tabindex="-1">Costs &amp; Effects</h2>
 <ul>
@@ -47,6 +46,12 @@
 <li>
 <p><code>[this/creature] heals [x in numerical form/all] damage</code> (e.g. &quot;[this] heals 2 damage&quot;)</p>
 </li>
+<li>
+<p><code>[...]; then, [...]</code> for a step resolving after the one before it (e.g. &quot;[March]; then, [Burst].&quot;)</p>
+</li>
+<li>
+<p><code>[...]; then, if you did, [...]</code> for a step resolving only if the one before it was fully done (e.g. &quot;[Sidestep] target; then, if you did, it is [Suppressed].&quot;)</p>
+</li>
 </ul>
 <h2 id="terms" tabindex="-1">Terms</h2>
 <ul>
@@ -55,16 +60,22 @@
 <li><strong>effect</strong> — <code>can / cannot</code> (e.g. &quot;Target can [Strike].&quot;; &quot;Creatures cannot [Pray].&quot;)</li>
 <li><strong>stat</strong> — <code>gets +/- [x in numerical form] [Stat]</code> (e.g. &quot;Target creature gets +1 [Might].&quot;)</li>
 </ul>
-<h2 id="common-triggers" tabindex="-1">Common Triggers</h2>
+<h2 id="triggers" tabindex="-1">Triggers</h2>
+<p>Every trigger starts with <code>When </code>:</p>
 <ul>
 <li><code>When summoned: [...]</code></li>
 <li><code>When flipped: [...]</code></li>
-<li><code>After [this] battles with another creature:</code></li>
+<li><code>When [this] fights another creature: [...]</code></li>
+</ul>
+<h2 id="replacement-effects" tabindex="-1">Replacement Effects</h2>
+<p>Continuous effects, implemented as hooks, worded as:</p>
+<ul>
+<li><code>If [...] would [...], [...] instead.</code></li>
 </ul>
 <h2 id="turn-phases" tabindex="-1">Turn Phases</h2>
 <ul>
 <li><code>until the end of turn</code></li>
-<li><code>At the the end of [your] turn</code></li>
+<li><code>When at the end of [your/each] turn: [...]</code></li>
 </ul>
 
 </main>
