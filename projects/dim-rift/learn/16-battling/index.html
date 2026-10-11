@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Dimensional Rift</title>
+    <link rel="icon" type="image/x-icon" href="/projects/dim-rift/assets/_icon-gen/mana.png">
+    <link rel="stylesheet" href="/projects/dim-rift/bundle.css">
+  </head>
+
+  <body>
+    
+<style>
+  /* override column size from bundle.css */
+  body {
+    grid-template-columns: 1fr min(80rem, 90%) 1fr;
+  }
+</style>
+
+<main>
+  
+  <div class="pagination">
+    
+    <p><a href="/projects/dim-rift/learn/15-movement">Movement &lt;</a></p>
+     
+    <p><a href="/projects/dim-rift/learn/17-other-actions">&gt; Other Actions</a></p>
+    
+  </div>
+  
+  <div id="onboarding-root"><h1 id="battling" tabindex="-1">Battling</h1>
+<h2 id="strike" tabindex="-1">Strike</h2>
+<p>All your face-up creatures get the <a href="/projects/dim-rift/wiki/Strike">Strike</a> action added to your pool when you choose the <a href="/projects/dim-rift/wiki/Battle_Event">Battle Event</a>. During a Battle Event, your creatures also have <strong>First Strike</strong> against active blockers. To <a href="/projects/dim-rift/wiki/Strike">Strike</a>:</p>
+<ol>
+<li>You target a creature zone (typically your opponent's)</li>
+<li>If the targeted zone has a creature, that creature <em>must</em> block the attack (<strong>passive block</strong>)</li>
+<li>If not, another creature can <strong>actively block</strong> if they connect to the targeted zone</li>
+<li>If there is a blocker, both creatures <strong>fight</strong></li>
+<li>If there is no blocker, the controller of the targeted zone is hit for 1 <a href="/projects/dim-rift/wiki/HP">HP</a>, and draws a card</li>
+</ol>
+<h2 id="fighting" tabindex="-1">Fighting</h2>
+<p>In a <a href="/projects/dim-rift/wiki/Fight">Fight</a>, both creatures deal <a href="/projects/dim-rift/wiki/Damage_Counter">damage</a> equal to their <a href="/projects/dim-rift/wiki/Might">Might Stat</a> to each other simultaneously. If at any point (as a state-based action) the damage counters on a creature equal or exceed their <a href="/projects/dim-rift/wiki/Life">Life Stat</a>, they are destroyed. Note that damage counters are <strong>NOT</strong> cleared at end of turn or step, but can be healed by effects.</p>
+<p>However, during a <a href="/projects/dim-rift/wiki/Battle_Event">Battle Event</a>, your creatures have <strong>First Strike</strong> against active blockers: your attacker deals its damage first, and if the active blocker is destroyed, it does not deal damage back. Passive blocks are always simultaneous.</p>
+<div class="buttons">
+  <a href="/projects/dim-rift/learn/17-other-actions" class="button">Next: Other Actions</a>
+</div>
+</div>
+</main>
+
+  </body>
+</html>

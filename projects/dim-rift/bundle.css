@@ -12,6 +12,9 @@
   --code: #f06292;
   --preformatted: #ccc;
   --disabled: #111;
+  /* the game's record face, for all reading text and code */
+  --sans-font: Writer, monospace;
+  --mono-font: Writer, monospace;
 }
 
 /* override column size from simple */
@@ -19,9 +22,15 @@ body {
   grid-template-columns: 1fr min(60rem, 90%) 1fr;
 }
 
+/* the game's display face, for the header, its menu and every heading */
 @font-face {
-  font-family: Quarterstaff;
-  src: url("assets/Quarterstaff.ttf");
+  font-family: Bluu;
+  src: url("assets/Bluu.otf");
+}
+
+@font-face {
+  font-family: Writer;
+  src: url("assets/Writer.ttf");
 }
 
 p,
@@ -29,8 +38,14 @@ li {
   text-align: justify;
 }
 
-header {
-  font-family: Quarterstaff;
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Bluu;
 }
 
 header h1 {
@@ -100,7 +115,11 @@ div.pagination p {
   gap: 8px;
 }
 
+/* centred as a row rather than on the text's baseline, which moves with the font */
 .stat-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
   padding: 2px;
   margin: 4px;
   border: 1px solid;
@@ -166,7 +185,7 @@ div.pagination p {
 }
 
 #onboarding-root {
-  font-size: 1.6em;
+  font-size: 1.4em;
   text-align: justify;
 }
 
