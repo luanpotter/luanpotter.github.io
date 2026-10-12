@@ -16,6 +16,7 @@
   <a href="/projects/dim-rift/">Home</a> | <a href="/projects/dim-rift/learn">Learn</a> |
   <a href="/projects/dim-rift/introduction">Introduction</a> | <a href="/projects/dim-rift/rules">Rules</a> |
   <a href="/projects/dim-rift/wiki">Wiki</a> | <a href="/projects/dim-rift/references">References</a> |
+  <a href="/projects/dim-rift/simulator">Simulator</a> |
   <a href="https://forms.gle/w8wBSuq8a1nRRBc78">Contact</a>
 </header>
 <main>
@@ -278,7 +279,13 @@
 
 </main>
 <footer>
-  <p>&copy; 2024 Dimensional Rift</p>
+  <p>&copy; 2024 Dimensional Rift • Version [<span id="version">dev</span>]</p>
+  <script>
+    const deploymentVersion = "72cc25be"; // Will be replaced during deploy
+    if (!deploymentVersion.startsWith("[[[")) {
+      document.getElementById("version").textContent = deploymentVersion;
+    }
+  </script>
 </footer>
 
   </body>

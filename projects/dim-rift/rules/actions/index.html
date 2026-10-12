@@ -16,6 +16,7 @@
   <a href="/projects/dim-rift/">Home</a> | <a href="/projects/dim-rift/learn">Learn</a> |
   <a href="/projects/dim-rift/introduction">Introduction</a> | <a href="/projects/dim-rift/rules">Rules</a> |
   <a href="/projects/dim-rift/wiki">Wiki</a> | <a href="/projects/dim-rift/references">References</a> |
+  <a href="/projects/dim-rift/simulator">Simulator</a> |
   <a href="https://forms.gle/w8wBSuq8a1nRRBc78">Contact</a>
 </header>
 <main>
@@ -37,7 +38,8 @@
 </ul>
 <p>For example, a creature with &quot;Action: March&quot; could choose that action every Event. But a creature that does not have &quot;Action: March&quot; printed on it only gets to access the <a href="/projects/dim-rift/wiki/March">March</a> action during a <a href="/projects/dim-rift/wiki/Campaign_Event">Campaign Event</a>.</p>
 <p>All creatures always have <a href="/projects/dim-rift/wiki/Reorient">Reorient</a> in their Action Pool, allowing them to rotate in place regardless of event choice.</p>
-<p>Some creatures have special actions that are described on their card, such as <a href="/projects/dim-rift/wiki/Pray">Pray</a> or <a href="/projects/dim-rift/wiki/Conscript">Conscript</a>. These are in their Action Pool and can be chosen instead of the regular <a href="/projects/dim-rift/wiki/March">March</a> or <a href="/projects/dim-rift/wiki/Strike">Strike</a> actions.</p>
+<p>Some effects, such as <a href="/projects/dim-rift/wiki/Pray">Pray</a> or <a href="/projects/dim-rift/wiki/Conscript">Conscript</a>, are often printed as actions: a card with &quot;Action: Pray&quot; has Pray in its Action Pool, to choose instead of the regular <a href="/projects/dim-rift/wiki/March">March</a> or <a href="/projects/dim-rift/wiki/Strike">Strike</a> actions.
+The same effect may be printed as an activation instead, which is no action at all and is used as any activation is.</p>
 <p>A player does not need to perform an Action with every available card (or any at all). Only face-up cards already on the field can perform actions. Typically, only creatures will have actions (but some artifacts or monuments, specially <a href="/projects/dim-rift/wiki/Equipment">Equipments</a> will have that option as well).</p>
 <h2 id="march-action" tabindex="-1">March Action</h2>
 <p>Move to target empty, <a href="/projects/dim-rift/wiki/Conquered">conquered</a> creature zone you control, rotating to desired orientation.</p>
@@ -53,7 +55,13 @@
 
 </main>
 <footer>
-  <p>&copy; 2024 Dimensional Rift</p>
+  <p>&copy; 2024 Dimensional Rift • Version [<span id="version">dev</span>]</p>
+  <script>
+    const deploymentVersion = "72cc25be"; // Will be replaced during deploy
+    if (!deploymentVersion.startsWith("[[[")) {
+      document.getElementById("version").textContent = deploymentVersion;
+    }
+  </script>
 </footer>
 
   </body>
