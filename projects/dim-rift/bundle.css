@@ -174,16 +174,6 @@ div.pagination p {
   margin-top: 8px;
 }
 
-.learn-toc {
-  line-height: 2.2;
-  font-size: 1.1em;
-}
-
-.learn-toc li::marker {
-  color: var(--accent);
-  font-weight: bold;
-}
-
 #onboarding-root {
   font-size: 1.4em;
   text-align: justify;
