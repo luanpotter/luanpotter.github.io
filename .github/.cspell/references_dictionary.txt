@@ -14,6 +14,7 @@ keybase # https://keybase.io
 luan # https://github.com/luanpotter
 luanpotter # https://github.com/luanpotter
 Ploeg # Jochum van der Ploeg, https://github.com/wolfenrain
+quickshell # https://quickshell.org
 Renan # Renan C. Araújo, https://github.com/renancaraujo
 sqldelight # https://github.com/sqldelight/sqldelight
 tonsky # https://github.com/tonsky
