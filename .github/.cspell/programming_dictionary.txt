@@ -1,3 +1,4 @@
 # programming terms or APIs
 fcall # part of the q javascript promise library
 frontmatter # additional spec on top of markdown
+omnibox # combined address/search bar, popularized by Google Chrome

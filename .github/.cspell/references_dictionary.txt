@@ -1,4 +1,5 @@
 # people and project names
+archinstall # https://github.com/archlinux/archinstall
 audioplayers # https://github.com/luanpotter/audioplayers
 codetrace # https://codetrace.com
 CRDB # CockroachDB, https://www.cockroachlabs.com
@@ -16,6 +17,9 @@ luanpotter # https://github.com/luanpotter
 Ploeg # Jochum van der Ploeg, https://github.com/wolfenrain
 quickshell # https://quickshell.org
 Renan # Renan C. Araújo, https://github.com/renancaraujo
+rofi # https://github.com/davatorium/rofi
 sqldelight # https://github.com/sqldelight/sqldelight
 tonsky # https://github.com/tonsky
 vimium # https://github.com/philc/vimium
+waybar # https://github.com/Alexays/Waybar
+wofi # https://hg.sr.ht/~scoopta/wofi
